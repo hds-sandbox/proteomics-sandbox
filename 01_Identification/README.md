@@ -21,3 +21,8 @@ Before running the app, you need to change a number of settings to include the t
 
 ![import_appp configuration](https://user-images.githubusercontent.com/3648982/141950906-befda2a4-b712-4f8d-a5d0-256249eedb6d.png)
 
+
+Load the parameters (and possibly add your own data folder) and run the app... Once the app is running on UCloud, you can open a remote desktop session by cliking the button "Open interface". You should be greeted with a welcome message with imformation about the resources available in the sandbox. For the purpose of this exercise, you need to run the program FragPipe by double-clicking the icon on the desktop:
+
+![Starting fragpipe](https://user-images.githubusercontent.com/3648982/141952788-6d64a203-d838-4511-a787-7fb5b03ac532.png)
+
