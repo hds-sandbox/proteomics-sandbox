@@ -1,4 +1,4 @@
-#Identification
+# Identification
 
 This part of the course is about identification and quantification of peptides and proteins from raw spectral data. For this purpose, we will be working with a proteogenomic study of breast cancer tissue samples ([Satpathy, S., Jaehnig, E.J., Krug, K. et al. (2020). Microscaled proteogenomic methods for precision oncology. Nature Communications, Vol. 11,1 532](https://www.ncbi.nlm.nih.gov/pubmed/31988290)). The raw data files are available under the [Protein Data Commons](https://pdc.cancer.gov/pdc/) repository as part of the Clinical Proteomic Tumor Analysis Consotium (CPTAC): https://pdc.cancer.gov/pdc/study/PDC000325
 
@@ -7,7 +7,7 @@ The study is demonstrating a protocol for proteogenomic profiling based on core 
 In this exercise, you will study a subset of the raw data. Specifically 1 fraction from 1 plex...
 
 
-#Getting started on UCloud
+## Getting started on UCloud
 
 For the purpose of this tutorial, the raw spectral data as well as the tools needed are available on the [UCloud](https://cloud.sdu.dk/) platform. To get started, switch to the "Proteomics sandbox" project in the dropdown box in the top of the page,
 
