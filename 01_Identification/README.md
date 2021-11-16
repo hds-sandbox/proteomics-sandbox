@@ -9,4 +9,15 @@ In this exercise, you will study a subset of the raw data. Specifically 1 fracti
 
 #Getting started on UCloud
 
-For the purpose of this tutorial, the raw spectral data as well as the tools needed are available on the [UCloud](https://cloud.sdu.dk/) platform.
+For the purpose of this tutorial, the raw spectral data as well as the tools needed are available on the [UCloud](https://cloud.sdu.dk/) platform. To get started, switch to the "Proteomics sandbox" project in the dropdown box in the top of the page,
+
+![Proteomics sandbox project](https://user-images.githubusercontent.com/3648982/141947252-6d3aa332-6e03-48a7-9aa0-b68f078665a9.png)
+
+and find and click the "Proteomics Sandbox" app in the catalog:
+
+![Proteomics Sandbox app](https://user-images.githubusercontent.com/3648982/141946651-1aaba841-bad2-4ace-89a1-04232bea5a75.png)
+
+Before running the app, you need to change a number of settings to include the the needed folders with data and software and to run an initialization script to set up the software environment in the sandbox app. The easiest way to do that is to import a premade configuration file: Click "Import parameters" to the right, choose "Select file from UCloud" and find and select the file `Proteomics sandbox / App_launchers / ProteomicsSandbox.json`.
+
+![import_appp configuration](https://user-images.githubusercontent.com/3648982/141950906-befda2a4-b712-4f8d-a5d0-256249eedb6d.png)
+
