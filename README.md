@@ -1,6 +1,6 @@
 # The Clinical Proteomics Sandbox
 
-This repository is used to collect the material related to teaching clinical proteomics. The material is divided into a number of modulse:
+This repository is used to collect the material related to teaching clinical proteomics. The material is divided into a number of modules:
 
 1. Identification
 1. Quality Control
