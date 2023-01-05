@@ -60,4 +60,6 @@ Datasets currently available in the UCloud project are highlighted in **bold**.
   * **PDC000329: PDX cores - Proteome**
   * PDC000330: PDX cores - Phosphoproteome
 
+**Analyzing Datasets in the Proteomics Sandbox App**
+
 In order to analyze the datasets, they must be placed in a folder where you have write access. However, making a full copy of a dataset to your own storage area can consume a large amount of space. The Proteomics Sandbox app offers a feature that allows you to create a lightweight clone of a folder structure, containing links to the original files instead of copies. Refer to the instructions under the [01_Identification](01_Identification) module for more information.
