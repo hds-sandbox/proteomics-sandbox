@@ -28,9 +28,9 @@ The following paths are available
 Software pacakges are installed under `/work/SW` and can be started from desktop icons. The following software packages are available:
 
 * FragPipe:
- * Automated peptide and protein identification and quantification using the MSFragger search engine.
- * Supports the identification of arbitrary PTMs.
- * Includes additional tools for post-processing and visualization of search results.
+     * Automated peptide and protein identification and quantification using the MSFragger search engine.
+     * Supports the identification of arbitrary PTMs.
+     * Includes additional tools for post-processing and visualization of search results.
 * MaxQuant:
 Comprehensive software suite for proteomics data analysis.
 Includes protein and peptide identification, quantification, and visualization of spectral matches.
