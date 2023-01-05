@@ -27,11 +27,26 @@ The following paths are available
 
 Software pacakges are installed under `/work/SW` and can be started from desktop icons. The following software packages are available:
 
-* FragPipe: Wrapper for the MSFragger search engine and accompanying tools for protein/peptide identification and quantification. Supports open search for arbitrary PTM identification.
-* MaxQuant: Advanced search engine and GUI protein/peptide identification and quantification as well as visualization of spectra and spectral matches.
-* PDV: Visualization of spectral matches, e.g. from MSFragger
-* SearchGUI: Simple interface for peptide search using a number of different search engines
-* PeptideShaker: Visualization of spectral matches from SearchGUI
+* FragPipe:
+** Automated peptide and protein identification and quantification using the MSFragger search engine.
+Supports the identification of arbitrary PTMs.
+Includes additional tools for post-processing and visualization of search results.
+* MaxQuant:
+Comprehensive software suite for proteomics data analysis.
+Includes protein and peptide identification, quantification, and visualization of spectral matches.
+Features an advanced search engine and a user-friendly graphical interface.
+* PDV:
+Visualization tool for spectral matches, particularly those obtained from MSFragger searches.
+Allows users to inspect and evaluate the quality of the matches.
+Supports annotation and customization of plots.
+* SearchGUI:
+User-friendly interface for performing peptide searches using multiple search engines (e.g. MSFragger, X!Tandem, OMSSA).
+Supports a wide range of search options and post-processing features.
+* PeptideShaker:
+Tool for visualizing and analyzing the results of peptide searches performed with SearchGUI.
+Includes features for filtering, annotation, and visualization of results.
+Supports integration with other proteomics databases and software.
+
 
 **Data**
 
