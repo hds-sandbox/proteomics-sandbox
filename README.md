@@ -15,13 +15,13 @@ The [Proteomics Sandbox app](https://cloud.sdu.dk/app/applications/proteomics/Oc
 
 **Folder structure**
 
-The following paths are available
+The following paths are available in the app:
 
-* `/ucloud`: Your home directory. Any files stored here will be lost, when the app is stopped.
-* `/work/SW`: Installed proteomics software is available here (see below)
-* `/work/Data`: Example datasets (see below)
-* `/work/ProteomicsWork`: Working directory stored under your own "My Workspace" project in UCloud
-* `/work`: Anything else stored under /work will be available under the "Jobs" folder in UCloud
+* `/ucloud`: Your home directory. Any files stored here will be deleted when the app is stopped.
+* `/work/SW`: Installed proteomics software is available here (see below).
+* `/work/Data`: Example datasets (see below).
+* `/work/ProteomicsWork`: Working directory stored under your own "My Workspace" project in UCloud.
+* `/work`: Anything else stored under `/work` will be available under the "Jobs" folder in UCloud.
 
 **Software**
 
@@ -32,20 +32,20 @@ Software pacakges are installed under `/work/SW` and can be started from desktop
      * Supports the identification of arbitrary PTMs.
      * Includes additional tools for post-processing and visualization of search results.
 * MaxQuant:
-Comprehensive software suite for proteomics data analysis.
-Includes protein and peptide identification, quantification, and visualization of spectral matches.
-Features an advanced search engine and a user-friendly graphical interface.
+    * Comprehensive software suite for proteomics data analysis.
+    * Includes protein and peptide identification, quantification, and visualization of spectral matches.
+    * Features an advanced search engine and a user-friendly graphical interface.
 * PDV:
-Visualization tool for spectral matches, particularly those obtained from MSFragger searches.
-Allows users to inspect and evaluate the quality of the matches.
-Supports annotation and customization of plots.
+    * Visualization tool for spectral matches, particularly those obtained from MSFragger searches.
+    * Allows users to inspect and evaluate the quality of the matches.
+    * Supports annotation and customization of plots.
 * SearchGUI:
-User-friendly interface for performing peptide searches using multiple search engines (e.g. MSFragger, X!Tandem, OMSSA).
-Supports a wide range of search options and post-processing features.
+    * User-friendly interface for performing peptide searches using multiple search engines (e.g. MSFragger, X!Tandem, OMSSA).
+    * Supports a wide range of search options and post-processing features.
 * PeptideShaker:
-Tool for visualizing and analyzing the results of peptide searches performed with SearchGUI.
-Includes features for filtering, annotation, and visualization of results.
-Supports integration with other proteomics databases and software.
+    * Tool for visualizing and analyzing the results of peptide searches performed with SearchGUI.
+    * Includes features for filtering, annotation, and visualization of results.
+    * Supports integration with other proteomics databases and software.
 
 
 **Data**
