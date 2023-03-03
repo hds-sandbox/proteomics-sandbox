@@ -27,22 +27,22 @@ The following paths are available in the app:
 
 Software pacakges are installed under `/work/SW` and can be started from desktop icons. The following software packages are available:
 
-* FragPipe:
+* [FragPipe](https://fragpipe.nesvilab.org/):
      * Automated peptide and protein identification and quantification using the MSFragger search engine.
      * Supports the identification of arbitrary PTMs.
      * Includes additional tools for post-processing and visualization of search results.
-* MaxQuant:
+* [MaxQuant](https://www.maxquant.org/):
     * Comprehensive software suite for proteomics data analysis.
     * Includes protein and peptide identification, quantification, and visualization of spectral matches.
     * Features an advanced search engine and a user-friendly graphical interface.
-* PDV:
+* [PDV](https://www.maxquant.org/):
     * Visualization tool for spectral matches, particularly those obtained from MSFragger searches.
     * Allows users to inspect and evaluate the quality of the matches.
     * Supports annotation and customization of plots.
-* SearchGUI:
+* [SearchGUI](http://compomics.github.io/projects/searchgui):
     * User-friendly interface for performing peptide searches using multiple search engines (e.g. MSFragger, X!Tandem, OMSSA).
     * Supports a wide range of search options and post-processing features.
-* PeptideShaker:
+* [PeptideShaker](http://compomics.github.io/projects/peptide-shaker#:~:text=PeptideShaker%20is%20a%20search%20engine,%2C%20Novor%2C%20DirecTag%20and%20mzIdentML.):
     * Tool for visualizing and analyzing the results of peptide searches performed with SearchGUI.
     * Includes features for filtering, annotation, and visualization of results.
     * Supports integration with other proteomics databases and software.
