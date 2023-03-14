@@ -18,6 +18,7 @@ RUN sudo apt-get update && \
     sudo add-apt-repository -y ppa:deadsnakes/ppa && \
     sudo apt-get install -y python3.9 python3.9-venv python3.9-dev && \
     sudo apt-get install -y mono-devel && \ 
+    sudo apt-get install psmisc && \
     sudo apt-get clean
 
 
@@ -94,10 +95,19 @@ RUN wget https://genesis.ugent.be/maven2/no/uib/thermo-raw-file-parser-gui/Therm
 # Configure cache for FragPipe
 COPY ./cache.template /opt/fragpipe/cache
 
-
 # Copy desktop icons to Ubuntu
 COPY ./launchers /usr/share/applications/launchers
 RUN cp /usr/share/applications/launchers/*.desktop /ucloud/Desktop
+
+
+# Autostart GitHub repository
+RUN mkdir -p /ucloud/.config/autostart
+COPY ./intro/intro.desktop /ucloud/.config/autostart
+RUN echo WebBrowser=firefox > /ucloud/.config/xfce4/helpers.rc
+
+# Remove error from Firefox
+# RUN sudo killall -9 firefox
+
 
 # Set the working directory
 WORKDIR /work
