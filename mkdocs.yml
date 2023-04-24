@@ -1,0 +1,160 @@
+# Project information
+site_name: Clinical Proteomics
+site_url: 'https://hds-sandbox.github.io/clinical-proteomics/' #  # This should be the final hosting url
+site_author: Jacob Fredegaard Hansen # Change authors accordingly
+site_description: >-
+  Outline for clinical proteomics
+
+# Repository
+repo_name: proteomics-course # Modify this to your repo name
+repo_url: https://github.com/hds-sandbox/proteomics-course # Modify this to your repo url
+
+# Configuration
+theme:
+
+  # Use the Material for MkDocs theme
+  # url: https://squidfunk.github.io/mkdocs-material/
+
+  name: material
+  custom_dir: overrides
+
+  # Necessary for search to work properly
+  include_search_page: false
+  search_index_only: true
+
+  # Default values, taken from mkdocs_theme.yml
+  language: en
+  features:
+    - content.code.annotate
+    # - content.tabs.link
+    - content.tooltips
+    # - header.autohide
+    # - navigation.expand
+    - navigation.indexes
+    # - navigation.instant
+    # - navigation.prune
+    - navigation.sections
+    - navigation.footer
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+    # - toc.integrate
+
+  palette:
+    # Sandbox colours - "brightness" and "slate" - are defined in stylesheets/extra.css 
+    # Palette toggle for light mode
+    - scheme: brightness
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+  font:
+    text: Roboto
+    code: Roboto Mono
+  
+  favicon: images/favicon.png
+  logo: images/logo.png
+
+# Changes to website colours and image parameters
+extra_css:
+  - stylesheets/neoteroi-mkdocs.css
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+plugins:
+  - tags:
+      tags_file: keywords.md # Keywords file to use for mkdocs tags
+  - bibtex:
+      bib_file: references.bib # Reference file in bibtex format
+  - search
+  - mkdocs-video # embed videos to the docs
+  - minify:   # minify HTML of a page before it is written to disk
+      minify_html: true
+  - mkdocs-jupyter
+
+# Analytics and social media
+extra:
+  analytics:
+    provider: google
+    property: !ENV GOOGLE_ANALYTICS_KEY
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/hds-sandbox
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/ucph_heads
+  homepage: http://hds-sandbox.github.io/ 
+
+# Extensions
+
+markdown_extensions:
+  - abbr # abbreviations   
+  - admonition  
+  - attr_list # Add HTML/CSS to Markdown elements  
+  - def_list # Definition lists  
+  - footnotes  
+  - md_in_html  
+  - toc: # Table of contents  
+      permalink: true # Adds anchor link, can customise symbol with emoji  
+
+  - tables  
+
+  # Python extensions - can see descriptions  
+  # at https://facelessuser.github.io/pymdown-extensions/  
+
+  - pymdownx.arithmatex: # LaTeX  
+      generic: true  
+  - pymdownx.betterem: # improves emphasis (bold/italic) handling  
+      smart_enable: all   
+  - pymdownx.critic # useful for marking .md file without changes to html  
+  - pymdownx.caret # improved functionality for caret symbol  
+  - pymdownx.details # collapsable elements that hide content  
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+      options:
+        custom_icons:
+          - overrides/.icons
+  - pymdownx.highlight: # code highlighting  
+      anchor_linenums: true  
+  - pymdownx.inlinehilite # inline code highlight  
+  - pymdownx.keys # to make entering and styling keyboard key presses easier  
+  - pymdownx.mark # highlight/mark text  
+  - pymdownx.smartsymbols # special characters (e.g. arrows, tm, fractions)  
+  - pymdownx.superfences # arbitrary nesting of code and content blocks inside each other
+  - pymdownx.tabbed: # add tabs to .md file
+      alternate_style: true
+  - pymdownx.tasklist: # checkbox task list  
+      custom_checkbox: true
+  - pymdownx.tilde # delete and subscript
+  - neoteroi.cards
+
+# Extra configs
+use_directory_urls: false
+docs_dir: develop # source md files should be saved in the develop folder
+site_dir: docs # built webpage will be created in the docs folder
+
+# Page tree
+# Include your page titles and associating .md files here
+
+nav:
+  - Introduction: index.md
+  - Getting Started: gettingstarted.md
+  - Setup: setup.md
+  - ColabFold: colabfold.md
+  - Course Materials: coursematerials.md
+  - Contributors: contributors.md

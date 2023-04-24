@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block site_meta %}
+<script type="application/ld+json" >
+    {
+      "@context": "https://schema.org",
+      "@id": "# Put here the course webpage (https://hds-sandbox.github.io/bulk_RNAseq_course/)",
+      "@type": "LearningResource",
+      "dct:conformsTo": "https://bioschemas.org/profiles/TrainingMaterial/1.0-RELEASE",
+      "description": "# Course description",
+      "keywords": [
+        "# Keyword1, Keyword2, etc"
+      ],
+      "learningResourceType": [
+        "e-Learning"
+      ],
+      "license": [
+        {
+          "@id": "# Link to license webpage (https://creativecommons.org/licenses/by/4.0/)",
+          "@type": "CreativeWork"
+        }
+      ],
+      "mentions": [
+        {
+          "@id": "# Link to DOI or zenodo materials (10.5281/zenodo.7660225)",
+          "@type": "Thing"
+        },
+        {
+          "@id": "#Another link to DOI or zenodo materials (10.5281/zenodo.7565997)",
+          "@type": "Thing"
+        }
+      ],
+      "name": "# Name of the workshop (Introduction to bulk RNAseq analysis workshop)"
+    }
+    </script >
+{% endblock %}
