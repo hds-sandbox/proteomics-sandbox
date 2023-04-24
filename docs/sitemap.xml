@@ -36,16 +36,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://hds-sandbox.github.io/clinical-proteomics/rmd/modify_md.html</loc>
-         <lastmod>2023-04-24</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://hds-sandbox.github.io/clinical-proteomics/rmd/knit/rmarkdown_example.html</loc>
-         <lastmod>2023-04-24</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://hds-sandbox.github.io/clinical-proteomics/keywords.html</loc>
          <lastmod>2023-04-24</lastmod>
          <changefreq>daily</changefreq>
