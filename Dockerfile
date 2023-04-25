@@ -16,16 +16,16 @@ WORKDIR /opt
 RUN sudo apt-get update && \
     sudo apt-get install -y software-properties-common && \
     sudo add-apt-repository -y ppa:deadsnakes/ppa && \
-    sudo apt-get install -y python3.9 python3.9-venv python3.9-dev && \
+    sudo apt-get install -y python3.9 python3.9-venv python3.9-dev python3-pip && \
     sudo apt-get install -y mono-devel && \ 
     sudo apt-get clean
-
 
 #Installing pip for Python3.9
 RUN sudo curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && python3.9 get-pip.py
 
-# Install easypqp and lxml for FragPipe
-RUN sudo python3.9 -m pip install pyopenms==2.6.0 easypqp lxml
+# Install easypqp and lxml and numpy and pandas Python3.9 for FragPipe
+RUN sudo python3.9 -m pip install pyopenms==2.6.0 easypqp lxml && \
+    sudo python3.9 -m pip install --force numpy pandas
 
 # Create the /usr/local directory in the container
 RUN mkdir -p /usr/local
@@ -52,9 +52,9 @@ RUN wget https://genesis.ugent.be/maven2/eu/isas/searchgui/SearchGUI/4.2.7/Searc
     wget https://github.com/Nesvilab/FragPipe/releases/download/19.1/FragPipe-19.1.zip && \
     unzip FragPipe-19.1.zip && \
     rm FragPipe-19.1.zip && \
-    wget https://github.com/Nesvilab/philosopher/releases/download/v4.7.0/philosopher_v4.7.0_linux_amd64.zip && \
-    unzip philosopher_v4.7.0_linux_amd64.zip && \
-    rm philosopher_v4.7.0_linux_amd64.zip && \
+    wget https://github.com/Nesvilab/philosopher/releases/download/v4.8.0/philosopher_v4.8.0_linux_amd64.zip && \
+    unzip philosopher_v4.8.0_linux_amd64.zip && \
+    rm philosopher_v4.8.0_linux_amd64.zip && \
     wget https://github.com/wenbostar/PDV/releases/download/v1.7.4/PDV-1.7.4.zip && \
     unzip PDV-1.7.4.zip && \
     rm PDV-1.7.4.zip && \
@@ -64,6 +64,11 @@ RUN wget https://genesis.ugent.be/maven2/eu/isas/searchgui/SearchGUI/4.2.7/Searc
     wget https://genesis.ugent.be/maven2/no/uib/thermo-raw-file-parser-gui/ThermoRawFileParserGUI/1.7.2/ThermoRawFileParserGUI-1.7.2.zip && \
     unzip ThermoRawFileParserGUI-1.7.2.zip && \
     rm ThermoRawFileParserGUI-1.7.2.zip
+
+# Change  mode of resources-folder for SearchGUI and PeptideShaker
+RUN sudo chmod -R a+rwx /opt/SearchGUI-4.2.7/resources && \
+    sudo chmod -R a+rwx /opt/PeptideShaker-2.2.22/resources
+
 
 # Configure cache for FragPipe
 COPY ./cache.template /opt/fragpipe/cache
