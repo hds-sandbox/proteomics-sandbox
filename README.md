@@ -1,17 +1,5 @@
-# The Clinical Proteomics Sandbox
-
-This repository is a collection of the material related to teaching clinical proteomics, which is divided into the following modules:
-
-1. Identification
-1. Quality Control
-1. Bioinformatics
-1. PhosphoProteomics
-
-Each module has a corresponding subfolder with instructions, notebooks, and other materials for completing the course. Software and clinical datasets for the course can be found on [UCloud](cloud.sdu.dk) in the "Proteomics Sandbox" project.
-
-## Sandbox app on UCloud
-
-The [Proteomics Sandbox app](https://cloud.sdu.dk/app/applications/proteomics/Oct2021/) on [UCloud](https://cloud.sdu.dk/) can be used to complete some of the exercises in this repository, particularly those under the [01_Identification](01_Identification) module. Instructions for starting the app are provided in that section. If you already started the sandbox app, you may be seeing this page within the sandbox remote desktop session.
+# The Proteomics Sandbox App
+The [Proteomics Sandbox App](https://cloud.sdu.dk/app/jobs/create?app=proteomics&version=Mar2023) is an excellent resource for biomedical students and non-computational researchers to learn and apply clinical proteomics at [UCloud](https://cloud.sdu.dk/). It provides a stable platform for proteomics software tools and offers a user-friendly interface. It is easy to use and does not require extensive coding knowledge. Furthermore, the app's lightweight clone feature optimizes storage requirements when working with datasets.
 
 **Software**
 
