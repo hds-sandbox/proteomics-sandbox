@@ -69,8 +69,5 @@ In addition, the sandbox aims to:
 
 As the sandbox continues to evolve, it will offer an invaluable resource for those seeking to enhance their knowledge and skills in clinical proteomics data analysis.
 
-
-
-
 ## In Brief
 The Clinical Proteomics Sandbox App provides a stable platform for proteomics software tools and a user-friendly interface for non-computational researchers and biomedical students to learn and apply clinical proteomics. The app's lightweight clone feature optimizes storage requirements when working with datasets. Software tools available include [FragPipe](https://fragpipe.nesvilab.org/), [MaxQuant](https://www.maxquant.org/), [PDV](https://github.com/wenbostar/PDV), [SearchGUI](https://compomics.github.io/projects/searchgui.html), [ThermoRawFileParser](https://github.com/compomics/ThermoRawFileParser), and [PeptideShaker](https://compomics.github.io/projects/peptide-shaker.html). The Sandbox will expand its content in the future, including modules for protein quantification and analysis of post-translational modifications, and will make clinical proteomics data available for education and training purposes.
