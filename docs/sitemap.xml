@@ -2,42 +2,47 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://hds-sandbox.github.io/clinical-proteomics/index.html</loc>
-         <lastmod>2023-04-24</lastmod>
+         <lastmod>2023-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hds-sandbox.github.io/clinical-proteomics/colabfold.html</loc>
-         <lastmod>2023-04-24</lastmod>
+         <lastmod>2023-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hds-sandbox.github.io/clinical-proteomics/contributors.html</loc>
-         <lastmod>2023-04-24</lastmod>
+         <lastmod>2023-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hds-sandbox.github.io/clinical-proteomics/coursematerials.html</loc>
-         <lastmod>2023-04-24</lastmod>
+         <lastmod>2023-05-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hds-sandbox.github.io/clinical-proteomics/fragpipe.html</loc>
+         <lastmod>2023-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hds-sandbox.github.io/clinical-proteomics/gettingstarted.html</loc>
-         <lastmod>2023-04-24</lastmod>
+         <lastmod>2023-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hds-sandbox.github.io/clinical-proteomics/keywords.html</loc>
-         <lastmod>2023-04-24</lastmod>
+         <lastmod>2023-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hds-sandbox.github.io/clinical-proteomics/setup.html</loc>
-         <lastmod>2023-04-24</lastmod>
+         <lastmod>2023-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hds-sandbox.github.io/clinical-proteomics/keywords.html</loc>
-         <lastmod>2023-04-24</lastmod>
+         <lastmod>2023-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
