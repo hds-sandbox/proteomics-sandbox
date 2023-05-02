@@ -2,8 +2,7 @@
 The [Proteomics Sandbox App](https://cloud.sdu.dk/app/jobs/create?app=proteomics&version=Mar2023) is an excellent resource for biomedical students and non-computational researchers to learn and apply clinical proteomics at [UCloud](https://cloud.sdu.dk/). It provides a stable platform for proteomics software tools and offers a user-friendly interface. It is easy to use and does not require extensive coding knowledge. Furthermore, the app's lightweight clone feature optimizes storage requirements when working with datasets.
 
 **Software**
-
-Software pacakges are installed under `/work/SW` and can be started from desktop icons. The following software packages are available:
+The software available in the Proteomics Sandbox includes FragPipe, MaxQuant, PDV, SearchGUI, ThermoRawFileParser, and PeptideShaker. These software tools provide automated peptide and protein identification and quantification, comprehensive proteomics data analysis, visualization tools for spectral matches, a user-friendly interface for performing peptide searches, and a tool for visualizing and analyzing peptide search results. A list of the available software and its functionalities is listed below:
 
 * [FragPipe](https://fragpipe.nesvilab.org/):
      * Automated peptide and protein identification and quantification using the MSFragger search engine.
