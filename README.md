@@ -26,4 +26,4 @@ The software available in the Proteomics Sandbox includes FragPipe, MaxQuant, PD
 
 **Analyzing Datasets in the Proteomics Sandbox App**
 
-In order to analyze the datasets, they must be placed in a folder where you have write access. However, making a full copy of a dataset to your own storage area can consume a large amount of space. The Proteomics Sandbox app offers a feature that allows you to create a lightweight clone of a folder structure, containing links to the original files instead of copies located in the 'work' directory.
+In order to analyze the datasets, they must be placed in a folder where you have write access. However, making a full copy of a dataset to your own storage area can consume a large amount of space. The Proteomics Sandbox app offers a feature that allows you to create a lightweight clone of a folder structure, containing links to the original files instead of copies located in the `work` directory.
