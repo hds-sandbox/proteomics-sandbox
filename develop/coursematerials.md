@@ -29,6 +29,7 @@ Are you interested in delving deeper into the fascinating field of proteomics? W
     If you are keen on delving deeper into proteomics, either through experimental or computational approaches, take a look at the following courses available at SDU:  
     
     - [BMB535: Experimental Proteomics - Characterization of cellular signaling using quantitative proteomics](https://odin.sdu.dk/sitecore/index.php?a=searchfagbesk&internkode=bmb535&lang=en)  
+    - [BMB542: Biomedical mass spectrometry – principles and applications](https://odin.sdu.dk/sitecore/index.php?a=searchfagbesk&internkode=bmb542&lang=en)
     - [BMB834: Protein structure, dynamics and modelling](https://odin.sdu.dk/sitecore/index.php?a=fagbesk&id=115655&lang=en&listid=)  
     - [BMB831: Biostatistics in R II](https://odin.sdu.dk/sitecore/index.php?a=fagbesk&id=123609&lang=en&listid=)  
     - [BMB210: Advanced methods in protein mass spectrometry and proteomics](https://odin.sdu.dk/sitecore/index.php?a=fagbesk&id=121176&lang=en&listid=)  
