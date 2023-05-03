@@ -1,13 +1,13 @@
 # Project information
 site_name: Clinical Proteomics
-site_url: 'https://hds-sandbox.github.io/clinical-proteomics/' #  # This should be the final hosting url
+site_url: 'https://hds-sandbox.github.io/proteomics-sandbox/' #  # This should be the final hosting url
 site_author: Jacob Fredegaard Hansen # Change authors accordingly
 site_description: >-
   Outline for clinical proteomics
 
 # Repository
 repo_name: proteomics-course # Modify this to your repo name
-repo_url: https://github.com/hds-sandbox/proteomics-course # Modify this to your repo url
+repo_url: https://github.com/hds-sandbox/proteomics-sandbox # Modify this to your repo url
 
 # Configuration
 theme:
