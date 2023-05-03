@@ -46,8 +46,7 @@ Below are step-by-step instructions on how to launch the Proteomics Sandbox appl
 <img src="images/UCloud/Add_folder.png" alt="Alt Text" width="750" height="450">
 
 :six: Once you have deployed your data, you are ready to launch the application. Click on **Submit** to the right of the screen and then click **Open interface** in the upper right corner of the following page to start using the Proteomics Sandbox application.  
-
-<img src="images/UCloud/submit_open_interface.png" alt="Alt Text" width="500" height="300">
+<img src="images/UCloud/Submit_open_interface.png" alt="Alt Text" width="500" height="300">
 
 
 Congratulations! You're now ready to dive into the world of clinical proteomics and perform various analyses with the user-friendly Proteomics Sandbox app. For more detailed instructions on how to use the software available in the app, check out the official documentation for the software linked in the [overview table](/proteomics-course/gettingstarted.html#software). 
