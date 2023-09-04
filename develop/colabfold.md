@@ -38,10 +38,21 @@ As a non-computational user, you can access ColabFold through UCloud. This integ
 
 :one: Log in to UCloud.  
 :two: Choose a workspace that has GPU resources for optimal performance.  
-:three: Search for ColabFold in the Apps section.  
+:three: Access the application menu by clicking on **Apps** in the left-hand side menu.  
+<img src="images/UCloud/UCloud_apps.png" alt="Alt Text" width="250" height="150">
+
+:three: Search for **ColabFold** and click on the icon for the application.  
+<img src="images/UCloud/ColabFold_app.png" alt="Alt Text" width="500" height="300">
+
 :four: Choose the appropriate machine type and select a GPU, such as u2-gpu-1. The use of a single GPU is generally sufficient, though larger sequences may require additional computational power.  
-:five: Select a personal folder to use, ensuring that you have uploaded the Jupyter Notebook from GitHub beforehand.  
+<img src="images/UCloud/Machine_type.png" alt="Alt Text" width="750" height="450">
+
+:five: Deploy your own personal folder by selecting **Folder** and adjusting the path to your directory. Be sure to select the correct **Workspace** and change the **Drive** to where you want your data to be stored, if needed. Click on the folder name to select it and then click **Use this folder** in the upper right corner of the pop-up window.  
+<img src="images/UCloud/Add_folder.png" alt="Alt Text" width="750" height="450">
+
 :six: Click on "Submit" and then "Open interface" on the following page.  
+<img src="images/UCloud/Submit_open_interface.png" alt="Alt Text" width="500" height="300">
+
 :seven: Proceed with the ColabFold workshop, which will guide you through the process of predicting protein structures based on amino acid sequences.  
 
 
