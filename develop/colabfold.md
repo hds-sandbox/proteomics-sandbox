@@ -34,7 +34,7 @@ hide:
 ColabFold is a web application that allows users to predict protein structures from sequence data. The application is based on the AlphaFold2 algorithm, which is a deep learning model that predicts protein structures from sequence data. The ColabFold application is a simplified version of the AlphaFold2 algorithm, which is designed to be used by non-computational researchers. The ColabFold application is available on the Clinical Proteomics Sandbox website and can be accessed at UCloud. 
 
 ### Getting Started
-As a non-computational user, you can access ColabFold through UCloud. This integration allows you to use the tool, but before beginning the ColabFold workshop, you need to download the workshop as a Jupyter Notebook from [GitHub](https://github.com/hds-sandbox/AlphaFold_Workshop) and upload it to your designated folder on UCloud. To initiate this process, please follow the steps below:
+You can access ColabFold through UCloud. This integration allows you to use the tool, but before beginning the ColabFold workshop, you need to download the workshop as a Jupyter Notebook from [GitHub](https://github.com/hds-sandbox/AlphaFold_Workshop) and upload it to your designated folder on UCloud. To initiate this process, please follow the steps below:
 
 :one: Log in to UCloud.  
 :two: Choose a workspace that has GPU resources for optimal performance.  
@@ -44,7 +44,7 @@ As a non-computational user, you can access ColabFold through UCloud. This integ
 :three: Search for **ColabFold** and click on the icon for the application.  
 <img src="images/UCloud/ColabFold_app.png" alt="Alt Text" width="500" height="300">
 
-:four: Choose the appropriate machine type and select a GPU, such as u2-gpu-1. The use of a single GPU is generally sufficient, though larger sequences may require additional computational power.  
+:four: Choose the appropriate machine type and select a GPU, such as **u2-gpu-1**. The use of a single GPU is generally sufficient, though larger sequences may require additional computational power.  
 <img src="images/UCloud/Machine_type.png" alt="Alt Text" width="750" height="450">
 
 :five: Deploy your own personal folder by selecting **Folder** and adjusting the path to your directory. Be sure to select the correct **Workspace** and change the **Drive** to where you want your data to be stored, if needed. Click on the folder name to select it and then click **Use this folder** in the upper right corner of the pop-up window.  
@@ -53,7 +53,9 @@ As a non-computational user, you can access ColabFold through UCloud. This integ
 :six: Click on "Submit" and then "Open interface" on the following page.  
 <img src="images/UCloud/Submit_open_interface.png" alt="Alt Text" width="500" height="300">
 
-:seven: Proceed with the ColabFold workshop, which will guide you through the process of predicting protein structures based on amino acid sequences.  
+:seven: Prior to proceeding, ensure you've downloaded the Jupyter Notebook labeled **AlphaFold2.ipynb** from [the Github repository](https://github.com/hds-sandbox/AlphaFold_Workshop). Then, upload the notebook to your ColabFold session using the left-hand menu.
+
+:eight: Proceed with the ColabFold workshop, which will guide you through the process of predicting protein structures based on amino acid sequences.  
 
 
 ### Efficient Super-Computing with ColabFold
