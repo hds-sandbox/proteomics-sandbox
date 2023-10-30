@@ -1,5 +1,5 @@
 # Use Ubuntu 22.04 as the base image
-FROM dreg.cloud.sdu.dk/ucloud-apps/ubuntu-xfce:22.04
+FROM dreg.cloud.sdu.dk/ucloud-apps/ubuntu:Oct2023-xfce
 
 # Labels for the Dockerfile
 LABEL software="Proteomics Sandbox"\
@@ -80,10 +80,10 @@ RUN sudo wget https://genesis.ugent.be/maven2/eu/isas/searchgui/SearchGUI/4.3.1/
     sudo rm mzmine-linux-installer_3.9.0.deb
 
 # Set permissions and configurations
-RUN sudo chmod -R a+rwx /opt/SearchGUI-4.3.1/resources && \
+ RUN sudo chmod -R a+rwx /opt/SearchGUI-4.3.1/resources && \
     sudo chmod -R a+rwx /opt/PeptideShaker-3.0.1/resources && \
-    sudo cp /usr/share/applications/launchers/*.desktop /ucloud/Desktop && \
-    sudo chmod -R a+rwx /ucloud/Desktop
+    sudo cp /usr/share/applications/launchers/*.desktop ~/Desktop && \
+    sudo chmod -R a+rwx ~/Desktop
 
 # Set the working directory
 WORKDIR /work
