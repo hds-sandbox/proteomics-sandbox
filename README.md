@@ -23,6 +23,16 @@ The software available in the Proteomics Sandbox includes FragPipe, MaxQuant, PD
     * Tool for visualizing and analyzing the results of peptide searches performed with SearchGUI.
     * Includes features for filtering, annotation, and visualization of results.
     * Supports integration with other proteomics databases and software.
-
+* [MZmine 3](https://mzmine.github.io/):
+    * Open-source software specialized for mass-spectrometry data processing, with an emphasis on LC-MS data.
+    * Based on the original MZmine toolbox, but has undergone comprehensive redesign and rewriting.
+    * Offers a user-friendly, adaptable, and expandable platform.
+    * Provides a complete set of modules addressing the entire LC-MS data analysis workflow.
+* [DIA-NN](https://github.com/vdemichev/DiaNN):
+    * Universal software for DIA proteomics data processing, revolutionizing proteomics in 2018 with innovative algorithms.
+    * Focuses on reliability, robustness, and reproducibility with stringent statistical control, flexible data modeling, and meticulous recording of all analysis steps.
+    * User-friendly with a high degree of automation, no bioinformatics expertise required, and showcases scalability by processing up to 1000 mass spec runs per hour.
+    * The newly developed GUI for Linux further enhances the user-friendliness for Proteomics Sandbox App users, making DIA-NN even more accessible
+ 
 ## **Analyzing Datasets in the Proteomics Sandbox App**  
 In order to analyze the datasets, they must be placed in a folder where you have write access. However, making a full copy of a dataset to your own storage area can consume a large amount of space. The Proteomics Sandbox app offers a feature that allows you to create a lightweight clone of a folder structure, containing links to the original files instead of copies located in the `work` directory.
