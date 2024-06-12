@@ -4,7 +4,7 @@ FROM dreg.cloud.sdu.dk/ucloud-apps/ubuntu:Apr2024-xfce
 # Labels for the Dockerfile
 LABEL software="Proteomics Sandbox"\
       author="Jacob Fredegaard Hansen  <jfredegaard@bmb.sdu.dk>"\
-      version="v2024.05"\
+      version="v2024.06"\
       license="MIT"\
       description="Proteomics sandbox with software for clinical proteomics data analysis."
 
@@ -61,8 +61,12 @@ RUN sudo chmod +x /opt/diann_install.sh && \
     /opt/diann_install.sh && \
     sudo rm /opt/diann_install.sh && \
     sudo rm /opt/install_gooey.sh && \
-    sudo unzip /usr/local/MSFragger-4.0.zip -d /usr/local && \
-    sudo unzip /usr/local/IonQuant-1.10.12.zip -d /usr/local && \
+    sudo unzip /usr/local/MSFragger-4.1.zip -d /usr/local && \
+    sudo mv /usr/local/MSFragger-4.1 /opt/fragpipe/tools && \
+    sudo unzip /usr/local/IonQuant-1.10.27.zip -d /usr/local && \
+    sudo mv /usr/local/IonQuant-1.10.27 /opt/fragpipe/tools && \
+    sudo unzip /usr/local/diaTracer-1.1.3.zip -d /usr/local && \
+    sudo mv /usr/local/diaTracer-1.1.3 /opt/fragpipe/tools && \
     sudo mkdir /usr/local/ProteoWizard && \
     sudo tar xvjf /usr/local/pwiz-bin-linux-x86_64-gcc7-release-3_0_23007_23d2af0.tar.bz2 -C /usr/local/ProteoWizard && \
     sudo unzip /usr/local/MaxQuant_v2.5.2.0.zip -d /usr/local && \
@@ -87,12 +91,13 @@ WORKDIR /opt
 RUN sudo wget https://genesis.ugent.be/maven2/eu/isas/searchgui/SearchGUI/4.3.9/SearchGUI-4.3.9-mac_and_linux.tar.gz && \
     sudo tar -xzf SearchGUI-4.3.9-mac_and_linux.tar.gz && \
     sudo rm SearchGUI-4.3.9-mac_and_linux.tar.gz && \
-    sudo wget https://github.com/Nesvilab/FragPipe/releases/download/21.1/FragPipe-21.1.zip && \
-    sudo unzip FragPipe-21.1.zip && \
-    sudo rm FragPipe-21.1.zip && \
+    sudo wget https://github.com/Nesvilab/FragPipe/releases/download/22.0/FragPipe-22.0.zip && \
+    sudo unzip FragPipe-22.0.zip && \
+    sudo rm FragPipe-22.0.zip && \
     sudo wget https://github.com/Nesvilab/philosopher/releases/download/v5.1.0/philosopher_v5.1.0_linux_amd64.zip && \
     sudo unzip philosopher_v5.1.0_linux_amd64.zip && \
     sudo rm philosopher_v5.1.0_linux_amd64.zip && \
+    sudo mv /opt/philosopher /opt/fragpipe/tools && \
     sudo wget https://github.com/wenbostar/PDV/releases/download/v2.0.0/PDV-2.0.0.zip && \
     sudo unzip PDV-2.0.0.zip && \
     sudo rm PDV-2.0.0.zip && \
@@ -111,6 +116,10 @@ RUN sudo wget https://genesis.ugent.be/maven2/eu/isas/searchgui/SearchGUI/4.3.9/
     sudo chmod -R a+rwx /opt/PeptideShaker-3.0.8/resources && \
     sudo cp /usr/share/applications/launchers/*.desktop ~/Desktop && \
     sudo chmod -R a+rwx ~/Desktop
+
+# Change to /opt/fragpipe and create the 'updates' directory with superuser permissions
+RUN cd /opt/fragpipe && \
+    sudo mkdir updates
 
 # Set ownership for all .desktop files
 RUN sudo chown $USER:$USER ~/Desktop/*.desktop 
