@@ -11,7 +11,8 @@ The software available in the Proteomics Sandbox includes FragPipe, MaxQuant, PD
 * [MaxQuant](https://www.maxquant.org/):
     * Comprehensive software suite for proteomics data analysis.
     * Includes protein and peptide identification, quantification, and visualization of spectral matches.
-    * Features an advanced search engine and a user-friendly graphical interface.
+    * Features an advanced search engine; only the command-line tool is available on Linux as the GUI is incompatible. Read more [here](https://cox-labs.github.io/coxdocs/Download_Installation.html).
+    * MaxQuant is located in `/usr/local/bin/MaxQuant_v2.5.2.0`.
 * [PDV](https://www.maxquant.org/):
     * Visualization tool for spectral matches, particularly those obtained from MSFragger searches.
     * Allows users to inspect and evaluate the quality of the matches.
@@ -32,7 +33,12 @@ The software available in the Proteomics Sandbox includes FragPipe, MaxQuant, PD
     * Universal software for DIA proteomics data processing, revolutionizing proteomics in 2018 with innovative algorithms.
     * Focuses on reliability, robustness, and reproducibility with stringent statistical control, flexible data modeling, and meticulous recording of all analysis steps.
     * User-friendly with a high degree of automation, no bioinformatics expertise required, and showcases scalability by processing up to 1000 mass spec runs per hour.
-    * The newly developed GUI for Linux further enhances the user-friendliness for Proteomics Sandbox App users, making DIA-NN even more accessible
+    * The newly developed GUI for Linux further enhances the user-friendliness for Proteomics Sandbox App users, making DIA-NN even more accessible.
+* [VMD](https://www.ks.uiuc.edu/Research/vmd/):
+    * High-performance molecular visualization program for displaying, animating, and analyzing large biomolecular systems.
+    * Facilitates the examination of protein structures and interactions derived from PDB files, offering advanced visualization capabilities.
+
+
  
 ## **Analyzing Datasets in the Proteomics Sandbox App**  
 In order to analyze the datasets, they must be placed in a folder where you have write access. However, making a full copy of a dataset to your own storage area can consume a large amount of space. The Proteomics Sandbox app offers a feature that allows you to create a lightweight clone of a folder structure, containing links to the original files instead of copies located in the `work` directory.
