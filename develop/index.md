@@ -1,7 +1,7 @@
 ---
 title: Clinical Proteomics
 summary: A brief description of my document.
-date: 2000-01-01
+date: last-modified
 hide:
   - navigation
   - toc
@@ -23,7 +23,7 @@ hide:
 # Clinical Proteomics
 </center>
 
-**Updated:** 2023-20-04
+**Updated:** 2024-17-06
 
 Discover the world of proteomics with the Clinical Proteomics module of the Sandbox, offering the Proteomics Sandbox app on UCloud - an accessible resource for biomedical students and non-computational researchers. With a user-friendly interface and a lightweight clone feature, the app is perfect for those without extensive coding knowledge, providing a stable platform for proteomics software tools. You can also learn to predict protein structures based on sequence data with the independent ColabFold workshop, available on UCloud. This hands-on experience offers insights into the exciting field of proteomics analysis and is accessible for all UCloud-users.  
 

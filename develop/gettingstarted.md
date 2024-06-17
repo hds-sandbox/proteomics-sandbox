@@ -1,7 +1,7 @@
 ---
 title: Getting Started
 summary: Tutorial to get started using the Proteomics Sandbox App.
-date: 2000-01-01
+date: last-modified
 hide:
   - navigation
 ---
@@ -33,18 +33,19 @@ hide:
 The  Proteomics Sandbox App is an excellent resource for biomedical students and non-computational researchers to learn and apply clinical proteomics. It provides a stable platform for proteomics software tools and offers a user-friendly interface. It is easy to use and does not require extensive coding knowledge. Furthermore, the app's lightweight clone feature optimizes storage requirements when working with datasets.
 
 ### Software  
-The software available in the Proteomics Sandbox includes [FragPipe](https://fragpipe.nesvilab.org/), [MaxQuant](https://www.maxquant.org/), [PDV](https://github.com/wenbostar/PDV), [SearchGUI](https://compomics.github.io/projects/searchgui.html), [ThermoRawFileParser](https://github.com/compomics/ThermoRawFileParser), [PeptideShaker](https://compomics.github.io/projects/peptide-shaker.html), [MZmine 3](https://mzmine.github.io/), and [DIA-NN](https://github.com/vdemichev/DiaNN). These software tools provide automated peptide and protein identification and quantification, comprehensive proteomics data analysis, visualization tools for spectral matches, a user-friendly interface for performing peptide searches, and a tool for visualizing and analyzing peptide search results. An overview table with a short description of each software tool is listed below for reference.
+The software available in the Proteomics Sandbox includes [FragPipe](https://fragpipe.nesvilab.org/), [MaxQuant](https://www.maxquant.org/), [PDV](https://github.com/wenbostar/PDV), [SearchGUI](https://compomics.github.io/projects/searchgui.html), [ThermoRawFileParser](https://github.com/compomics/ThermoRawFileParser), [PeptideShaker](https://compomics.github.io/projects/peptide-shaker.html), [MZmine 3](https://mzmine.github.io/), [DIA-NN](https://github.com/vdemichev/DiaNN), and [VMD](https://www.ks.uiuc.edu/Research/vmd/). These software tools provide automated peptide and protein identification and quantification, comprehensive proteomics data analysis, visualization tools for spectral matches, a user-friendly interface for performing peptide searches, and a tool for visualizing and analyzing peptide search results. An overview table with a short description of each software tool is listed below for reference.
 
 | Software      | Description                                                                                                                                                    |
 | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [FragPipe](https://fragpipe.nesvilab.org/)      | Automated peptide and protein identification and quantification using the MSFragger search engine. Supports the identification of arbitrary PTMs. Includes additional tools for post-processing and visualization of search results. |
-| [MaxQuant](https://www.maxquant.org/)      | Comprehensive software suite for proteomics data analysis. Includes protein and peptide identification, quantification, and visualization of spectral matches. Features an advanced search engine and a user-friendly graphical interface. |
+| [MaxQuant](https://www.maxquant.org/)      | Comprehensive software suite for proteomics data analysis. Includes protein and peptide identification, quantification, and visualization of spectral matches. Features an advanced search engine; only the command-line tool is available on Linux as the GUI is incompatible. |
 | [PDV](https://github.com/wenbostar/PDV)           | Visualization tool for spectral matches, particularly those obtained from MSFragger searches. Allows users to inspect and evaluate the quality of the matches. Supports annotation and customization of plots. |
 | [SearchGUI](https://compomics.github.io/projects/searchgui.html)     | User-friendly interface for performing peptide searches using multiple search engines (e.g., MSFragger, X!Tandem, OMSSA). Supports a wide range of search options and post-processing features. |
 | [ThermoRawFileParser](https://github.com/compomics/ThermoRawFileParser) | A tool for converting Thermo Scientific RAW files to an open format mzML file that can be read by other proteomics software. Includes options for filtering, peak picking, and data conversion. |
 | [PeptideShaker](https://compomics.github.io/projects/peptide-shaker.html) | Tool for visualizing and analyzing the results of peptide searches performed with SearchGUI. Includes features for filtering, annotation, and visualization of results. Supports integration with other proteomics databases and software. |
 | [MZmine 3](https://mzmine.github.io/) | Open-source software for LC-MS data processing, MZmine 3 is a complete redesign of the original MZmine toolbox. It offers a flexible, user-friendly platform with modules for the full LC-MS data analysis workflow. |
 | [DIA-NN](https://github.com/vdemichev/DiaNN) | DIA-NN is a universal tool for DIA proteomics data. It features robust algorithms for reliable, large-scale experiments, emphasizing ease of use, reproducibility, and high throughput, processing up to 1000 runs per hour. |
+| [VMD](https://www.ks.uiuc.edu/Research/vmd/) | Visual Molecular Dynamics (VMD) is a molecular visualization program for displaying, animating, and analyzing large biomolecular systems using 3D graphics and built-in scripting. Supports various molecular dynamics simulations and bioinformatics analyses. |
 
 
 ### Efficient and User-Friendly Proteomics Software Access
@@ -54,7 +55,7 @@ The software available in the Proteomics Sandbox includes [FragPipe](https://fra
     3. Lightweight clone feature that optimizes storage requirements when working with datasets.
    
 
-Overall, the Clinical Proteomics Sandbox is an excellent resource for biomedical students and non-computational researchers seeking to expand their knowledge and skills in clinical proteomics.
+The Clinical Proteomics Sandbox is an excellent resource for biomedical students and non-computational researchers seeking to expand their knowledge and skills in clinical proteomics.
 
 ## Future Plans  
 The Clinical Proteomics Sandbox is constantly evolving to provide an accessible platform for learning and practicing clinical proteomics data analysis. In the future, the sandbox will expand its content to include new modules such as:
