@@ -38,19 +38,13 @@ This module provides a comprehensive guide to Tandem Mass Tag (TMT) labeled mass
 
 !!! note "Module Outline"
 
-    ## 1. Introduction to TMT Labeling and Mass Spectrometry
-    
-    ## 2. Retrieving Data and Study Design
-    
-    ## 3. Downloading and Processing Data using FragPipe
-    
-    ## 4. Setting Up Study Design in FragPipe
-    
-    ## 5. Creating Annotation Files for Each Pool
-    
-    ## 6. Data Analysis and Interpretation
-    
-    ## 7. Conclusion and Future Directions
+    1. Introduction to TMT Labeling and Mass Spectrometry <br>
+    2. Retrieving Data and Study Design <br>
+    3. Downloading and Processing Data using FragPipe <br>
+    4. Setting Up Study Design in FragPipe <br>
+    5. Creating Annotation Files for Each Pool <br>
+    6. Data Analysis and Interpretation <br>
+    7. Conclusion and Future Directions
 
 
 
