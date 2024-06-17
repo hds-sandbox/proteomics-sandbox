@@ -48,27 +48,27 @@ This module provides a comprehensive guide to Tandem Mass Tag (TMT) labeled mass
 
 
 
-## 1. Introduction to TMT Labeling and Mass Spectrometry
+### 1. Introduction to TMT Labeling and Mass Spectrometry
 
 **Proteomics** is the large-scale study of proteins, particularly their structures and functions. As proteins are essential components of living organisms, understanding them is crucial for elucidating biological processes and disease mechanisms. **Mass-spectrometry (MS)-based proteomics** is a powerful technique that allows for the comprehensive analysis of proteins in a given sample.
 
-## 2. Retrieving Data and Study Design
-The first step in proteomics data analysis is to locate relevant scientific papers that describe the experimental design and data analysis methods. In this section, we will discuss how to retrieve proteomics data from the paper [Breast cancer quantitative proteome and proteogenomic landscape](https://www-nature-com.proxy1-bib.sdu.dk/articles/s41467-019-09018-y#Sec15) by Johansson et al. and understand the study design.
+### 2. Retrieving Data and Study Design
+The first step in proteomics data analysis is to locate relevant scientific papers that describe the experimental design and data analysis methods. In this section, we will discuss how to retrieve proteomics data from the paper *[Breast cancer quantitative proteome and proteogenomic landscape](https://www-nature-com.proxy1-bib.sdu.dk/articles/s41467-019-09018-y#Sec15)* by Johansson *et al.* and understand the study design.
 
 
-## 3. Downloading and Processing Data using FragPipe
+### 3. Downloading and Processing Data using FragPipe
 In this section, we will download the raw proteomics data from the paper by Johansson et al. and process it using FragPipe, a popular proteomics data analysis software. We will discuss the steps involved in data processing and the parameters used in the analysis.
 
-## 4. Setting Up Study Design in FragPipe
+### 4. Setting Up Study Design in FragPipe
 To analyze the TMT-labeled mass spectrometry data, we need to set up the study design in FragPipe. This involves creating annotation files for each pool of samples and specifying the experimental conditions. In this section, we will discuss how to set up the study design in FragPipe.
 
-## 5. Creating Annotation Files for Each Pool
+### 5. Creating Annotation Files for Each Pool
 The annotation files are essential for data analysis in FragPipe. They contain information about the experimental conditions, sample names, and other relevant details. In this section, we will discuss how to create accurate annotation files for each pool of samples.
 
-## 6. Data Analysis and Interpretation
+### 6. Data Analysis and Interpretation
 Data analysis is a crucial step in proteomics research. In this section, we will analyze the TMT-labeled mass spectrometry data using FragPipe and interpret the results. We will discuss how to identify differentially expressed proteins and pathways that are associated with breast cancer.
 
-## 7. Conclusion and Future Directions
+### 7. Conclusion and Future Directions
 In this final section, we will summarize the key findings from the data analysis and discuss future directions for proteomics research. We will also reflect on the challenges and opportunities in the field of proteomics and the potential impact of proteomics on human health.
 
 # References
