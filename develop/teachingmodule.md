@@ -53,7 +53,7 @@ This module provides a comprehensive guide to Tandem Mass Tag (TMT) labeled mass
 **Proteomics** is the large-scale study of proteins, particularly their structures and functions. As proteins are essential components of living organisms, understanding them is crucial for elucidating biological processes and disease mechanisms. **Mass-spectrometry (MS)-based proteomics** is a powerful technique that allows for the comprehensive analysis of proteins in a given sample.
 
 ### 2. Retrieving Data and Study Design
-The first step in proteomics data analysis is to locate relevant scientific papers that describe the experimental design and data analysis methods. In this section, we will discuss how to retrieve proteomics data from the paper *[Breast cancer quantitative proteome and proteogenomic landscape](https://www-nature-com.proxy1-bib.sdu.dk/articles/s41467-019-09018-y#Sec15)* by Johansson *et al.* and understand the study design.
+The first step in proteomics data analysis is to locate relevant scientific papers that describe the experimental design and data analysis methods. In this section, we will discuss how to retrieve proteomics data from the paper *[Breast cancer quantitative proteome and proteogenomic landscape](https://www-nature-com.proxy1-bib.sdu.dk/articles/s41467-019-09018-y)* by Johansson *et al.* and understand the study design.
 
 
 ### 3. Downloading and Processing Data using FragPipe
