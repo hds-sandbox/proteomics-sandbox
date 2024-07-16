@@ -30,7 +30,7 @@ hide:
 
 ## Launch the Proteomics Sandbox application in UCloud  
 
-Below are step-by-step instructions on how to launch the Proteomics Sandbox application in UCloud.  
+Below are step-by-step instructions on how to launch the Proteomics Sandbox application in UCloud. Test.  
 
 :one: Navigate to the workspace where your data is located.  
 :two: Access the application menu by clicking on **Apps** in the left-hand side menu.  
