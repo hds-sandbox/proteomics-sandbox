@@ -1,7 +1,7 @@
 ---
 title: FragPipe
 summary: Course materials on FragPipe for the proteomics module. 
-date: 2000-01-01
+date: last-modified
 hide:
   - navigation
 ---

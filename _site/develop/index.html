@@ -6,9 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2000-01-01">
+<meta name="author" content="Jacob Fredegaard Hansen">
+<meta name="dcterms.date" content="2024-06-17">
+<meta name="description" content="Outline for clinical proteomics">
 
-<title>Teaching Module</title>
+<title>Clinical Proteomics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,40 +26,101 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="teachingmodule_files/libs/clipboard/clipboard.min.js"></script>
-<script src="teachingmodule_files/libs/quarto-html/quarto.js"></script>
-<script src="teachingmodule_files/libs/quarto-html/popper.min.js"></script>
-<script src="teachingmodule_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="teachingmodule_files/libs/quarto-html/anchor.min.js"></script>
-<link href="teachingmodule_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="teachingmodule_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="teachingmodule_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="teachingmodule_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="teachingmodule_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
 
 
+<link rel="stylesheet" href="stylesheets/neoteroi-mkdocs.css">
+<link rel="stylesheet" href="stylesheets/extra.css">
 </head>
 
-<body class="fullcontent">
+<body>
 
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#clinical-proteomics" id="toc-clinical-proteomics" class="nav-link active" data-scroll-target="#clinical-proteomics">Clinical Proteomics</a>
+  <ul class="collapse">
+  <li><a href="#learning-clinical-proteomics-with-the-sandbox" id="toc-learning-clinical-proteomics-with-the-sandbox" class="nav-link" data-scroll-target="#learning-clinical-proteomics-with-the-sandbox">Learning Clinical Proteomics with the Sandbox</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Teaching Module</h1>
+<h1 class="title">Clinical Proteomics</h1>
 </div>
 
+<div>
+  <div class="description">
+    Outline for clinical proteomics
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Jacob Fredegaard Hansen </p>
+          </div>
+  </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 1, 2000</p>
+      <p class="date">June 17, 2024</p>
     </div>
   </div>
   
@@ -80,71 +143,71 @@ hide:
 # You should hide the navigation if there are no subsections
 # You should hide the Table of Contents if there are no important titles
 -->
-<p>!!! note “Section Overview”</p>
-<pre><code>&amp;#128368; **Total Time Estimation:** 8 hours
+<center>
+<section id="clinical-proteomics" class="level1">
+<h1>Clinical Proteomics</h1>
+</section></center>
+<p><strong>Updated:</strong> 2024-17-06</p>
+<p>Discover the world of proteomics with the Clinical Proteomics module of the Sandbox, offering the Proteomics Sandbox app on UCloud - an accessible resource for biomedical students and non-computational researchers. With a user-friendly interface and a lightweight clone feature, the app is perfect for those without extensive coding knowledge, providing a stable platform for proteomics software tools. You can also learn to predict protein structures based on sequence data with the independent ColabFold workshop, available on UCloud. This hands-on experience offers insights into the exciting field of proteomics analysis and is accessible for all UCloud-users.</p>
+<p>New course materials are being developed constantly to enhance your education and training in clinical proteomics data analysis. Stay tuned!</p>
+<p>!!! danger “Disclaimer” Currently, the educational material on proteomics is only available at UCloud, making it only accessible for UCloud-users.</p>
+<p><br></p>
+<!-- AUTHORS -->
+<!-- Format: [author name](link to author page){ .md-button } -->
+<h4 class="anchored">
+Authors
+</h4>
+<p>[cards cols=“4”(./develop/cards/cards.yaml)]</p>
+<hr>
+<p>!!! warning “Requirements” - Access to UCloud and sufficient resources to run the application - Basic computational knowledge, including familiarity with the UCloud environment - Familiarity with proteomics analysis techniques</p>
+<section id="learning-clinical-proteomics-with-the-sandbox" class="level2">
+<h2 class="anchored" data-anchor-id="learning-clinical-proteomics-with-the-sandbox">Learning Clinical Proteomics with the Sandbox</h2>
+<p>The Clinical Proteomics Module offers a comprehensive resource for learning and practicing clinical proteomics data analysis. The module consists of the following components:</p>
+<ul>
+<li>The Proteomics Sandbox app, which is a virtual machine with software readily available for clinical proteomics data analysis.<br>
+</li>
+<li>ColabFold workshop, which is an independent teaching material for learning to predict protein structures from sequence data based on AlphaFold.</li>
+</ul>
+<p>In the future, additional course materials will be made available to provide comprehensive teaching and education in clinical proteomics. With the Clinical Proteomics Module, students and researchers have the opportunity to work with real-world clinical data, gain practical experience in analyzing and interpreting such data, and enhance their knowledge and skills in clinical proteomics data analysis.</p>
+<p>Explore the various sections of the proteomics module by clicking on the tabs above.</p>
 
-&amp;#128172; **Learning Objectives:**    
-    1. Understand the workflow of TMT-labeled mass spectrometry. &lt;br&gt;
-    2. Retrieve and understand the study design and data from selected papers. &lt;br&gt;
-    3. Download and preprocess proteomics data using FragPipe. &lt;br&gt;
-    4. Set up and use FragPipe for TMT-labeled MS data analysis. &lt;br&gt;
-    5. Create accurate annotation files for data analysis.</code></pre>
-<section id="course-materials" class="level1">
-<h1>Course Materials</h1>
-<p>This page provides access to course materials on proteomics. Please note that the page is currently under development, and more detailed course materials will be added in the future.</p>
-<p>This module provides a comprehensive guide to Tandem Mass Tag (TMT) labeled mass spectrometry data analysis. It is designed to equip students with the necessary skills to locate relevant scientific papers, retrieve and download proteomics data, process the data using FragPipe, and create appropriate annotation files for data analysis.</p>
-<p>!!! note “Module Outline”</p>
-<pre><code>## 1. Introduction to TMT Labeling and Mass Spectrometry
 
-## 2. Retrieving Data and Study Design
-
-## 3. Downloading and Processing Data using FragPipe
-
-## 4. Setting Up Study Design in FragPipe
-
-## 5. Creating Annotation Files for Each Pool
-
-## 6. Data Analysis and Interpretation
-
-## 7. Conclusion and Future Directions</code></pre>
-<section id="introduction-to-tmt-labeling-and-mass-spectrometry" class="level2">
-<h2 class="anchored" data-anchor-id="introduction-to-tmt-labeling-and-mass-spectrometry">1. Introduction to TMT Labeling and Mass Spectrometry</h2>
-<p><strong>Proteomics</strong> is the large-scale study of proteins, particularly their structures and functions. As proteins are essential components of living organisms, understanding them is crucial for elucidating biological processes and disease mechanisms. <strong>Mass-spectrometry (MS)-based proteomics</strong> is a powerful technique that allows for the comprehensive analysis of proteins in a given sample.</p>
-</section>
-<section id="retrieving-data-and-study-design" class="level2">
-<h2 class="anchored" data-anchor-id="retrieving-data-and-study-design">2. Retrieving Data and Study Design</h2>
-<p>The first step in proteomics data analysis is to locate relevant scientific papers that describe the experimental design and data analysis methods. In this section, we will discuss how to retrieve proteomics data from the paper <a href="https://www-nature-com.proxy1-bib.sdu.dk/articles/s41467-019-09018-y#Sec15">Breast cancer quantitative proteome and proteogenomic landscape</a> by Johansson et al.&nbsp;and understand the study design.</p>
-</section>
-<section id="downloading-and-processing-data-using-fragpipe" class="level2">
-<h2 class="anchored" data-anchor-id="downloading-and-processing-data-using-fragpipe">3. Downloading and Processing Data using FragPipe</h2>
-<p>In this section, we will download the raw proteomics data from the paper by Johansson et al.&nbsp;and process it using FragPipe, a popular proteomics data analysis software. We will discuss the steps involved in data processing and the parameters used in the analysis.</p>
-</section>
-<section id="setting-up-study-design-in-fragpipe" class="level2">
-<h2 class="anchored" data-anchor-id="setting-up-study-design-in-fragpipe">4. Setting Up Study Design in FragPipe</h2>
-<p>To analyze the TMT-labeled mass spectrometry data, we need to set up the study design in FragPipe. This involves creating annotation files for each pool of samples and specifying the experimental conditions. In this section, we will discuss how to set up the study design in FragPipe.</p>
-</section>
-<section id="creating-annotation-files-for-each-pool" class="level2">
-<h2 class="anchored" data-anchor-id="creating-annotation-files-for-each-pool">5. Creating Annotation Files for Each Pool</h2>
-<p>The annotation files are essential for data analysis in FragPipe. They contain information about the experimental conditions, sample names, and other relevant details. In this section, we will discuss how to create accurate annotation files for each pool of samples.</p>
-</section>
-<section id="data-analysis-and-interpretation" class="level2">
-<h2 class="anchored" data-anchor-id="data-analysis-and-interpretation">6. Data Analysis and Interpretation</h2>
-<p>Data analysis is a crucial step in proteomics research. In this section, we will analyze the TMT-labeled mass spectrometry data using FragPipe and interpret the results. We will discuss how to identify differentially expressed proteins and pathways that are associated with breast cancer.</p>
-</section>
-<section id="conclusion-and-future-directions" class="level2">
-<h2 class="anchored" data-anchor-id="conclusion-and-future-directions">7. Conclusion and Future Directions</h2>
-<p>In this final section, we will summarize the key findings from the data analysis and discuss future directions for proteomics research. We will also reflect on the challenges and opportunities in the field of proteomics and the potential impact of proteomics on human health.</p>
-</section>
-</section>
-<section id="references" class="level1">
-<h1>References</h1>
-<ol type="1">
-<li>Johansson, H. J., Socciarelli, F., Vacanti, N. M., Haugen, M. H., Zhu, Y., Siavelis, I., … &amp; Mælandsmo, G. M. (2019). Breast cancer quantitative proteome and proteogenomic landscape. Nature communications, 10(1), 1-16.</li>
-</ol>
 </section>
 
-</main>
-<!-- /main column -->
+
+</main> <!-- /main -->
+﻿window.MathJax = {
+
+    tex: {
+
+        inlineMath: [["\\(", "\\)"]],
+
+        displayMath: [["\\[", "\\]"]],
+
+        processEscapes: true,
+
+        processEnvironments: true
+
+    },
+
+    options: {
+
+        ignoreHtmlClass: ".*|",
+
+        processHtmlClass: "arithmatex"
+
+    }
+
+};
+
+
+
+document$.subscribe(() =&gt; {
+
+    MathJax.typesetPromise()
+
+})
+
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

@@ -1,0 +1,773 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrartcl}
+
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else  
+    % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{241,243,245}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage{bookmark}
+
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Breast Cancer Proteomics Module},
+  pdfauthor={Jacob Fredegaard Hansen},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Breast Cancer Proteomics Module}
+\author{Jacob Fredegaard Hansen}
+\date{2024-09-30}
+
+\begin{document}
+\maketitle
+
+\renewcommand*\contentsname{Table of Contents}
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{3}
+\tableofcontents
+}
+!!! note ``Section Overview''
+
+\begin{verbatim}
+&#128368; **Total Time Estimation:** 8 hours
+
+&#128172; **Learning Objectives:**    
+    1. Understand the workflow of the study. <br>
+    2. Retrieve and understand the study design and data from selected papers. <br>
+    3. Download and preprocess proteomics data using FragPipe. <br>
+    4. Set up and use FragPipe for TMT-labeled MS data analysis. <br>
+    5. Create accurate annotation files for data analysis.
+\end{verbatim}
+
+\subsection{Preliminary work}\label{preliminary-work}
+
+For this work, we will use the data that was used and analyzed in the
+paper
+\emph{\href{https://www-nature-com.proxy1-bib.sdu.dk/articles/s41467-019-09018-y}{Breast
+cancer quantitative proteome and proteogenomic landscape}} by Johansson
+\emph{et al.}, which compares subgroups of breast cancer tumors from the
+Oslo2 cohort.
+
+Before delving into the actual analysis of the data in FragPipe, we must
+initially:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Read and understand the study design of the paper.
+\item
+  Understand the data being used from the paper.
+\end{enumerate}
+
+\subsubsection{Questions for Understanding the
+Paper}\label{questions-for-understanding-the-paper}
+
+To better understand the paper, we have formulated some questions that
+should help clarify the study design, aim, and overall scope of the
+work. These questions are listed below:
+
+\begin{itemize}
+\tightlist
+\item
+  \ldots{}
+\item
+  \ldots{}
+\item
+  \ldots{}
+\end{itemize}
+
+\subsubsection{Supplementary Data}\label{supplementary-data}
+
+Before we proceed and download the data available from the paper, we
+must first delve into some of the details in Supplementary Data 1. This
+is a large table containing the quantitative proteome data from the
+Oslo2 breast cancer cohort, which includes 45 subgroups of cancer tumors
+and relates to Figures 1-6 in the paper.
+
+To better understand the supplementary data, we have prepared guiding
+questions to aid in interpreting the table. You can find the
+supplementary data in the paper
+\href{https://www-nature-com.proxy1-bib.sdu.dk/articles/s41467-019-09018-y\#Sec15}{here}.
+
+\subsubsection{Question 1: Give a short description of what the table
+contains.}\label{question-1-give-a-short-description-of-what-the-table-contains.}
+
+\subsubsection{Question 2: What does the tumor ID
+indicate?}\label{question-2-what-does-the-tumor-id-indicate}
+
+\subsubsection{Question 3: Provide a brief description of TMT-labelled
+mass spectrometry proteomics data and how it is experimentally
+executed.}\label{question-3-provide-a-brief-description-of-tmt-labelled-mass-spectrometry-proteomics-data-and-how-it-is-experimentally-executed.}
+
+\paragraph{TMT10-Tags and Tumor IDs}\label{tmt10-tags-and-tumor-ids}
+
+Fill in the table below by entering the corresponding TMT10-tags and
+Tumor IDs. Once submitted, you'll get instant feedback on whether your
+input is correct.
+
+TMT/Plex Set
+
+Set 1
+
+Set 2
+
+Set 3
+
+Set 4
+
+Set 5
+
+TMT126
+
+TMT127N
+
+TMT127C
+
+TMT128N
+
+TMT128C
+
+TMT129N
+
+TMT129C
+
+TMT130N
+
+TMT130C
+
+TMT131
+
+Submit
+
+\subsubsection{Question 4: What is in
+TMT131?}\label{question-4-what-is-in-tmt131}
+
+\subsubsection{Question 5: What is the purpose of having such a
+sample?}\label{question-5-what-is-the-purpose-of-having-such-a-sample}
+
+Now that we better understand the workflow of the study and the content
+of the data, we are ready to move on to the analysis performed by
+FragPipe in the next section.
+
+\subsection{Analysis of MS Data Using
+FragPipe}\label{analysis-of-ms-data-using-fragpipe}
+
+In this section of the teaching module, we will work with data from the
+paper. The first task is to download sample files from the paper, guided
+by the questions provided below:
+
+\subsubsection{Question 6: Where is the data
+located?}\label{question-6-where-is-the-data-located}
+
+\subsubsection{Question 7: What is the ProteomeXChange
+database?}\label{question-7-what-is-the-proteomexchange-database}
+
+\subsubsection{Question 8: What is the accession code used for the data
+deposited in
+ProteomeXChange?}\label{question-8-what-is-the-accession-code-used-for-the-data-deposited-in-proteomexchange}
+
+By examining the accession code for the data deposited on
+ProteomeXChange, we can access and download the data using FTP.
+
+\subsubsection{Question 9: What is FTP, and how does it
+work?}\label{question-9-what-is-ftp-and-how-does-it-work}
+
+For downloading the data, we will use the \textbf{Proteomics Sandbox
+Application} on UCloud. This platform allows us to access the necessary
+storage capacity as well as the computational power required to execute
+this process.
+
+The \textbf{Proteomics Sandbox Application} is a virtual environment
+that includes multiple software tools, including \textbf{FragPipe} for
+analyzing proteomics data.
+
+You can find the \textbf{Proteomics Sandbox Application} on UCloud
+\href{https://cloud.sdu.dk/app/jobs/create?app=proteomics}{here}.
+
+First, we will download the data for the sample files to be used in
+\textbf{FragPipe}. Then, we will launch \textbf{FragPipe} to run the
+first analysis of the data. Before doing so, we have some questions
+regarding \textbf{FragPipe} and its usability:
+
+\subsubsection{Question 10: What is FragPipe, and what can it be used
+for?}\label{question-10-what-is-fragpipe-and-what-can-it-be-used-for}
+
+\subsubsection{Question 11: If you were not using FragPipe for this part
+of the teaching module, which other software tools could be used
+instead? Please include a few
+examples.}\label{question-11-if-you-were-not-using-fragpipe-for-this-part-of-the-teaching-module-which-other-software-tools-could-be-used-instead-please-include-a-few-examples.}
+
+\subsubsection{Question 12: What are the advantages of using
+FragPipe?}\label{question-12-what-are-the-advantages-of-using-fragpipe}
+
+Simple analyses in \textbf{FragPipe} may only require 8 GB of RAM, while
+large-scale or complex analyses may require 24 GB of memory or more
+(\href{https://fragpipe.nesvilab.org/docs/tutorial_fragpipe.html\#:~:text=FragPipe\%20runs\%20on\%20Windows\%20and,24\%20GB\%20memory\%20or\%20more.}{FragPipe
+Documentation}), which is why we will allocate 24 GB for this exercise.
+
+In UCloud, the settings should look like this:
+
+\textbf{SCREENSHOT HERE}
+
+Before submitting the job, it is also recommended to create a personal
+folder where you can store both the data and the results generated by
+\textbf{FragPipe}. You can follow the step-by-step guide below:
+
+\textbf{SCREENSHOT HERE}
+
+\textbf{CAUTION!!!}
+
+Make sure to allocate the right number of hours before submitting the
+job. If the time runs out, the job will be canceled, and all progress
+will be lost. However, you can always extend the job duration if more
+time is required after submission.
+
+Time can pass quickly when working, so we recommend initially allocating
+2 hours for the job. Now, we are ready to submit the job and launch the
+virtual environment of the \textbf{Proteomics Sandbox Application}.
+
+\subsection{Download Data from the
+Paper}\label{download-data-from-the-paper}
+
+Initially, we will need to download the paper's data. For this exercise,
+we will only use one sample file from each Plex Set/Pool.
+
+We will use the terminal in the virtual environment for downloading the
+data. First, we need to update and download the necessary packages. You
+can do that by typing the following code:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sudo}\NormalTok{ apt{-}get update}
+\FunctionTok{sudo}\NormalTok{ apt{-}get install lftp}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{Question 13: What is the code above doing? Please
+describe the code and what it is used
+for.}\label{question-13-what-is-the-code-above-doing-please-describe-the-code-and-what-it-is-used-for.}
+
+Now, we can access the FTP server where the data is located. You will
+need the server address from the correct FTP-server, which can be found
+on the site for the accession code XXX in ProteomeXchange, previously
+visited. At the bottom of the page, you will find the FTP-server address
+where the data is stored.
+
+\subsubsection{Question 14: Please find the
+address.}\label{question-14-please-find-the-address.}
+
+The address is used for accessing the data used in the study. To do so,
+we can use the package lftp that we just installed to access the server
+using the following code:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{lftp}\NormalTok{ [insert the address of the FTP server here]}
+\ExtensionTok{lftp}\NormalTok{ ftp://ftp.......}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{Question 15: Now, we have access to the data deposited on
+the FTP-server. Briefly describe the contents of the folder in the
+FTP-server.}\label{question-15-now-we-have-access-to-the-data-deposited-on-the-ftp-server.-briefly-describe-the-contents-of-the-folder-in-the-ftp-server.}
+
+To download one sample file from each of the Plex Sets, you can use the
+following code in the terminal:
+
+\subparagraph{CODE HERE}\label{code-here}
+
+\subsubsection{Question 16: Please describe what the code is doing by
+explaining the functions
+used.}\label{question-16-please-describe-what-the-code-is-doing-by-explaining-the-functions-used.}
+
+If you added your own private folder to the UCloud session, you could
+now move the data into that folder for better management of the data
+you're working with.
+
+Next, we can launch FragPipe, which is located on the desktop. In this
+tutorial, we are using FragPipe version XX.YY in the June 2024 version
+of the Proteomics Sandbox Application.
+
+Now that we have launched FragPipe, we need to configure the settings
+prior to running the analysis. Therefore, we have provided some guiding
+questions to help you set up the settings in FragPipe:
+
+\subsubsection{Getting started with
+FragPipe}\label{getting-started-with-fragpipe}
+
+Go to the ``Workflow'' tab to set up the workflow for the analysis and
+import the data you have just downloaded.
+
+\subsubsection{Question 17: Which workflow should you select? HINT: How
+many TMT-tags are given in the table in Supplementary Data
+1.}\label{question-17-which-workflow-should-you-select-hint-how-many-tmt-tags-are-given-in-the-table-in-supplementary-data-1.}
+
+Click `Load workflow' after you have found and selected the correct
+workflow to be used.
+
+Next, add your files by clicking on ``Add files'' and locate them in the
+designated folder for your raw files that you previously created.
+
+Now you should relocate to the ``Database'' tab. Here you can either
+download or browse for an already preexisting database file. In this
+case, we will simply download the latest database file.
+
+\subsubsection{Question 18: What is the database file used for in
+FragPipe and why is it
+important?}\label{question-18-what-is-the-database-file-used-for-in-fragpipe-and-why-is-it-important}
+
+\subsubsection{Question 19: Which organism should you select for
+downloading the database
+file?}\label{question-19-which-organism-should-you-select-for-downloading-the-database-file}
+
+\subsubsection{Question 20: Describe the relation between decoys and FDR
+by answering these
+questions:}\label{question-20-describe-the-relation-between-decoys-and-fdr-by-answering-these-questions}
+
+\begin{itemize}
+\tightlist
+\item
+  What are decoys?
+\item
+  Why should you add decoys?
+\item
+  How do decoys play a role in the FDR estimate?
+\end{itemize}
+
+Next, you can go to the MSFragger tab to adjust the parameter settings
+for the search and matching of the theoretical and experimental peptide
+spectra.
+
+Most of the settings used for MSFragger can be obtained from the paper
+\emph{NAME OF PAPER}, which is referred to in the Methods and Materials
+section.
+
+When all settings have been obtained, MSFragger should look something
+like this:
+
+\subsubsection{Question 21: What is
+MSFragger?}\label{question-21-what-is-msfragger}
+
+\subsubsection{Question 22: How does MSFragger
+work?}\label{question-22-how-does-msfragger-work}
+
+\subsubsection{Question 23: Why is it important to run MSFragger for
+this
+analysis?}\label{question-23-why-is-it-important-to-run-msfragger-for-this-analysis}
+
+Finally, we can navigate to the ``Run'' tab and run the analysis. For
+that, we must choose an output directory for the results of the search
+made by FragPipe. Once you have adjusted that, you are ready to click on
+``Run''.
+
+This process might take some time, so make sure that you still have
+enough hours allocated on your job on UCloud---otherwise, it will get
+terminated. Meanwhile, you can answer these questions:
+
+\subsubsection{Question 24: What do you expect from the output results?
+Consider the number of files you have provided for this
+search.}\label{question-24-what-do-you-expect-from-the-output-results-consider-the-number-of-files-you-have-provided-for-this-search.}
+
+\subsubsection{Question 25: Can we use this output based on the limited
+number of sample files for the downstream analysis? Why/Why
+not?}\label{question-25-can-we-use-this-output-based-on-the-limited-number-of-sample-files-for-the-downstream-analysis-whywhy-not}
+
+\subsubsection{\texorpdfstring{Question 26: What does it mean that the
+sample tissues have been fractionated according to \emph{PAPER}? Please
+describe that process and study design. Will more fractions lead to
+better proteome
+coverage?}{Question 26: What does it mean that the sample tissues have been fractionated according to PAPER? Please describe that process and study design. Will more fractions lead to better proteome coverage?}}\label{question-26-what-does-it-mean-that-the-sample-tissues-have-been-fractionated-according-to-paper-please-describe-that-process-and-study-design.-will-more-fractions-lead-to-better-proteome-coverage}
+
+When the run in FragPipe is done, please locate the output results and
+get an overview of the output.
+
+\subsubsection{Question 27: What kind of output does FragPipe
+provide?}\label{question-27-what-kind-of-output-does-fragpipe-provide}
+
+For the downstream analysis, we will use the output from the list of
+combined proteins, which we will explore further in the following
+section.
+
+\subsection{Further Interpretation and Analysis of FragPipe
+Results}\label{further-interpretation-and-analysis-of-fragpipe-results}
+
+For this part, we will use output files based on a run with FragPipe
+using all sample files (i.e., 5x72 raw files). That file can be
+downloaded here???
+
+Now, we will look at the output from FragPipe, where we will use the
+file named \texttt{combined\_proteins.tsv}. Initially, we will explore
+the contents of the file locally. Therefore, you should download the
+file from UCloud and view it locally in a file editor such as Excel.
+
+You can download the file by clicking on the file in your output
+directory in the UCloud interface, from where you can choose to download
+it.
+
+\subsubsection{Question 28: Give a brief description of the contents of
+the table. What does the table contain across the rows and the
+columns?}\label{question-28-give-a-brief-description-of-the-contents-of-the-table.-what-does-the-table-contain-across-the-rows-and-the-columns}
+
+For the downstream analysis, we will use the columns containing the TMT
+intensities across the proteins identified.
+
+For that we will use
+\href{https://computproteomics.bmb.sdu.dk/app_direct/OmicsQ/}{OmicsQ},
+which is a toolkit for quantitative proteomics. OmicsQ can be used to
+facilitate the processing of quantitative data from Omics type
+experiments. Additionally, it also serves as an entrypoint for using
+apps like
+\href{https://computproteomics.bmb.sdu.dk/app_direct/PolySTest/}{PolySTest}
+{[}SCHWAMMLE20201396{]} for statistical testing,
+\href{https://computproteomics.bmb.sdu.dk/app_direct/VSClust/}{VSClust}
+for clustering and
+\href{https://computproteomics.bmb.sdu.dk/app_direct/ComplexBrowser/}{ComplexBrowser}
+for the investigation of the behavior of protein complexes.
+
+\subsubsection{Reading the Data}\label{reading-the-data}
+
+´´´r
+
+\subsubsection{Visualization of the
+Data}\label{visualization-of-the-data}
+
+\subsubsection{Dynamic Range, Similarity, and Missing
+Values}\label{dynamic-range-similarity-and-missing-values}
+
+\subsubsection{Principal Component
+Analysis}\label{principal-component-analysis}
+
+\subsubsection{Hierarchical Clustering}\label{hierarchical-clustering}
+
+\subsubsection{Digging Deeper into the Behavior of One
+Protein}\label{digging-deeper-into-the-behavior-of-one-protein}
+
+\subsubsection{Statistics and Clustering using
+VSClust}\label{statistics-and-clustering-using-vsclust}
+
+\subsubsection{GO Terms and Pathways}\label{go-terms-and-pathways}
+
+\section{Questions for the Paper}\label{questions-for-the-paper}
+
+Click to expand questions
+
+\subsection{1. Study Design and Aim}\label{study-design-and-aim}
+
+\textbf{1.1. What was the primary objective of the Johansson et
+al.~study on breast cancer proteomics?}
+
+\textbf{1.2. Describe the study's design. How were the tumor samples
+selected and classified? What subtypes of breast cancer were included in
+the analysis?}
+
+\subsection{2. Experimental Setup}\label{experimental-setup}
+
+\textbf{2.1. What were the main proteomic techniques used in this study
+to quantify proteins in breast tumors?}
+
+\textbf{2.2. Why was mass spectrometry (MS) chosen for this study?}
+
+\subsection{3. Data and Analysis}\label{data-and-analysis}
+
+\textbf{3.1. The study identified nearly 10,000 proteins. What criteria
+were used to quantify and select proteins for analysis?}
+
+\textbf{3.2. What is the significance of integrating proteomics with
+other data layers such as mRNA expression, genome copy-number
+alterations, and single-nucleotide polymorphisms in this study?}
+
+\textbf{3.3. How did the unsupervised clustering of proteome profiles
+relate to the established PAM50 breast cancer subtypes?}
+
+\subsection{4. Key Findings}\label{key-findings}
+
+\textbf{4.1. What novel insights did this study provide about basal-like
+and luminal B tumors in terms of immune infiltration?}
+
+\textbf{4.2. How does the discovery of protein products from non-coding
+genomic regions potentially impact breast cancer immunotherapy?}
+
+\subsection{5. Conclusion and
+Implications}\label{conclusion-and-implications}
+
+\textbf{5.1. Summarize the main findings of this study and their
+potential impact on breast cancer treatment and prognosis.}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{Answers}\label{answers}
+
+Click to expand answers
+
+\subsection{1. Study Design and Aim}\label{study-design-and-aim-1}
+
+\textbf{1.1.}\\
+The primary objective of this study was to perform an in-depth, unbiased
+proteomic analysis of breast tumors to better understand their molecular
+heterogeneity. The study aimed to provide a detailed quantitative
+proteomic landscape of breast cancer, revealing potential prognostic
+markers and therapeutic targets, particularly focusing on subtypes
+poorly defined by previous mRNA-based methods.\\
+\emph{Source: Introduction, page 1}
+
+\textbf{1.2.}\\
+The study included 45 breast tumors, with 9 patients representing each
+of the five PAM50-based molecular classifications (basal-like, HER2,
+luminal A, luminal B, and normal-like). These tumors were selected from
+the Oslo2 study cohort. The classification aimed to ensure diversity and
+comprehensive subtype representation.\\
+\emph{Source: Study Design and Sample Selection, page 3}
+
+\subsection{2. Experimental Setup}\label{experimental-setup-1}
+
+\textbf{2.1.}\\
+The main technique used was LC-MS/MS-based protein quantification,
+combined with high-resolution isoelectric focusing (HiRIEF). These
+methods allowed for in-depth quantification of almost 10,000 proteins
+across the 45 tumor samples.\\
+\emph{Source: Methods, page 3}
+
+\textbf{2.2.}\\
+MS was chosen because it provides high-throughput and quantitative
+protein measurements, essential for understanding the protein landscape
+of breast cancer.\\
+\emph{Source: Methods, page 1, 2}
+
+\subsection{3. Data and Analysis}\label{data-and-analysis-1}
+
+\textbf{3.1.}\\
+The subset of proteins used for quantitative analysis was based on gene
+symbol-centric quantification, with a median of 12 unique peptides per
+protein and 24 peptide spectrum matches (PSMs) per protein. Proteins
+were included in the analysis only if they were quantified in all 45
+tumors.\\
+\emph{Source: Results, page 3}
+
+\textbf{3.2.}\\
+Integrating proteomics with other omics data layers provided a
+comprehensive multi-level understanding of breast cancer biology. By
+combining protein data with mRNA expression, copy-number alterations,
+and SNPs, the study revealed correlations between different molecular
+levels and how these layers interact to drive tumor behavior. This
+integrated approach also highlighted cases where mRNA does not correlate
+with protein abundance, underscoring the importance of direct protein
+measurements.\\
+\emph{Source: Results, page 2}
+
+\textbf{3.3.}\\
+The unsupervised clustering largely recapitulated the PAM50 subtypes but
+showed some overlap between the luminal B and HER2 subtypes.\\
+\emph{Source: Results, page 4}
+
+\subsection{4. Key Findings}\label{key-findings-1}
+
+\textbf{4.1.}\\
+The study found that basal-like and luminal B tumors could be further
+subdivided based on immune component infiltration, suggesting that
+current classifications might be incomplete. This immune infiltration
+provided new prognostic markers, with implications for the development
+of immune-targeted therapies.\\
+\emph{Source: Results, page 2}
+
+\textbf{4.2.}\\
+The discovery of protein products from non-coding genomic regions, such
+as long non-coding RNAs (lncRNAs) and pseudogenes, opens up the
+possibility of using these proteins as tumor-specific antigens. These
+neoantigens could be targeted by immunotherapies, offering a new class
+of treatment options for breast cancer patients.\\
+\emph{Source: Results, page 9}
+
+\subsection{5. Conclusion and
+Implications}\label{conclusion-and-implications-1}
+
+\textbf{5.1.}\\
+This study provided a comprehensive proteomic and proteogenomic
+landscape of breast cancer, identifying nearly 10,000 proteins and
+linking them with mRNA expression, genomic alterations, and immune
+signatures. It highlighted novel tumor subtypes, provided new biomarkers
+for prognosis, and revealed potential therapeutic targets, including
+tumor-specific antigens from non-coding regions. These findings may lead
+to more personalized treatments, particularly in targeting previously
+unrecognized molecular features of breast cancer.\\
+\emph{Source: Discussion, page 11}
+
+\subsection{Personal Details}\label{personal-details}
+
+\textbf{Name:}\\
+
+\textbf{Email:}\\
+
+\textbf{Course/Program:}\\
+
+\textbf{Date:}\\
+
+Download Your Answers as PDF
+
+
+
+\end{document}

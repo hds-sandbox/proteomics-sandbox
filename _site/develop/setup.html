@@ -6,9 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-06-17">
+<meta name="author" content="Jacob Fredegaard Hansen">
+<meta name="dcterms.date" content="2024-09-27">
+<meta name="description" content="Outline for clinical proteomics">
 
-<title>Clinical Proteomics</title>
+<title>Clinical Proteomics - Setup</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,40 +26,101 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="index_files/libs/clipboard/clipboard.min.js"></script>
-<script src="index_files/libs/quarto-html/quarto.js"></script>
-<script src="index_files/libs/quarto-html/popper.min.js"></script>
-<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="index_files/libs/quarto-html/anchor.min.js"></script>
-<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="index_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
 
 
+<link rel="stylesheet" href="stylesheets/neoteroi-mkdocs.css">
+<link rel="stylesheet" href="stylesheets/extra.css">
 </head>
 
-<body class="fullcontent">
+<body>
 
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#setup" id="toc-setup" class="nav-link active" data-scroll-target="#setup">Setup</a>
+  <ul class="collapse">
+  <li><a href="#launch-the-proteomics-sandbox-application-in-ucloud" id="toc-launch-the-proteomics-sandbox-application-in-ucloud" class="nav-link" data-scroll-target="#launch-the-proteomics-sandbox-application-in-ucloud">Launch the Proteomics Sandbox application in UCloud</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Clinical Proteomics</h1>
+<h1 class="title">Setup</h1>
 </div>
 
+<div>
+  <div class="description">
+    Outline for clinical proteomics
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Jacob Fredegaard Hansen </p>
+          </div>
+  </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">June 17, 2024</p>
+      <p class="date">September 27, 2024</p>
     </div>
   </div>
   
@@ -80,38 +143,37 @@ hide:
 # You should hide the navigation if there are no subsections
 # You should hide the Table of Contents if there are no important titles
 -->
-<center>
-<section id="clinical-proteomics" class="level1">
-<h1>Clinical Proteomics</h1>
-</section></center>
-<p><strong>Updated:</strong> 2024-17-06</p>
-<p>Discover the world of proteomics with the Clinical Proteomics module of the Sandbox, offering the Proteomics Sandbox app on UCloud - an accessible resource for biomedical students and non-computational researchers. With a user-friendly interface and a lightweight clone feature, the app is perfect for those without extensive coding knowledge, providing a stable platform for proteomics software tools. You can also learn to predict protein structures based on sequence data with the independent ColabFold workshop, available on UCloud. This hands-on experience offers insights into the exciting field of proteomics analysis and is accessible for all UCloud-users.</p>
-<p>New course materials are being developed constantly to enhance your education and training in clinical proteomics data analysis. Stay tuned!</p>
-<p>!!! danger “Disclaimer” Currently, the educational material on proteomics is only available at UCloud, making it only accessible for UCloud-users.</p>
-<p><br></p>
-<!-- AUTHORS -->
-<!-- Format: [author name](link to author page){ .md-button } -->
-<h4 class="anchored">
-Authors
-</h4>
-<p>[cards cols=“4”(./develop/cards/cards.yaml)]</p>
-<hr>
-<p>!!! warning “Requirements” - Access to UCloud and sufficient resources to run the application - Basic computational knowledge, including familiarity with the UCloud environment - Familiarity with proteomics analysis techniques</p>
-<section id="learning-clinical-proteomics-with-the-sandbox" class="level2">
-<h2 class="anchored" data-anchor-id="learning-clinical-proteomics-with-the-sandbox">Learning Clinical Proteomics with the Sandbox</h2>
-<p>The Clinical Proteomics Module offers a comprehensive resource for learning and practicing clinical proteomics data analysis. The module consists of the following components:</p>
-<ul>
-<li>The Proteomics Sandbox app, which is a virtual machine with software readily available for clinical proteomics data analysis.<br>
-</li>
-<li>ColabFold workshop, which is an independent teaching material for learning to predict protein structures from sequence data based on AlphaFold.</li>
-</ul>
-<p>In the future, additional course materials will be made available to provide comprehensive teaching and education in clinical proteomics. With the Clinical Proteomics Module, students and researchers have the opportunity to work with real-world clinical data, gain practical experience in analyzing and interpreting such data, and enhance their knowledge and skills in clinical proteomics data analysis.</p>
-<p>Explore the various sections of the proteomics module by clicking on the tabs above.</p>
+<section id="setup" class="level1">
+<h1>Setup</h1>
+<p>!!! note “Section Overview”</p>
+<pre><code>&amp;#128368; **Total Time Estimation:** 10 minutes
+
+&amp;#128172; **Learning Objectives:**    
+    1. Launch the Proteomics Sandbox App and become proficient in using it for proteomics data analysis.  
+    2. Deploy your own data in the Proteomics Sandbox app.   </code></pre>
+<section id="launch-the-proteomics-sandbox-application-in-ucloud" class="level2">
+<h2 class="anchored" data-anchor-id="launch-the-proteomics-sandbox-application-in-ucloud">Launch the Proteomics Sandbox application in UCloud</h2>
+<p>Below are step-by-step instructions on how to launch the Proteomics Sandbox application in UCloud.</p>
+<p>:one: Navigate to the workspace where your data is located.<br>
+:two: Access the application menu by clicking on <strong>Apps</strong> in the left-hand side menu.<br>
+<img src="images/UCloud/UCloud_apps.png" alt="Alt Text" width="250" height="150"></p>
+<p>:three: Search for <strong>Proteomics Sandbox</strong> and click on the icon for the application.<br>
+<img src="images/UCloud/Proteomics_Sandbox_app.png" alt="Alt Text" width="500" height="300"></p>
+<p>:four: Select your desired number of resources under <strong>Machine type</strong>. Remember, larger datasets will require more resources.<br>
+<img src="images/UCloud/Machine_type.png" alt="Alt Text" width="750" height="450"></p>
+<p>:five: Deploy your data by selecting <strong>Folder</strong> and adjusting the path to your files. Be sure to select the correct <strong>Workspace</strong> and change the <strong>Drive</strong> to where your data is located. Click on the folder name to select it and then click <strong>Use this folder</strong> in the upper right corner of the pop-up window.<br>
+<img src="images/UCloud/Add_folder.png" alt="Alt Text" width="750" height="450"></p>
+<p>:six: Once you have deployed your data, you are ready to launch the application. Click on <strong>Submit</strong> to the right of the screen and then click <strong>Open interface</strong> in the upper right corner of the following page to start using the Proteomics Sandbox application.<br>
+<img src="images/UCloud/Submit_open_interface.png" alt="Alt Text" width="500" height="300"></p>
+<p>Congratulations! You’re now ready to dive into the world of clinical proteomics and perform various analyses with the user-friendly Proteomics Sandbox app. For more detailed instructions on how to use the software available in the app, check out the official documentation for the software linked in the <a href="..\proteomics-sandbox/gettingstarted.html#software">overview table</a>.</p>
+<p>!!! danger “Important Warning” 1. When working within the Proteomics Sandbox application, <strong>it is crucial to ensure that all your work is saved in the designated ‘work’ directory</strong>. Failure to do so may result in permanent loss of your work when the session ends or expires.<br>
+2. It is imperative to <strong>keep track of the time allocated for your UCloud job</strong>. Upon expiry, the session will terminate automatically, resulting in loss of unsaved work. It is possible to extend the number of hours for your session after it has commenced.</p>
+
+
+</section>
 </section>
 
-
-</main>
-<!-- /main column -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

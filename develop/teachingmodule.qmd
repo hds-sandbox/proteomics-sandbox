@@ -1,0 +1,603 @@
+---
+title: Breast Cancer Proteomics Module
+summary: Teaching module provided for the proteomics module. 
+date: last-modified
+author: Jacob Fredegaard Hansen
+hide:
+  - navigation
+---
+
+<!--
+# Put above to hide navigation (left), toc (right) or footer (bottom)
+
+hide:
+  - navigation 
+  - toc
+  - footer 
+
+# You should hide the navigation if there are no subsections
+# You should hide the Table of Contents if there are no important titles
+-->
+
+!!! note "Section Overview"
+
+    &#128368; **Total Time Estimation:** 8 hours
+
+    &#128172; **Learning Objectives:**    
+        1. Understand the workflow of the study. <br>
+        2. Retrieve and understand the study design and data from selected papers. <br>
+        3. Download and preprocess proteomics data using FragPipe. <br>
+        4. Set up and use FragPipe for TMT-labeled MS data analysis. <br>
+        5. Create accurate annotation files for data analysis.
+   
+
+
+## Preliminary work
+
+For this work, we will use the data that was used and analyzed in the paper *[Breast cancer quantitative proteome and proteogenomic landscape](https://www-nature-com.proxy1-bib.sdu.dk/articles/s41467-019-09018-y)* by Johansson *et al.*, which compares subgroups of breast cancer tumors from the Oslo2 cohort.
+
+Before delving into the actual analysis of the data in FragPipe, we must initially:
+
+1. Read and understand the study design of the paper.
+2. Understand the data being used from the paper.
+
+### Questions for Understanding the Paper
+
+To better understand the paper, we have formulated some questions that should help clarify the study design, aim, and overall scope of the work. These questions are listed below:
+
+- …
+- …
+- …
+
+
+### Supplementary Data
+
+Before we proceed and download the data available from the paper, we must first delve into some of the details in Supplementary Data 1. This is a large table containing the quantitative proteome data from the Oslo2 breast cancer cohort, which includes 45 subgroups of cancer tumors and relates to Figures 1-6 in the paper.
+
+To better understand the supplementary data, we have prepared guiding questions to aid in interpreting the table. You can find the supplementary data in the paper [here](https://www-nature-com.proxy1-bib.sdu.dk/articles/s41467-019-09018-y#Sec15).
+
+<!-- Question 1 -->
+<h3 class="question">Question 1: Give a short description of what the table contains.</h3>
+<textarea id="question1" placeholder="Type your answer here..." class="input-box"></textarea>
+
+<!-- Question 2 -->
+<h3 class="question">Question 2: What does the tumor ID indicate?</h3>
+<textarea id="question2" placeholder="Type your answer here..." class="input-box"></textarea>
+
+<!-- Question 3 -->
+<h3 class="question">Question 3: Provide a brief description of TMT-labelled mass spectrometry proteomics data and how it is experimentally executed.</h3>
+<textarea id="question3" placeholder="Type your answer here..." class="input-box"></textarea>
+
+
+#### TMT10-Tags and Tumor IDs
+
+Fill in the table below by entering the corresponding TMT10-tags and Tumor IDs. Once submitted, you'll get instant feedback on whether your input is correct.
+
+<form id="tmtForm">
+  <table style="width: 100%; border-collapse: collapse;">
+    <tr>
+      <th style="width: 30%;">TMT/Plex Set</th>
+      <th style="width: 14%;">Set 1</th>
+      <th style="width: 14%;">Set 2</th>
+      <th style="width: 14%;">Set 3</th>
+      <th style="width: 14%;">Set 4</th>
+      <th style="width: 14%;">Set 5</th>
+    </tr>
+    <tr>
+      <td>TMT126</td>
+      <td><input type="text" id="set1_126" name="set1_126" style="width: 100%;"></td>
+      <td><input type="text" id="set2_126" name="set2_126" style="width: 100%;"></td>
+      <td><input type="text" id="set3_126" name="set3_126" style="width: 100%;"></td>
+      <td><input type="text" id="set4_126" name="set4_126" style="width: 100%;"></td>
+      <td><input type="text" id="set5_126" name="set5_126" style="width: 100%;"></td>
+    </tr>
+    <tr>
+      <td>TMT127N</td>
+      <td><input type="text" id="set1_127N" name="set1_127N" style="width: 100%;"></td>
+      <td><input type="text" id="set2_127N" name="set2_127N" style="width: 100%;"></td>
+      <td><input type="text" id="set3_127N" name="set3_127N" style="width: 100%;"></td>
+      <td><input type="text" id="set4_127N" name="set4_127N" style="width: 100%;"></td>
+      <td><input type="text" id="set5_127N" name="set5_127N" style="width: 100%;"></td>
+    </tr>
+    <tr>
+      <td>TMT127C</td>
+      <td><input type="text" id="set1_127C" name="set1_127C" style="width: 100%;"></td>
+      <td><input type="text" id="set2_127C" name="set2_127C" style="width: 100%;"></td>
+      <td><input type="text" id="set3_127C" name="set3_127C" style="width: 100%;"></td>
+      <td><input type="text" id="set4_127C" name="set4_127C" style="width: 100%;"></td>
+      <td><input type="text" id="set5_127C" name="set5_127C" style="width: 100%;"></td>
+    </tr>
+    <tr>
+      <td>TMT128N</td>
+      <td><input type="text" id="set1_128N" name="set1_128N" style="width: 100%;"></td>
+      <td><input type="text" id="set2_128N" name="set2_128N" style="width: 100%;"></td>
+      <td><input type="text" id="set3_128N" name="set3_128N" style="width: 100%;"></td>
+      <td><input type="text" id="set4_128N" name="set4_128N" style="width: 100%;"></td>
+      <td><input type="text" id="set5_128N" name="set5_128N" style="width: 100%;"></td>
+    </tr>
+    <tr>
+      <td>TMT128C</td>
+      <td><input type="text" id="set1_128C" name="set1_128C" style="width: 100%;"></td>
+      <td><input type="text" id="set2_128C" name="set2_128C" style="width: 100%;"></td>
+      <td><input type="text" id="set3_128C" name="set3_128C" style="width: 100%;"></td>
+      <td><input type="text" id="set4_128C" name="set4_128C" style="width: 100%;"></td>
+      <td><input type="text" id="set5_128C" name="set5_128C" style="width: 100%;"></td>
+    </tr>
+    <tr>
+      <td>TMT129N</td>
+      <td><input type="text" id="set1_129N" name="set1_129N" style="width: 100%;"></td>
+      <td><input type="text" id="set2_129N" name="set2_129N" style="width: 100%;"></td>
+      <td><input type="text" id="set3_129N" name="set3_129N" style="width: 100%;"></td>
+      <td><input type="text" id="set4_129N" name="set4_129N" style="width: 100%;"></td>
+      <td><input type="text" id="set5_129N" name="set5_129N" style="width: 100%;"></td>
+    </tr>
+    <tr>
+      <td>TMT129C</td>
+      <td><input type="text" id="set1_129C" name="set1_129C" style="width: 100%;"></td>
+      <td><input type="text" id="set2_129C" name="set2_129C" style="width: 100%;"></td>
+      <td><input type="text" id="set3_129C" name="set3_129C" style="width: 100%;"></td>
+      <td><input type="text" id="set4_129C" name="set4_129C" style="width: 100%;"></td>
+      <td><input type="text" id="set5_129C" name="set5_129C" style="width: 100%;"></td>
+    </tr>
+    <tr>
+      <td>TMT130N</td>
+      <td><input type="text" id="set1_130N" name="set1_130N" style="width: 100%;"></td>
+      <td><input type="text" id="set2_130N" name="set2_130N" style="width: 100%;"></td>
+      <td><input type="text" id="set3_130N" name="set3_130N" style="width: 100%;"></td>
+      <td><input type="text" id="set4_130N" name="set4_130N" style="width: 100%;"></td>
+      <td><input type="text" id="set5_130N" name="set5_130N" style="width: 100%;"></td>
+    </tr>
+    <tr>
+      <td>TMT130C</td>
+      <td><input type="text" id="set1_130C" name="set1_130C" style="width: 100%;"></td>
+      <td><input type="text" id="set2_130C" name="set2_130C" style="width: 100%;"></td>
+      <td><input type="text" id="set3_130C" name="set3_130C" style="width: 100%;"></td>
+      <td><input type="text" id="set4_130C" name="set4_130C" style="width: 100%;"></td>
+      <td><input type="text" id="set5_130C" name="set5_130C" style="width: 100%;"></td>
+    </tr>
+    <tr>
+      <td>TMT131</td>
+      <td><input type="text" id="set1_131" name="set1_131" style="width: 100%;"></td>
+      <td><input type="text" id="set2_131" name="set2_131" style="width: 100%;"></td>
+      <td><input type="text" id="set3_131" name="set3_131" style="width: 100%;"></td>
+      <td><input type="text" id="set4_131" name="set4_131" style="width: 100%;"></td>
+      <td><input type="text" id="set5_131" name="set5_131" style="width: 100%;"></td>
+    </tr>
+  </table>
+  <button type="button" onclick="checkAnswers()">Submit</button>
+</form>
+
+<p id="feedback"></p>
+
+<script>
+  // Define correct answers for validation
+  const correctAnswers = {
+    set1_126: 'OSL.53E', set2_126: 'OSL.4AF', set3_126: 'OSL.43C', set4_126: 'OSL.43A', set5_126: 'OSL.40A',
+    set1_127N: 'OSL.567', set2_127N: 'OSL.46E', set3_127N: 'OSL.493', set4_127N: 'OSL.406', set5_127N: 'OSL.40E',
+    set1_127C: 'OSL.3FF', set2_127C: 'OSL.494', set3_127C: 'OSL.4D9', set4_127C: 'OSL.47C', set5_127C: 'OSL.3FA',
+    set1_128N: 'OSL.55F', set2_128N: 'OSL.457', set3_128N: 'OSL.56F', set4_128N: 'OSL.524', set5_128N: 'OSL.521',
+    set1_128C: 'OSL.46A', set2_128C: 'OSL.48B', set3_128C: 'OSL.405', set4_128C: 'OSL.443', set5_128C: 'OSL.46D',
+    set1_129N: 'OSL.4B0', set2_129N: 'OSL.4B4', set3_129N: 'OSL.49E', set4_129N: 'OSL.458', set5_129N: 'OSL.54D',
+    set1_129C: 'OSL.4D6', set2_129C: 'OSL.449', set3_129C: 'OSL.441', set4_129C: 'OSL.53D', set5_129C: 'OSL.4BA',
+    set1_130N: 'OSL.485', set2_130N: 'OSL.44E', set3_130N: 'OSL.430', set4_130N: 'OSL.540', set5_130N: 'OSL.579',
+    set1_130C: 'OSL.41B', set2_130C: 'OSL.3EB', set3_130C: 'OSL.4FA', set4_130C: 'OSL.42E', set5_130C: 'OSL.57B',
+    set1_131: 'Pool', set2_131: 'Pool', set3_131: 'Pool', set4_131: 'Pool', set5_131: 'Pool'
+  };
+
+  function checkAnswers() {
+    for (const [id, correctAnswer] of Object.entries(correctAnswers)) {
+      const input = document.getElementById(id);
+      const userAnswer = input.value.trim();
+
+      if (userAnswer === correctAnswer) {
+        input.style.backgroundColor = 'lightgreen'; // Highlight in green for correct
+      } else {
+        input.style.backgroundColor = 'lightcoral'; // Highlight in red for incorrect
+      }
+    }
+  }
+</script>
+
+
+### Question 4: What is in TMT131?
+
+<textarea id="question4" placeholder="Type your answer here..." class="input-box"></textarea>
+
+### Question 5: What is the purpose of having such a sample?
+
+<textarea id="question5" placeholder="Type your answer here..." class="input-box"></textarea>
+
+
+
+Now that we better understand the workflow of the study and the content of the data, we are ready to move on to the analysis performed by FragPipe in the next section.
+
+
+## Analysis of MS Data Using FragPipe
+
+In this section of the teaching module, we will work with data from the paper. The first task is to download sample files from the paper, guided by the questions provided below:
+
+### Question 6: Where is the data located?
+
+<textarea id="question6" placeholder="Type your answer here..." class="input-box"></textarea>
+
+### Question 7: What is the ProteomeXChange database?
+
+<textarea id="question7" placeholder="Type your answer here..." class="input-box"></textarea>
+
+### Question 8: What is the accession code used for the data deposited in ProteomeXChange?
+
+<textarea id="question8" placeholder="Type your answer here..." class="input-box"></textarea>
+
+
+By examining the accession code for the data deposited on ProteomeXChange, we can access and download the data using FTP.
+
+### Question 9: What is FTP, and how does it work?
+
+<textarea id="question9" placeholder="Type your answer here..." class="input-box"></textarea>
+
+
+For downloading the data, we will use the **Proteomics Sandbox Application** on UCloud. This platform allows us to access the necessary storage capacity as well as the computational power required to execute this process.
+
+The **Proteomics Sandbox Application** is a virtual environment that includes multiple software tools, including **FragPipe** for analyzing proteomics data.
+
+You can find the **Proteomics Sandbox Application** on UCloud [here](https://cloud.sdu.dk/app/jobs/create?app=proteomics).
+
+First, we will download the data for the sample files to be used in **FragPipe**. Then, we will launch **FragPipe** to run the first analysis of the data. Before doing so, we have some questions regarding **FragPipe** and its usability:
+
+### Question 10: What is FragPipe, and what can it be used for?
+
+<textarea id="question10" placeholder="Type your answer here..." class="input-box"></textarea>
+
+### Question 11: If you were not using FragPipe for this part of the teaching module, which other software tools could be used instead? Please include a few examples.
+
+<textarea id="question11" placeholder="Type your answer here..." class="input-box"></textarea>
+
+### Question 12: What are the advantages of using FragPipe?
+
+<textarea id="question12" placeholder="Type your answer here..." class="input-box"></textarea>
+
+
+Simple analyses in **FragPipe** may only require 8 GB of RAM, while large-scale or complex analyses may require 24 GB of memory or more ([FragPipe Documentation](https://fragpipe.nesvilab.org/docs/tutorial_fragpipe.html#:~:text=FragPipe%20runs%20on%20Windows%20and,24%20GB%20memory%20or%20more.)), which is why we will allocate 24 GB for this exercise.
+
+In UCloud, the settings should look like this:
+
+**SCREENSHOT HERE**
+
+Before submitting the job, it is also recommended to create a personal folder where you can store both the data and the results generated by **FragPipe**. You can follow the step-by-step guide below:
+
+**SCREENSHOT HERE**
+
+**CAUTION!!!**
+
+Make sure to allocate the right number of hours before submitting the job. If the time runs out, the job will be canceled, and all progress will be lost. However, you can always extend the job duration if more time is required after submission.
+
+Time can pass quickly when working, so we recommend initially allocating 2 hours for the job. Now, we are ready to submit the job and launch the virtual environment of the **Proteomics Sandbox Application**.
+
+
+## Download Data from the Paper
+
+Initially, we will need to download the paper's data. For this exercise, we will only use one sample file from each Plex Set/Pool.
+
+We will use the terminal in the virtual environment for downloading the data. First, we need to update and download the necessary packages. You can do that by typing the following code:
+
+```bash
+sudo apt-get update
+sudo apt-get install lftp
+```
+
+### Question 13: What is the code above doing? Please describe the code and what it is used for.
+
+<textarea id="question13" placeholder="Type your answer here..." class="input-box"></textarea>
+
+Now, we can access the FTP server where the data is located. You will need the server address from the correct FTP-server, which can be found on the site for the accession code XXX in ProteomeXchange, previously visited. At the bottom of the page, you will find the FTP-server address where the data is stored.
+
+### Question 14: Please find the address.
+
+<textarea id="question14" placeholder="Type your answer here..." class="input-box"></textarea>
+
+The address is used for accessing the data used in the study. To do so, we can use the package lftp that we just installed to access the server using the following code:
+
+```bash
+lftp [insert the address of the FTP server here]
+lftp ftp://ftp.......
+```
+
+### Question 15: Now, we have access to the data deposited on the FTP-server. Briefly describe the contents of the folder in the FTP-server.
+
+<textarea id="question15" placeholder="Type your answer here..." class="input-box"></textarea>
+
+
+To download one sample file from each of the Plex Sets, you can use the following code in the terminal:
+
+##### CODE HERE
+
+
+### Question 16: Please describe what the code is doing by explaining the functions used.
+
+<textarea id="question16" placeholder="Type your answer here..." class="input-box"></textarea>
+
+If you added your own private folder to the UCloud session, you could now move the data into that folder for better management of the data you're working with.
+
+Next, we can launch FragPipe, which is located on the desktop. In this tutorial, we are using FragPipe version XX.YY in the June 2024 version of the Proteomics Sandbox Application.
+
+Now that we have launched FragPipe, we need to configure the settings prior to running the analysis. Therefore, we have provided some guiding questions to help you set up the settings in FragPipe:
+
+### Getting started with FragPipe
+Go to the “Workflow” tab to set up the workflow for the analysis and import the data you have just downloaded.
+
+### Question 17: Which workflow should you select? HINT: How many TMT-tags are given in the table in Supplementary Data 1.
+
+<textarea id="question17" placeholder="Type your answer here..." class="input-box"></textarea>
+
+
+Click ‘Load workflow’ after you have found and selected the correct workflow to be used.
+
+Next, add your files by clicking on “Add files” and locate them in the designated folder for your raw files that you previously created.
+
+Now you should relocate to the “Database” tab. Here you can either download or browse for an already preexisting database file. In this case, we will simply download the latest database file.
+
+### Question 18: What is the database file used for in FragPipe and why is it important?
+
+<textarea id="question18" placeholder="Type your answer here..." class="input-box"></textarea>
+
+### Question 19: Which organism should you select for downloading the database file?
+
+<textarea id="question19" placeholder="Type your answer here..." class="input-box"></textarea>
+
+### Question 20: Describe the relation between decoys and FDR by answering these questions:
+- What are decoys?
+- Why should you add decoys?
+- How do decoys play a role in the FDR estimate?
+
+<textarea id="question20" placeholder="Type your answer here..." class="input-box"></textarea>
+
+
+Next, you can go to the MSFragger tab to adjust the parameter settings for the search and matching of the theoretical and experimental peptide spectra.
+
+Most of the settings used for MSFragger can be obtained from the paper *NAME OF PAPER*, which is referred to in the Methods and Materials section.
+
+When all settings have been obtained, MSFragger should look something like this:
+
+### Question 21: What is MSFragger?
+
+<textarea id="question21" placeholder="Type your answer here..." class="input-box"></textarea>
+
+### Question 22: How does MSFragger work?
+
+<textarea id="question22" placeholder="Type your answer here..." class="input-box"></textarea>
+
+### Question 23: Why is it important to run MSFragger for this analysis?
+
+<textarea id="question23" placeholder="Type your answer here..." class="input-box"></textarea>
+
+
+Finally, we can navigate to the “Run” tab and run the analysis. For that, we must choose an output directory for the results of the search made by FragPipe. Once you have adjusted that, you are ready to click on “Run”.
+
+This process might take some time, so make sure that you still have enough hours allocated on your job on UCloud—otherwise, it will get terminated. Meanwhile, you can answer these questions:
+
+### Question 24: What do you expect from the output results? Consider the number of files you have provided for this search.
+
+<textarea id="question24" placeholder="Type your answer here..." class="input-box"></textarea>
+
+### Question 25: Can we use this output based on the limited number of sample files for the downstream analysis? Why/Why not?
+
+<textarea id="question25" placeholder="Type your answer here..." class="input-box"></textarea>
+
+### Question 26: What does it mean that the sample tissues have been fractionated according to *PAPER*? Please describe that process and study design. Will more fractions lead to better proteome coverage?
+
+<textarea id="question26" placeholder="Type your answer here..." class="input-box"></textarea>
+
+
+When the run in FragPipe is done, please locate the output results and get an overview of the output.
+
+### Question 27: What kind of output does FragPipe provide?
+
+<textarea id="question27" placeholder="Type your answer here..." class="input-box"></textarea>
+
+For the downstream analysis, we will use the output from the list of combined proteins, which we will explore further in the following section.
+
+
+## Further Interpretation and Analysis of FragPipe Results
+
+For this part, we will use output files based on a run with FragPipe using all sample files (i.e., 5x72 raw files). That file can be downloaded here??? 
+
+Now, we will look at the output from FragPipe, where we will use the file named `combined_proteins.tsv`. Initially, we will explore the contents of the file locally. Therefore, you should download the file from UCloud and view it locally in a file editor such as Excel.
+
+You can download the file by clicking on the file in your output directory in the UCloud interface, from where you can choose to download it.
+
+### Question 28: Give a brief description of the contents of the table. What does the table contain across the rows and the columns?
+
+<textarea id="question28" placeholder="Type your answer here..." class="input-box"></textarea>
+
+
+For the downstream analysis, we will use the columns containing the TMT intensities across the proteins identified.
+
+
+For that we will use [OmicsQ](https://computproteomics.bmb.sdu.dk/app_direct/OmicsQ/), which is a toolkit for quantitative proteomics.
+OmicsQ can be used to facilitate the processing of quantitative data from Omics type experiments. Additionally, it also serves as an entrypoint for using apps like [PolySTest](https://computproteomics.bmb.sdu.dk/app_direct/PolySTest/) [SCHWAMMLE20201396] for statistical testing, [VSClust](https://computproteomics.bmb.sdu.dk/app_direct/VSClust/) for clustering and [ComplexBrowser](https://computproteomics.bmb.sdu.dk/app_direct/ComplexBrowser/) for the investigation of the behavior of protein complexes.
+
+
+
+### Reading the Data
+
+<!-- Placeholder for future content -->
+
+```{r, echo=TRUE}
+# Set a CRAN mirror
+options(repos = c(CRAN = "https://cran.rstudio.com/"))
+
+# Comment the following line with "#" afterwards 
+install.packages("pheatmap")
+library(pheatmap)
+
+rQuantTable <- read.csv("resources/data/PMC6453966.csv", row.names=1)
+
+# Which columns are there?
+cat("---- Column names: ----\n")
+colnames(rQuantTable)
+
+options(repr.matrix.max.cols = 100)
+head(rQuantTable)
+
+# Take only protein abundances
+# Add correct numbers for first_col and last_col
+first_col <- 34
+last_col <- 34 + 9 * 5
+QuantTable <- rQuantTable[, first_col:last_col]
+
+# Assign tumor types by reading the file PMC6453966TumorTypes.csv
+TCateg <- read.csv("resources/data/PMC6453966TumorTypes.csv")
+cat("---- New column names: ----\n")
+colnames(TCateg)
+colnames(QuantTable) <- paste(TCateg$PAM50.subtype, "Sample", 1:45)
+QuantTable <- QuantTable[, sort(colnames(QuantTable))]
+head(QuantTable)
+```
+
+
+### Visualization of the Data
+
+<!-- Placeholder for future content -->
+
+### Dynamic Range, Similarity, and Missing Values
+
+<!-- Placeholder for future content -->
+
+### Principal Component Analysis
+
+<!-- Placeholder for future content -->
+
+### Hierarchical Clustering
+
+<!-- Placeholder for future content -->
+
+### Digging Deeper into the Behavior of One Protein
+
+<!-- Placeholder for future content -->
+
+### Statistics and Clustering using VSClust
+
+<!-- Placeholder for future content -->
+
+### GO Terms and Pathways
+
+<!-- Placeholder for future content -->
+
+## Personal Details
+
+**Name:**  
+<textarea id="name" placeholder="Type your name here..." class="input-box"></textarea>
+
+**Email:**  
+<textarea id="email" placeholder="Type your email here..." class="input-box"></textarea>
+
+**Course/Program:**  
+<textarea id="course" placeholder="Type your course/program here..." class="input-box"></textarea>
+
+**Date:**  
+<textarea id="date" placeholder="Type the date here..." class="input-box"></textarea>
+
+<button id="downloadBtn" class="download-button">Download Your Answers as PDF</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+
+<script>
+// Function to save answers to localStorage
+function saveAnswers() {
+  for (let i = 1; i <= 3; i++) { // Adjust based on the number of questions
+    const answer = document.getElementById(`question${i}`)?.value || '';
+    localStorage.setItem(`question${i}`, answer);
+  }
+}
+
+// Load answers from localStorage
+for (let i = 1; i <= 3; i++) {
+  const savedAnswer = localStorage.getItem(`question${i}`) || '';
+  if (document.getElementById(`question${i}`)) {
+    document.getElementById(`question${i}`).value = savedAnswer;
+  }
+}
+
+// Automatically resize textareas based on input
+document.querySelectorAll('.input-box').forEach(textarea => {
+  textarea.style.height = 'auto';
+  textarea.style.height = (textarea.scrollHeight) + 'px';
+  textarea.addEventListener('input', function() {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+    saveAnswers();
+  });
+});
+
+// Function to download the answers as a PDF with a more professional layout
+document.getElementById('downloadBtn').addEventListener('click', function() {
+  const answersHTML = `
+    <div style="font-family: Arial, sans-serif; padding: 20px;">
+      <h1 style="text-align: center; font-size: 24px;">Assignment Submission</h1>
+      
+      <h2 style="font-size: 18px; margin-bottom: 5px;">Question 1: Describe the central dogma of molecular biology</h2>
+      <p style="font-size: 14px;">${document.getElementById('question1').value}</p>
+      
+      <h2 style="font-size: 18px; margin-bottom: 5px;">Question 2: Explain how mass spectrometry is used in proteomics</h2>
+      <p style="font-size: 14px;">${document.getElementById('question2').value}</p>
+      
+      <h2 style="font-size: 18px; margin-bottom: 5px;">Question 3: Write a short code example in R or Python to visualize data</h2>
+      <p style="font-size: 14px;">${document.getElementById('question3').value}</p>
+      
+      <!-- Add more questions and answers in the same format -->
+    </div>
+  `;
+
+  const opt = {
+    margin: 1,
+    filename: 'assignment_answers.pdf',
+    image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: { scale: 2 },
+    jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+  };
+
+  html2pdf().from(answersHTML).set(opt).save();
+});
+</script>
+
+<style>
+/* Styling the textarea */
+.input-box {
+  width: 100%;
+  min-height: 120px;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  background-color: #f9f9f9;
+  resize: none;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-box:focus {
+  border-color: #0073e6;
+  box-shadow: 0px 4px 8px rgba(0, 115, 230, 0.2);
+  outline: none;
+}
+
+/* Styling the download button */
+.download-button {
+  background-color: #0073e6;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.download-button:hover {
+  background-color: #005bb5;
+  box-shadow: 0px 4px 8px rgba(0, 115, 230, 0.3);
+}
+</style>
