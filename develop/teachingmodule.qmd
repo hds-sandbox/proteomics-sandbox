@@ -34,7 +34,7 @@ hide:
 
 ## Preliminary work
 
-For this work, we will use the data that was used and analyzed in the paper *[Breast cancer quantitative proteome and proteogenomic landscape](https://www-nature-com.proxy1-bib.sdu.dk/articles/s41467-019-09018-y)* by Johansson *et al.*, which compares subgroups of breast cancer tumors from the Oslo2 cohort.
+For this work, we will use the data that was used and analyzed in the paper *[Breast cancer quantitative proteome and proteogenomic landscape](https://www.nature.com/articles/s41467-019-09018-y)* by Johansson *et al.*, which compares subgroups of breast cancer tumors from the Oslo2 cohort.
 
 Before delving into the actual analysis of the data in FragPipe, we must initially:
 
@@ -57,15 +57,15 @@ Before we proceed and download the data available from the paper, we must first 
 To better understand the supplementary data, we have prepared guiding questions to aid in interpreting the table. You can find the supplementary data in the paper [here](https://www-nature-com.proxy1-bib.sdu.dk/articles/s41467-019-09018-y#Sec15).
 
 <!-- Question 1 -->
-<h3 class="question">Question 1: Give a short description of what the table contains.</h3>
+<h3 class="question">Question 1: Provide a brief description of the content presented in the table.</h3>
 <textarea id="question1" placeholder="Type your answer here..." class="input-box"></textarea>
 
 <!-- Question 2 -->
-<h3 class="question">Question 2: What does the tumor ID indicate?</h3>
+<h3 class="question">Question 2: What information does the tumor ID represent?</h3>
 <textarea id="question2" placeholder="Type your answer here..." class="input-box"></textarea>
 
 <!-- Question 3 -->
-<h3 class="question">Question 3: Provide a brief description of TMT-labelled mass spectrometry proteomics data and how it is experimentally executed.</h3>
+<h3 class="question">Question 3: Briefly describe TMT-labeled mass spectrometry proteomics data and explain the experimental procedure involved.</h3>
 <textarea id="question3" placeholder="Type your answer here..." class="input-box"></textarea>
 
 
@@ -85,86 +85,87 @@ Fill in the table below by entering the corresponding TMT10-tags and Tumor IDs. 
     </tr>
     <tr>
       <td>TMT126</td>
-      <td><input type="text" id="set1_126" name="set1_126" style="width: 100%;"></td>
-      <td><input type="text" id="set2_126" name="set2_126" style="width: 100%;"></td>
-      <td><input type="text" id="set3_126" name="set3_126" style="width: 100%;"></td>
-      <td><input type="text" id="set4_126" name="set4_126" style="width: 100%;"></td>
-      <td><input type="text" id="set5_126" name="set5_126" style="width: 100%;"></td>
+      <td><input type="text" id="set1_126" name="set1_126" class="input-box"></td>
+      <td><input type="text" id="set2_126" name="set2_126" class="input-box"></td>
+      <td><input type="text" id="set3_126" name="set3_126" class="input-box"></td>
+      <td><input type="text" id="set4_126" name="set4_126" class="input-box"></td>
+      <td><input type="text" id="set5_126" name="set5_126" class="input-box"></td>
     </tr>
     <tr>
       <td>TMT127N</td>
-      <td><input type="text" id="set1_127N" name="set1_127N" style="width: 100%;"></td>
-      <td><input type="text" id="set2_127N" name="set2_127N" style="width: 100%;"></td>
-      <td><input type="text" id="set3_127N" name="set3_127N" style="width: 100%;"></td>
-      <td><input type="text" id="set4_127N" name="set4_127N" style="width: 100%;"></td>
-      <td><input type="text" id="set5_127N" name="set5_127N" style="width: 100%;"></td>
+      <td><input type="text" id="set1_127N" name="set1_127N" class="input-box"></td>
+      <td><input type="text" id="set2_127N" name="set2_127N" class="input-box"></td>
+      <td><input type="text" id="set3_127N" name="set3_127N" class="input-box"></td>
+      <td><input type="text" id="set4_127N" name="set4_127N" class="input-box"></td>
+      <td><input type="text" id="set5_127N" name="set5_127N" class="input-box"></td>
     </tr>
     <tr>
       <td>TMT127C</td>
-      <td><input type="text" id="set1_127C" name="set1_127C" style="width: 100%;"></td>
-      <td><input type="text" id="set2_127C" name="set2_127C" style="width: 100%;"></td>
-      <td><input type="text" id="set3_127C" name="set3_127C" style="width: 100%;"></td>
-      <td><input type="text" id="set4_127C" name="set4_127C" style="width: 100%;"></td>
-      <td><input type="text" id="set5_127C" name="set5_127C" style="width: 100%;"></td>
+      <td><input type="text" id="set1_127C" name="set1_127C" class="input-box"></td>
+      <td><input type="text" id="set2_127C" name="set2_127C" class="input-box"></td>
+      <td><input type="text" id="set3_127C" name="set3_127C" class="input-box"></td>
+      <td><input type="text" id="set4_127C" name="set4_127C" class="input-box"></td>
+      <td><input type="text" id="set5_127C" name="set5_127C" class="input-box"></td>
     </tr>
     <tr>
       <td>TMT128N</td>
-      <td><input type="text" id="set1_128N" name="set1_128N" style="width: 100%;"></td>
-      <td><input type="text" id="set2_128N" name="set2_128N" style="width: 100%;"></td>
-      <td><input type="text" id="set3_128N" name="set3_128N" style="width: 100%;"></td>
-      <td><input type="text" id="set4_128N" name="set4_128N" style="width: 100%;"></td>
-      <td><input type="text" id="set5_128N" name="set5_128N" style="width: 100%;"></td>
+      <td><input type="text" id="set1_128N" name="set1_128N" class="input-box"></td>
+      <td><input type="text" id="set2_128N" name="set2_128N" class="input-box"></td>
+      <td><input type="text" id="set3_128N" name="set3_128N" class="input-box"></td>
+      <td><input type="text" id="set4_128N" name="set4_128N" class="input-box"></td>
+      <td><input type="text" id="set5_128N" name="set5_128N" class="input-box"></td>
     </tr>
     <tr>
       <td>TMT128C</td>
-      <td><input type="text" id="set1_128C" name="set1_128C" style="width: 100%;"></td>
-      <td><input type="text" id="set2_128C" name="set2_128C" style="width: 100%;"></td>
-      <td><input type="text" id="set3_128C" name="set3_128C" style="width: 100%;"></td>
-      <td><input type="text" id="set4_128C" name="set4_128C" style="width: 100%;"></td>
-      <td><input type="text" id="set5_128C" name="set5_128C" style="width: 100%;"></td>
+      <td><input type="text" id="set1_128C" name="set1_128C" class="input-box"></td>
+      <td><input type="text" id="set2_128C" name="set2_128C" class="input-box"></td>
+      <td><input type="text" id="set3_128C" name="set3_128C" class="input-box"></td>
+      <td><input type="text" id="set4_128C" name="set4_128C" class="input-box"></td>
+      <td><input type="text" id="set5_128C" name="set5_128C" class="input-box"></td>
     </tr>
     <tr>
       <td>TMT129N</td>
-      <td><input type="text" id="set1_129N" name="set1_129N" style="width: 100%;"></td>
-      <td><input type="text" id="set2_129N" name="set2_129N" style="width: 100%;"></td>
-      <td><input type="text" id="set3_129N" name="set3_129N" style="width: 100%;"></td>
-      <td><input type="text" id="set4_129N" name="set4_129N" style="width: 100%;"></td>
-      <td><input type="text" id="set5_129N" name="set5_129N" style="width: 100%;"></td>
+      <td><input type="text" id="set1_129N" name="set1_129N" class="input-box"></td>
+      <td><input type="text" id="set2_129N" name="set2_129N" class="input-box"></td>
+      <td><input type="text" id="set3_129N" name="set3_129N" class="input-box"></td>
+      <td><input type="text" id="set4_129N" name="set4_129N" class="input-box"></td>
+      <td><input type="text" id="set5_129N" name="set5_129N" class="input-box"></td>
     </tr>
     <tr>
       <td>TMT129C</td>
-      <td><input type="text" id="set1_129C" name="set1_129C" style="width: 100%;"></td>
-      <td><input type="text" id="set2_129C" name="set2_129C" style="width: 100%;"></td>
-      <td><input type="text" id="set3_129C" name="set3_129C" style="width: 100%;"></td>
-      <td><input type="text" id="set4_129C" name="set4_129C" style="width: 100%;"></td>
-      <td><input type="text" id="set5_129C" name="set5_129C" style="width: 100%;"></td>
+      <td><input type="text" id="set1_129C" name="set1_129C" class="input-box"></td>
+      <td><input type="text" id="set2_129C" name="set2_129C" class="input-box"></td>
+      <td><input type="text" id="set3_129C" name="set3_129C" class="input-box"></td>
+      <td><input type="text" id="set4_129C" name="set4_129C" class="input-box"></td>
+      <td><input type="text" id="set5_129C" name="set5_129C" class="input-box"></td>
     </tr>
     <tr>
       <td>TMT130N</td>
-      <td><input type="text" id="set1_130N" name="set1_130N" style="width: 100%;"></td>
-      <td><input type="text" id="set2_130N" name="set2_130N" style="width: 100%;"></td>
-      <td><input type="text" id="set3_130N" name="set3_130N" style="width: 100%;"></td>
-      <td><input type="text" id="set4_130N" name="set4_130N" style="width: 100%;"></td>
-      <td><input type="text" id="set5_130N" name="set5_130N" style="width: 100%;"></td>
+      <td><input type="text" id="set1_130N" name="set1_130N" class="input-box"></td>
+      <td><input type="text" id="set2_130N" name="set2_130N" class="input-box"></td>
+      <td><input type="text" id="set3_130N" name="set3_130N" class="input-box"></td>
+      <td><input type="text" id="set4_130N" name="set4_130N" class="input-box"></td>
+      <td><input type="text" id="set5_130N" name="set5_130N" class="input-box"></td>
     </tr>
     <tr>
       <td>TMT130C</td>
-      <td><input type="text" id="set1_130C" name="set1_130C" style="width: 100%;"></td>
-      <td><input type="text" id="set2_130C" name="set2_130C" style="width: 100%;"></td>
-      <td><input type="text" id="set3_130C" name="set3_130C" style="width: 100%;"></td>
-      <td><input type="text" id="set4_130C" name="set4_130C" style="width: 100%;"></td>
-      <td><input type="text" id="set5_130C" name="set5_130C" style="width: 100%;"></td>
+      <td><input type="text" id="set1_130C" name="set1_130C" class="input-box"></td>
+      <td><input type="text" id="set2_130C" name="set2_130C" class="input-box"></td>
+      <td><input type="text" id="set3_130C" name="set3_130C" class="input-box"></td>
+      <td><input type="text" id="set4_130C" name="set4_130C" class="input-box"></td>
+      <td><input type="text" id="set5_130C" name="set5_130C" class="input-box"></td>
     </tr>
     <tr>
       <td>TMT131</td>
-      <td><input type="text" id="set1_131" name="set1_131" style="width: 100%;"></td>
-      <td><input type="text" id="set2_131" name="set2_131" style="width: 100%;"></td>
-      <td><input type="text" id="set3_131" name="set3_131" style="width: 100%;"></td>
-      <td><input type="text" id="set4_131" name="set4_131" style="width: 100%;"></td>
-      <td><input type="text" id="set5_131" name="set5_131" style="width: 100%;"></td>
+      <td><input type="text" id="set1_131" name="set1_131" class="input-box"></td>
+      <td><input type="text" id="set2_131" name="set2_131" class="input-box"></td>
+      <td><input type="text" id="set3_131" name="set3_131" class="input-box"></td>
+      <td><input type="text" id="set4_131" name="set4_131" class="input-box"></td>
+      <td><input type="text" id="set5_131" name="set5_131" class="input-box"></td>
     </tr>
   </table>
-  <button type="button" onclick="checkAnswers()">Submit</button>
+  <button type="button" onclick="checkAnswers()" class="download-button">Submit</button>
+  <button type="button" onclick="downloadFiles()" class="download-button">Download Annotation Files</button>
 </form>
 
 <p id="feedback"></p>
@@ -185,6 +186,7 @@ Fill in the table below by entering the corresponding TMT10-tags and Tumor IDs. 
   };
 
   function checkAnswers() {
+    // Check user answers and highlight input fields
     for (const [id, correctAnswer] of Object.entries(correctAnswers)) {
       const input = document.getElementById(id);
       const userAnswer = input.value.trim();
@@ -196,15 +198,42 @@ Fill in the table below by entering the corresponding TMT10-tags and Tumor IDs. 
       }
     }
   }
+
+  function downloadFiles() {
+    const sets = ['set1', 'set2', 'set3', 'set4', 'set5'];
+    const tmtLabels = ['TMT126', 'TMT127N', 'TMT127C', 'TMT128N', 'TMT128C',
+                       'TMT129N', 'TMT129C', 'TMT130N', 'TMT130C', 'TMT131'];
+
+    sets.forEach((set) => {
+      let content = '';
+      
+      // Iterate over each TMT label
+      tmtLabels.forEach(label => {
+        const input = document.getElementById(`${set}_${label.slice(-3)}`) || document.getElementById(`${set}_${label.slice(-3, -1)}N`) || document.getElementById(`${set}_${label.slice(-3, -1)}C`);
+        const userAnswer = input ? input.value.trim() : '';
+        content += `${label}\t${userAnswer}\n`;
+      });
+
+      const blob = new Blob([content], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `${set}_annotation.txt`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url); // Cleanup
+    });
+  }
 </script>
 
-
-### Question 4: What is in TMT131?
-
+<!-- Question 4 -->
+<h3 class="question">Question 4: What is in TMT131?</h3>
 <textarea id="question4" placeholder="Type your answer here..." class="input-box"></textarea>
 
-### Question 5: What is the purpose of having such a sample?
 
+<!-- Question 5 -->
+<h3 class="question">Question 5: What is the purpose of using this type of sample?</h3>
 <textarea id="question5" placeholder="Type your answer here..." class="input-box"></textarea>
 
 
@@ -216,25 +245,23 @@ Now that we better understand the workflow of the study and the content of the d
 
 In this section of the teaching module, we will work with data from the paper. The first task is to download sample files from the paper, guided by the questions provided below:
 
-### Question 6: Where is the data located?
-
+<!-- Question 6 -->
+<h3 class="question">Question 6: Where can the data be found?</h3>
 <textarea id="question6" placeholder="Type your answer here..." class="input-box"></textarea>
 
-### Question 7: What is the ProteomeXChange database?
-
+<!-- Question 7 -->
+<h3 class="question">Question 7: What is the ProteomeXChange database?</h3>
 <textarea id="question7" placeholder="Type your answer here..." class="input-box"></textarea>
 
-### Question 8: What is the accession code used for the data deposited in ProteomeXChange?
-
+<!-- Question 8 -->
+<h3 class="question">Question 8: What accession code is used for the data deposited in ProteomeXChange?</h3>
 <textarea id="question8" placeholder="Type your answer here..." class="input-box"></textarea>
-
 
 By examining the accession code for the data deposited on ProteomeXChange, we can access and download the data using FTP.
 
-### Question 9: What is FTP, and how does it work?
-
+<!-- Question 9 -->
+<h3 class="question">Question 9: What is FTP, and what is its functionality?</h3>
 <textarea id="question9" placeholder="Type your answer here..." class="input-box"></textarea>
-
 
 For downloading the data, we will use the **Proteomics Sandbox Application** on UCloud. This platform allows us to access the necessary storage capacity as well as the computational power required to execute this process.
 
@@ -244,16 +271,16 @@ You can find the **Proteomics Sandbox Application** on UCloud [here](https://clo
 
 First, we will download the data for the sample files to be used in **FragPipe**. Then, we will launch **FragPipe** to run the first analysis of the data. Before doing so, we have some questions regarding **FragPipe** and its usability:
 
-### Question 10: What is FragPipe, and what can it be used for?
-
+<!-- Question 10 -->
+<h3 class="question">Question 10: What is FragPipe, and what are its applications?</h3>
 <textarea id="question10" placeholder="Type your answer here..." class="input-box"></textarea>
 
-### Question 11: If you were not using FragPipe for this part of the teaching module, which other software tools could be used instead? Please include a few examples.
-
+<!-- Question 11 -->
+<h3 class="question">Question 11: If FragPipe were not used for this part of the teaching module, which alternative software tools could be employed? Please provide a few examples.</h3>
 <textarea id="question11" placeholder="Type your answer here..." class="input-box"></textarea>
 
-### Question 12: What are the advantages of using FragPipe?
-
+<!-- Question 12 -->
+<h3 class="question">Question 12: What are the benefits of using FragPipe?</h3>
 <textarea id="question12" placeholder="Type your answer here..." class="input-box"></textarea>
 
 
@@ -285,14 +312,14 @@ sudo apt-get update
 sudo apt-get install lftp
 ```
 
-### Question 13: What is the code above doing? Please describe the code and what it is used for.
-
+<!-- Question 13 -->
+<h3 class="question">Question 13: What does the code above do? Please explain its functionality and purpose.</h3>
 <textarea id="question13" placeholder="Type your answer here..." class="input-box"></textarea>
 
 Now, we can access the FTP server where the data is located. You will need the server address from the correct FTP-server, which can be found on the site for the accession code XXX in ProteomeXchange, previously visited. At the bottom of the page, you will find the FTP-server address where the data is stored.
 
-### Question 14: Please find the address.
-
+<!-- Question 14 -->
+<h3 class="question">Question 14: Please locate the address.</h3>
 <textarea id="question14" placeholder="Type your answer here..." class="input-box"></textarea>
 
 The address is used for accessing the data used in the study. To do so, we can use the package lftp that we just installed to access the server using the following code:
@@ -302,18 +329,16 @@ lftp [insert the address of the FTP server here]
 lftp ftp://ftp.......
 ```
 
-### Question 15: Now, we have access to the data deposited on the FTP-server. Briefly describe the contents of the folder in the FTP-server.
-
+<!-- Question 15 -->
+<h3 class="question">Question 15: We now have access to the data stored on the FTP server. Please provide a brief description of the contents of the folder on the FTP server.</h3>
 <textarea id="question15" placeholder="Type your answer here..." class="input-box"></textarea>
-
 
 To download one sample file from each of the Plex Sets, you can use the following code in the terminal:
 
 ##### CODE HERE
 
-
-### Question 16: Please describe what the code is doing by explaining the functions used.
-
+<!-- Question 16 -->
+<h3 class="question">Question 16: Please explain what the code is doing by describing the functions used.</h3>
 <textarea id="question16" placeholder="Type your answer here..." class="input-box"></textarea>
 
 If you added your own private folder to the UCloud session, you could now move the data into that folder for better management of the data you're working with.
@@ -325,10 +350,9 @@ Now that we have launched FragPipe, we need to configure the settings prior to r
 ### Getting started with FragPipe
 Go to the “Workflow” tab to set up the workflow for the analysis and import the data you have just downloaded.
 
-### Question 17: Which workflow should you select? HINT: How many TMT-tags are given in the table in Supplementary Data 1.
-
+<!-- Question 17 -->
+<h3 class="question">Question 17: Which workflow should you select? HINT: How many TMT tags are listed in the table in Supplementary Data 1?</h3>
 <textarea id="question17" placeholder="Type your answer here..." class="input-box"></textarea>
-
 
 Click ‘Load workflow’ after you have found and selected the correct workflow to be used.
 
@@ -336,20 +360,23 @@ Next, add your files by clicking on “Add files” and locate them in the desig
 
 Now you should relocate to the “Database” tab. Here you can either download or browse for an already preexisting database file. In this case, we will simply download the latest database file.
 
-### Question 18: What is the database file used for in FragPipe and why is it important?
-
+<!-- Question 18 -->
+<h3 class="question">Question 18: What is the purpose of the database file used in FragPipe, and why is it important?</h3>
 <textarea id="question18" placeholder="Type your answer here..." class="input-box"></textarea>
 
-### Question 19: Which organism should you select for downloading the database file?
-
+<!-- Question 19 -->
+<h3 class="question">Question 19: Which organism should you choose when downloading the database file?</h3>
 <textarea id="question19" placeholder="Type your answer here..." class="input-box"></textarea>
 
-### Question 20: Describe the relation between decoys and FDR by answering these questions:
-- What are decoys?
-- Why should you add decoys?
-- How do decoys play a role in the FDR estimate?
-
+<!-- Question 20 -->
+<h3 class="question">Question 20: Describe the relationship between decoys and false discovery rate (FDR) by answering the following questions:</h3>
+<ul>
+    <li>What are decoys?</li>
+    <li>Why should you include decoys?</li>
+    <li>What role do decoys play in estimating the FDR?</li>
+</ul>
 <textarea id="question20" placeholder="Type your answer here..." class="input-box"></textarea>
+
 
 
 Next, you can go to the MSFragger tab to adjust the parameter settings for the search and matching of the theoretical and experimental peptide spectra.
@@ -358,40 +385,43 @@ Most of the settings used for MSFragger can be obtained from the paper *NAME OF 
 
 When all settings have been obtained, MSFragger should look something like this:
 
-### Question 21: What is MSFragger?
-
+<!-- Question 21 -->
+<h3 class="question">Question 21: What is MSFragger?</h3>
 <textarea id="question21" placeholder="Type your answer here..." class="input-box"></textarea>
 
-### Question 22: How does MSFragger work?
-
+<!-- Question 22 -->
+<h3 class="question">Question 22: How does MSFragger operate?</h3>
 <textarea id="question22" placeholder="Type your answer here..." class="input-box"></textarea>
 
-### Question 23: Why is it important to run MSFragger for this analysis?
-
+<!-- Question 23 -->
+<h3 class="question">Question 23: Why is it essential to run MSFragger for this analysis?</h3>
 <textarea id="question23" placeholder="Type your answer here..." class="input-box"></textarea>
-
 
 Finally, we can navigate to the “Run” tab and run the analysis. For that, we must choose an output directory for the results of the search made by FragPipe. Once you have adjusted that, you are ready to click on “Run”.
 
 This process might take some time, so make sure that you still have enough hours allocated on your job on UCloud—otherwise, it will get terminated. Meanwhile, you can answer these questions:
 
-### Question 24: What do you expect from the output results? Consider the number of files you have provided for this search.
-
+<!-- Question 24 -->
+<h3 class="question">Question 24: What are your expectations regarding the output results? Consider the implications of the number of files provided for this search in your response.</h3>
 <textarea id="question24" placeholder="Type your answer here..." class="input-box"></textarea>
 
-### Question 25: Can we use this output based on the limited number of sample files for the downstream analysis? Why/Why not?
-
+<!-- Question 25 -->
+<h3 class="question">Question 25: Can the output from this analysis be reliably used for downstream applications given the limited number of sample files? Justify your answer.</h3>
 <textarea id="question25" placeholder="Type your answer here..." class="input-box"></textarea>
 
-### Question 26: What does it mean that the sample tissues have been fractionated according to *PAPER*? Please describe that process and study design. Will more fractions lead to better proteome coverage?
-
+<!-- Question 26 -->
+<h3 class="question">Question 26: What does it signify that the sample tissues have been fractionated as described in *PAPER*?</h3>
+<ul>
+    <li>Outline the fractionation process utilized.</li>
+    <li>Explain the study design associated with this research.</li>
+    <li>In your opinion, will increasing the number of fractions improve proteome coverage? Justify your reasoning.</li>
+</ul>
 <textarea id="question26" placeholder="Type your answer here..." class="input-box"></textarea>
-
 
 When the run in FragPipe is done, please locate the output results and get an overview of the output.
 
-### Question 27: What kind of output does FragPipe provide?
-
+<!-- Question 27 -->
+<h3 class="question">Question 27: What types of output are generated by FragPipe?</h3>
 <textarea id="question27" placeholder="Type your answer here..." class="input-box"></textarea>
 
 For the downstream analysis, we will use the output from the list of combined proteins, which we will explore further in the following section.
@@ -405,8 +435,8 @@ Now, we will look at the output from FragPipe, where we will use the file named 
 
 You can download the file by clicking on the file in your output directory in the UCloud interface, from where you can choose to download it.
 
-### Question 28: Give a brief description of the contents of the table. What does the table contain across the rows and the columns?
-
+<!-- Question 28 -->
+<h3 class="question">Question 28: Provide a concise overview of the table's contents. What information is represented in the rows and columns?</h3>
 <textarea id="question28" placeholder="Type your answer here..." class="input-box"></textarea>
 
 
@@ -416,44 +446,19 @@ For the downstream analysis, we will use the columns containing the TMT intensit
 For that we will use [OmicsQ](https://computproteomics.bmb.sdu.dk/app_direct/OmicsQ/), which is a toolkit for quantitative proteomics.
 OmicsQ can be used to facilitate the processing of quantitative data from Omics type experiments. Additionally, it also serves as an entrypoint for using apps like [PolySTest](https://computproteomics.bmb.sdu.dk/app_direct/PolySTest/) [SCHWAMMLE20201396] for statistical testing, [VSClust](https://computproteomics.bmb.sdu.dk/app_direct/VSClust/) for clustering and [ComplexBrowser](https://computproteomics.bmb.sdu.dk/app_direct/ComplexBrowser/) for the investigation of the behavior of protein complexes.
 
+# Data screening, multi-variate analysis and clustering
+
+For the downstream workflow, we will follow the tutorial from the Jupyter Notebook embedded below.
+
+<iframe src="https://nbviewer.jupyter.org/github/veitveit/training-quantitative-proteomics/blob/main/03_Cluster_Analysis/Multivariate%20analysis.ipynb" 
+        width="100%" 
+        height="1200px">
+</iframe>
 
 
 ### Reading the Data
 
 <!-- Placeholder for future content -->
-
-```{r, echo=TRUE}
-# Set a CRAN mirror
-options(repos = c(CRAN = "https://cran.rstudio.com/"))
-
-# Comment the following line with "#" afterwards 
-install.packages("pheatmap")
-library(pheatmap)
-
-rQuantTable <- read.csv("resources/data/PMC6453966.csv", row.names=1)
-
-# Which columns are there?
-cat("---- Column names: ----\n")
-colnames(rQuantTable)
-
-options(repr.matrix.max.cols = 100)
-head(rQuantTable)
-
-# Take only protein abundances
-# Add correct numbers for first_col and last_col
-first_col <- 34
-last_col <- 34 + 9 * 5
-QuantTable <- rQuantTable[, first_col:last_col]
-
-# Assign tumor types by reading the file PMC6453966TumorTypes.csv
-TCateg <- read.csv("resources/data/PMC6453966TumorTypes.csv")
-cat("---- New column names: ----\n")
-colnames(TCateg)
-colnames(QuantTable) <- paste(TCateg$PAM50.subtype, "Sample", 1:45)
-QuantTable <- QuantTable[, sort(colnames(QuantTable))]
-head(QuantTable)
-```
-
 
 ### Visualization of the Data
 
@@ -504,18 +509,21 @@ head(QuantTable)
 <script>
 // Function to save answers to localStorage
 function saveAnswers() {
-  for (let i = 1; i <= 3; i++) { // Adjust based on the number of questions
-    const answer = document.getElementById(`question${i}`)?.value || '';
-    localStorage.setItem(`question${i}`, answer);
-  }
+  // Select all textareas
+  const textareas = document.querySelectorAll('textarea[id^="question"]');
+  textareas.forEach(textarea => {
+    const answer = textarea.value || '';
+    localStorage.setItem(textarea.id, answer);
+  });
 }
 
 // Load answers from localStorage
-for (let i = 1; i <= 3; i++) {
-  const savedAnswer = localStorage.getItem(`question${i}`) || '';
-  if (document.getElementById(`question${i}`)) {
-    document.getElementById(`question${i}`).value = savedAnswer;
-  }
+function loadAnswers() {
+  const textareas = document.querySelectorAll('textarea[id^="question"]');
+  textareas.forEach(textarea => {
+    const savedAnswer = localStorage.getItem(textarea.id) || '';
+    textarea.value = savedAnswer;
+  });
 }
 
 // Automatically resize textareas based on input
@@ -531,22 +539,24 @@ document.querySelectorAll('.input-box').forEach(textarea => {
 
 // Function to download the answers as a PDF with a more professional layout
 document.getElementById('downloadBtn').addEventListener('click', function() {
-  const answersHTML = `
+  const questions = document.querySelectorAll('.question');
+  let answersHTML = `
     <div style="font-family: Arial, sans-serif; padding: 20px;">
       <h1 style="text-align: center; font-size: 24px;">Assignment Submission</h1>
-      
-      <h2 style="font-size: 18px; margin-bottom: 5px;">Question 1: Describe the central dogma of molecular biology</h2>
-      <p style="font-size: 14px;">${document.getElementById('question1').value}</p>
-      
-      <h2 style="font-size: 18px; margin-bottom: 5px;">Question 2: Explain how mass spectrometry is used in proteomics</h2>
-      <p style="font-size: 14px;">${document.getElementById('question2').value}</p>
-      
-      <h2 style="font-size: 18px; margin-bottom: 5px;">Question 3: Write a short code example in R or Python to visualize data</h2>
-      <p style="font-size: 14px;">${document.getElementById('question3').value}</p>
-      
-      <!-- Add more questions and answers in the same format -->
-    </div>
   `;
+
+  questions.forEach((question, index) => {
+    const questionNumber = index + 1; // Incrementing index for question number
+    const questionText = question.innerHTML; // Get the question text
+    const answerText = document.getElementById(`question${questionNumber}`).value; // Get the corresponding answer
+
+    answersHTML += `
+      <h2 style="font-size: 18px; margin-bottom: 5px;">${questionText}</h2>
+      <p style="font-size: 14px;">${answerText || 'No answer provided'}</p>
+    `;
+  });
+
+  answersHTML += `</div>`; // Closing the div
 
   const opt = {
     margin: 1,
@@ -558,6 +568,9 @@ document.getElementById('downloadBtn').addEventListener('click', function() {
 
   html2pdf().from(answersHTML).set(opt).save();
 });
+
+// Load answers when the page loads
+window.onload = loadAnswers;
 </script>
 
 <style>
@@ -599,5 +612,33 @@ document.getElementById('downloadBtn').addEventListener('click', function() {
 .download-button:hover {
   background-color: #005bb5;
   box-shadow: 0px 4px 8px rgba(0, 115, 230, 0.3);
+}
+
+.input-box {
+  width: 100%;
+  min-height: 40px; /* Adjusted for input height */
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: 1px solid #ccc; /* Ensure consistent border */
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 16px; /* Ensure consistent font size */
+  box-sizing: border-box; /* Ensures padding is included in total width */
+}
+
+.download-button {
+  background-color: #007bff; /* Blue button */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.download-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
 }
 </style>

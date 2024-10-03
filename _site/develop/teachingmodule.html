@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Jacob Fredegaard Hansen">
-<meta name="dcterms.date" content="2024-10-01">
+<meta name="dcterms.date" content="2024-10-03">
 <meta name="description" content="Outline for clinical proteomics">
 
 <title>Clinical Proteomics - Breast Cancer Proteomics Module</title>
@@ -124,41 +124,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#questions-for-understanding-the-paper" id="toc-questions-for-understanding-the-paper" class="nav-link" data-scroll-target="#questions-for-understanding-the-paper">Questions for Understanding the Paper</a></li>
   <li><a href="#supplementary-data" id="toc-supplementary-data" class="nav-link" data-scroll-target="#supplementary-data">Supplementary Data</a></li>
-  <li><a href="#question-4-what-is-in-tmt131" id="toc-question-4-what-is-in-tmt131" class="nav-link" data-scroll-target="#question-4-what-is-in-tmt131">Question 4: What is in TMT131?</a></li>
-  <li><a href="#question-5-what-is-the-purpose-of-having-such-a-sample" id="toc-question-5-what-is-the-purpose-of-having-such-a-sample" class="nav-link" data-scroll-target="#question-5-what-is-the-purpose-of-having-such-a-sample">Question 5: What is the purpose of having such a sample?</a></li>
   </ul></li>
-  <li><a href="#analysis-of-ms-data-using-fragpipe" id="toc-analysis-of-ms-data-using-fragpipe" class="nav-link" data-scroll-target="#analysis-of-ms-data-using-fragpipe">Analysis of MS Data Using FragPipe</a>
-  <ul class="collapse">
-  <li><a href="#question-6-where-is-the-data-located" id="toc-question-6-where-is-the-data-located" class="nav-link" data-scroll-target="#question-6-where-is-the-data-located">Question 6: Where is the data located?</a></li>
-  <li><a href="#question-7-what-is-the-proteomexchange-database" id="toc-question-7-what-is-the-proteomexchange-database" class="nav-link" data-scroll-target="#question-7-what-is-the-proteomexchange-database">Question 7: What is the ProteomeXChange database?</a></li>
-  <li><a href="#question-8-what-is-the-accession-code-used-for-the-data-deposited-in-proteomexchange" id="toc-question-8-what-is-the-accession-code-used-for-the-data-deposited-in-proteomexchange" class="nav-link" data-scroll-target="#question-8-what-is-the-accession-code-used-for-the-data-deposited-in-proteomexchange">Question 8: What is the accession code used for the data deposited in ProteomeXChange?</a></li>
-  <li><a href="#question-9-what-is-ftp-and-how-does-it-work" id="toc-question-9-what-is-ftp-and-how-does-it-work" class="nav-link" data-scroll-target="#question-9-what-is-ftp-and-how-does-it-work">Question 9: What is FTP, and how does it work?</a></li>
-  <li><a href="#question-10-what-is-fragpipe-and-what-can-it-be-used-for" id="toc-question-10-what-is-fragpipe-and-what-can-it-be-used-for" class="nav-link" data-scroll-target="#question-10-what-is-fragpipe-and-what-can-it-be-used-for">Question 10: What is FragPipe, and what can it be used for?</a></li>
-  <li><a href="#question-11-if-you-were-not-using-fragpipe-for-this-part-of-the-teaching-module-which-other-software-tools-could-be-used-instead-please-include-a-few-examples." id="toc-question-11-if-you-were-not-using-fragpipe-for-this-part-of-the-teaching-module-which-other-software-tools-could-be-used-instead-please-include-a-few-examples." class="nav-link" data-scroll-target="#question-11-if-you-were-not-using-fragpipe-for-this-part-of-the-teaching-module-which-other-software-tools-could-be-used-instead-please-include-a-few-examples.">Question 11: If you were not using FragPipe for this part of the teaching module, which other software tools could be used instead? Please include a few examples.</a></li>
-  <li><a href="#question-12-what-are-the-advantages-of-using-fragpipe" id="toc-question-12-what-are-the-advantages-of-using-fragpipe" class="nav-link" data-scroll-target="#question-12-what-are-the-advantages-of-using-fragpipe">Question 12: What are the advantages of using FragPipe?</a></li>
-  </ul></li>
+  <li><a href="#analysis-of-ms-data-using-fragpipe" id="toc-analysis-of-ms-data-using-fragpipe" class="nav-link" data-scroll-target="#analysis-of-ms-data-using-fragpipe">Analysis of MS Data Using FragPipe</a></li>
   <li><a href="#download-data-from-the-paper" id="toc-download-data-from-the-paper" class="nav-link" data-scroll-target="#download-data-from-the-paper">Download Data from the Paper</a>
   <ul class="collapse">
-  <li><a href="#question-13-what-is-the-code-above-doing-please-describe-the-code-and-what-it-is-used-for." id="toc-question-13-what-is-the-code-above-doing-please-describe-the-code-and-what-it-is-used-for." class="nav-link" data-scroll-target="#question-13-what-is-the-code-above-doing-please-describe-the-code-and-what-it-is-used-for.">Question 13: What is the code above doing? Please describe the code and what it is used for.</a></li>
-  <li><a href="#question-14-please-find-the-address." id="toc-question-14-please-find-the-address." class="nav-link" data-scroll-target="#question-14-please-find-the-address.">Question 14: Please find the address.</a></li>
-  <li><a href="#question-15-now-we-have-access-to-the-data-deposited-on-the-ftp-server.-briefly-describe-the-contents-of-the-folder-in-the-ftp-server." id="toc-question-15-now-we-have-access-to-the-data-deposited-on-the-ftp-server.-briefly-describe-the-contents-of-the-folder-in-the-ftp-server." class="nav-link" data-scroll-target="#question-15-now-we-have-access-to-the-data-deposited-on-the-ftp-server.-briefly-describe-the-contents-of-the-folder-in-the-ftp-server.">Question 15: Now, we have access to the data deposited on the FTP-server. Briefly describe the contents of the folder in the FTP-server.</a></li>
-  <li><a href="#question-16-please-describe-what-the-code-is-doing-by-explaining-the-functions-used." id="toc-question-16-please-describe-what-the-code-is-doing-by-explaining-the-functions-used." class="nav-link" data-scroll-target="#question-16-please-describe-what-the-code-is-doing-by-explaining-the-functions-used.">Question 16: Please describe what the code is doing by explaining the functions used.</a></li>
   <li><a href="#getting-started-with-fragpipe" id="toc-getting-started-with-fragpipe" class="nav-link" data-scroll-target="#getting-started-with-fragpipe">Getting started with FragPipe</a></li>
-  <li><a href="#question-17-which-workflow-should-you-select-hint-how-many-tmt-tags-are-given-in-the-table-in-supplementary-data-1." id="toc-question-17-which-workflow-should-you-select-hint-how-many-tmt-tags-are-given-in-the-table-in-supplementary-data-1." class="nav-link" data-scroll-target="#question-17-which-workflow-should-you-select-hint-how-many-tmt-tags-are-given-in-the-table-in-supplementary-data-1.">Question 17: Which workflow should you select? HINT: How many TMT-tags are given in the table in Supplementary Data 1.</a></li>
-  <li><a href="#question-18-what-is-the-database-file-used-for-in-fragpipe-and-why-is-it-important" id="toc-question-18-what-is-the-database-file-used-for-in-fragpipe-and-why-is-it-important" class="nav-link" data-scroll-target="#question-18-what-is-the-database-file-used-for-in-fragpipe-and-why-is-it-important">Question 18: What is the database file used for in FragPipe and why is it important?</a></li>
-  <li><a href="#question-19-which-organism-should-you-select-for-downloading-the-database-file" id="toc-question-19-which-organism-should-you-select-for-downloading-the-database-file" class="nav-link" data-scroll-target="#question-19-which-organism-should-you-select-for-downloading-the-database-file">Question 19: Which organism should you select for downloading the database file?</a></li>
-  <li><a href="#question-20-describe-the-relation-between-decoys-and-fdr-by-answering-these-questions" id="toc-question-20-describe-the-relation-between-decoys-and-fdr-by-answering-these-questions" class="nav-link" data-scroll-target="#question-20-describe-the-relation-between-decoys-and-fdr-by-answering-these-questions">Question 20: Describe the relation between decoys and FDR by answering these questions:</a></li>
-  <li><a href="#question-21-what-is-msfragger" id="toc-question-21-what-is-msfragger" class="nav-link" data-scroll-target="#question-21-what-is-msfragger">Question 21: What is MSFragger?</a></li>
-  <li><a href="#question-22-how-does-msfragger-work" id="toc-question-22-how-does-msfragger-work" class="nav-link" data-scroll-target="#question-22-how-does-msfragger-work">Question 22: How does MSFragger work?</a></li>
-  <li><a href="#question-23-why-is-it-important-to-run-msfragger-for-this-analysis" id="toc-question-23-why-is-it-important-to-run-msfragger-for-this-analysis" class="nav-link" data-scroll-target="#question-23-why-is-it-important-to-run-msfragger-for-this-analysis">Question 23: Why is it important to run MSFragger for this analysis?</a></li>
-  <li><a href="#question-24-what-do-you-expect-from-the-output-results-consider-the-number-of-files-you-have-provided-for-this-search." id="toc-question-24-what-do-you-expect-from-the-output-results-consider-the-number-of-files-you-have-provided-for-this-search." class="nav-link" data-scroll-target="#question-24-what-do-you-expect-from-the-output-results-consider-the-number-of-files-you-have-provided-for-this-search.">Question 24: What do you expect from the output results? Consider the number of files you have provided for this search.</a></li>
-  <li><a href="#question-25-can-we-use-this-output-based-on-the-limited-number-of-sample-files-for-the-downstream-analysis-whywhy-not" id="toc-question-25-can-we-use-this-output-based-on-the-limited-number-of-sample-files-for-the-downstream-analysis-whywhy-not" class="nav-link" data-scroll-target="#question-25-can-we-use-this-output-based-on-the-limited-number-of-sample-files-for-the-downstream-analysis-whywhy-not">Question 25: Can we use this output based on the limited number of sample files for the downstream analysis? Why/Why not?</a></li>
-  <li><a href="#question-26-what-does-it-mean-that-the-sample-tissues-have-been-fractionated-according-to-paper-please-describe-that-process-and-study-design.-will-more-fractions-lead-to-better-proteome-coverage" id="toc-question-26-what-does-it-mean-that-the-sample-tissues-have-been-fractionated-according-to-paper-please-describe-that-process-and-study-design.-will-more-fractions-lead-to-better-proteome-coverage" class="nav-link" data-scroll-target="#question-26-what-does-it-mean-that-the-sample-tissues-have-been-fractionated-according-to-paper-please-describe-that-process-and-study-design.-will-more-fractions-lead-to-better-proteome-coverage">Question 26: What does it mean that the sample tissues have been fractionated according to <em>PAPER</em>? Please describe that process and study design. Will more fractions lead to better proteome coverage?</a></li>
-  <li><a href="#question-27-what-kind-of-output-does-fragpipe-provide" id="toc-question-27-what-kind-of-output-does-fragpipe-provide" class="nav-link" data-scroll-target="#question-27-what-kind-of-output-does-fragpipe-provide">Question 27: What kind of output does FragPipe provide?</a></li>
   </ul></li>
-  <li><a href="#further-interpretation-and-analysis-of-fragpipe-results" id="toc-further-interpretation-and-analysis-of-fragpipe-results" class="nav-link" data-scroll-target="#further-interpretation-and-analysis-of-fragpipe-results">Further Interpretation and Analysis of FragPipe Results</a>
+  <li><a href="#further-interpretation-and-analysis-of-fragpipe-results" id="toc-further-interpretation-and-analysis-of-fragpipe-results" class="nav-link" data-scroll-target="#further-interpretation-and-analysis-of-fragpipe-results">Further Interpretation and Analysis of FragPipe Results</a></li>
+  <li><a href="#data-screening-multi-variate-analysis-and-clustering" id="toc-data-screening-multi-variate-analysis-and-clustering" class="nav-link" data-scroll-target="#data-screening-multi-variate-analysis-and-clustering">Data screening, multi-variate analysis and clustering</a>
   <ul class="collapse">
-  <li><a href="#question-28-give-a-brief-description-of-the-contents-of-the-table.-what-does-the-table-contain-across-the-rows-and-the-columns" id="toc-question-28-give-a-brief-description-of-the-contents-of-the-table.-what-does-the-table-contain-across-the-rows-and-the-columns" class="nav-link" data-scroll-target="#question-28-give-a-brief-description-of-the-contents-of-the-table.-what-does-the-table-contain-across-the-rows-and-the-columns">Question 28: Give a brief description of the contents of the table. What does the table contain across the rows and the columns?</a></li>
   <li><a href="#reading-the-data" id="toc-reading-the-data" class="nav-link" data-scroll-target="#reading-the-data">Reading the Data</a></li>
   <li><a href="#visualization-of-the-data" id="toc-visualization-of-the-data" class="nav-link" data-scroll-target="#visualization-of-the-data">Visualization of the Data</a></li>
   <li><a href="#dynamic-range-similarity-and-missing-values" id="toc-dynamic-range-similarity-and-missing-values" class="nav-link" data-scroll-target="#dynamic-range-similarity-and-missing-values">Dynamic Range, Similarity, and Missing Values</a></li>
@@ -167,8 +141,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#digging-deeper-into-the-behavior-of-one-protein" id="toc-digging-deeper-into-the-behavior-of-one-protein" class="nav-link" data-scroll-target="#digging-deeper-into-the-behavior-of-one-protein">Digging Deeper into the Behavior of One Protein</a></li>
   <li><a href="#statistics-and-clustering-using-vsclust" id="toc-statistics-and-clustering-using-vsclust" class="nav-link" data-scroll-target="#statistics-and-clustering-using-vsclust">Statistics and Clustering using VSClust</a></li>
   <li><a href="#go-terms-and-pathways" id="toc-go-terms-and-pathways" class="nav-link" data-scroll-target="#go-terms-and-pathways">GO Terms and Pathways</a></li>
-  </ul></li>
   <li><a href="#personal-details" id="toc-personal-details" class="nav-link" data-scroll-target="#personal-details">Personal Details</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -199,7 +173,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 1, 2024</p>
+      <p class="date">October 3, 2024</p>
     </div>
   </div>
   
@@ -233,7 +207,7 @@ hide:
     5. Create accurate annotation files for data analysis.</code></pre>
 <section id="preliminary-work" class="level2">
 <h2 class="anchored" data-anchor-id="preliminary-work">Preliminary work</h2>
-<p>For this work, we will use the data that was used and analyzed in the paper <em><a href="https://www-nature-com.proxy1-bib.sdu.dk/articles/s41467-019-09018-y">Breast cancer quantitative proteome and proteogenomic landscape</a></em> by Johansson <em>et al.</em>, which compares subgroups of breast cancer tumors from the Oslo2 cohort.</p>
+<p>For this work, we will use the data that was used and analyzed in the paper <em><a href="https://www.nature.com/articles/s41467-019-09018-y">Breast cancer quantitative proteome and proteogenomic landscape</a></em> by Johansson <em>et al.</em>, which compares subgroups of breast cancer tumors from the Oslo2 cohort.</p>
 <p>Before delving into the actual analysis of the data in FragPipe, we must initially:</p>
 <ol type="1">
 <li>Read and understand the study design of the paper.</li>
@@ -254,21 +228,21 @@ hide:
 <p>To better understand the supplementary data, we have prepared guiding questions to aid in interpreting the table. You can find the supplementary data in the paper <a href="https://www-nature-com.proxy1-bib.sdu.dk/articles/s41467-019-09018-y#Sec15">here</a>.</p>
 <!-- Question 1 -->
 <h3 class="question anchored">
-Question 1: Give a short description of what the table contains.
+Question 1: Provide a brief description of the content presented in the table.
 </h3>
 <textarea id="question1" placeholder="Type your answer here..." class="input-box"></textarea>
 <!-- Question 2 -->
 <h3 class="question anchored">
-Question 2: What does the tumor ID indicate?
+Question 2: What information does the tumor ID represent?
 </h3>
 <textarea id="question2" placeholder="Type your answer here..." class="input-box"></textarea>
 <!-- Question 3 -->
 <h3 class="question anchored">
-Question 3: Provide a brief description of TMT-labelled mass spectrometry proteomics data and how it is experimentally executed.
+Question 3: Briefly describe TMT-labeled mass spectrometry proteomics data and explain the experimental procedure involved.
 </h3>
 <textarea id="question3" placeholder="Type your answer here..." class="input-box"></textarea>
 <section id="tmt10-tags-and-tumor-ids" class="level4">
-<h4 class="anchored" data-anchor-id="tmt10-tags-and-tumor-ids">TMT10-Tags and Tumor IDs</h4>
+<h4 class="anchored">TMT10-Tags and Tumor IDs</h4>
 <p>Fill in the table below by entering the corresponding TMT10-tags and Tumor IDs. Once submitted, you’ll get instant feedback on whether your input is correct.</p>
 <form id="tmtForm">
 <table style="width: 100%; border-collapse: collapse;">
@@ -297,19 +271,19 @@ Set 5
 TMT126
 </td>
 <td>
-<input type="text" id="set1_126" name="set1_126" style="width: 100%;">
+<input type="text" id="set1_126" name="set1_126" class="input-box">
 </td>
 <td>
-<input type="text" id="set2_126" name="set2_126" style="width: 100%;">
+<input type="text" id="set2_126" name="set2_126" class="input-box">
 </td>
 <td>
-<input type="text" id="set3_126" name="set3_126" style="width: 100%;">
+<input type="text" id="set3_126" name="set3_126" class="input-box">
 </td>
 <td>
-<input type="text" id="set4_126" name="set4_126" style="width: 100%;">
+<input type="text" id="set4_126" name="set4_126" class="input-box">
 </td>
 <td>
-<input type="text" id="set5_126" name="set5_126" style="width: 100%;">
+<input type="text" id="set5_126" name="set5_126" class="input-box">
 </td>
 </tr>
 <tr>
@@ -317,19 +291,19 @@ TMT126
 TMT127N
 </td>
 <td>
-<input type="text" id="set1_127N" name="set1_127N" style="width: 100%;">
+<input type="text" id="set1_127N" name="set1_127N" class="input-box">
 </td>
 <td>
-<input type="text" id="set2_127N" name="set2_127N" style="width: 100%;">
+<input type="text" id="set2_127N" name="set2_127N" class="input-box">
 </td>
 <td>
-<input type="text" id="set3_127N" name="set3_127N" style="width: 100%;">
+<input type="text" id="set3_127N" name="set3_127N" class="input-box">
 </td>
 <td>
-<input type="text" id="set4_127N" name="set4_127N" style="width: 100%;">
+<input type="text" id="set4_127N" name="set4_127N" class="input-box">
 </td>
 <td>
-<input type="text" id="set5_127N" name="set5_127N" style="width: 100%;">
+<input type="text" id="set5_127N" name="set5_127N" class="input-box">
 </td>
 </tr>
 <tr>
@@ -337,19 +311,19 @@ TMT127N
 TMT127C
 </td>
 <td>
-<input type="text" id="set1_127C" name="set1_127C" style="width: 100%;">
+<input type="text" id="set1_127C" name="set1_127C" class="input-box">
 </td>
 <td>
-<input type="text" id="set2_127C" name="set2_127C" style="width: 100%;">
+<input type="text" id="set2_127C" name="set2_127C" class="input-box">
 </td>
 <td>
-<input type="text" id="set3_127C" name="set3_127C" style="width: 100%;">
+<input type="text" id="set3_127C" name="set3_127C" class="input-box">
 </td>
 <td>
-<input type="text" id="set4_127C" name="set4_127C" style="width: 100%;">
+<input type="text" id="set4_127C" name="set4_127C" class="input-box">
 </td>
 <td>
-<input type="text" id="set5_127C" name="set5_127C" style="width: 100%;">
+<input type="text" id="set5_127C" name="set5_127C" class="input-box">
 </td>
 </tr>
 <tr>
@@ -357,19 +331,19 @@ TMT127C
 TMT128N
 </td>
 <td>
-<input type="text" id="set1_128N" name="set1_128N" style="width: 100%;">
+<input type="text" id="set1_128N" name="set1_128N" class="input-box">
 </td>
 <td>
-<input type="text" id="set2_128N" name="set2_128N" style="width: 100%;">
+<input type="text" id="set2_128N" name="set2_128N" class="input-box">
 </td>
 <td>
-<input type="text" id="set3_128N" name="set3_128N" style="width: 100%;">
+<input type="text" id="set3_128N" name="set3_128N" class="input-box">
 </td>
 <td>
-<input type="text" id="set4_128N" name="set4_128N" style="width: 100%;">
+<input type="text" id="set4_128N" name="set4_128N" class="input-box">
 </td>
 <td>
-<input type="text" id="set5_128N" name="set5_128N" style="width: 100%;">
+<input type="text" id="set5_128N" name="set5_128N" class="input-box">
 </td>
 </tr>
 <tr>
@@ -377,19 +351,19 @@ TMT128N
 TMT128C
 </td>
 <td>
-<input type="text" id="set1_128C" name="set1_128C" style="width: 100%;">
+<input type="text" id="set1_128C" name="set1_128C" class="input-box">
 </td>
 <td>
-<input type="text" id="set2_128C" name="set2_128C" style="width: 100%;">
+<input type="text" id="set2_128C" name="set2_128C" class="input-box">
 </td>
 <td>
-<input type="text" id="set3_128C" name="set3_128C" style="width: 100%;">
+<input type="text" id="set3_128C" name="set3_128C" class="input-box">
 </td>
 <td>
-<input type="text" id="set4_128C" name="set4_128C" style="width: 100%;">
+<input type="text" id="set4_128C" name="set4_128C" class="input-box">
 </td>
 <td>
-<input type="text" id="set5_128C" name="set5_128C" style="width: 100%;">
+<input type="text" id="set5_128C" name="set5_128C" class="input-box">
 </td>
 </tr>
 <tr>
@@ -397,19 +371,19 @@ TMT128C
 TMT129N
 </td>
 <td>
-<input type="text" id="set1_129N" name="set1_129N" style="width: 100%;">
+<input type="text" id="set1_129N" name="set1_129N" class="input-box">
 </td>
 <td>
-<input type="text" id="set2_129N" name="set2_129N" style="width: 100%;">
+<input type="text" id="set2_129N" name="set2_129N" class="input-box">
 </td>
 <td>
-<input type="text" id="set3_129N" name="set3_129N" style="width: 100%;">
+<input type="text" id="set3_129N" name="set3_129N" class="input-box">
 </td>
 <td>
-<input type="text" id="set4_129N" name="set4_129N" style="width: 100%;">
+<input type="text" id="set4_129N" name="set4_129N" class="input-box">
 </td>
 <td>
-<input type="text" id="set5_129N" name="set5_129N" style="width: 100%;">
+<input type="text" id="set5_129N" name="set5_129N" class="input-box">
 </td>
 </tr>
 <tr>
@@ -417,19 +391,19 @@ TMT129N
 TMT129C
 </td>
 <td>
-<input type="text" id="set1_129C" name="set1_129C" style="width: 100%;">
+<input type="text" id="set1_129C" name="set1_129C" class="input-box">
 </td>
 <td>
-<input type="text" id="set2_129C" name="set2_129C" style="width: 100%;">
+<input type="text" id="set2_129C" name="set2_129C" class="input-box">
 </td>
 <td>
-<input type="text" id="set3_129C" name="set3_129C" style="width: 100%;">
+<input type="text" id="set3_129C" name="set3_129C" class="input-box">
 </td>
 <td>
-<input type="text" id="set4_129C" name="set4_129C" style="width: 100%;">
+<input type="text" id="set4_129C" name="set4_129C" class="input-box">
 </td>
 <td>
-<input type="text" id="set5_129C" name="set5_129C" style="width: 100%;">
+<input type="text" id="set5_129C" name="set5_129C" class="input-box">
 </td>
 </tr>
 <tr>
@@ -437,19 +411,19 @@ TMT129C
 TMT130N
 </td>
 <td>
-<input type="text" id="set1_130N" name="set1_130N" style="width: 100%;">
+<input type="text" id="set1_130N" name="set1_130N" class="input-box">
 </td>
 <td>
-<input type="text" id="set2_130N" name="set2_130N" style="width: 100%;">
+<input type="text" id="set2_130N" name="set2_130N" class="input-box">
 </td>
 <td>
-<input type="text" id="set3_130N" name="set3_130N" style="width: 100%;">
+<input type="text" id="set3_130N" name="set3_130N" class="input-box">
 </td>
 <td>
-<input type="text" id="set4_130N" name="set4_130N" style="width: 100%;">
+<input type="text" id="set4_130N" name="set4_130N" class="input-box">
 </td>
 <td>
-<input type="text" id="set5_130N" name="set5_130N" style="width: 100%;">
+<input type="text" id="set5_130N" name="set5_130N" class="input-box">
 </td>
 </tr>
 <tr>
@@ -457,19 +431,19 @@ TMT130N
 TMT130C
 </td>
 <td>
-<input type="text" id="set1_130C" name="set1_130C" style="width: 100%;">
+<input type="text" id="set1_130C" name="set1_130C" class="input-box">
 </td>
 <td>
-<input type="text" id="set2_130C" name="set2_130C" style="width: 100%;">
+<input type="text" id="set2_130C" name="set2_130C" class="input-box">
 </td>
 <td>
-<input type="text" id="set3_130C" name="set3_130C" style="width: 100%;">
+<input type="text" id="set3_130C" name="set3_130C" class="input-box">
 </td>
 <td>
-<input type="text" id="set4_130C" name="set4_130C" style="width: 100%;">
+<input type="text" id="set4_130C" name="set4_130C" class="input-box">
 </td>
 <td>
-<input type="text" id="set5_130C" name="set5_130C" style="width: 100%;">
+<input type="text" id="set5_130C" name="set5_130C" class="input-box">
 </td>
 </tr>
 <tr>
@@ -477,24 +451,27 @@ TMT130C
 TMT131
 </td>
 <td>
-<input type="text" id="set1_131" name="set1_131" style="width: 100%;">
+<input type="text" id="set1_131" name="set1_131" class="input-box">
 </td>
 <td>
-<input type="text" id="set2_131" name="set2_131" style="width: 100%;">
+<input type="text" id="set2_131" name="set2_131" class="input-box">
 </td>
 <td>
-<input type="text" id="set3_131" name="set3_131" style="width: 100%;">
+<input type="text" id="set3_131" name="set3_131" class="input-box">
 </td>
 <td>
-<input type="text" id="set4_131" name="set4_131" style="width: 100%;">
+<input type="text" id="set4_131" name="set4_131" class="input-box">
 </td>
 <td>
-<input type="text" id="set5_131" name="set5_131" style="width: 100%;">
+<input type="text" id="set5_131" name="set5_131" class="input-box">
 </td>
 </tr>
 </tbody></table>
-<button type="button" onclick="checkAnswers()">
+<button type="button" onclick="checkAnswers()" class="download-button">
 Submit
+</button>
+<button type="button" onclick="downloadFiles()" class="download-button">
+Download Annotation Files
 </button>
 </form>
 <p id="feedback">
@@ -515,6 +492,7 @@ Submit
   };
 
   function checkAnswers() {
+    // Check user answers and highlight input fields
     for (const [id, correctAnswer] of Object.entries(correctAnswers)) {
       const input = document.getElementById(id);
       const userAnswer = input.value.trim();
@@ -526,53 +504,90 @@ Submit
       }
     }
   }
+
+  function downloadFiles() {
+    const sets = ['set1', 'set2', 'set3', 'set4', 'set5'];
+    const tmtLabels = ['TMT126', 'TMT127N', 'TMT127C', 'TMT128N', 'TMT128C',
+                       'TMT129N', 'TMT129C', 'TMT130N', 'TMT130C', 'TMT131'];
+
+    sets.forEach((set) => {
+      let content = '';
+      
+      // Iterate over each TMT label
+      tmtLabels.forEach(label => {
+        const input = document.getElementById(`${set}_${label.slice(-3)}`) || document.getElementById(`${set}_${label.slice(-3, -1)}N`) || document.getElementById(`${set}_${label.slice(-3, -1)}C`);
+        const userAnswer = input ? input.value.trim() : '';
+        content += `${label}\t${userAnswer}\n`;
+      });
+
+      const blob = new Blob([content], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `${set}_annotation.txt`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url); // Cleanup
+    });
+  }
 </script>
-</section>
-</section>
-<section id="question-4-what-is-in-tmt131" class="level3">
-<h3 class="anchored" data-anchor-id="question-4-what-is-in-tmt131">Question 4: What is in TMT131?</h3>
+<!-- Question 4 -->
+<h3 class="question anchored" data-anchor-id="tmt10-tags-and-tumor-ids">
+Question 4: What is in TMT131?
+</h3>
 <textarea id="question4" placeholder="Type your answer here..." class="input-box"></textarea>
-</section>
-<section id="question-5-what-is-the-purpose-of-having-such-a-sample" class="level3">
-<h3 class="anchored" data-anchor-id="question-5-what-is-the-purpose-of-having-such-a-sample">Question 5: What is the purpose of having such a sample?</h3>
+<!-- Question 5 -->
+<h3 class="question anchored">
+Question 5: What is the purpose of using this type of sample?
+</h3>
 <textarea id="question5" placeholder="Type your answer here..." class="input-box"></textarea>
 <p>Now that we better understand the workflow of the study and the content of the data, we are ready to move on to the analysis performed by FragPipe in the next section.</p>
+</section>
 </section>
 </section>
 <section id="analysis-of-ms-data-using-fragpipe" class="level2">
 <h2 class="anchored" data-anchor-id="analysis-of-ms-data-using-fragpipe">Analysis of MS Data Using FragPipe</h2>
 <p>In this section of the teaching module, we will work with data from the paper. The first task is to download sample files from the paper, guided by the questions provided below:</p>
-<section id="question-6-where-is-the-data-located" class="level3">
-<h3 class="anchored" data-anchor-id="question-6-where-is-the-data-located">Question 6: Where is the data located?</h3>
+<!-- Question 6 -->
+<h3 class="question anchored">
+Question 6: Where can the data be found?
+</h3>
 <textarea id="question6" placeholder="Type your answer here..." class="input-box"></textarea>
-</section>
-<section id="question-7-what-is-the-proteomexchange-database" class="level3">
-<h3 class="anchored" data-anchor-id="question-7-what-is-the-proteomexchange-database">Question 7: What is the ProteomeXChange database?</h3>
+<!-- Question 7 -->
+<h3 class="question anchored">
+Question 7: What is the ProteomeXChange database?
+</h3>
 <textarea id="question7" placeholder="Type your answer here..." class="input-box"></textarea>
-</section>
-<section id="question-8-what-is-the-accession-code-used-for-the-data-deposited-in-proteomexchange" class="level3">
-<h3 class="anchored" data-anchor-id="question-8-what-is-the-accession-code-used-for-the-data-deposited-in-proteomexchange">Question 8: What is the accession code used for the data deposited in ProteomeXChange?</h3>
+<!-- Question 8 -->
+<h3 class="question anchored">
+Question 8: What accession code is used for the data deposited in ProteomeXChange?
+</h3>
 <textarea id="question8" placeholder="Type your answer here..." class="input-box"></textarea>
 <p>By examining the accession code for the data deposited on ProteomeXChange, we can access and download the data using FTP.</p>
-</section>
-<section id="question-9-what-is-ftp-and-how-does-it-work" class="level3">
-<h3 class="anchored" data-anchor-id="question-9-what-is-ftp-and-how-does-it-work">Question 9: What is FTP, and how does it work?</h3>
+<!-- Question 9 -->
+<h3 class="question anchored">
+Question 9: What is FTP, and what is its functionality?
+</h3>
 <textarea id="question9" placeholder="Type your answer here..." class="input-box"></textarea>
 <p>For downloading the data, we will use the <strong>Proteomics Sandbox Application</strong> on UCloud. This platform allows us to access the necessary storage capacity as well as the computational power required to execute this process.</p>
 <p>The <strong>Proteomics Sandbox Application</strong> is a virtual environment that includes multiple software tools, including <strong>FragPipe</strong> for analyzing proteomics data.</p>
 <p>You can find the <strong>Proteomics Sandbox Application</strong> on UCloud <a href="https://cloud.sdu.dk/app/jobs/create?app=proteomics">here</a>.</p>
 <p>First, we will download the data for the sample files to be used in <strong>FragPipe</strong>. Then, we will launch <strong>FragPipe</strong> to run the first analysis of the data. Before doing so, we have some questions regarding <strong>FragPipe</strong> and its usability:</p>
-</section>
-<section id="question-10-what-is-fragpipe-and-what-can-it-be-used-for" class="level3">
-<h3 class="anchored" data-anchor-id="question-10-what-is-fragpipe-and-what-can-it-be-used-for">Question 10: What is FragPipe, and what can it be used for?</h3>
+<!-- Question 10 -->
+<h3 class="question anchored">
+Question 10: What is FragPipe, and what are its applications?
+</h3>
 <textarea id="question10" placeholder="Type your answer here..." class="input-box"></textarea>
-</section>
-<section id="question-11-if-you-were-not-using-fragpipe-for-this-part-of-the-teaching-module-which-other-software-tools-could-be-used-instead-please-include-a-few-examples." class="level3">
-<h3 class="anchored" data-anchor-id="question-11-if-you-were-not-using-fragpipe-for-this-part-of-the-teaching-module-which-other-software-tools-could-be-used-instead-please-include-a-few-examples.">Question 11: If you were not using FragPipe for this part of the teaching module, which other software tools could be used instead? Please include a few examples.</h3>
+<!-- Question 11 -->
+<h3 class="question anchored">
+Question 11: If FragPipe were not used for this part of the teaching module, which alternative software tools could be employed? Please provide a few examples.
+</h3>
 <textarea id="question11" placeholder="Type your answer here..." class="input-box"></textarea>
-</section>
-<section id="question-12-what-are-the-advantages-of-using-fragpipe" class="level3">
-<h3 class="anchored" data-anchor-id="question-12-what-are-the-advantages-of-using-fragpipe">Question 12: What are the advantages of using FragPipe?</h3>
+<!-- Question 12 -->
+<h3 class="question anchored">
+Question 12: What are the benefits of using FragPipe?
+</h3>
 <textarea id="question12" placeholder="Type your answer here..." class="input-box"></textarea>
 <p>Simple analyses in <strong>FragPipe</strong> may only require 8 GB of RAM, while large-scale or complex analyses may require 24 GB of memory or more (<a href="https://fragpipe.nesvilab.org/docs/tutorial_fragpipe.html#:~:text=FragPipe%20runs%20on%20Windows%20and,24%20GB%20memory%20or%20more.">FragPipe Documentation</a>), which is why we will allocate 24 GB for this exercise.</p>
 <p>In UCloud, the settings should look like this:</p>
@@ -583,35 +598,38 @@ Submit
 <p>Make sure to allocate the right number of hours before submitting the job. If the time runs out, the job will be canceled, and all progress will be lost. However, you can always extend the job duration if more time is required after submission.</p>
 <p>Time can pass quickly when working, so we recommend initially allocating 2 hours for the job. Now, we are ready to submit the job and launch the virtual environment of the <strong>Proteomics Sandbox Application</strong>.</p>
 </section>
-</section>
 <section id="download-data-from-the-paper" class="level2">
 <h2 class="anchored" data-anchor-id="download-data-from-the-paper">Download Data from the Paper</h2>
 <p>Initially, we will need to download the paper’s data. For this exercise, we will only use one sample file from each Plex Set/Pool.</p>
 <p>We will use the terminal in the virtual environment for downloading the data. First, we need to update and download the necessary packages. You can do that by typing the following code:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get update</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install lftp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<section id="question-13-what-is-the-code-above-doing-please-describe-the-code-and-what-it-is-used-for." class="level3">
-<h3 class="anchored" data-anchor-id="question-13-what-is-the-code-above-doing-please-describe-the-code-and-what-it-is-used-for.">Question 13: What is the code above doing? Please describe the code and what it is used for.</h3>
+<!-- Question 13 -->
+<h3 class="question anchored">
+Question 13: What does the code above do? Please explain its functionality and purpose.
+</h3>
 <textarea id="question13" placeholder="Type your answer here..." class="input-box"></textarea>
 <p>Now, we can access the FTP server where the data is located. You will need the server address from the correct FTP-server, which can be found on the site for the accession code XXX in ProteomeXchange, previously visited. At the bottom of the page, you will find the FTP-server address where the data is stored.</p>
-</section>
-<section id="question-14-please-find-the-address." class="level3">
-<h3 class="anchored" data-anchor-id="question-14-please-find-the-address.">Question 14: Please find the address.</h3>
+<!-- Question 14 -->
+<h3 class="question anchored">
+Question 14: Please locate the address.
+</h3>
 <textarea id="question14" placeholder="Type your answer here..." class="input-box"></textarea>
 <p>The address is used for accessing the data used in the study. To do so, we can use the package lftp that we just installed to access the server using the following code:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">lftp</span> [insert the address of the FTP server here]</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">lftp</span> ftp://ftp.......</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="question-15-now-we-have-access-to-the-data-deposited-on-the-ftp-server.-briefly-describe-the-contents-of-the-folder-in-the-ftp-server." class="level3">
-<h3 class="anchored" data-anchor-id="question-15-now-we-have-access-to-the-data-deposited-on-the-ftp-server.-briefly-describe-the-contents-of-the-folder-in-the-ftp-server.">Question 15: Now, we have access to the data deposited on the FTP-server. Briefly describe the contents of the folder in the FTP-server.</h3>
+<!-- Question 15 -->
+<h3 class="question anchored">
+Question 15: We now have access to the data stored on the FTP server. Please provide a brief description of the contents of the folder on the FTP server.
+</h3>
 <textarea id="question15" placeholder="Type your answer here..." class="input-box"></textarea>
 <p>To download one sample file from each of the Plex Sets, you can use the following code in the terminal:</p>
 <section id="code-here" class="level5">
-<h5 class="anchored" data-anchor-id="code-here">CODE HERE</h5>
-</section>
-</section>
-<section id="question-16-please-describe-what-the-code-is-doing-by-explaining-the-functions-used." class="level3">
-<h3 class="anchored" data-anchor-id="question-16-please-describe-what-the-code-is-doing-by-explaining-the-functions-used.">Question 16: Please describe what the code is doing by explaining the functions used.</h3>
+<h5 class="anchored">CODE HERE</h5>
+<!-- Question 16 -->
+<h3 class="question anchored" data-anchor-id="code-here">
+Question 16: Please explain what the code is doing by describing the functions used.
+</h3>
 <textarea id="question16" placeholder="Type your answer here..." class="input-box"></textarea>
 <p>If you added your own private folder to the UCloud session, you could now move the data into that folder for better management of the data you’re working with.</p>
 <p>Next, we can launch FragPipe, which is located on the desktop. In this tutorial, we are using FragPipe version XX.YY in the June 2024 version of the Proteomics Sandbox Application.</p>
@@ -620,63 +638,91 @@ Submit
 <section id="getting-started-with-fragpipe" class="level3">
 <h3 class="anchored" data-anchor-id="getting-started-with-fragpipe">Getting started with FragPipe</h3>
 <p>Go to the “Workflow” tab to set up the workflow for the analysis and import the data you have just downloaded.</p>
-</section>
-<section id="question-17-which-workflow-should-you-select-hint-how-many-tmt-tags-are-given-in-the-table-in-supplementary-data-1." class="level3">
-<h3 class="anchored" data-anchor-id="question-17-which-workflow-should-you-select-hint-how-many-tmt-tags-are-given-in-the-table-in-supplementary-data-1.">Question 17: Which workflow should you select? HINT: How many TMT-tags are given in the table in Supplementary Data 1.</h3>
+<!-- Question 17 -->
+<h3 class="question anchored">
+Question 17: Which workflow should you select? HINT: How many TMT tags are listed in the table in Supplementary Data 1?
+</h3>
 <textarea id="question17" placeholder="Type your answer here..." class="input-box"></textarea>
 <p>Click ‘Load workflow’ after you have found and selected the correct workflow to be used.</p>
 <p>Next, add your files by clicking on “Add files” and locate them in the designated folder for your raw files that you previously created.</p>
 <p>Now you should relocate to the “Database” tab. Here you can either download or browse for an already preexisting database file. In this case, we will simply download the latest database file.</p>
-</section>
-<section id="question-18-what-is-the-database-file-used-for-in-fragpipe-and-why-is-it-important" class="level3">
-<h3 class="anchored" data-anchor-id="question-18-what-is-the-database-file-used-for-in-fragpipe-and-why-is-it-important">Question 18: What is the database file used for in FragPipe and why is it important?</h3>
+<!-- Question 18 -->
+<h3 class="question anchored">
+Question 18: What is the purpose of the database file used in FragPipe, and why is it important?
+</h3>
 <textarea id="question18" placeholder="Type your answer here..." class="input-box"></textarea>
-</section>
-<section id="question-19-which-organism-should-you-select-for-downloading-the-database-file" class="level3">
-<h3 class="anchored" data-anchor-id="question-19-which-organism-should-you-select-for-downloading-the-database-file">Question 19: Which organism should you select for downloading the database file?</h3>
+<!-- Question 19 -->
+<h3 class="question anchored">
+Question 19: Which organism should you choose when downloading the database file?
+</h3>
 <textarea id="question19" placeholder="Type your answer here..." class="input-box"></textarea>
-</section>
-<section id="question-20-describe-the-relation-between-decoys-and-fdr-by-answering-these-questions" class="level3">
-<h3 class="anchored" data-anchor-id="question-20-describe-the-relation-between-decoys-and-fdr-by-answering-these-questions">Question 20: Describe the relation between decoys and FDR by answering these questions:</h3>
+<!-- Question 20 -->
+<h3 class="question anchored">
+Question 20: Describe the relationship between decoys and false discovery rate (FDR) by answering the following questions:
+</h3>
 <ul>
-<li>What are decoys?</li>
-<li>Why should you add decoys?</li>
-<li>How do decoys play a role in the FDR estimate?</li>
+<li>
+What are decoys?
+</li>
+<li>
+Why should you include decoys?
+</li>
+<li>
+What role do decoys play in estimating the FDR?
+</li>
 </ul>
 <textarea id="question20" placeholder="Type your answer here..." class="input-box"></textarea>
 <p>Next, you can go to the MSFragger tab to adjust the parameter settings for the search and matching of the theoretical and experimental peptide spectra.</p>
 <p>Most of the settings used for MSFragger can be obtained from the paper <em>NAME OF PAPER</em>, which is referred to in the Methods and Materials section.</p>
 <p>When all settings have been obtained, MSFragger should look something like this:</p>
-</section>
-<section id="question-21-what-is-msfragger" class="level3">
-<h3 class="anchored" data-anchor-id="question-21-what-is-msfragger">Question 21: What is MSFragger?</h3>
+<!-- Question 21 -->
+<h3 class="question anchored">
+Question 21: What is MSFragger?
+</h3>
 <textarea id="question21" placeholder="Type your answer here..." class="input-box"></textarea>
-</section>
-<section id="question-22-how-does-msfragger-work" class="level3">
-<h3 class="anchored" data-anchor-id="question-22-how-does-msfragger-work">Question 22: How does MSFragger work?</h3>
+<!-- Question 22 -->
+<h3 class="question anchored">
+Question 22: How does MSFragger operate?
+</h3>
 <textarea id="question22" placeholder="Type your answer here..." class="input-box"></textarea>
-</section>
-<section id="question-23-why-is-it-important-to-run-msfragger-for-this-analysis" class="level3">
-<h3 class="anchored" data-anchor-id="question-23-why-is-it-important-to-run-msfragger-for-this-analysis">Question 23: Why is it important to run MSFragger for this analysis?</h3>
+<!-- Question 23 -->
+<h3 class="question anchored">
+Question 23: Why is it essential to run MSFragger for this analysis?
+</h3>
 <textarea id="question23" placeholder="Type your answer here..." class="input-box"></textarea>
 <p>Finally, we can navigate to the “Run” tab and run the analysis. For that, we must choose an output directory for the results of the search made by FragPipe. Once you have adjusted that, you are ready to click on “Run”.</p>
 <p>This process might take some time, so make sure that you still have enough hours allocated on your job on UCloud—otherwise, it will get terminated. Meanwhile, you can answer these questions:</p>
-</section>
-<section id="question-24-what-do-you-expect-from-the-output-results-consider-the-number-of-files-you-have-provided-for-this-search." class="level3">
-<h3 class="anchored" data-anchor-id="question-24-what-do-you-expect-from-the-output-results-consider-the-number-of-files-you-have-provided-for-this-search.">Question 24: What do you expect from the output results? Consider the number of files you have provided for this search.</h3>
+<!-- Question 24 -->
+<h3 class="question anchored">
+Question 24: What are your expectations regarding the output results? Consider the implications of the number of files provided for this search in your response.
+</h3>
 <textarea id="question24" placeholder="Type your answer here..." class="input-box"></textarea>
-</section>
-<section id="question-25-can-we-use-this-output-based-on-the-limited-number-of-sample-files-for-the-downstream-analysis-whywhy-not" class="level3">
-<h3 class="anchored" data-anchor-id="question-25-can-we-use-this-output-based-on-the-limited-number-of-sample-files-for-the-downstream-analysis-whywhy-not">Question 25: Can we use this output based on the limited number of sample files for the downstream analysis? Why/Why not?</h3>
+<!-- Question 25 -->
+<h3 class="question anchored">
+Question 25: Can the output from this analysis be reliably used for downstream applications given the limited number of sample files? Justify your answer.
+</h3>
 <textarea id="question25" placeholder="Type your answer here..." class="input-box"></textarea>
-</section>
-<section id="question-26-what-does-it-mean-that-the-sample-tissues-have-been-fractionated-according-to-paper-please-describe-that-process-and-study-design.-will-more-fractions-lead-to-better-proteome-coverage" class="level3">
-<h3 class="anchored" data-anchor-id="question-26-what-does-it-mean-that-the-sample-tissues-have-been-fractionated-according-to-paper-please-describe-that-process-and-study-design.-will-more-fractions-lead-to-better-proteome-coverage">Question 26: What does it mean that the sample tissues have been fractionated according to <em>PAPER</em>? Please describe that process and study design. Will more fractions lead to better proteome coverage?</h3>
+<!-- Question 26 -->
+<h3 class="question anchored">
+Question 26: What does it signify that the sample tissues have been fractionated as described in <em>PAPER</em>?
+</h3>
+<ul>
+<li>
+Outline the fractionation process utilized.
+</li>
+<li>
+Explain the study design associated with this research.
+</li>
+<li>
+In your opinion, will increasing the number of fractions improve proteome coverage? Justify your reasoning.
+</li>
+</ul>
 <textarea id="question26" placeholder="Type your answer here..." class="input-box"></textarea>
 <p>When the run in FragPipe is done, please locate the output results and get an overview of the output.</p>
-</section>
-<section id="question-27-what-kind-of-output-does-fragpipe-provide" class="level3">
-<h3 class="anchored" data-anchor-id="question-27-what-kind-of-output-does-fragpipe-provide">Question 27: What kind of output does FragPipe provide?</h3>
+<!-- Question 27 -->
+<h3 class="question anchored">
+Question 27: What types of output are generated by FragPipe?
+</h3>
 <textarea id="question27" placeholder="Type your answer here..." class="input-box"></textarea>
 <p>For the downstream analysis, we will use the output from the list of combined proteins, which we will explore further in the following section.</p>
 </section>
@@ -686,16 +732,22 @@ Submit
 <p>For this part, we will use output files based on a run with FragPipe using all sample files (i.e., 5x72 raw files). That file can be downloaded here???</p>
 <p>Now, we will look at the output from FragPipe, where we will use the file named <code>combined_proteins.tsv</code>. Initially, we will explore the contents of the file locally. Therefore, you should download the file from UCloud and view it locally in a file editor such as Excel.</p>
 <p>You can download the file by clicking on the file in your output directory in the UCloud interface, from where you can choose to download it.</p>
-<section id="question-28-give-a-brief-description-of-the-contents-of-the-table.-what-does-the-table-contain-across-the-rows-and-the-columns" class="level3">
-<h3 class="anchored" data-anchor-id="question-28-give-a-brief-description-of-the-contents-of-the-table.-what-does-the-table-contain-across-the-rows-and-the-columns">Question 28: Give a brief description of the contents of the table. What does the table contain across the rows and the columns?</h3>
+<!-- Question 28 -->
+<h3 class="question anchored">
+Question 28: Provide a concise overview of the table’s contents. What information is represented in the rows and columns?
+</h3>
 <textarea id="question28" placeholder="Type your answer here..." class="input-box"></textarea>
 <p>For the downstream analysis, we will use the columns containing the TMT intensities across the proteins identified.</p>
 <p>For that we will use <a href="https://computproteomics.bmb.sdu.dk/app_direct/OmicsQ/">OmicsQ</a>, which is a toolkit for quantitative proteomics. OmicsQ can be used to facilitate the processing of quantitative data from Omics type experiments. Additionally, it also serves as an entrypoint for using apps like <a href="https://computproteomics.bmb.sdu.dk/app_direct/PolySTest/">PolySTest</a> [SCHWAMMLE20201396] for statistical testing, <a href="https://computproteomics.bmb.sdu.dk/app_direct/VSClust/">VSClust</a> for clustering and <a href="https://computproteomics.bmb.sdu.dk/app_direct/ComplexBrowser/">ComplexBrowser</a> for the investigation of the behavior of protein complexes.</p>
 </section>
+<section id="data-screening-multi-variate-analysis-and-clustering" class="level1">
+<h1>Data screening, multi-variate analysis and clustering</h1>
+<p>For the downstream workflow, we will follow the tutorial from the Jupyter Notebook embedded below.</p>
+<iframe src="https://nbviewer.jupyter.org/github/veitveit/training-quantitative-proteomics/blob/main/03_Cluster_Analysis/Multivariate%20analysis.ipynb" width="100%" height="1200px">
+</iframe>
 <section id="reading-the-data" class="level3">
 <h3 class="anchored" data-anchor-id="reading-the-data">Reading the Data</h3>
 <!-- Placeholder for future content -->
-<p>´´´r</p>
 </section>
 <section id="visualization-of-the-data" class="level3">
 <h3 class="anchored" data-anchor-id="visualization-of-the-data">Visualization of the Data</h3>
@@ -722,67 +774,8 @@ Submit
 <!-- Placeholder for future content -->
 </section>
 <section id="go-terms-and-pathways" class="level3">
-<h3 class="anchored">GO Terms and Pathways</h3>
+<h3 class="anchored" data-anchor-id="go-terms-and-pathways">GO Terms and Pathways</h3>
 <!-- Placeholder for future content -->
-<h2 class="anchored" data-anchor-id="go-terms-and-pathways">
-Personal Details
-</h2>
-<div class="personal-info-grid">
-<div class="personal-info-item">
-<pre><code>&lt;label for="name"&gt;&lt;strong&gt;Name:&lt;/strong&gt;&lt;/label&gt;
-&lt;textarea id="name" placeholder="Type your name here..." class="input-box"&gt;&lt;/textarea&gt;</code></pre>
-</div>
-<div class="personal-info-item">
-<pre><code>&lt;label for="email"&gt;&lt;strong&gt;Email:&lt;/strong&gt;&lt;/label&gt;
-&lt;textarea id="email" placeholder="Type your email here..." class="input-box"&gt;&lt;/textarea&gt;</code></pre>
-</div>
-<div class="personal-info-item">
-<pre><code>&lt;label for="course"&gt;&lt;strong&gt;Course/Program:&lt;/strong&gt;&lt;/label&gt;
-&lt;textarea id="course" placeholder="Type your course/program here..." class="input-box"&gt;&lt;/textarea&gt;</code></pre>
-</div>
-<div class="personal-info-item">
-<pre><code>&lt;label for="date"&gt;&lt;strong&gt;Date:&lt;/strong&gt;&lt;/label&gt;
-&lt;textarea id="date" placeholder="Type the date here..." class="input-box"&gt;&lt;/textarea&gt;</code></pre>
-</div>
-</div>
-<style>
-  /* Personal Information Grid Layout */
-  .personal-info-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two columns */
-    gap: 20px; /* Space between columns */
-    margin-bottom: 30px;
-  }
-
-  .personal-info-item {
-    display: flex;
-    flex-direction: column;
-  }
-
-  /* Styling the textarea */
-  .input-box {
-    width: 100%;
-    min-height: 40px; /* Adjust height */
-    padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    background-color: #f9f9f9;
-    resize: none;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    transition: border-color 0.3s, box-shadow 0.3s;
-  }
-
-  .input-box:focus {
-    border-color: #0073e6;
-    box-shadow: 0px 4px 8px rgba(0, 115, 230, 0.2);
-    outline: none;
-  }
-</style>
-</section>
 </section>
 <section id="personal-details" class="level2">
 <h2 class="anchored" data-anchor-id="personal-details">Personal Details</h2>
@@ -805,18 +798,21 @@ Download Your Answers as PDF
 <script>
 // Function to save answers to localStorage
 function saveAnswers() {
-  for (let i = 1; i <= 3; i++) { // Adjust based on the number of questions
-    const answer = document.getElementById(`question${i}`)?.value || '';
-    localStorage.setItem(`question${i}`, answer);
-  }
+  // Select all textareas
+  const textareas = document.querySelectorAll('textarea[id^="question"]');
+  textareas.forEach(textarea => {
+    const answer = textarea.value || '';
+    localStorage.setItem(textarea.id, answer);
+  });
 }
 
 // Load answers from localStorage
-for (let i = 1; i <= 3; i++) {
-  const savedAnswer = localStorage.getItem(`question${i}`) || '';
-  if (document.getElementById(`question${i}`)) {
-    document.getElementById(`question${i}`).value = savedAnswer;
-  }
+function loadAnswers() {
+  const textareas = document.querySelectorAll('textarea[id^="question"]');
+  textareas.forEach(textarea => {
+    const savedAnswer = localStorage.getItem(textarea.id) || '';
+    textarea.value = savedAnswer;
+  });
 }
 
 // Automatically resize textareas based on input
@@ -832,22 +828,24 @@ document.querySelectorAll('.input-box').forEach(textarea => {
 
 // Function to download the answers as a PDF with a more professional layout
 document.getElementById('downloadBtn').addEventListener('click', function() {
-  const answersHTML = `
+  const questions = document.querySelectorAll('.question');
+  let answersHTML = `
     <div style="font-family: Arial, sans-serif; padding: 20px;">
       <h1 style="text-align: center; font-size: 24px;">Assignment Submission</h1>
-      
-      <h2 style="font-size: 18px; margin-bottom: 5px;">Question 1: Describe the central dogma of molecular biology</h2>
-      <p style="font-size: 14px;">${document.getElementById('question1').value}</p>
-      
-      <h2 style="font-size: 18px; margin-bottom: 5px;">Question 2: Explain how mass spectrometry is used in proteomics</h2>
-      <p style="font-size: 14px;">${document.getElementById('question2').value}</p>
-      
-      <h2 style="font-size: 18px; margin-bottom: 5px;">Question 3: Write a short code example in R or Python to visualize data</h2>
-      <p style="font-size: 14px;">${document.getElementById('question3').value}</p>
-      
-      <!-- Add more questions and answers in the same format -->
-    </div>
   `;
+
+  questions.forEach((question, index) => {
+    const questionNumber = index + 1; // Incrementing index for question number
+    const questionText = question.innerHTML; // Get the question text
+    const answerText = document.getElementById(`question${questionNumber}`).value; // Get the corresponding answer
+
+    answersHTML += `
+      <h2 style="font-size: 18px; margin-bottom: 5px;">${questionText}</h2>
+      <p style="font-size: 14px;">${answerText || 'No answer provided'}</p>
+    `;
+  });
+
+  answersHTML += `</div>`; // Closing the div
 
   const opt = {
     margin: 1,
@@ -859,6 +857,9 @@ document.getElementById('downloadBtn').addEventListener('click', function() {
 
   html2pdf().from(answersHTML).set(opt).save();
 });
+
+// Load answers when the page loads
+window.onload = loadAnswers;
 </script>
 <style>
 /* Styling the textarea */
@@ -900,9 +901,38 @@ document.getElementById('downloadBtn').addEventListener('click', function() {
   background-color: #005bb5;
   box-shadow: 0px 4px 8px rgba(0, 115, 230, 0.3);
 }
+
+.input-box {
+  width: 100%;
+  min-height: 40px; /* Adjusted for input height */
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: 1px solid #ccc; /* Ensure consistent border */
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 16px; /* Ensure consistent font size */
+  box-sizing: border-box; /* Ensures padding is included in total width */
+}
+
+.download-button {
+  background-color: #007bff; /* Blue button */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.download-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
 </style>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
