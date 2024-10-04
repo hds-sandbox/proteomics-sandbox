@@ -6,9 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Jacob Fredegaard Hansen">
 <meta name="dcterms.date" content="2024-09-11">
-<meta name="description" content="Outline for clinical proteomics">
 
 <title>ColabFold – Clinical Proteomics</title>
 <style>
@@ -37,10 +35,12 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -70,35 +70,19 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="stylesheets/neoteroi-mkdocs.css">
-<link rel="stylesheet" href="stylesheets/extra.css">
+<link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
 
 <div id="quarto-search-results"></div>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#colabfold" id="toc-colabfold" class="nav-link active" data-scroll-target="#colabfold">ColabFold</a>
-  <ul class="collapse">
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a>
-  <ul class="collapse">
-  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting Started</a></li>
-  <li><a href="#efficient-super-computing-with-colabfold" id="toc-efficient-super-computing-with-colabfold" class="nav-link" data-scroll-target="#efficient-super-computing-with-colabfold">Efficient Super-Computing with ColabFold</a></li>
-  </ul></li>
-  </ul></li>
-  </ul>
-</nav>
-    </div>
+    
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -106,21 +90,10 @@ ul.task-list li input[type="checkbox"] {
 <p class="subtitle lead">Tutorial to get started using ColabFold at UCloud.</p>
 </div>
 
-<div>
-  <div class="description">
-    Outline for clinical proteomics
-  </div>
-</div>
 
 
-<div class="quarto-title-meta">
+<div class="quarto-title-meta column-page">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Jacob Fredegaard Hansen </p>
-          </div>
-  </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
@@ -177,15 +150,15 @@ Course Abstract
 <li><p>Choose a workspace that has GPU resources for optimal performance.<br>
 </p></li>
 <li><p>Access the application menu by clicking on <strong>Apps</strong> in the left-hand side menu.<br>
-<img src="images/UCloud/UCloud_apps.png" alt="Alt Text" width="250" height="150"> <img src="images/UCloud/UCloud_apps.png" class="quarto-figure quarto-figure-center" width="250" height="150"></p></li>
+<img src="images/UCloud/UCloud_apps.png" class="img-fluid quarto-figure quarto-figure-center" width="250" alt="UCloud Applications"></p></li>
 <li><p>Search for <strong>ColabFold</strong> and click on the icon for the application.<br>
-<img src="images/UCloud/ColabFold_app.png" alt="Alt Text" width="500" height="300"></p></li>
+<img src="images/UCloud/ColabFold_app.png" class="img-fluid quarto-figure quarto-figure-center" width="500"></p></li>
 <li><p>Choose the appropriate machine type and select a GPU, such as <strong>u2-gpu-1</strong>. The use of a single GPU is generally sufficient, though larger sequences may require additional computational power.<br>
-<img src="images/UCloud/Machine_type.png" alt="Alt Text" width="750" height="450"></p></li>
+<img src="images/UCloud/Machine_type.png" class="img-fluid quarto-figure quarto-figure-center" width="750"></p></li>
 <li><p>Deploy your own personal folder by selecting <strong>Folder</strong> and adjusting the path to your directory. Be sure to select the correct <strong>Workspace</strong> and change the <strong>Drive</strong> to where you want your data to be stored, if needed. Click on the folder name to select it and then click <strong>Use this folder</strong> in the upper right corner of the pop-up window.<br>
-<img src="images/UCloud/Add_folder.png" alt="Alt Text" width="750" height="450"></p></li>
+<img src="images/UCloud/Add_folder.png" class="img-fluid quarto-figure quarto-figure-center" width="750"></p></li>
 <li><p>Click on “Submit” and then “Open interface” on the following page.<br>
-<img src="images/UCloud/Submit_open_interface.png" alt="Alt Text" width="500" height="300"></p></li>
+<img src="images/UCloud/Submit_open_interface.png" class="img-fluid quarto-figure quarto-figure-center" width="500"></p></li>
 <li><p>Prior to proceeding, ensure you’ve downloaded the Jupyter Notebook labeled <strong>AlphaFold2.ipynb</strong> from <a href="https://github.com/hds-sandbox/AlphaFold_Workshop">the Github repository</a>. Then, upload the notebook to your ColabFold session using the left-hand menu.</p></li>
 <li><p>Proceed with the ColabFold workshop, which will guide you through the process of predicting protein structures based on amino acid sequences.</p></li>
 </ol>
@@ -234,6 +207,150 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
