@@ -1,16 +1,27 @@
-name: render page
-on:
+on: 
   push:
-    branches:
-      - webpage 
+    branches: webpage-quarto
+  workflow_dispatch:
+
+name: Quarto Publish
+
 jobs:
-  deploy:
+  build-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
+      - name: Install libcurl on Linux
+        if: runner.os == 'Linux'
+        run: sudo apt-get update -y && sudo apt-get install -y libcurl4-openssl-dev libharfbuzz-dev libfribidi-dev
+
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Render and Publish
+        uses: quarto-dev/quarto-actions/publish@v2
         with:
-          python-version: 3.x
-      - run: |
-          pip install mkdocs-material mkdocs-bibtex neoteroi-mkdocs mkdocs-video mkdocs-minify-plugin mkdocs-jupyter mkdocs-git-revision-date-localized-plugin mkdocs-table-reader-plugin
-          mkdocs gh-deploy --force
+          target: gh-pages
