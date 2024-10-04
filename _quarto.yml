@@ -1,15 +1,17 @@
 project:
   type: website
+
+website:
   title: "Clinical Proteomics"
 
 # Add the author and description to the metadata section
-metadata:
-  author: "Jacob Fredegaard Hansen"
-  description: "Outline for clinical proteomics"
+#metadata:
+#  author: "Jacob Fredegaard Hansen"
+#  description: "Outline for clinical proteomics"
 
 # Navbar configuration
 navbar:
-  title: "Clinical Proteomics"
+#  title: "Clinical Proteomics"
   left:
     - text: Introduction
       href: index.qmd
@@ -28,48 +30,47 @@ navbar:
 
 format:
   html:
-    theme: flatly
-    css:
-      - stylesheets/neoteroi-mkdocs.css
-      - stylesheets/extra.css
+    theme:
+          light: [materia, css/materialight.scss]
+          dark: darkly
 #    include-after-body:
 #      - javascripts/mathjax.js
 #      - https://polyfill.io/v3/polyfill.min.js?features=es6
 #      - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-    favicon: images/favicon.png
-    logo: images/logo.png
+#    favicon: images/favicon.png
+#    logo: images/logo.png
     toc: true
-    toc-depth: 3
-    navigation:
-      depth: 3
-    highlight-style: github
+#    toc-depth: 3
+#    navigation:
+#      depth: 3
+#    highlight-style: github
 
 # Bibliography for citations
-bibliography: references.bib
+#bibliography: references.bib
 
 # Add extra configuration
-extra:
+#extra:
 #  google-analytics: !expr Sys.getenv("GOOGLE_ANALYTICS_KEY")
-  social-links:
-    - icon: github
-      href: https://github.com/hds-sandbox
-    - icon: twitter
-      href: https://twitter.com/ucph_heads
+#  social-links:
+#    - icon: github
+#      href: https://github.com/hds-sandbox
+#    - icon: twitter
+#      href: https://twitter.com/ucph_heads
 
 # Markdown extensions
-markdown:
-  extensions: 
-    - abbr
-    - admonition
-    - footnotes
-    - attr
-    - def_list
-    - tables
-    - fenced_code_blocks
-    - table_of_contents
-    - callouts
-    - yaml_metadata_block
+#markdown:
+#  extensions: 
+#    - abbr
+#    - admonition
+#    - footnotes
+#    - attr
+#    - def_list
+#    - tables
+#    - fenced_code_blocks
+#    - table_of_contents
+#    - callouts
+#    - yaml_metadata_block
 
 # Input/output directories
-output-dir: docs
-input-dir: develop
+#output-dir: docs
+#input-dir: develop

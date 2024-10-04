@@ -1,7 +1,11 @@
 ---
 title: "ColabFold"
 subtitle: Tutorial to get started using ColabFold at UCloud.
-format: html
+format:
+  html:
+    toc: false
+    page-layout: full
+css: css/styles.css
 date-modified: last-modified
 date-format: long
 date: 2024-09-11
@@ -29,21 +33,20 @@ You can access ColabFold through UCloud. This integration allows you to use the 
 1. Log in to UCloud.  
 2. Choose a workspace that has GPU resources for optimal performance.  
 3. Access the application menu by clicking on **Apps** in the left-hand side menu.  
-<img src="images/UCloud/UCloud_apps.png" alt="Alt Text" width="250" height="150">
-![](images/UCloud/UCloud_apps.png){width=250 height=150 fig-align="center"}
+![UCloud Applications](images/UCloud/UCloud_apps.png){width=250 fig-align="center"}
 
 4. Search for **ColabFold** and click on the icon for the application.  
-<img src="images/UCloud/ColabFold_app.png" alt="Alt Text" width="500" height="300">
+![](images/UCloud/ColabFold_app.png){width=500 fig-align="center"}
 
 
 5. Choose the appropriate machine type and select a GPU, such as **u2-gpu-1**. The use of a single GPU is generally sufficient, though larger sequences may require additional computational power.  
-<img src="images/UCloud/Machine_type.png" alt="Alt Text" width="750" height="450">
+![](images/UCloud/Machine_type.png){width=750 fig-align="center"}
 
 6. Deploy your own personal folder by selecting **Folder** and adjusting the path to your directory. Be sure to select the correct **Workspace** and change the **Drive** to where you want your data to be stored, if needed. Click on the folder name to select it and then click **Use this folder** in the upper right corner of the pop-up window.  
-<img src="images/UCloud/Add_folder.png" alt="Alt Text" width="750" height="450">
+![](images/UCloud/Add_folder.png){width=750 fig-align="center"}
 
 7. Click on "Submit" and then "Open interface" on the following page.  
-<img src="images/UCloud/Submit_open_interface.png" alt="Alt Text" width="500" height="300">
+![](images/UCloud/Submit_open_interface.png){width=500 fig-align="center"}
 
 8. Prior to proceeding, ensure you've downloaded the Jupyter Notebook labeled **AlphaFold2.ipynb** from [the Github repository](https://github.com/hds-sandbox/AlphaFold_Workshop). Then, upload the notebook to your ColabFold session using the left-hand menu.
 
