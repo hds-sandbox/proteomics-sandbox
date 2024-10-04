@@ -1,6 +1,6 @@
 ---
 title: "ColabFold"
-subtitleÆ Tutorial to get started using ColabFold at UCloud.
+subtitle: Tutorial to get started using ColabFold at UCloud.
 format: html
 date-modified: last-modified
 date-format: long
