@@ -12,9 +12,6 @@ date: 2024-09-11
 #bibliography: resources/references.bib
 ---
 
-<center>
-# Clinical Proteomics
-</center>
 
 Discover the world of proteomics with the Clinical Proteomics module of the Sandbox, offering the Proteomics Sandbox app on UCloud - an accessible resource for biomedical students and non-computational researchers. With a user-friendly interface and a lightweight clone feature, the app is perfect for those without extensive coding knowledge, providing a stable platform for proteomics software tools. You can also learn to predict protein structures based on sequence data with the independent ColabFold workshop, available on UCloud. This hands-on experience offers insights into the exciting field of proteomics analysis and is accessible for all UCloud-users.  
 
@@ -24,8 +21,6 @@ New course materials are being developed constantly to enhance your education an
 
 Currently, the educational material on proteomics is only available at UCloud, making it only accessible for UCloud-users.
 
-
-"Requirements"
     - Access to UCloud and sufficient resources to run the application
     - Basic computational knowledge, including familiarity with the UCloud environment
     - Familiarity with proteomics analysis techniques
