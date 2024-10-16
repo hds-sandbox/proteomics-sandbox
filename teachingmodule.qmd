@@ -455,38 +455,25 @@ For the downstream workflow, we will follow the tutorial from the Jupyter Notebo
         height="1200px">
 </iframe>
 
+<!--
 
 ### Reading the Data
 
-<!-- Placeholder for future content -->
-
 ### Visualization of the Data
-
-<!-- Placeholder for future content -->
 
 ### Dynamic Range, Similarity, and Missing Values
 
-<!-- Placeholder for future content -->
-
 ### Principal Component Analysis
-
-<!-- Placeholder for future content -->
 
 ### Hierarchical Clustering
 
-<!-- Placeholder for future content -->
-
 ### Digging Deeper into the Behavior of One Protein
-
-<!-- Placeholder for future content -->
 
 ### Statistics and Clustering using VSClust
 
-<!-- Placeholder for future content -->
-
 ### GO Terms and Pathways
 
-<!-- Placeholder for future content -->
+-->
 
 ## Personal Details
 
