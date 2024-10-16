@@ -26,3 +26,4 @@ format:
           light: [materia, css/materialight.scss]
           dark: darkly
     toc: true
+    css: css/styles.css
