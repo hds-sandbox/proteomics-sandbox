@@ -8,3 +8,71 @@
     background-color:  #f0f0f0;
     padding: 20px;
   }
+
+body {
+    counter-reset: question-counter;
+}
+
+.question {
+    counter-increment: question-counter;
+    font-weight: bold;
+    font-size: 120%;
+}
+
+.question::before {
+  content: "Question " counter(question-counter) ": ";
+}
+
+
+/* Styling the textarea */
+
+.input-box:focus {
+  border-color: #0073e6;
+  box-shadow: 0px 4px 8px rgba(0, 115, 230, 0.2);
+  outline: none;
+}
+
+/* Styling the download button */
+.download-button {
+  background-color: #0073e6;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.download-button:hover {
+  background-color: #005bb5;
+  box-shadow: 0px 4px 8px rgba(0, 115, 230, 0.3);
+}
+
+.input-box {
+  width: 100%;
+  min-height: 40px; /* Adjusted for input height */
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: 1px solid #ccc; /* Ensure consistent border */
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 16px; /* Ensure consistent font size */
+  box-sizing: border-box; /* Ensures padding is included in total width */
+}
+
+.download-button {
+  background-color: #007bff; /* Blue button */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.download-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
