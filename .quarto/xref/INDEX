@@ -1,0 +1,26 @@
+{
+  "colabfold.qmd": {
+    "colabfold.html": "3fe36659"
+  },
+  "contributors.qmd": {
+    "contributors.html": "2ad11b87"
+  },
+  "coursematerials.qmd": {
+    "coursematerials.html": "d3128175"
+  },
+  "fragpipe.qmd": {
+    "fragpipe.html": "ee4ff8bb"
+  },
+  "gettingstarted.qmd": {
+    "gettingstarted.html": "769ad76f"
+  },
+  "index.qmd": {
+    "index.html": "4e215ab8"
+  },
+  "setup.qmd": {
+    "setup.html": "efea0fb4"
+  },
+  "teachingmodule.qmd": {
+    "teachingmodule.html": "17f86847"
+  }
+}
