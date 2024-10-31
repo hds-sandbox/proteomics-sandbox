@@ -234,15 +234,27 @@ hide:
 # You should hide the navigation if there are no subsections
 # You should hide the Table of Contents if there are no important titles
 -->
-<p>!!! note “Section Overview”</p>
-<pre><code>&amp;#128368; **Total Time Estimation:** 8 hours
-
-&amp;#128172; **Learning Objectives:**    
-    1. Understand the workflow of the study. &lt;br&gt;
-    2. Retrieve and understand the study design and data from selected papers. &lt;br&gt;
-    3. Download and preprocess proteomics data using FragPipe. &lt;br&gt;
-    4. Set up and use FragPipe for TMT-labeled MS data analysis. &lt;br&gt;
-    5. Create accurate annotation files for data analysis.</code></pre>
+<div class="callout callout-style-default callout-note callout-titled" title="Section Overview">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Section Overview
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>🕰 <strong>Total Time Estimation:</strong> 8 hours</p>
+<p>💬 <strong>Learning Objectives:</strong></p>
+<ul>
+<li>Understand the workflow of the study.</li>
+<li>Retrieve and understand the study design and data from selected papers.</li>
+<li>Download and preprocess proteomics data using FragPipe.</li>
+<li>Set up and use FragPipe for TMT-labeled MS data analysis.</li>
+<li>Create accurate annotation files for data analysis.</li>
+</ul>
+</div>
+</div>
 <section id="preliminary-work" class="level2">
 <h2 class="anchored" data-anchor-id="preliminary-work">Preliminary work</h2>
 <p>For this work, we will use the data that was used and analyzed in the paper <em><a href="https://www.nature.com/articles/s41467-019-09018-y">Breast cancer quantitative proteome and proteogenomic landscape</a></em> by Johansson <em>et al.</em>, which compares subgroups of breast cancer tumors from the Oslo2 cohort.</p>
@@ -616,8 +628,8 @@ Download Annotation Files
 <h2 class="anchored" data-anchor-id="download-data-from-the-paper">Download Data from the Paper</h2>
 <p>Initially, we will need to download the paper’s data. For this exercise, we will only use one sample file from each Plex Set/Pool.</p>
 <p>We will use the terminal in the virtual environment for downloading the data. First, we need to update and download the necessary packages. You can do that by typing the following code:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get update</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install lftp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get update</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install lftp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="question">
 <p>What does the code above do? Please explain its functionality and purpose.</p>
 </div>
@@ -626,8 +638,8 @@ Download Annotation Files
 <p>Please locate the address.</p>
 </div>
 <p>The address is used for accessing the data used in the study. To do so, we can use the package lftp that we just installed to access the server using the following code:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">lftp</span> [insert the address of the FTP server here]</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">lftp</span> ftp://ftp.......</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">lftp</span> [insert the address of the FTP server here]</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">lftp</span> ftp://ftp.......</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="question">
 <p>We now have access to the data stored on the FTP server. Please provide a brief description of the contents of the folder on the FTP server.</p>
 </div>

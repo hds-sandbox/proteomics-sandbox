@@ -16,7 +16,7 @@ body {
 .question {
     counter-increment: question-counter;
     font-weight: bold;
-    font-size: 120%;
+    font-size: inherit;
 }
 
 .question::before {

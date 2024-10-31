@@ -81,7 +81,7 @@
     "href": "teachingmodule.html",
     "title": "Breast Cancer Proteomics Module",
     "section": "",
-    "text": "!!! note “Section Overview”"
+    "text": "Section Overview\n\n\n\n🕰 Total Time Estimation: 8 hours\n💬 Learning Objectives:\n\nUnderstand the workflow of the study.\nRetrieve and understand the study design and data from selected papers.\nDownload and preprocess proteomics data using FragPipe.\nSet up and use FragPipe for TMT-labeled MS data analysis.\nCreate accurate annotation files for data analysis."
   },
   {
     "objectID": "teachingmodule.html#preliminary-work",
