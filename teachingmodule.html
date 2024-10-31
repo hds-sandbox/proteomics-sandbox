@@ -171,19 +171,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#preliminary-work" id="toc-preliminary-work" class="nav-link active" data-scroll-target="#preliminary-work">Preliminary work</a>
+  <li><a href="#welcome-to-the-ms-data-analysis-module" id="toc-welcome-to-the-ms-data-analysis-module" class="nav-link active" data-scroll-target="#welcome-to-the-ms-data-analysis-module">Welcome to the MS Data Analysis Module</a>
+  <ul class="collapse">
+  <li><a href="#preliminary-work" id="toc-preliminary-work" class="nav-link" data-scroll-target="#preliminary-work">Preliminary work</a>
   <ul class="collapse">
   <li><a href="#questions-for-understanding-the-paper" id="toc-questions-for-understanding-the-paper" class="nav-link" data-scroll-target="#questions-for-understanding-the-paper">Questions for Understanding the Paper</a></li>
   <li><a href="#supplementary-data" id="toc-supplementary-data" class="nav-link" data-scroll-target="#supplementary-data">Supplementary Data</a></li>
   </ul></li>
-  <li><a href="#analysis-of-ms-data-using-fragpipe" id="toc-analysis-of-ms-data-using-fragpipe" class="nav-link" data-scroll-target="#analysis-of-ms-data-using-fragpipe">Analysis of MS Data Using FragPipe</a></li>
-  <li><a href="#download-data-from-the-paper" id="toc-download-data-from-the-paper" class="nav-link" data-scroll-target="#download-data-from-the-paper">Download Data from the Paper</a>
+  <li><a href="#analysis-of-ms-data-using-fragpipe" id="toc-analysis-of-ms-data-using-fragpipe" class="nav-link" data-scroll-target="#analysis-of-ms-data-using-fragpipe">Analysis of MS Data Using FragPipe</a>
   <ul class="collapse">
   <li><a href="#getting-started-with-fragpipe" id="toc-getting-started-with-fragpipe" class="nav-link" data-scroll-target="#getting-started-with-fragpipe">Getting started with FragPipe</a></li>
+  <li><a href="#interpretation-and-analysis-of-fragpipe-results" id="toc-interpretation-and-analysis-of-fragpipe-results" class="nav-link" data-scroll-target="#interpretation-and-analysis-of-fragpipe-results">Interpretation and Analysis of FragPipe Results</a></li>
   </ul></li>
-  <li><a href="#further-interpretation-and-analysis-of-fragpipe-results" id="toc-further-interpretation-and-analysis-of-fragpipe-results" class="nav-link" data-scroll-target="#further-interpretation-and-analysis-of-fragpipe-results">Further Interpretation and Analysis of FragPipe Results</a></li>
-  <li><a href="#data-screening-multi-variate-analysis-and-clustering" id="toc-data-screening-multi-variate-analysis-and-clustering" class="nav-link" data-scroll-target="#data-screening-multi-variate-analysis-and-clustering">Data screening, multi-variate analysis and clustering</a>
-  <ul class="collapse">
+  <li><a href="#data-screening-multi-variate-analysis-and-clustering" id="toc-data-screening-multi-variate-analysis-and-clustering" class="nav-link" data-scroll-target="#data-screening-multi-variate-analysis-and-clustering">Data screening, multi-variate analysis and clustering</a></li>
   <li><a href="#personal-details" id="toc-personal-details" class="nav-link" data-scroll-target="#personal-details">Personal Details</a></li>
   </ul></li>
   </ul>
@@ -255,6 +255,44 @@ Section Overview
 </ul>
 </div>
 </div>
+<section id="welcome-to-the-ms-data-analysis-module" class="level1">
+<h1>Welcome to the MS Data Analysis Module</h1>
+<p>In this module, you will learn about mass spectrometry (MS) data analysis using <strong>Tandem Mass Tag (TMT)</strong>–labeled data, focusing on insights from a breast cancer study. This module is designed to guide you through key stages of MS data analysis, from preparation to advanced analysis, ensuring accurate quantification of TMT-labeled data.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Module Overview
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The module is divided into three sections:</p>
+<ol type="1">
+<li><strong>Preliminary Work</strong>
+<ul>
+<li>Explore the study design.</li>
+<li>Retrieve relevant datasets.</li>
+<li>Prepare essential files for downstream analysis.</li>
+</ul></li>
+<li><strong>Analysis of MS Data Using FragPipe</strong>
+<ul>
+<li>Data processing with FragPipe.</li>
+<li>Set up workflows tailored to TMT-labeled samples.</li>
+<li>Run MS data analysis.</li>
+</ul></li>
+<li><strong>Data Screening, Multivariate Analysis, and Clustering</strong>
+<ul>
+<li>Techniques for screening and organizing results.</li>
+<li>Multi-variate analysis and clustering.</li>
+<li>Reveal meaningful patterns in the dataset.</li>
+</ul></li>
+</ol>
+</div>
+</div>
+<p>By the end of this module, you will be equipped to manage TMT-labeled proteomics data and conduct detailed analyses crucial in clinical proteomics research.</p>
+<p><strong>Let’s get started!</strong></p>
 <section id="preliminary-work" class="level2">
 <h2 class="anchored" data-anchor-id="preliminary-work">Preliminary work</h2>
 <p>For this work, we will use the data that was used and analyzed in the paper <em><a href="https://www.nature.com/articles/s41467-019-09018-y">Breast cancer quantitative proteome and proteogenomic landscape</a></em> by Johansson <em>et al.</em>, which compares subgroups of breast cancer tumors from the Oslo2 cohort.</p>
@@ -623,9 +661,8 @@ Download Annotation Files
 <p><strong>CAUTION!!!</strong></p>
 <p>Make sure to allocate the right number of hours before submitting the job. If the time runs out, the job will be canceled, and all progress will be lost. However, you can always extend the job duration if more time is required after submission.</p>
 <p>Time can pass quickly when working, so we recommend initially allocating 2 hours for the job. Now, we are ready to submit the job and launch the virtual environment of the <strong>Proteomics Sandbox Application</strong>.</p>
-</section>
-<section id="download-data-from-the-paper" class="level2">
-<h2 class="anchored" data-anchor-id="download-data-from-the-paper">Download Data from the Paper</h2>
+<section id="download-data-from-the-paper" class="level4">
+<h4 class="anchored" data-anchor-id="download-data-from-the-paper">Download Data from the Paper</h4>
 <p>Initially, we will need to download the paper’s data. For this exercise, we will only use one sample file from each Plex Set/Pool.</p>
 <p>We will use the terminal in the virtual environment for downloading the data. First, we need to update and download the necessary packages. You can do that by typing the following code:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get update</span>
@@ -652,6 +689,7 @@ Download Annotation Files
 <p>If you added your own private folder to the UCloud session, you could now move the data into that folder for better management of the data you’re working with.</p>
 <p>Next, we can launch FragPipe, which is located on the desktop. In this tutorial, we are using FragPipe version XX.YY in the June 2024 version of the Proteomics Sandbox Application.</p>
 <p>Now that we have launched FragPipe, we need to configure the settings prior to running the analysis. Therefore, we have provided some guiding questions to help you set up the settings in FragPipe:</p>
+</section>
 </section>
 <section id="getting-started-with-fragpipe" class="level3">
 <h3 class="anchored" data-anchor-id="getting-started-with-fragpipe">Getting started with FragPipe</h3>
@@ -722,9 +760,8 @@ In your opinion, will increasing the number of fractions improve proteome covera
 </div>
 <p>For the downstream analysis, we will use the output from the list of combined proteins, which we will explore further in the following section.</p>
 </section>
-</section>
-<section id="further-interpretation-and-analysis-of-fragpipe-results" class="level2">
-<h2 class="anchored" data-anchor-id="further-interpretation-and-analysis-of-fragpipe-results">Further Interpretation and Analysis of FragPipe Results</h2>
+<section id="interpretation-and-analysis-of-fragpipe-results" class="level3">
+<h3 class="anchored" data-anchor-id="interpretation-and-analysis-of-fragpipe-results">Interpretation and Analysis of FragPipe Results</h3>
 <p>For this part, we will use output files based on a run with FragPipe using all sample files (i.e., 5x72 raw files). That file can be downloaded here???</p>
 <p>Now, we will look at the output from FragPipe, where we will use the file named <code>combined_proteins.tsv</code>. Initially, we will explore the contents of the file locally. Therefore, you should download the file from UCloud and view it locally in a file editor such as Excel.</p>
 <p>You can download the file by clicking on the file in your output directory in the UCloud interface, from where you can choose to download it.</p>
@@ -733,31 +770,23 @@ In your opinion, will increasing the number of fractions improve proteome covera
 </div>
 <p>For the downstream analysis, we will use the columns containing the TMT intensities across the proteins identified.</p>
 <p>For that we will use <a href="https://computproteomics.bmb.sdu.dk/app_direct/OmicsQ/">OmicsQ</a>, which is a toolkit for quantitative proteomics. OmicsQ can be used to facilitate the processing of quantitative data from Omics type experiments. Additionally, it also serves as an entrypoint for using apps like <a href="https://computproteomics.bmb.sdu.dk/app_direct/PolySTest/">PolySTest</a> [SCHWAMMLE20201396] for statistical testing, <a href="https://computproteomics.bmb.sdu.dk/app_direct/VSClust/">VSClust</a> for clustering and <a href="https://computproteomics.bmb.sdu.dk/app_direct/ComplexBrowser/">ComplexBrowser</a> for the investigation of the behavior of protein complexes.</p>
-</section>
-<section id="data-screening-multi-variate-analysis-and-clustering" class="level1">
-<h1>Data screening, multi-variate analysis and clustering</h1>
-<p>For the downstream workflow, we will follow the tutorial from the Jupyter Notebook embedded below.</p>
-<iframe src="https://nbviewer.jupyter.org/github/veitveit/training-quantitative-proteomics/blob/main/03_Cluster_Analysis/Multivariate%20analysis.ipynb" width="100%" height="1200px">
-</iframe>
 <!--
-
-### Reading the Data
-
-### Visualization of the Data
-
-### Dynamic Range, Similarity, and Missing Values
-
-### Principal Component Analysis
-
-### Hierarchical Clustering
-
-### Digging Deeper into the Behavior of One Protein
-
-### Statistics and Clustering using VSClust
-
-### GO Terms and Pathways
+Guide and introduction to Omics Q
+Questions about Omics Q
+Questions about output and interpretations of results from OmicsQ
+-->
+</section>
+</section>
+<section id="data-screening-multi-variate-analysis-and-clustering" class="level2">
+<h2 class="anchored" data-anchor-id="data-screening-multi-variate-analysis-and-clustering">Data screening, multi-variate analysis and clustering</h2>
+<p>For the downstream workflow, we will follow the tutorial from the Jupyter Notebook embedded below.</p>
+<!--
+Guide on how to use Jupyter Notebook in the Proteomics Sandbox Application (git clone)
 
 -->
+<iframe src="https://nbviewer.jupyter.org/github/veitveit/training-quantitative-proteomics/blob/main/03_Cluster_Analysis/Multivariate%20analysis.ipynb" width="100%" height="1200px">
+</iframe>
+</section>
 <section id="personal-details" class="level2">
 <h2 class="anchored" data-anchor-id="personal-details">Personal Details</h2>
 <strong>Name:</strong><br>
