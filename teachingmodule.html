@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Jacob Fredegaard Hansen">
-<meta name="dcterms.date" content="2024-10-16">
+<meta name="dcterms.date" content="2024-10-31">
 
 <title>Breast Cancer Proteomics Module – Clinical Proteomics</title>
 <style>
@@ -106,6 +106,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
+<link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -210,7 +211,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 16, 2024</p>
+      <p class="date">October 31, 2024</p>
     </div>
   </div>
   
@@ -263,23 +264,17 @@ hide:
 <h3 class="anchored" data-anchor-id="supplementary-data">Supplementary Data</h3>
 <p>Before we proceed and download the data available from the paper, we must first delve into some of the details in Supplementary Data 1. This is a large table containing the quantitative proteome data from the Oslo2 breast cancer cohort, which includes 45 subgroups of cancer tumors and relates to Figures 1-6 in the paper.</p>
 <p>To better understand the supplementary data, we have prepared guiding questions to aid in interpreting the table. You can find the supplementary data in the paper <a href="https://www-nature-com.proxy1-bib.sdu.dk/articles/s41467-019-09018-y#Sec15">here</a>.</p>
-<!-- Question 1 -->
-<h3 class="question anchored">
-Question 1: Provide a brief description of the content presented in the table.
-</h3>
-<textarea id="question1" placeholder="Type your answer here..." class="input-box"></textarea>
-<!-- Question 2 -->
-<h3 class="question anchored">
-Question 2: What information does the tumor ID represent?
-</h3>
-<textarea id="question2" placeholder="Type your answer here..." class="input-box"></textarea>
-<!-- Question 3 -->
-<h3 class="question anchored">
-Question 3: Briefly describe TMT-labeled mass spectrometry proteomics data and explain the experimental procedure involved.
-</h3>
-<textarea id="question3" placeholder="Type your answer here..." class="input-box"></textarea>
+<div class="question">
+<p>Provide a brief description of the content presented in the table.</p>
+</div>
+<div class="question">
+<p>What information does the tumor ID represent?</p>
+</div>
+<div class="question">
+<p>Briefly describe TMT-labeled mass spectrometry proteomics data and explain the experimental procedure involved.</p>
+</div>
 <section id="tmt10-tags-and-tumor-ids" class="level4">
-<h4 class="anchored">TMT10-Tags and Tumor IDs</h4>
+<h4 class="anchored" data-anchor-id="tmt10-tags-and-tumor-ids">TMT10-Tags and Tumor IDs</h4>
 <p>Fill in the table below by entering the corresponding TMT10-tags and Tumor IDs. Once submitted, you’ll get instant feedback on whether your input is correct.</p>
 <form id="tmtForm">
 <table style="width: 100%; border-collapse: collapse;">
@@ -569,16 +564,12 @@ Download Annotation Files
     });
   }
 </script>
-<!-- Question 4 -->
-<h3 class="question anchored" data-anchor-id="tmt10-tags-and-tumor-ids">
-Question 4: What is in TMT131?
-</h3>
-<textarea id="question4" placeholder="Type your answer here..." class="input-box"></textarea>
-<!-- Question 5 -->
-<h3 class="question anchored">
-Question 5: What is the purpose of using this type of sample?
-</h3>
-<textarea id="question5" placeholder="Type your answer here..." class="input-box"></textarea>
+<div class="question">
+<p>What is in TMT131?</p>
+</div>
+<div class="question">
+<p>What is the purpose of using this type of sample?</p>
+</div>
 <p>Now that we better understand the workflow of the study and the content of the data, we are ready to move on to the analysis performed by FragPipe in the next section.</p>
 </section>
 </section>
@@ -586,46 +577,32 @@ Question 5: What is the purpose of using this type of sample?
 <section id="analysis-of-ms-data-using-fragpipe" class="level2">
 <h2 class="anchored" data-anchor-id="analysis-of-ms-data-using-fragpipe">Analysis of MS Data Using FragPipe</h2>
 <p>In this section of the teaching module, we will work with data from the paper. The first task is to download sample files from the paper, guided by the questions provided below:</p>
-<!-- Question 6 -->
-<h3 class="question anchored">
-Question 6: Where can the data be found?
-</h3>
-<textarea id="question6" placeholder="Type your answer here..." class="input-box"></textarea>
-<!-- Question 7 -->
-<h3 class="question anchored">
-Question 7: What is the ProteomeXChange database?
-</h3>
-<textarea id="question7" placeholder="Type your answer here..." class="input-box"></textarea>
-<!-- Question 8 -->
-<h3 class="question anchored">
-Question 8: What accession code is used for the data deposited in ProteomeXChange?
-</h3>
-<textarea id="question8" placeholder="Type your answer here..." class="input-box"></textarea>
+<div class="question">
+<p>Where can the data be found?</p>
+</div>
+<div class="question">
+<p>What is the ProteomeXChange database?</p>
+</div>
+<div class="question">
+<p>What accession code is used for the data deposited in ProteomeXChange?</p>
+</div>
 <p>By examining the accession code for the data deposited on ProteomeXChange, we can access and download the data using FTP.</p>
-<!-- Question 9 -->
-<h3 class="question anchored">
-Question 9: What is FTP, and what is its functionality?
-</h3>
-<textarea id="question9" placeholder="Type your answer here..." class="input-box"></textarea>
+<div class="question">
+<p>What is FTP, and what is its functionality?</p>
+</div>
 <p>For downloading the data, we will use the <strong>Proteomics Sandbox Application</strong> on UCloud. This platform allows us to access the necessary storage capacity as well as the computational power required to execute this process.</p>
 <p>The <strong>Proteomics Sandbox Application</strong> is a virtual environment that includes multiple software tools, including <strong>FragPipe</strong> for analyzing proteomics data.</p>
 <p>You can find the <strong>Proteomics Sandbox Application</strong> on UCloud <a href="https://cloud.sdu.dk/app/jobs/create?app=proteomics">here</a>.</p>
 <p>First, we will download the data for the sample files to be used in <strong>FragPipe</strong>. Then, we will launch <strong>FragPipe</strong> to run the first analysis of the data. Before doing so, we have some questions regarding <strong>FragPipe</strong> and its usability:</p>
-<!-- Question 10 -->
-<h3 class="question anchored">
-Question 10: What is FragPipe, and what are its applications?
-</h3>
-<textarea id="question10" placeholder="Type your answer here..." class="input-box"></textarea>
-<!-- Question 11 -->
-<h3 class="question anchored">
-Question 11: If FragPipe were not used for this part of the teaching module, which alternative software tools could be employed? Please provide a few examples.
-</h3>
-<textarea id="question11" placeholder="Type your answer here..." class="input-box"></textarea>
-<!-- Question 12 -->
-<h3 class="question anchored">
-Question 12: What are the benefits of using FragPipe?
-</h3>
-<textarea id="question12" placeholder="Type your answer here..." class="input-box"></textarea>
+<div class="question">
+<p>What is FragPipe, and what are its applications?</p>
+</div>
+<div class="question">
+<p>If FragPipe were not used for this part of the teaching module, which alternative software tools could be employed? Please provide a few examples.</p>
+</div>
+<div class="question">
+<p>What are the benefits of using FragPipe?</p>
+</div>
 <p>Simple analyses in <strong>FragPipe</strong> may only require 8 GB of RAM, while large-scale or complex analyses may require 24 GB of memory or more (<a href="https://fragpipe.nesvilab.org/docs/tutorial_fragpipe.html#:~:text=FragPipe%20runs%20on%20Windows%20and,24%20GB%20memory%20or%20more.">FragPipe Documentation</a>), which is why we will allocate 24 GB for this exercise.</p>
 <p>In UCloud, the settings should look like this:</p>
 <p><strong>SCREENSHOT HERE</strong></p>
@@ -641,33 +618,25 @@ Question 12: What are the benefits of using FragPipe?
 <p>We will use the terminal in the virtual environment for downloading the data. First, we need to update and download the necessary packages. You can do that by typing the following code:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get update</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install lftp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<!-- Question 13 -->
-<h3 class="question anchored">
-Question 13: What does the code above do? Please explain its functionality and purpose.
-</h3>
-<textarea id="question13" placeholder="Type your answer here..." class="input-box"></textarea>
+<div class="question">
+<p>What does the code above do? Please explain its functionality and purpose.</p>
+</div>
 <p>Now, we can access the FTP server where the data is located. You will need the server address from the correct FTP-server, which can be found on the site for the accession code XXX in ProteomeXchange, previously visited. At the bottom of the page, you will find the FTP-server address where the data is stored.</p>
-<!-- Question 14 -->
-<h3 class="question anchored">
-Question 14: Please locate the address.
-</h3>
-<textarea id="question14" placeholder="Type your answer here..." class="input-box"></textarea>
+<div class="question">
+<p>Please locate the address.</p>
+</div>
 <p>The address is used for accessing the data used in the study. To do so, we can use the package lftp that we just installed to access the server using the following code:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">lftp</span> [insert the address of the FTP server here]</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">lftp</span> ftp://ftp.......</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<!-- Question 15 -->
-<h3 class="question anchored">
-Question 15: We now have access to the data stored on the FTP server. Please provide a brief description of the contents of the folder on the FTP server.
-</h3>
-<textarea id="question15" placeholder="Type your answer here..." class="input-box"></textarea>
+<div class="question">
+<p>We now have access to the data stored on the FTP server. Please provide a brief description of the contents of the folder on the FTP server.</p>
+</div>
 <p>To download one sample file from each of the Plex Sets, you can use the following code in the terminal:</p>
 <section id="code-here" class="level5">
-<h5 class="anchored">CODE HERE</h5>
-<!-- Question 16 -->
-<h3 class="question anchored" data-anchor-id="code-here">
-Question 16: Please explain what the code is doing by describing the functions used.
-</h3>
-<textarea id="question16" placeholder="Type your answer here..." class="input-box"></textarea>
+<h5 class="anchored" data-anchor-id="code-here">CODE HERE</h5>
+<div class="question">
+<p>Please explain what the code is doing by describing the functions used.</p>
+</div>
 <p>If you added your own private folder to the UCloud session, you could now move the data into that folder for better management of the data you’re working with.</p>
 <p>Next, we can launch FragPipe, which is located on the desktop. In this tutorial, we are using FragPipe version XX.YY in the June 2024 version of the Proteomics Sandbox Application.</p>
 <p>Now that we have launched FragPipe, we need to configure the settings prior to running the analysis. Therefore, we have provided some guiding questions to help you set up the settings in FragPipe:</p>
@@ -675,28 +644,20 @@ Question 16: Please explain what the code is doing by describing the functions u
 <section id="getting-started-with-fragpipe" class="level3">
 <h3 class="anchored" data-anchor-id="getting-started-with-fragpipe">Getting started with FragPipe</h3>
 <p>Go to the “Workflow” tab to set up the workflow for the analysis and import the data you have just downloaded.</p>
-<!-- Question 17 -->
-<h3 class="question anchored">
-Question 17: Which workflow should you select? HINT: How many TMT tags are listed in the table in Supplementary Data 1?
-</h3>
-<textarea id="question17" placeholder="Type your answer here..." class="input-box"></textarea>
+<div class="question">
+<p>Which workflow should you select? HINT: How many TMT tags are listed in the table in Supplementary Data 1?</p>
+</div>
 <p>Click ‘Load workflow’ after you have found and selected the correct workflow to be used.</p>
 <p>Next, add your files by clicking on “Add files” and locate them in the designated folder for your raw files that you previously created.</p>
 <p>Now you should relocate to the “Database” tab. Here you can either download or browse for an already preexisting database file. In this case, we will simply download the latest database file.</p>
-<!-- Question 18 -->
-<h3 class="question anchored">
-Question 18: What is the purpose of the database file used in FragPipe, and why is it important?
-</h3>
-<textarea id="question18" placeholder="Type your answer here..." class="input-box"></textarea>
-<!-- Question 19 -->
-<h3 class="question anchored">
-Question 19: Which organism should you choose when downloading the database file?
-</h3>
-<textarea id="question19" placeholder="Type your answer here..." class="input-box"></textarea>
-<!-- Question 20 -->
-<h3 class="question anchored">
-Question 20: Describe the relationship between decoys and false discovery rate (FDR) by answering the following questions:
-</h3>
+<div class="question">
+<p>What is the purpose of the database file used in FragPipe, and why is it important?</p>
+</div>
+<div class="question">
+<p>Which organism should you choose when downloading the database file?</p>
+</div>
+<div class="question">
+<p>Describe the relationship between decoys and false discovery rate (FDR) by answering the following questions:</p>
 <ul>
 <li>
 What are decoys?
@@ -708,41 +669,30 @@ Why should you include decoys?
 What role do decoys play in estimating the FDR?
 </li>
 </ul>
-<textarea id="question20" placeholder="Type your answer here..." class="input-box"></textarea>
+</div>
 <p>Next, you can go to the MSFragger tab to adjust the parameter settings for the search and matching of the theoretical and experimental peptide spectra.</p>
 <p>Most of the settings used for MSFragger can be obtained from the paper <em>NAME OF PAPER</em>, which is referred to in the Methods and Materials section.</p>
 <p>When all settings have been obtained, MSFragger should look something like this:</p>
-<!-- Question 21 -->
-<h3 class="question anchored">
-Question 21: What is MSFragger?
-</h3>
-<textarea id="question21" placeholder="Type your answer here..." class="input-box"></textarea>
-<!-- Question 22 -->
-<h3 class="question anchored">
-Question 22: How does MSFragger operate?
-</h3>
-<textarea id="question22" placeholder="Type your answer here..." class="input-box"></textarea>
-<!-- Question 23 -->
-<h3 class="question anchored">
-Question 23: Why is it essential to run MSFragger for this analysis?
-</h3>
-<textarea id="question23" placeholder="Type your answer here..." class="input-box"></textarea>
+<div class="question">
+<p>What is MSFragger?</p>
+</div>
+<div class="question">
+<p>How does MSFragger operate?</p>
+</div>
+<div class="question">
+<p>Why is it essential to run MSFragger for this analysis?</p>
+</div>
 <p>Finally, we can navigate to the “Run” tab and run the analysis. For that, we must choose an output directory for the results of the search made by FragPipe. Once you have adjusted that, you are ready to click on “Run”.</p>
 <p>This process might take some time, so make sure that you still have enough hours allocated on your job on UCloud—otherwise, it will get terminated. Meanwhile, you can answer these questions:</p>
-<!-- Question 24 -->
-<h3 class="question anchored">
-Question 24: What are your expectations regarding the output results? Consider the implications of the number of files provided for this search in your response.
-</h3>
-<textarea id="question24" placeholder="Type your answer here..." class="input-box"></textarea>
-<!-- Question 25 -->
-<h3 class="question anchored">
-Question 25: Can the output from this analysis be reliably used for downstream applications given the limited number of sample files? Justify your answer.
-</h3>
-<textarea id="question25" placeholder="Type your answer here..." class="input-box"></textarea>
-<!-- Question 26 -->
-<h3 class="question anchored">
-Question 26: What does it signify that the sample tissues have been fractionated as described in <em>PAPER</em>?
-</h3>
+<div class="question">
+<p>What are your expectations regarding the output results? Consider the implications of the number of files provided for this search in your response.</p>
+</div>
+<div class="question">
+<p>Can the output from this analysis be reliably used for downstream applications given the limited number of sample files? Justify your answer.</p>
+</div>
+<div class="question">
+<p>What does it signify that the sample tissues have been fractionated as described in <em>PAPER</em>?</p>
+</div>
 <ul>
 <li>
 Outline the fractionation process utilized.
@@ -754,13 +704,10 @@ Explain the study design associated with this research.
 In your opinion, will increasing the number of fractions improve proteome coverage? Justify your reasoning.
 </li>
 </ul>
-<textarea id="question26" placeholder="Type your answer here..." class="input-box"></textarea>
 <p>When the run in FragPipe is done, please locate the output results and get an overview of the output.</p>
-<!-- Question 27 -->
-<h3 class="question anchored">
-Question 27: What types of output are generated by FragPipe?
-</h3>
-<textarea id="question27" placeholder="Type your answer here..." class="input-box"></textarea>
+<div class="question">
+<p>What types of output are generated by FragPipe?</p>
+</div>
 <p>For the downstream analysis, we will use the output from the list of combined proteins, which we will explore further in the following section.</p>
 </section>
 </section>
@@ -769,11 +716,9 @@ Question 27: What types of output are generated by FragPipe?
 <p>For this part, we will use output files based on a run with FragPipe using all sample files (i.e., 5x72 raw files). That file can be downloaded here???</p>
 <p>Now, we will look at the output from FragPipe, where we will use the file named <code>combined_proteins.tsv</code>. Initially, we will explore the contents of the file locally. Therefore, you should download the file from UCloud and view it locally in a file editor such as Excel.</p>
 <p>You can download the file by clicking on the file in your output directory in the UCloud interface, from where you can choose to download it.</p>
-<!-- Question 28 -->
-<h3 class="question anchored">
-Question 28: Provide a concise overview of the table’s contents. What information is represented in the rows and columns?
-</h3>
-<textarea id="question28" placeholder="Type your answer here..." class="input-box"></textarea>
+<div class="question">
+<p>Provide a concise overview of the table’s contents. What information is represented in the rows and columns?</p>
+</div>
 <p>For the downstream analysis, we will use the columns containing the TMT intensities across the proteins identified.</p>
 <p>For that we will use <a href="https://computproteomics.bmb.sdu.dk/app_direct/OmicsQ/">OmicsQ</a>, which is a toolkit for quantitative proteomics. OmicsQ can be used to facilitate the processing of quantitative data from Omics type experiments. Additionally, it also serves as an entrypoint for using apps like <a href="https://computproteomics.bmb.sdu.dk/app_direct/PolySTest/">PolySTest</a> [SCHWAMMLE20201396] for statistical testing, <a href="https://computproteomics.bmb.sdu.dk/app_direct/VSClust/">VSClust</a> for clustering and <a href="https://computproteomics.bmb.sdu.dk/app_direct/ComplexBrowser/">ComplexBrowser</a> for the investigation of the behavior of protein complexes.</p>
 </section>
@@ -818,142 +763,8 @@ Question 28: Provide a concise overview of the table’s contents. What informat
 <button id="downloadBtn" class="download-button">
 Download Your Answers as PDF
 </button>
+<script src="javascripts/answers.js">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
-<script>
-// Function to save answers to localStorage
-function saveAnswers() {
-  // Select all textareas
-  const textareas = document.querySelectorAll('textarea[id^="question"]');
-  textareas.forEach(textarea => {
-    const answer = textarea.value || '';
-    localStorage.setItem(textarea.id, answer);
-  });
-}
-
-// Load answers from localStorage
-function loadAnswers() {
-  const textareas = document.querySelectorAll('textarea[id^="question"]');
-  textareas.forEach(textarea => {
-    const savedAnswer = localStorage.getItem(textarea.id) || '';
-    textarea.value = savedAnswer;
-  });
-}
-
-// Automatically resize textareas based on input
-document.querySelectorAll('.input-box').forEach(textarea => {
-  textarea.style.height = 'auto';
-  textarea.style.height = (textarea.scrollHeight) + 'px';
-  textarea.addEventListener('input', function() {
-    this.style.height = 'auto';
-    this.style.height = (this.scrollHeight) + 'px';
-    saveAnswers();
-  });
-});
-
-// Function to download the answers as a PDF with a more professional layout
-document.getElementById('downloadBtn').addEventListener('click', function() {
-  const questions = document.querySelectorAll('.question');
-  let answersHTML = `
-    <div style="font-family: Arial, sans-serif; padding: 20px;">
-      <h1 style="text-align: center; font-size: 24px;">Assignment Submission</h1>
-  `;
-
-  questions.forEach((question, index) => {
-    const questionNumber = index + 1; // Incrementing index for question number
-    const questionText = question.innerHTML; // Get the question text
-    const answerText = document.getElementById(`question${questionNumber}`).value; // Get the corresponding answer
-
-    answersHTML += `
-      <h2 style="font-size: 18px; margin-bottom: 5px;">${questionText}</h2>
-      <p style="font-size: 14px;">${answerText || 'No answer provided'}</p>
-    `;
-  });
-
-  answersHTML += `</div>`; // Closing the div
-
-  const opt = {
-    margin: 1,
-    filename: 'assignment_answers.pdf',
-    image: { type: 'jpeg', quality: 0.98 },
-    html2canvas: { scale: 2 },
-    jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
-  };
-
-  html2pdf().from(answersHTML).set(opt).save();
-});
-
-// Load answers when the page loads
-window.onload = loadAnswers;
-</script>
-<style>
-/* Styling the textarea */
-.input-box {
-  width: 100%;
-  min-height: 120px;
-  padding: 10px;
-  margin-top: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  background-color: #f9f9f9;
-  resize: none;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  transition: border-color 0.3s, box-shadow 0.3s;
-}
-
-.input-box:focus {
-  border-color: #0073e6;
-  box-shadow: 0px 4px 8px rgba(0, 115, 230, 0.2);
-  outline: none;
-}
-
-/* Styling the download button */
-.download-button {
-  background-color: #0073e6;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s, box-shadow 0.3s;
-}
-
-.download-button:hover {
-  background-color: #005bb5;
-  box-shadow: 0px 4px 8px rgba(0, 115, 230, 0.3);
-}
-
-.input-box {
-  width: 100%;
-  min-height: 40px; /* Adjusted for input height */
-  padding: 10px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  border: 1px solid #ccc; /* Ensure consistent border */
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  font-size: 16px; /* Ensure consistent font size */
-  box-sizing: border-box; /* Ensures padding is included in total width */
-}
-
-.download-button {
-  background-color: #007bff; /* Blue button */
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  margin-top: 20px;
-}
-
-.download-button:hover {
-  background-color: #0056b3; /* Darker blue on hover */
-}
-</style>
 
 
 </section>
