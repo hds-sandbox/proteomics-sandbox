@@ -20,7 +20,7 @@ body {
 }
 
 .question::before {
-  content: "Question " counter(question-counter) ": ";
+  content: "❓ Question " counter(question-counter) ": ";
 }
 
 
