@@ -1,35 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://hds-sandbox.github.io/proteomics-sandbox/gettingstarted.html</loc>
-    <lastmod>2024-10-31T14:32:20.786Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hds-sandbox.github.io/proteomics-sandbox/index.html</loc>
-    <lastmod>2024-10-31T14:32:20.810Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hds-sandbox.github.io/proteomics-sandbox/setup.html</loc>
-    <lastmod>2024-10-31T14:32:20.814Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hds-sandbox.github.io/proteomics-sandbox/fragpipe.html</loc>
-    <lastmod>2024-10-31T14:32:20.786Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hds-sandbox.github.io/proteomics-sandbox/colabfold.html</loc>
-    <lastmod>2024-10-31T14:32:20.786Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hds-sandbox.github.io/proteomics-sandbox/teachingmodule.html</loc>
-    <lastmod>2024-10-31T14:32:20.814Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hds-sandbox.github.io/proteomics-sandbox/contributors.html</loc>
-    <lastmod>2024-10-31T14:32:20.786Z</lastmod>
+    <loc>https://hds-sandbox.github.io/proteomics-sandbox/Create SDRF.html</loc>
+    <lastmod>2024-11-08T09:53:32.585Z</lastmod>
   </url>
   <url>
     <loc>https://hds-sandbox.github.io/proteomics-sandbox/coursematerials.html</loc>
-    <lastmod>2024-10-31T14:32:20.786Z</lastmod>
+    <lastmod>2024-11-08T09:53:32.585Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hds-sandbox.github.io/proteomics-sandbox/contributors.html</loc>
+    <lastmod>2024-11-08T09:53:32.585Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hds-sandbox.github.io/proteomics-sandbox/teachingmodule.html</loc>
+    <lastmod>2024-11-08T09:53:32.613Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hds-sandbox.github.io/proteomics-sandbox/colabfold.html</loc>
+    <lastmod>2024-11-08T09:53:32.585Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hds-sandbox.github.io/proteomics-sandbox/sdrf.html</loc>
+    <lastmod>2024-11-08T09:53:32.613Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hds-sandbox.github.io/proteomics-sandbox/fragpipe.html</loc>
+    <lastmod>2024-11-08T09:53:32.585Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hds-sandbox.github.io/proteomics-sandbox/setup.html</loc>
+    <lastmod>2024-11-08T09:53:32.613Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hds-sandbox.github.io/proteomics-sandbox/index.html</loc>
+    <lastmod>2024-11-08T09:53:32.609Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hds-sandbox.github.io/proteomics-sandbox/gettingstarted.html</loc>
+    <lastmod>2024-11-08T09:53:32.585Z</lastmod>
   </url>
 </urlset>

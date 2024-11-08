@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-09-11">
 
-<title>ColabFold – Clinical Proteomics</title>
+<title>create-sdrf – Clinical Proteomics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,10 +20,44 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -69,6 +102,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 <link rel="stylesheet" href="css/styles.css">
@@ -104,7 +140,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Setup</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./colabfold.html" aria-current="page"> 
+    <a class="nav-link" href="./colabfold.html"> 
 <span class="menu-text">ColabFold</span></a>
   </li>  
   <li class="nav-item">
@@ -128,114 +164,152 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">ColabFold</h1>
-<p class="subtitle lead">Tutorial to get started using ColabFold at UCloud.</p>
-</div>
+<main class="content" id="quarto-document-content">
 
 
 
-<div class="quarto-title-meta column-page">
 
-    
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">September 11, 2024</p>
-    </div>
-  </div>
-  
-    <div>
-    <div class="quarto-title-meta-heading">Modified</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date-modified">November 8, 2024</p>
-    </div>
-  </div>
-    
-  </div>
-  
-
-
-</header>
-
-
-<section id="colabfold" class="level1">
-<h1>ColabFold</h1>
-<div class="callout callout-style-default callout-note callout-titled" title="Course Abstract">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<div id="888301cb-544d-45ed-9100-c7893fbb57a4" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="callout-title-container flex-fill">
-Course Abstract
+<div id="e40954cb-ee9c-47d8-a5de-065a175c0797" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_table(<span class="st">'sdrf (3).tsv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div id="2f5251dd-2e6e-4c3a-9189-b7f463bbe178" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'comment[instrument]'</span>] <span class="op">=</span> <span class="st">'Q Exactive'</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'comment[technical replicate]'</span>] <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'characteristics[organism]'</span>] <span class="op">=</span> <span class="st">'Homo Sapiens'</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'characteristics[organism part]'</span>] <span class="op">=</span> <span class="st">'breast'</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'comment[fraction identifier]'</span>] <span class="op">=</span> df[<span class="st">'comment[data file]'</span>].<span class="bu">str</span>.extract(<span class="vs">r'fr(\d+).raw'</span>).astype(<span class="bu">int</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'comment[file uri]'</span>] <span class="op">=</span> <span class="st">'https://storage.jpostdb.org/JPST000265/'</span> <span class="op">+</span> df[<span class="st">'comment[data file]'</span>]</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'technology type'</span>] <span class="op">=</span> <span class="st">'proteomic profiling by mass spectrometry'</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'characteristics[ancestry category]'</span>] <span class="op">=</span> <span class="st">'not available'</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'characteristics[age]'</span>] <span class="op">=</span> <span class="st">'not available'</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'characteristics[sex]'</span>] <span class="op">=</span> <span class="st">'female'</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'characteristics[cell type]'</span>] <span class="op">=</span> <span class="st">'malignant cell'</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'characteristics[biological replicate]'</span>] <span class="op">=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="callout-body-container callout-body">
-<ul>
-<li><p><strong>Time Estimation:</strong> 4 hours</p></li>
-<li><p><strong>Learning Objectives:</strong><br>
-1. Explain the process of predicting protein structures based on amino acid sequences using the ColabFold web application.<br>
-2. Utilize the ColabFold web application within the UCloud environment to perform complex computational tasks with optimal performance.<br>
-3. Understand the metrics used by AlphaFold2 to predict protein structure models and how they relate to the confidence and accuracy of the predictions.<br>
-</p></li>
-</ul>
+<div id="578230a6-3ccf-41ff-9731-9eefe0d2b55f" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>tumor_id <span class="op">=</span> pd.read_excel(<span class="st">'41467_2019_9018_MOESM3_ESM.xlsx'</span>, sheet_name<span class="op">=</span><span class="st">'Tumor annotations'</span>, usecols<span class="op">=</span>[<span class="st">'Tumor ID'</span>, <span class="st">'TMT set nr'</span>, <span class="st">'TMT tag'</span>, <span class="st">'PAM50 subtype'</span>], index_col<span class="op">=</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div id="7beb75d9-bb9b-45bc-8628-a08559b2c220" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>tumor_id.index <span class="op">=</span> pd.MultiIndex.from_tuples([(s, <span class="bu">str</span>(label)) <span class="cf">for</span> s, label <span class="kw">in</span> tumor_id.index], names<span class="op">=</span>tumor_id.index.names)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>ColabFold is a web application that allows users to predict protein structures from sequence data. The application is based on the AlphaFold2 algorithm, which is a deep learning model that predicts protein structures from sequence data. The ColabFold application is a simplified version of the AlphaFold2 algorithm, which is designed to be used by non-computational researchers. The ColabFold application is available on the Clinical Proteomics Sandbox website and can be accessed at UCloud.</p>
-<section id="getting-started" class="level3">
-<h3 class="anchored" data-anchor-id="getting-started">Getting Started</h3>
-<p>You can access ColabFold through UCloud. This integration allows you to use the tool, but before beginning the ColabFold workshop, you need to download the workshop as a Jupyter Notebook from <a href="https://github.com/hds-sandbox/AlphaFold_Workshop">GitHub</a> and upload it to your designated folder on UCloud. To initiate this process, please follow the steps below:</p>
-<ol type="1">
-<li><p>Log in to UCloud.<br>
-</p></li>
-<li><p>Choose a workspace that has GPU resources for optimal performance.<br>
-</p></li>
-<li><p>Access the application menu by clicking on <strong>Apps</strong> in the left-hand side menu.<br>
-<img src="images/UCloud/UCloud_apps.png" class="img-fluid quarto-figure quarto-figure-center" width="250" alt="UCloud Applications"></p></li>
-<li><p>Search for <strong>ColabFold</strong> and click on the icon for the application.<br>
-<img src="images/UCloud/ColabFold_app.png" class="img-fluid quarto-figure quarto-figure-center" width="500"></p></li>
-<li><p>Choose the appropriate machine type and select a GPU, such as <strong>u2-gpu-1</strong>. The use of a single GPU is generally sufficient, though larger sequences may require additional computational power.<br>
-<img src="images/UCloud/Machine_type.png" class="img-fluid quarto-figure quarto-figure-center" width="750"></p></li>
-<li><p>Deploy your own personal folder by selecting <strong>Folder</strong> and adjusting the path to your directory. Be sure to select the correct <strong>Workspace</strong> and change the <strong>Drive</strong> to where you want your data to be stored, if needed. Click on the folder name to select it and then click <strong>Use this folder</strong> in the upper right corner of the pop-up window.<br>
-<img src="images/UCloud/Add_folder.png" class="img-fluid quarto-figure quarto-figure-center" width="750"></p></li>
-<li><p>Click on “Submit” and then “Open interface” on the following page.<br>
-<img src="images/UCloud/Submit_open_interface.png" class="img-fluid quarto-figure quarto-figure-center" width="500"></p></li>
-<li><p>Prior to proceeding, ensure you’ve downloaded the Jupyter Notebook labeled <strong>AlphaFold2.ipynb</strong> from <a href="https://github.com/hds-sandbox/AlphaFold_Workshop">the Github repository</a>. Then, upload the notebook to your ColabFold session using the left-hand menu.</p></li>
-<li><p>Proceed with the ColabFold workshop, which will guide you through the process of predicting protein structures based on amino acid sequences.</p></li>
-</ol>
-</section>
-<section id="efficient-super-computing-with-colabfold" class="level3">
-<h3 class="anchored" data-anchor-id="efficient-super-computing-with-colabfold">Efficient Super-Computing with ColabFold</h3>
-<div class="callout callout-style-default callout-tip callout-titled" title="Advantages of using ColabFold at UCloud">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<div id="ead191c9-aef3-431a-816c-c15273f052df" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>tumor_types <span class="op">=</span> {</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Basal'</span>: <span class="st">'basal-like breast carcinoma'</span>,</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'LumA'</span>: <span class="st">'luminal A breast carcinoma'</span>,</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'LumB'</span>: <span class="st">'luminal B breast carcinoma'</span>,</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'HER2'</span>: <span class="st">'HER2 Positive Breast Carcinoma'</span>,</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Normal'</span>: <span class="st">'Normal Breast-Like Subtype of Breast Carcinoma'</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="callout-title-container flex-fill">
-Advantages of using ColabFold at UCloud
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<pre><code>1. ColabFold at UCloud provides access to super-computing power, enabling users to perform complex computational tasks quickly and efficiently.  
-2. The user-friendly interface of ColabFold and UCloud's interactive HPC-environment make it easy for non-computational users to access and utilize the tool.  
-3. Using ColabFold at UCloud can be a cost-effective solution for those who require access to super-computing power, as it eliminates the need for expensive hardware or software investments and offers a pay-per-use basis instead.</code></pre>
-</div>
-</div>
+<div id="65f5a20e-4d12-48cc-9a32-cdcecad4f602" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>tumor_id.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<div>
 
 
-</section>
-</section>
-</section>
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Tumor ID</th>
+<th data-quarto-table-cell-role="th">PAM50 subtype</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">TMT set nr</th>
+<th data-quarto-table-cell-role="th">TMT tag</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td rowspan="5" data-quarto-table-cell-role="th" data-valign="top">1</td>
+<td data-quarto-table-cell-role="th">126</td>
+<td>OSL.53E</td>
+<td>Basal</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">127N</td>
+<td>OSL.567</td>
+<td>LumA</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">127C</td>
+<td>OSL.3FF</td>
+<td>Basal</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">128N</td>
+<td>OSL.55F</td>
+<td>Basal</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">128C</td>
+<td>OSL.46A</td>
+<td>Basal</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div id="8ecf547f-1594-48f2-aa54-67cdc4257620" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>pool_str <span class="op">=</span> <span class="st">'SN='</span> <span class="op">+</span> <span class="st">','</span>.join(tumor_id[<span class="st">'Tumor ID'</span>].values)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_info(row):</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    pool <span class="op">=</span> <span class="bu">int</span>(re.search(<span class="vs">r'pool(\d)'</span>, row[<span class="st">'comment[data file]'</span>]).group(<span class="dv">1</span>))</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>        sample <span class="op">=</span> tumor_id.loc[(pool, row[<span class="st">'comment[label]'</span>][<span class="dv">3</span>:]), <span class="st">'Tumor ID'</span>]</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>        disease <span class="op">=</span> tumor_types[tumor_id.loc[(pool, row[<span class="st">'comment[label]'</span>][<span class="dv">3</span>:]), <span class="st">'PAM50 subtype'</span>]]</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>        pooled <span class="op">=</span> <span class="st">'not pooled'</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">KeyError</span>:</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>        sample <span class="op">=</span> <span class="st">'pool'</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>        disease <span class="op">=</span> <span class="st">'breast cancer'</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>        pooled <span class="op">=</span> pool_str</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    assay <span class="op">=</span> <span class="ss">f"pool </span><span class="sc">{</span>pool<span class="sc">}</span><span class="ss">, fraction </span><span class="sc">{</span>row[<span class="st">'comment[fraction identifier]'</span>]<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> sample, assay, pooled, disease</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="f37d664a-a044-4b38-96de-d2e561819468" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'source name'</span>, <span class="st">'assay name'</span>, <span class="st">'characteristics[pooled sample]'</span>, <span class="st">'characteristics[disease]'</span>]] <span class="op">=</span> df.<span class="bu">apply</span>(get_info, axis<span class="op">=</span><span class="dv">1</span>, result_type<span class="op">=</span><span class="st">'expand'</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'factor value[disease]'</span>] <span class="op">=</span> df[<span class="st">'characteristics[disease]'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="ab2be8a8-237f-4ae1-bdc7-b70024f828bb" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> key(colname):</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> colname <span class="op">==</span> <span class="st">'source name'</span>:</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">0</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> colname[:<span class="dv">15</span>] <span class="op">==</span> <span class="st">'characteristics'</span>:</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">1</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> colname <span class="op">==</span> <span class="st">'assay name'</span>:</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">2</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> colname <span class="op">==</span> <span class="st">'technology type'</span>:</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">3</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> colname[:<span class="dv">7</span>] <span class="op">==</span> <span class="st">'comment'</span>:</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">4</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> colname[:<span class="dv">12</span>] <span class="op">==</span> <span class="st">'factor value'</span>:</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">5</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="c95778b3-4230-4890-bf9b-7b276a8667cb" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df[<span class="bu">sorted</span>(df.columns, key<span class="op">=</span>key)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="1dde5960-3afc-4f25-a71d-dddd58cedb8f" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>df.to_csv(<span class="st">'PXD008841.sdrf.tsv'</span>, sep<span class="op">=</span><span class="st">'</span><span class="ch">\t</span><span class="st">'</span>, index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

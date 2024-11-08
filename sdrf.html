@@ -6,9 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-09-11">
+<meta name="author" content="Lev Levitsky">
+<meta name="dcterms.date" content="2024-11-08">
 
-<title>ColabFold – Clinical Proteomics</title>
+<title>Breast Cancer Proteomics Module: SDRF – Clinical Proteomics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -104,7 +105,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Setup</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./colabfold.html" aria-current="page"> 
+    <a class="nav-link" href="./colabfold.html"> 
 <span class="menu-text">ColabFold</span></a>
   </li>  
   <li class="nav-item">
@@ -128,37 +129,45 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#sdrf-metadata-format" id="toc-sdrf-metadata-format" class="nav-link active" data-scroll-target="#sdrf-metadata-format">SDRF metadata format</a></li>
+  <li><a href="#personal-details" id="toc-personal-details" class="nav-link" data-scroll-target="#personal-details">Personal Details</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">ColabFold</h1>
-<p class="subtitle lead">Tutorial to get started using ColabFold at UCloud.</p>
+<h1 class="title">Breast Cancer Proteomics Module: SDRF</h1>
 </div>
 
 
 
-<div class="quarto-title-meta column-page">
+<div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Lev Levitsky </p>
+          </div>
+  </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 11, 2024</p>
+      <p class="date">November 8, 2024</p>
     </div>
   </div>
   
-    <div>
-    <div class="quarto-title-meta-heading">Modified</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date-modified">November 8, 2024</p>
-    </div>
-  </div>
     
   </div>
   
@@ -167,74 +176,70 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="colabfold" class="level1">
-<h1>ColabFold</h1>
-<div class="callout callout-style-default callout-note callout-titled" title="Course Abstract">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<div class="question">
+<p>Suppose you want to reproduce the figures from the article. What do you need for that, except the experimental data files?</p>
 </div>
-<div class="callout-title-container flex-fill">
-Course Abstract
+<section id="sdrf-metadata-format" class="level3">
+<h3 class="anchored" data-anchor-id="sdrf-metadata-format">SDRF metadata format</h3>
+<p>Familiarize yourself with the <strong>Sample and Data Relationship Format for Proteomics</strong> - its <a href="https://github.com/bigbio/proteomics-sample-metadata">general description</a> and take a look at the <a href="https://github.com/bigbio/proteomics-sample-metadata/blob/master/sdrf-proteomics/README.adoc">specification</a>. Then answer a few questions:</p>
+<div class="question">
+<p>What is the general layout of an SDRF file?</p>
 </div>
+<div class="question">
+<p>What is the scope of information contained in an SDRF file?</p>
 </div>
-<div class="callout-body-container callout-body">
-<ul>
-<li><p><strong>Time Estimation:</strong> 4 hours</p></li>
-<li><p><strong>Learning Objectives:</strong><br>
-1. Explain the process of predicting protein structures based on amino acid sequences using the ColabFold web application.<br>
-2. Utilize the ColabFold web application within the UCloud environment to perform complex computational tasks with optimal performance.<br>
-3. Understand the metrics used by AlphaFold2 to predict protein structure models and how they relate to the confidence and accuracy of the predictions.<br>
-</p></li>
-</ul>
+<div class="question">
+<p>What columns would capture the most important sample characteristics for the dataset you are working with?</p>
 </div>
+<div class="question">
+<p>How are the valid values defined for different columns?</p>
 </div>
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>ColabFold is a web application that allows users to predict protein structures from sequence data. The application is based on the AlphaFold2 algorithm, which is a deep learning model that predicts protein structures from sequence data. The ColabFold application is a simplified version of the AlphaFold2 algorithm, which is designed to be used by non-computational researchers. The ColabFold application is available on the Clinical Proteomics Sandbox website and can be accessed at UCloud.</p>
-<section id="getting-started" class="level3">
-<h3 class="anchored" data-anchor-id="getting-started">Getting Started</h3>
-<p>You can access ColabFold through UCloud. This integration allows you to use the tool, but before beginning the ColabFold workshop, you need to download the workshop as a Jupyter Notebook from <a href="https://github.com/hds-sandbox/AlphaFold_Workshop">GitHub</a> and upload it to your designated folder on UCloud. To initiate this process, please follow the steps below:</p>
-<ol type="1">
-<li><p>Log in to UCloud.<br>
-</p></li>
-<li><p>Choose a workspace that has GPU resources for optimal performance.<br>
-</p></li>
-<li><p>Access the application menu by clicking on <strong>Apps</strong> in the left-hand side menu.<br>
-<img src="images/UCloud/UCloud_apps.png" class="img-fluid quarto-figure quarto-figure-center" width="250" alt="UCloud Applications"></p></li>
-<li><p>Search for <strong>ColabFold</strong> and click on the icon for the application.<br>
-<img src="images/UCloud/ColabFold_app.png" class="img-fluid quarto-figure quarto-figure-center" width="500"></p></li>
-<li><p>Choose the appropriate machine type and select a GPU, such as <strong>u2-gpu-1</strong>. The use of a single GPU is generally sufficient, though larger sequences may require additional computational power.<br>
-<img src="images/UCloud/Machine_type.png" class="img-fluid quarto-figure quarto-figure-center" width="750"></p></li>
-<li><p>Deploy your own personal folder by selecting <strong>Folder</strong> and adjusting the path to your directory. Be sure to select the correct <strong>Workspace</strong> and change the <strong>Drive</strong> to where you want your data to be stored, if needed. Click on the folder name to select it and then click <strong>Use this folder</strong> in the upper right corner of the pop-up window.<br>
-<img src="images/UCloud/Add_folder.png" class="img-fluid quarto-figure quarto-figure-center" width="750"></p></li>
-<li><p>Click on “Submit” and then “Open interface” on the following page.<br>
-<img src="images/UCloud/Submit_open_interface.png" class="img-fluid quarto-figure quarto-figure-center" width="500"></p></li>
-<li><p>Prior to proceeding, ensure you’ve downloaded the Jupyter Notebook labeled <strong>AlphaFold2.ipynb</strong> from <a href="https://github.com/hds-sandbox/AlphaFold_Workshop">the Github repository</a>. Then, upload the notebook to your ColabFold session using the left-hand menu.</p></li>
-<li><p>Proceed with the ColabFold workshop, which will guide you through the process of predicting protein structures based on amino acid sequences.</p></li>
-</ol>
+<p>We will now create an annotation for a small subset of our data according to SDRF-Proteomics standard. Go to <a href="https://lessdrf.streamlit.app/">lesSDRF</a>, then start a new SDRF annotation with the human template. When asked for file names, input only the first RAW file name from the annotation table found in supporting information. After that, proceed to step 2, labeling.</p>
+<p>Carefully select the list of labels corresponding to the dataset, then click “Submit selection”, and proceed to specify that every label is present in “ALL” files. Then click “Ready” and proceed to step 3.</p>
+<div class="question">
+<p>How many rows does the SDRF table have now? How many would it have if we annotated the entire dataset?</p>
+</div>
+<p>Fill in the first three required columns one by one: source name, organism, and organism part.</p>
+<div class="question">
+<p>What would be a good sample identifier for the “source name” column?</p>
+</div>
+<p>Fill in the next column, cell type. Consider that we are dealing with cancer samples. For the next columns, ancestry category and age, you can select “not available”. Then, fill in the “sex” column.</p>
+<p>It is time to fill in the disease column.</p>
+<div class="question">
+<p>How many different values for disease can we possibly have in our annotation? What do they correspond to?</p>
+</div>
+<div class="question">
+<p>How many different values will we actually use when annotating the selected subset of data?</p>
+</div>
+<p>Proceed to fill the disease column, then fill in the rest of the columns, up to and including “instrument”.</p>
+<div class="question">
+<p>How many different values should you use in the “assay name” column when annotating the subset? Why? How many different values should there be in the entire annotation?</p>
+</div>
+<p>When you have only four columns left (cleavage agent details, modifications, precursor and fragment mass tolerance), skip to step 4 and fill the factor value column.</p>
+<div class="question">
+<p>What is the meaning of factor value, and what should it be in this case?</p>
+</div>
+<p>After that, download the resulting file. Copy the cleavage agent, modifications and mass tolerance information from the partial annotation provided by FragPipe into your file, using Excel or similar software. Congratulations! You have a complete annotation according to the SDRF standard, but only for one out of all raw files in the data set. If you need a grade for this course, submit your SDRF file together with your answers.</p>
+<div class="question">
+<p>How would you go about making a full dataset annotation?</p>
+</div>
 </section>
-<section id="efficient-super-computing-with-colabfold" class="level3">
-<h3 class="anchored" data-anchor-id="efficient-super-computing-with-colabfold">Efficient Super-Computing with ColabFold</h3>
-<div class="callout callout-style-default callout-tip callout-titled" title="Advantages of using ColabFold at UCloud">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Advantages of using ColabFold at UCloud
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<pre><code>1. ColabFold at UCloud provides access to super-computing power, enabling users to perform complex computational tasks quickly and efficiently.  
-2. The user-friendly interface of ColabFold and UCloud's interactive HPC-environment make it easy for non-computational users to access and utilize the tool.  
-3. Using ColabFold at UCloud can be a cost-effective solution for those who require access to super-computing power, as it eliminates the need for expensive hardware or software investments and offers a pay-per-use basis instead.</code></pre>
-</div>
-</div>
+<section id="personal-details" class="level2">
+<h2 class="anchored" data-anchor-id="personal-details">Personal Details</h2>
+<strong>Name:</strong>
+<textarea id="name" placeholder="Type your name here..." class="input-box"></textarea>
+<strong>Email:</strong>
+<textarea id="email" placeholder="Type your email here..." class="input-box"></textarea>
+<strong>Course/Program:</strong>
+<textarea id="course" placeholder="Type your course/program here..." class="input-box"></textarea>
+<strong>Date:</strong>
+<textarea id="date" placeholder="Type the date here..." class="input-box"></textarea>
+<button id="downloadBtn" class="download-button">
+Download Your Answers as PDF
+</button>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
 
 
-</section>
-</section>
 </section>
 
 </main> <!-- /main -->

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Jacob Fredegaard Hansen">
-<meta name="dcterms.date" content="2024-10-31">
+<meta name="dcterms.date" content="2024-11-08">
 
 <title>Breast Cancer Proteomics Module – Clinical Proteomics</title>
 <style>
@@ -21,40 +21,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -211,7 +177,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 31, 2024</p>
+      <p class="date">November 8, 2024</p>
     </div>
   </div>
   
@@ -328,7 +294,7 @@ Module Overview
 </div>
 <section id="tmt10-tags-and-tumor-ids" class="level4">
 <h4 class="anchored" data-anchor-id="tmt10-tags-and-tumor-ids">TMT10-Tags and Tumor IDs</h4>
-<p>Fill in the table below by entering the corresponding TMT10-tags and Tumor IDs. Once submitted, you’ll get instant feedback on whether your input is correct.</p>
+<p>Fill in the table below by entering the corresponding TMT10-tags and Tumor IDs. Once submitted, you’ll get instant feedback on whether your input is correct. When you have filled the whole table correctly, download the annotation files, <strong>you will need them later</strong>.</p>
 <form id="tmtForm">
 <table style="width: 100%; border-collapse: collapse;">
 <tbody><tr>
@@ -536,19 +502,19 @@ TMT130C
 TMT131
 </td>
 <td>
-<input type="text" id="set1_131" name="set1_131" class="input-box">
+<input type="text" id="set1_131N" name="set1_131" class="input-box">
 </td>
 <td>
-<input type="text" id="set2_131" name="set2_131" class="input-box">
+<input type="text" id="set2_131N" name="set2_131" class="input-box">
 </td>
 <td>
-<input type="text" id="set3_131" name="set3_131" class="input-box">
+<input type="text" id="set3_131N" name="set3_131" class="input-box">
 </td>
 <td>
-<input type="text" id="set4_131" name="set4_131" class="input-box">
+<input type="text" id="set4_131N" name="set4_131" class="input-box">
 </td>
 <td>
-<input type="text" id="set5_131" name="set5_131" class="input-box">
+<input type="text" id="set5_131N" name="set5_131" class="input-box">
 </td>
 </tr>
 </tbody></table>
@@ -573,7 +539,7 @@ Download Annotation Files
     set1_129C: 'OSL.4D6', set2_129C: 'OSL.449', set3_129C: 'OSL.441', set4_129C: 'OSL.53D', set5_129C: 'OSL.4BA',
     set1_130N: 'OSL.485', set2_130N: 'OSL.44E', set3_130N: 'OSL.430', set4_130N: 'OSL.540', set5_130N: 'OSL.579',
     set1_130C: 'OSL.41B', set2_130C: 'OSL.3EB', set3_130C: 'OSL.4FA', set4_130C: 'OSL.42E', set5_130C: 'OSL.57B',
-    set1_131: 'Pool', set2_131: 'Pool', set3_131: 'Pool', set4_131: 'Pool', set5_131: 'Pool'
+    set1_131N: 'Pool', set2_131N: 'Pool', set3_131N: 'Pool', set4_131N: 'Pool', set5_131N: 'Pool'
   };
 
   function checkAnswers() {
@@ -592,15 +558,14 @@ Download Annotation Files
 
   function downloadFiles() {
     const sets = ['set1', 'set2', 'set3', 'set4', 'set5'];
-    const tmtLabels = ['TMT126', 'TMT127N', 'TMT127C', 'TMT128N', 'TMT128C',
-                       'TMT129N', 'TMT129C', 'TMT130N', 'TMT130C', 'TMT131'];
+    const tmtLabels = ['126', '127N', '127C', '128N', '128C', '129N', '129C', '130N', '130C', '131N'];
 
     sets.forEach((set) => {
       let content = '';
       
       // Iterate over each TMT label
       tmtLabels.forEach(label => {
-        const input = document.getElementById(`${set}_${label.slice(-3)}`) || document.getElementById(`${set}_${label.slice(-3, -1)}N`) || document.getElementById(`${set}_${label.slice(-3, -1)}C`);
+        const input = document.getElementById(`${set}_${label}`);
         const userAnswer = input ? input.value.trim() : '';
         content += `${label}\t${userAnswer}\n`;
       });
@@ -656,7 +621,7 @@ Download Annotation Files
 <div class="question">
 <p>What are the benefits of using FragPipe?</p>
 </div>
-<p>Simple analyses in <strong>FragPipe</strong> may only require 8 GB of RAM, while large-scale or complex analyses may require 24 GB of memory or more (<a href="https://fragpipe.nesvilab.org/docs/tutorial_fragpipe.html#:~:text=FragPipe%20runs%20on%20Windows%20and,24%20GB%20memory%20or%20more.">FragPipe Documentation</a>), which is why we will allocate 24 GB for this exercise.</p>
+<p>Now that we know what we want to do and why, it is time to start the <strong>Proteomics Sandbox</strong> application, or job. Simple analyses in <strong>FragPipe</strong> may only require 8 GB of RAM, while large-scale or complex analyses may require 24 GB of memory or more (<a href="https://fragpipe.nesvilab.org/docs/tutorial_fragpipe.html#:~:text=FragPipe%20runs%20on%20Windows%20and,24%20GB%20memory%20or%20more.">FragPipe Documentation</a>), which is why we will allocate 24 GB for this exercise.</p>
 <p>In UCloud, the settings should look like this:</p>
 <p><strong>SCREENSHOT HERE</strong></p>
 <p>Before submitting the job, it is also recommended to create a personal folder where you can store both the data and the results generated by <strong>FragPipe</strong>. You can follow the step-by-step guide below:</p>
@@ -667,32 +632,41 @@ Download Annotation Files
 <section id="download-data-from-the-paper" class="level4">
 <h4 class="anchored" data-anchor-id="download-data-from-the-paper">Download Data from the Paper</h4>
 <p>Initially, we will need to download the paper’s data. For this exercise, we will only use one sample file from each Plex Set/Pool.</p>
-<p>We will use the terminal in the virtual environment for downloading the data. First, we need to update and download the necessary packages. You can do that by typing the following code:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get update</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install lftp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="question">
-<p>What does the code above do? Please explain its functionality and purpose.</p>
-</div>
-<p>Now, we can access the FTP server where the data is located. You will need the server address from the correct FTP-server, which can be found on the site for the accession code XXX in ProteomeXchange, previously visited. At the bottom of the page, you will find the FTP-server address where the data is stored.</p>
+<p>We will use the terminal in the virtual environment for downloading the data.</p>
+<p>Now, we can access the FTP server where the data is located. You will need the server address from the correct FTP-server, which can be found on the site for the accession code PXD008841 in ProteomeXchange, previously visited. At the bottom of the page, you will find the FTP-server address where the data is stored.</p>
 <div class="question">
 <p>Please locate the address.</p>
 </div>
-<p>The address is used for accessing the data used in the study. To do so, we can use the package lftp that we just installed to access the server using the following code:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">lftp</span> [insert the address of the FTP server here]</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">lftp</span> ftp://ftp.......</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Click on the “Dataset FTP location” link.</p>
 <div class="question">
 <p>We now have access to the data stored on the FTP server. Please provide a brief description of the contents of the folder on the FTP server.</p>
 </div>
-<p>To download one sample file from each of the Plex Sets, you can use the following code in the terminal:</p>
-<section id="code-here" class="level5">
-<h5 class="anchored" data-anchor-id="code-here">CODE HERE</h5>
-<div class="question">
-<p>Please explain what the code is doing by describing the functions used.</p>
+<p>To download one sample file from each of the Plex Sets, we will need these URLs only:</p>
+<pre><code>https://storage.jpostdb.org/JPST000265/HJOS2U_20140410_TMTpool1_300ugIPG37-49_7of15ul_fr01.raw
+https://storage.jpostdb.org/JPST000265/HJOS2U_20140410_TMTpool2_300ugIPG37-49_7of15ul_fr01.raw
+https://storage.jpostdb.org/JPST000265/HJOSLO2U_QEHF_20150318_TMT_pool3_300ugIPG37-49_7of15ul_fr01.raw
+https://storage.jpostdb.org/JPST000265/HJOSLO2U_QEHF_20150322_TMT_pool4_300ugIPG37-49_7of15ul_fr01.raw
+https://storage.jpostdb.org/JPST000265/HJOSLO2U_QEHF_20150329_TMT_pool5_300ugIPG37-49_7of15ul_fr01.raw
+</code></pre>
+<p>(you can also download this list <a href="https://github.com/hds-sandbox/proteomics-sandbox/blob/webpage/urls.txt">here</a>).</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We recommend to open this material inside <strong>Proteomics Sandbox</strong> to be able to copy &amp; paste or download the file directly into the environment.</p>
+</div>
+</div>
+<p>After you save the list of URLs into a file named <code>urls.txt</code>. you can use the following code in the terminal:</p>
+<pre><code>wget -i urls.txt</code></pre>
 <p>If you added your own private folder to the UCloud session, you could now move the data into that folder for better management of the data you’re working with.</p>
-<p>Next, we can launch FragPipe, which is located on the desktop. In this tutorial, we are using FragPipe version XX.YY in the June 2024 version of the Proteomics Sandbox Application.</p>
+<p>Next, we can launch FragPipe, which is located on the desktop. In this tutorial, we are using FragPipe version <strong>22.0</strong> in the October 2024 version of the <strong>Proteomics Sandbox</strong> Application.</p>
 <p>Now that we have launched FragPipe, we need to configure the settings prior to running the analysis. Therefore, we have provided some guiding questions to help you set up the settings in FragPipe:</p>
-</section>
 </section>
 <section id="getting-started-with-fragpipe" class="level3">
 <h3 class="anchored" data-anchor-id="getting-started-with-fragpipe">Getting started with FragPipe</h3>
@@ -701,8 +675,9 @@ Download Annotation Files
 <p>Which workflow should you select? HINT: How many TMT tags are listed in the table in Supplementary Data 1?</p>
 </div>
 <p>Click ‘Load workflow’ after you have found and selected the correct workflow to be used.</p>
-<p>Next, add your files by clicking on “Add files” and locate them in the designated folder for your raw files that you previously created.</p>
-<p>Now you should relocate to the “Database” tab. Here you can either download or browse for an already preexisting database file. In this case, we will simply download the latest database file.</p>
+<p>Next, add your files by clicking on “Add files” and locate them in the designated folder for your raw files that you previously created. Assign each file to a separate <em>experiment</em> by clicking “Consecutive”.</p>
+<p>Go to the “Quant (Isobaric)” tab. Here, you need to provide annotations for TMT channels. Use the five pool annotations that you downloaded from this page. You will need to upload them to Ucloud and specify the corresponding annotation file for each experiement in order.</p>
+<p>Now you should relocate to the “Database” tab. Here you can either download or browse for an already preexisting database file. In this case, we will simply download the latest database file by clicking the “Download” button in FragPipe.</p>
 <div class="question">
 <p>What is the purpose of the database file used in FragPipe, and why is it important?</p>
 </div>
