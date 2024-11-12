@@ -22,6 +22,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -731,11 +765,11 @@ Note
 <p>We recommend to open this material inside <strong>Proteomics Sandbox</strong> to be able to copy &amp; paste or download the file directly into the environment.</p>
 </div>
 </div>
-<p>After you save the list of URLs into a file named <code>urls.txt</code>. you can use the following code in the terminal:</p>
-<pre><code>wget -i urls.txt</code></pre>
-<p>If you added your own private folder to the UCloud session, you could now move the data into that folder for better management of the data you’re working with.</p>
-<p>Next, we can launch FragPipe, which is located on the desktop. In this tutorial, we are using FragPipe version <strong>22.0</strong> in the October 2024 version of the <strong>Proteomics Sandbox</strong> Application.</p>
-<p>Now that we have launched FragPipe, we need to configure the settings prior to running the analysis. Therefore, we have provided some guiding questions to help you set up the settings in FragPipe:</p>
+<p>After saving the list of URLs to a file named <code>urls.txt</code>, you can use the following command in the terminal. Make sure you are in the correct directory where <code>urls.txt</code> is located before running the code below to ensure the file is found correctly:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> <span class="at">-i</span> urls.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If you added your own private folder to the UCloud session, you can now move the data into that folder for better data management.</p>
+<p>Next, we can launch FragPipe, which is located on the desktop. In this tutorial, we are using FragPipe version <strong>22.0</strong> within the October 2024 version of the <strong>Proteomics Sandbox</strong> application, available <a href="https://cloud.sdu.dk/app/jobs/create?app=proteomics&amp;version=Oct2024">here</a>.</p>
+<p>Now that FragPipe is launched, we need to configure the settings before running the analysis. To assist you in setting up the settings in FragPipe, we have provided some guiding questions:</p>
 </section>
 <section id="getting-started-with-fragpipe" class="level3">
 <h3 class="anchored" data-anchor-id="getting-started-with-fragpipe">Getting started with FragPipe</h3>
@@ -752,17 +786,17 @@ Note
 <p>Some of the information you will need in this section can be found in <strong>Supplementary Information</strong> to the study. Open the <strong>Supplementary Information</strong> and go to page 25, <strong>Supplementary Methods</strong>.</p>
 </div>
 </div>
-<p>Go to the “Workflow” tab to set up the workflow for the analysis and import the data you have just downloaded.</p>
+<p>Go to the <code>Workflow</code> tab to set up the workflow for the analysis and import the data you just downloaded.</p>
 <div class="question">
 <p>Which workflow should you select? <strong>Hint</strong>: What labeling method was used in the study?</p>
 </div>
 <div class="question">
 <p>How does the labeling method affect data processing?</p>
 </div>
-<p>Click “Load workflow” after you have found and selected the correct workflow to be used.</p>
-<p>Next, add your files by clicking on “Add files” and locate them in the designated folder for your raw files that you previously created. Assign each file to a separate <em>experiment</em> by clicking “Consecutive”.</p>
-<p>Go to the “Quant (Isobaric)” tab. Here, you need to provide annotations for TMT channels. Use the five pool annotations that you downloaded from this page. You will need to upload them to Ucloud and specify the corresponding annotation file for each experiement in order.</p>
-<p>Now you should relocate to the “Database” tab. Here you can either download or browse for an already preexisting database file. In this case, we will simply download the latest database file by clicking the “Download” button in FragPipe. Add contaminants and decoys.</p>
+<p>Click <code>Load workflow</code> after you have selected the appropriate workflow.</p>
+<p>Next, add your files by clicking on <code>Add files</code> and locating them in the designated folder for your raw files. Assign each file to a separate <em>experiment</em> by clicking <code>Consecutive</code>.</p>
+<p>Go to the <code>Quant (Isobaric)</code> tab. Here, you need to provide annotations for TMT channels. Use the five pool annotations that you downloaded from this page. You will need to upload them to UCloud and specify the corresponding annotation file for each experiment in order.</p>
+<p>Now, navigate to the <code>Database</code> tab. Here you can either download a new database file or browse for an existing one. In this case, we will download the latest database file by clicking the <code>Download</code> button in FragPipe. Be sure to add contaminants and decoys.</p>
 <div class="question">
 <p>What is the purpose of the database file used in FragPipe, and why is it important?</p>
 </div>
