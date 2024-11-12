@@ -744,13 +744,12 @@ Caution
 <p>We now have access to the data stored on the FTP server. Please provide a brief description of the contents of the folder on the FTP server.</p>
 </div>
 <p>To download one sample file from each of the Plex Sets, we will need these URLs only:</p>
-<pre><code>https://storage.jpostdb.org/JPST000265/HJOS2U_20140410_TMTpool1_300ugIPG37-49_7of15ul_fr01.raw
-https://storage.jpostdb.org/JPST000265/HJOS2U_20140410_TMTpool2_300ugIPG37-49_7of15ul_fr01.raw
-https://storage.jpostdb.org/JPST000265/HJOSLO2U_QEHF_20150318_TMT_pool3_300ugIPG37-49_7of15ul_fr01.raw
-https://storage.jpostdb.org/JPST000265/HJOSLO2U_QEHF_20150322_TMT_pool4_300ugIPG37-49_7of15ul_fr01.raw
-https://storage.jpostdb.org/JPST000265/HJOSLO2U_QEHF_20150329_TMT_pool5_300ugIPG37-49_7of15ul_fr01.raw
-
-</code></pre>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">https://storage.jpostdb.org/JPST000265/HJOS2U_20140410_TMTpool1_300ugIPG37-49_7of15ul_fr01.raw</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">https://storage.jpostdb.org/JPST000265/HJOS2U_20140410_TMTpool2_300ugIPG37-49_7of15ul_fr01.raw</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">https://storage.jpostdb.org/JPST000265/HJOSLO2U_QEHF_20150318_TMT_pool3_300ugIPG37-49_7of15ul_fr01.raw</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">https://storage.jpostdb.org/JPST000265/HJOSLO2U_QEHF_20150322_TMT_pool4_300ugIPG37-49_7of15ul_fr01.raw</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ex">https://storage.jpostdb.org/JPST000265/HJOSLO2U_QEHF_20150329_TMT_pool5_300ugIPG37-49_7of15ul_fr01.raw</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>(You can also download this list <a href="https://github.com/hds-sandbox/proteomics-sandbox/blob/webpage/TeachingModule/urls.txt">here</a>).</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -817,7 +816,7 @@ What role do decoys play in estimating the FDR?
 </li>
 </ul>
 </div>
-<p>Next, you can go to the “MSFragger” tab to adjust the parameter settings for the search and matching of the theoretical and experimental peptide spectra. The search parameters to be used are listed in <strong>Supplementary Methods</strong>.</p>
+<p>Next, you can go to the <code>MSFragger</code> tab to adjust the parameter settings for the search and matching of the theoretical and experimental peptide spectra. The search parameters to be used are listed in <strong>Supplementary Methods</strong>.</p>
 <div class="question">
 <p>What parameters did you set?</p>
 </div>
@@ -841,7 +840,7 @@ Note
 <p>You can also skip configuring MSFragger manually and just use this <a href="https://github.com/hds-sandbox/proteomics-sandbox/blob/webpage/fragger.params">parameter file</a>. You will need to upload it to UCloud and then load it on the “MSFragger” tab in FragPipe.</p>
 </div>
 </div>
-<p>Finally, we can navigate to the “Run” tab and run the analysis. For that, we must choose an output directory for the results of the search made by FragPipe. Once you have adjusted that, you are ready to click on “Run”.</p>
+<p>Finally, we can navigate to the <code>Run</code> tab and run the analysis. For that, we must choose an output directory for the results of the search made by FragPipe. Once you have adjusted that, you are ready to click on <code>Run</code>.</p>
 <p>This process might take some time, so make sure that you still have enough hours allocated on your job on UCloud—otherwise, it will get terminated. Meanwhile, you can answer these questions:</p>
 <div class="question">
 <p>What are your expectations regarding the output results? Consider the implications of the number of files provided for this search in your response.</p>
