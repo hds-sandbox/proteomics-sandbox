@@ -44,7 +44,14 @@ document.getElementById('downloadBtn').addEventListener('click', function() {
   let answersHTML = `
     <div style="font-family: Arial, sans-serif; padding: 20px;">
       <h1 style="text-align: center; font-size: 24px;">Assignment Submission</h1>
-  `;
+      <h2 style="font-size: 18px;">Submitter</h2>
+      <table>`;
+
+  const table = document.querySelector('table.personal-details');
+  for (var i = 0, row; row = table.rows[i]; i++) {
+     answersHTML += `<tr><td style="font-weight: bold;">${row.cells[0].textContent}</td><td>${row.cells[1].children[0].value}</td></tr>`;
+  }
+  answersHTML += `</table>`;
 
   questions.forEach((question, index) => {
     const questionNumber = index + 1; // Incrementing index for question number

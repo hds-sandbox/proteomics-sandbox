@@ -76,3 +76,8 @@ body {
 .download-button:hover {
   background-color: #0056b3; /* Darker blue on hover */
 }
+
+table.personal-details tr td:nth-child(1) {
+  vertical-align: middle;
+  font-weight: bold;
+}

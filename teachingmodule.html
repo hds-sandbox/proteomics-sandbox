@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Jacob Fredegaard Hansen">
-<meta name="dcterms.date" content="2024-11-08">
+<meta name="dcterms.date" content="2024-11-12">
 
 <title>Breast Cancer Proteomics Module – Clinical Proteomics</title>
 <style>
@@ -139,17 +139,13 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#welcome-to-the-ms-data-analysis-module" id="toc-welcome-to-the-ms-data-analysis-module" class="nav-link active" data-scroll-target="#welcome-to-the-ms-data-analysis-module">Welcome to the MS Data Analysis Module</a>
   <ul class="collapse">
-  <li><a href="#preliminary-work" id="toc-preliminary-work" class="nav-link" data-scroll-target="#preliminary-work">Preliminary work</a>
+  <li><a href="#part-1-preliminary-work" id="toc-part-1-preliminary-work" class="nav-link" data-scroll-target="#part-1-preliminary-work">Part 1: Preliminary work</a>
   <ul class="collapse">
   <li><a href="#questions-for-understanding-the-paper" id="toc-questions-for-understanding-the-paper" class="nav-link" data-scroll-target="#questions-for-understanding-the-paper">Questions for Understanding the Paper</a></li>
   <li><a href="#supplementary-data" id="toc-supplementary-data" class="nav-link" data-scroll-target="#supplementary-data">Supplementary Data</a></li>
   </ul></li>
-  <li><a href="#analysis-of-ms-data-using-fragpipe" id="toc-analysis-of-ms-data-using-fragpipe" class="nav-link" data-scroll-target="#analysis-of-ms-data-using-fragpipe">Analysis of MS Data Using FragPipe</a>
-  <ul class="collapse">
-  <li><a href="#getting-started-with-fragpipe" id="toc-getting-started-with-fragpipe" class="nav-link" data-scroll-target="#getting-started-with-fragpipe">Getting started with FragPipe</a></li>
-  <li><a href="#interpretation-and-analysis-of-fragpipe-results" id="toc-interpretation-and-analysis-of-fragpipe-results" class="nav-link" data-scroll-target="#interpretation-and-analysis-of-fragpipe-results">Interpretation and Analysis of FragPipe Results</a></li>
-  </ul></li>
-  <li><a href="#data-screening-multi-variate-analysis-and-clustering" id="toc-data-screening-multi-variate-analysis-and-clustering" class="nav-link" data-scroll-target="#data-screening-multi-variate-analysis-and-clustering">Data screening, multi-variate analysis and clustering</a></li>
+  <li><a href="#part-2-analysis-of-ms-data-using-fragpipe" id="toc-part-2-analysis-of-ms-data-using-fragpipe" class="nav-link" data-scroll-target="#part-2-analysis-of-ms-data-using-fragpipe">Part 2: Analysis of MS Data Using FragPipe</a></li>
+  <li><a href="#part-3-data-screening-multi-variate-analysis-and-clustering" id="toc-part-3-data-screening-multi-variate-analysis-and-clustering" class="nav-link" data-scroll-target="#part-3-data-screening-multi-variate-analysis-and-clustering">Part 3: Data screening, multi-variate analysis and clustering</a></li>
   <li><a href="#personal-details" id="toc-personal-details" class="nav-link" data-scroll-target="#personal-details">Personal Details</a></li>
   </ul></li>
   </ul>
@@ -177,7 +173,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 8, 2024</p>
+      <p class="date">November 12, 2024</p>
     </div>
   </div>
   
@@ -262,8 +258,8 @@ Module Overview
 </div>
 <p>By the end of this module, you will be equipped to manage TMT-labeled proteomics data and conduct detailed analyses crucial in clinical proteomics research.</p>
 <p><strong>Let’s get started!</strong></p>
-<section id="preliminary-work" class="level2">
-<h2 class="anchored" data-anchor-id="preliminary-work">Preliminary work</h2>
+<section id="part-1-preliminary-work" class="level2">
+<h2 class="anchored" data-anchor-id="part-1-preliminary-work">Part 1: Preliminary work</h2>
 <p>For this work, we will use the data that was used and analyzed in the paper <em><a href="https://www.nature.com/articles/s41467-019-09018-y">Breast cancer quantitative proteome and proteogenomic landscape</a></em> by Johansson <em>et al.</em>, which compares subgroups of breast cancer tumors from the Oslo2 cohort.</p>
 <p>Before delving into the actual analysis of the data in FragPipe, we must initially:</p>
 <ol type="1">
@@ -273,15 +269,41 @@ Module Overview
 <section id="questions-for-understanding-the-paper" class="level3">
 <h3 class="anchored" data-anchor-id="questions-for-understanding-the-paper">Questions for Understanding the Paper</h3>
 <p>To better understand the paper, we have formulated some questions that should help clarify the study design, aim, and overall scope of the work. These questions are listed below:</p>
-<ul>
-<li>…</li>
-<li>…</li>
-<li>…</li>
-</ul>
+<div class="question">
+<p>What are the primary research goals of this study?</p>
+</div>
+<div class="question">
+<p>How is the study design structured to achieve the study objective?</p>
+</div>
+<div class="question">
+<p>What role does LC-MS/MS play in this study, and why was it chosen as a method?</p>
+</div>
+<div class="question">
+<p>What novel insights were gained from the proteogenomic approach used in this study?</p>
+</div>
 </section>
 <section id="supplementary-data" class="level3">
 <h3 class="anchored" data-anchor-id="supplementary-data">Supplementary Data</h3>
-<p>Before we proceed and download the data available from the paper, we must first delve into some of the details in Supplementary Data 1. This is a large table containing the quantitative proteome data from the Oslo2 breast cancer cohort, which includes 45 subgroups of cancer tumors and relates to Figures 1-6 in the paper.</p>
+<p>Before we proceed and download the data available from the paper, we must first delve into some of the details in Supplementary Data. Your first task is to look through the Supplementary Data and find the annotation relating the tumor types to the isotopic labels used.</p>
+<div class="question">
+<p>How did you find the required information? Describe the steps you took. How much time did it take?</p>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>If you have not been able to find the annotations, open Supplementary Data 1, and then go to the tab called “Tumor annotations”.</p>
+</div>
+</div>
+</div>
 <p>To better understand the supplementary data, we have prepared guiding questions to aid in interpreting the table. You can find the supplementary data in the paper <a href="https://www-nature-com.proxy1-bib.sdu.dk/articles/s41467-019-09018-y#Sec15">here</a>.</p>
 <div class="question">
 <p>Provide a brief description of the content presented in the table.</p>
@@ -294,7 +316,20 @@ Module Overview
 </div>
 <section id="tmt10-tags-and-tumor-ids" class="level4">
 <h4 class="anchored" data-anchor-id="tmt10-tags-and-tumor-ids">TMT10-Tags and Tumor IDs</h4>
-<p>Fill in the table below by entering the corresponding TMT10-tags and Tumor IDs. Once submitted, you’ll get instant feedback on whether your input is correct. When you have filled the whole table correctly, download the annotation files, <strong>you will need them later</strong>.</p>
+<p>Fill in the table below by entering the corresponding TMT10-tags and Tumor IDs. Once submitted, you’ll get instant feedback on whether your input is correct.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When you have filled the whole table correctly, download the annotation files, <strong>you will need them later</strong>.</p>
+</div>
+</div>
 <form id="tmtForm">
 <table style="width: 100%; border-collapse: collapse;">
 <tbody><tr>
@@ -592,171 +627,12 @@ Download Annotation Files
 </section>
 </section>
 </section>
-<section id="analysis-of-ms-data-using-fragpipe" class="level2">
-<h2 class="anchored" data-anchor-id="analysis-of-ms-data-using-fragpipe">Analysis of MS Data Using FragPipe</h2>
-<p>In this section of the teaching module, we will work with data from the paper. The first task is to download sample files from the paper, guided by the questions provided below:</p>
-<div class="question">
-<p>Where can the data be found?</p>
-</div>
-<div class="question">
-<p>What is the ProteomeXChange database?</p>
-</div>
-<div class="question">
-<p>What accession code is used for the data deposited in ProteomeXChange?</p>
-</div>
-<p>By examining the accession code for the data deposited on ProteomeXChange, we can access and download the data using FTP.</p>
-<div class="question">
-<p>What is FTP, and what is its functionality?</p>
-</div>
-<p>For downloading the data, we will use the <strong>Proteomics Sandbox Application</strong> on UCloud. This platform allows us to access the necessary storage capacity as well as the computational power required to execute this process.</p>
-<p>The <strong>Proteomics Sandbox Application</strong> is a virtual environment that includes multiple software tools, including <strong>FragPipe</strong> for analyzing proteomics data.</p>
-<p>You can find the <strong>Proteomics Sandbox Application</strong> on UCloud <a href="https://cloud.sdu.dk/app/jobs/create?app=proteomics">here</a>.</p>
-<p>First, we will download the data for the sample files to be used in <strong>FragPipe</strong>. Then, we will launch <strong>FragPipe</strong> to run the first analysis of the data. Before doing so, we have some questions regarding <strong>FragPipe</strong> and its usability:</p>
-<div class="question">
-<p>What is FragPipe, and what are its applications?</p>
-</div>
-<div class="question">
-<p>If FragPipe were not used for this part of the teaching module, which alternative software tools could be employed? Please provide a few examples.</p>
-</div>
-<div class="question">
-<p>What are the benefits of using FragPipe?</p>
-</div>
-<p>Now that we know what we want to do and why, it is time to start the <strong>Proteomics Sandbox</strong> application, or job. Simple analyses in <strong>FragPipe</strong> may only require 8 GB of RAM, while large-scale or complex analyses may require 24 GB of memory or more (<a href="https://fragpipe.nesvilab.org/docs/tutorial_fragpipe.html#:~:text=FragPipe%20runs%20on%20Windows%20and,24%20GB%20memory%20or%20more.">FragPipe Documentation</a>), which is why we will allocate 24 GB for this exercise.</p>
-<p>In UCloud, the settings should look like this:</p>
-<p><strong>SCREENSHOT HERE</strong></p>
-<p>Before submitting the job, it is also recommended to create a personal folder where you can store both the data and the results generated by <strong>FragPipe</strong>. You can follow the step-by-step guide below:</p>
-<p><strong>SCREENSHOT HERE</strong></p>
-<p><strong>CAUTION!!!</strong></p>
-<p>Make sure to allocate the right number of hours before submitting the job. If the time runs out, the job will be canceled, and all progress will be lost. However, you can always extend the job duration if more time is required after submission.</p>
-<p>Time can pass quickly when working, so we recommend initially allocating 2 hours for the job. Now, we are ready to submit the job and launch the virtual environment of the <strong>Proteomics Sandbox Application</strong>.</p>
-<section id="download-data-from-the-paper" class="level4">
-<h4 class="anchored" data-anchor-id="download-data-from-the-paper">Download Data from the Paper</h4>
-<p>Initially, we will need to download the paper’s data. For this exercise, we will only use one sample file from each Plex Set/Pool.</p>
-<p>We will use the terminal in the virtual environment for downloading the data.</p>
-<p>Now, we can access the FTP server where the data is located. You will need the server address from the correct FTP-server, which can be found on the site for the accession code PXD008841 in ProteomeXchange, previously visited. At the bottom of the page, you will find the FTP-server address where the data is stored.</p>
-<div class="question">
-<p>Please locate the address.</p>
-</div>
-<p>Click on the “Dataset FTP location” link.</p>
-<div class="question">
-<p>We now have access to the data stored on the FTP server. Please provide a brief description of the contents of the folder on the FTP server.</p>
-</div>
-<p>To download one sample file from each of the Plex Sets, we will need these URLs only:</p>
-<pre><code>https://storage.jpostdb.org/JPST000265/HJOS2U_20140410_TMTpool1_300ugIPG37-49_7of15ul_fr01.raw
-https://storage.jpostdb.org/JPST000265/HJOS2U_20140410_TMTpool2_300ugIPG37-49_7of15ul_fr01.raw
-https://storage.jpostdb.org/JPST000265/HJOSLO2U_QEHF_20150318_TMT_pool3_300ugIPG37-49_7of15ul_fr01.raw
-https://storage.jpostdb.org/JPST000265/HJOSLO2U_QEHF_20150322_TMT_pool4_300ugIPG37-49_7of15ul_fr01.raw
-https://storage.jpostdb.org/JPST000265/HJOSLO2U_QEHF_20150329_TMT_pool5_300ugIPG37-49_7of15ul_fr01.raw
-</code></pre>
-<p>(you can also download this list <a href="https://github.com/hds-sandbox/proteomics-sandbox/blob/webpage/urls.txt">here</a>).</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>We recommend to open this material inside <strong>Proteomics Sandbox</strong> to be able to copy &amp; paste or download the file directly into the environment.</p>
-</div>
-</div>
-<p>After you save the list of URLs into a file named <code>urls.txt</code>. you can use the following code in the terminal:</p>
-<pre><code>wget -i urls.txt</code></pre>
-<p>If you added your own private folder to the UCloud session, you could now move the data into that folder for better management of the data you’re working with.</p>
-<p>Next, we can launch FragPipe, which is located on the desktop. In this tutorial, we are using FragPipe version <strong>22.0</strong> in the October 2024 version of the <strong>Proteomics Sandbox</strong> Application.</p>
-<p>Now that we have launched FragPipe, we need to configure the settings prior to running the analysis. Therefore, we have provided some guiding questions to help you set up the settings in FragPipe:</p>
+<section id="part-2-analysis-of-ms-data-using-fragpipe" class="level2">
+<h2 class="anchored" data-anchor-id="part-2-analysis-of-ms-data-using-fragpipe">Part 2: Analysis of MS Data Using FragPipe</h2>
+<!--- {{< include TeachingModule/AnalysisMSData_FragPipe.qmd >}} --->
 </section>
-<section id="getting-started-with-fragpipe" class="level3">
-<h3 class="anchored" data-anchor-id="getting-started-with-fragpipe">Getting started with FragPipe</h3>
-<p>Go to the “Workflow” tab to set up the workflow for the analysis and import the data you have just downloaded.</p>
-<div class="question">
-<p>Which workflow should you select? HINT: How many TMT tags are listed in the table in Supplementary Data 1?</p>
-</div>
-<p>Click ‘Load workflow’ after you have found and selected the correct workflow to be used.</p>
-<p>Next, add your files by clicking on “Add files” and locate them in the designated folder for your raw files that you previously created. Assign each file to a separate <em>experiment</em> by clicking “Consecutive”.</p>
-<p>Go to the “Quant (Isobaric)” tab. Here, you need to provide annotations for TMT channels. Use the five pool annotations that you downloaded from this page. You will need to upload them to Ucloud and specify the corresponding annotation file for each experiement in order.</p>
-<p>Now you should relocate to the “Database” tab. Here you can either download or browse for an already preexisting database file. In this case, we will simply download the latest database file by clicking the “Download” button in FragPipe.</p>
-<div class="question">
-<p>What is the purpose of the database file used in FragPipe, and why is it important?</p>
-</div>
-<div class="question">
-<p>Which organism should you choose when downloading the database file?</p>
-</div>
-<div class="question">
-<p>Describe the relationship between decoys and false discovery rate (FDR) by answering the following questions:</p>
-<ul>
-<li>
-What are decoys?
-</li>
-<li>
-Why should you include decoys?
-</li>
-<li>
-What role do decoys play in estimating the FDR?
-</li>
-</ul>
-</div>
-<p>Next, you can go to the MSFragger tab to adjust the parameter settings for the search and matching of the theoretical and experimental peptide spectra.</p>
-<p>Most of the settings used for MSFragger can be obtained from the paper <em>NAME OF PAPER</em>, which is referred to in the Methods and Materials section.</p>
-<p>When all settings have been obtained, MSFragger should look something like this:</p>
-<div class="question">
-<p>What is MSFragger?</p>
-</div>
-<div class="question">
-<p>How does MSFragger operate?</p>
-</div>
-<div class="question">
-<p>Why is it essential to run MSFragger for this analysis?</p>
-</div>
-<p>Finally, we can navigate to the “Run” tab and run the analysis. For that, we must choose an output directory for the results of the search made by FragPipe. Once you have adjusted that, you are ready to click on “Run”.</p>
-<p>This process might take some time, so make sure that you still have enough hours allocated on your job on UCloud—otherwise, it will get terminated. Meanwhile, you can answer these questions:</p>
-<div class="question">
-<p>What are your expectations regarding the output results? Consider the implications of the number of files provided for this search in your response.</p>
-</div>
-<div class="question">
-<p>Can the output from this analysis be reliably used for downstream applications given the limited number of sample files? Justify your answer.</p>
-</div>
-<div class="question">
-<p>What does it signify that the sample tissues have been fractionated as described in <em>PAPER</em>?</p>
-</div>
-<ul>
-<li>
-Outline the fractionation process utilized.
-</li>
-<li>
-Explain the study design associated with this research.
-</li>
-<li>
-In your opinion, will increasing the number of fractions improve proteome coverage? Justify your reasoning.
-</li>
-</ul>
-<p>When the run in FragPipe is done, please locate the output results and get an overview of the output.</p>
-<div class="question">
-<p>What types of output are generated by FragPipe?</p>
-</div>
-<p>For the downstream analysis, we will use the output from the list of combined proteins, which we will explore further in the following section.</p>
-</section>
-<section id="interpretation-and-analysis-of-fragpipe-results" class="level3">
-<h3 class="anchored" data-anchor-id="interpretation-and-analysis-of-fragpipe-results">Interpretation and Analysis of FragPipe Results</h3>
-<p>For this part, we will use output files based on a run with FragPipe using all sample files (i.e., 5x72 raw files). That file can be downloaded here???</p>
-<p>Now, we will look at the output from FragPipe, where we will use the file named <code>combined_proteins.tsv</code>. Initially, we will explore the contents of the file locally. Therefore, you should download the file from UCloud and view it locally in a file editor such as Excel.</p>
-<p>You can download the file by clicking on the file in your output directory in the UCloud interface, from where you can choose to download it.</p>
-<div class="question">
-<p>Provide a concise overview of the table’s contents. What information is represented in the rows and columns?</p>
-</div>
-<p>For the downstream analysis, we will use the columns containing the TMT intensities across the proteins identified.</p>
-<p>For that we will use <a href="https://computproteomics.bmb.sdu.dk/app_direct/OmicsQ/">OmicsQ</a>, which is a toolkit for quantitative proteomics. OmicsQ can be used to facilitate the processing of quantitative data from Omics type experiments. Additionally, it also serves as an entrypoint for using apps like <a href="https://computproteomics.bmb.sdu.dk/app_direct/PolySTest/">PolySTest</a> [SCHWAMMLE20201396] for statistical testing, <a href="https://computproteomics.bmb.sdu.dk/app_direct/VSClust/">VSClust</a> for clustering and <a href="https://computproteomics.bmb.sdu.dk/app_direct/ComplexBrowser/">ComplexBrowser</a> for the investigation of the behavior of protein complexes.</p>
-<!--
-Guide and introduction to Omics Q
-Questions about Omics Q
-Questions about output and interpretations of results from OmicsQ
--->
-</section>
-</section>
-<section id="data-screening-multi-variate-analysis-and-clustering" class="level2">
-<h2 class="anchored" data-anchor-id="data-screening-multi-variate-analysis-and-clustering">Data screening, multi-variate analysis and clustering</h2>
+<section id="part-3-data-screening-multi-variate-analysis-and-clustering" class="level2">
+<h2 class="anchored" data-anchor-id="part-3-data-screening-multi-variate-analysis-and-clustering">Part 3: Data screening, multi-variate analysis and clustering</h2>
 <p>For the downstream workflow, we will follow the tutorial from the Jupyter Notebook embedded below.</p>
 <!--
 Guide on how to use Jupyter Notebook in the Proteomics Sandbox Application (git clone)
@@ -767,30 +643,47 @@ Guide on how to use Jupyter Notebook in the Proteomics Sandbox Application (git 
 </section>
 <section id="personal-details" class="level2">
 <h2 class="anchored" data-anchor-id="personal-details">Personal Details</h2>
-<strong>Name:</strong><br>
-
-<textarea id="name" placeholder="Type your name here..." class="input-box"></textarea>
-<strong>Email:</strong><br>
-
-<textarea id="email" placeholder="Type your email here..." class="input-box"></textarea>
-<strong>Course/Program:</strong><br>
-
-<textarea id="course" placeholder="Type your course/program here..." class="input-box"></textarea>
-<strong>Date:</strong><br>
-
-<textarea id="date" placeholder="Type the date here..." class="input-box"></textarea>
+<table class="personal-details caption-top table">
+<caption>Please fill in your information</caption>
+<colgroup>
+<col style="width: 13%">
+<col style="width: 86%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Name</td>
+<td><textarea id="name" placeholder="Type your name here..." class="input-box"></textarea></td>
+</tr>
+<tr class="even">
+<td>Email</td>
+<td><textarea id="email" placeholder="Type your email here..." class="input-box"></textarea></td>
+</tr>
+<tr class="odd">
+<td>Course/Program</td>
+<td><textarea id="course" placeholder="Type your course/program here..." class="input-box"></textarea></td>
+</tr>
+<tr class="even">
+<td>Date</td>
+<td><textarea id="date" placeholder="Type the date here..." class="input-box"></textarea></td>
+</tr>
+</tbody>
+</table>
 <button id="downloadBtn" class="download-button">
 Download Your Answers as PDF
 </button>
-<script src="javascripts/answers.js">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
-
-
+<script src="javascripts/answers.js">
+<div id="quarto-navigation-envelope" class="hidden">
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar-title">Clinical Proteomics</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar-title">Clinical Proteomics</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:Introduction">Introduction</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:/index.html">/index.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:Getting Started">Getting Started</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:/gettingstarted.html">/gettingstarted.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:Setup">Setup</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:/setup.html">/setup.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:ColabFold">ColabFold</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:/colabfold.html">/colabfold.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:Course Materials">Course Materials</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:/coursematerials.html">/coursematerials.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:Teaching Module">Teaching Module</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:/teachingmodule.html">/teachingmodule.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:Contributors">Contributors</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:/contributors.html">/contributors.html</span></p>
+</div>
+<div id="quarto-meta-markdown" class="hidden">
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-metatitle">Breast Cancer Proteomics Module – Clinical Proteomics</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-twittercardtitle">Breast Cancer Proteomics Module – Clinical Proteomics</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-ogcardtitle">Breast Cancer Proteomics Module – Clinical Proteomics</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-metasitename">Clinical Proteomics</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-twittercarddesc"></span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-ogcardddesc"></span></p>
+</div>
 </section>
 </section>
 
 </main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+<script id = "quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -1354,7 +1247,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-</div> <!-- /content -->
+</section></section></main></div> <!-- /content -->
 
 
 
