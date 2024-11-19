@@ -194,20 +194,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="question">
 <p>What is FTP, and what is its functionality?</p>
 </div>
-<p>For downloading the data, we will use the <strong>Proteomics Sandbox Application</strong> on UCloud. This platform allows us to access the necessary storage capacity as well as the computational power required to execute this process.</p>
-<p>The <strong>Proteomics Sandbox Application</strong> is a virtual environment that includes multiple software tools, including <strong>FragPipe</strong> for analyzing proteomics data.</p>
-<p>You can find the <strong>Proteomics Sandbox Application</strong> on UCloud <a href="https://cloud.sdu.dk/app/jobs/create?app=proteomics">here</a>.</p>
+<p>To download the data, we will use the <strong>Proteomics Sandbox Application</strong> on UCloud. This platform provides the necessary storage capacity and computational power to perform this process.</p>
+<p>The <strong>Proteomics Sandbox Application</strong> is a virtual environment that includes various software tools, such as <strong>FragPipe</strong>, for analyzing proteomics data.</p>
 <p>First, we will download the data for the sample files to be used in <strong>FragPipe</strong>. Then, we will launch <strong>FragPipe</strong> to run the first analysis of the data. Before doing so, we have some questions regarding <strong>FragPipe</strong> and its usability:</p>
 <div class="question">
 <p>What is FragPipe, and what are its applications?</p>
 </div>
 <div class="question">
-<p>If FragPipe were not used for this part of the teaching module, which alternative software tools could be employed? Please provide a few examples.</p>
+<p>If FragPipe was not used for this part of the teaching module, which alternative software tools could be employed? Please provide a few examples.</p>
 </div>
 <div class="question">
 <p>What are the benefits of using FragPipe?</p>
 </div>
 <p>Now that we know what we want to do and why, it is time to start the <strong>Proteomics Sandbox</strong> application, or job. Simple analyses in <strong>FragPipe</strong> may only require 8 GB of RAM, while large-scale or complex analyses may require 24 GB of memory or more (<a href="https://fragpipe.nesvilab.org/docs/tutorial_fragpipe.html#:~:text=FragPipe%20runs%20on%20Windows%20and,24%20GB%20memory%20or%20more.">FragPipe Documentation</a>), which is why we will allocate 24 GB for this exercise.</p>
+<p>You can access the <strong>Proteomics Sandbox Application</strong> on UCloud <a href="https://cloud.sdu.dk/app/jobs/create?app=proteomics&amp;version=Oct2024">here</a>.</p>
 <p>In UCloud, the settings should look like this:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -252,7 +252,19 @@ Caution
 <div class="question">
 <p>Please locate the address.</p>
 </div>
-<p>Click on the “Dataset FTP location” link.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Click on the <strong>Dataset FTP location</strong> link.</p>
+</div>
+</div>
 <div class="question">
 <p>We now have access to the data stored on the FTP server. Please provide a brief description of the contents of the folder on the FTP server.</p>
 </div>
@@ -262,7 +274,22 @@ Caution
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">https://storage.jpostdb.org/JPST000265/HJOSLO2U_QEHF_20150318_TMT_pool3_300ugIPG37-49_7of15ul_fr01.raw</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">https://storage.jpostdb.org/JPST000265/HJOSLO2U_QEHF_20150322_TMT_pool4_300ugIPG37-49_7of15ul_fr01.raw</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ex">https://storage.jpostdb.org/JPST000265/HJOSLO2U_QEHF_20150329_TMT_pool5_300ugIPG37-49_7of15ul_fr01.raw</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>(You can also download this list <a href="https://github.com/hds-sandbox/proteomics-sandbox/blob/webpage/TeachingModule/urls.txt">here</a>).</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip to Download of Data
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>You can also download this list <a href="https://github.com/hds-sandbox/proteomics-sandbox/blob/webpage/TeachingModule/urls.txt">here</a>.</p>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
