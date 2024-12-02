@@ -18,25 +18,59 @@ window.addEventListener("load", function() {
 });
 
 // Function to save answers to localStorage
-function saveAnswers() {
-  // Select all textareas
-  const textareas = document.querySelectorAll('textarea[id^="question"]');
-  textareas.forEach(textarea => {
-    const answer = textarea.value || '';
-    localStorage.setItem(textarea.id, answer);
+function saveTableAnswers() {
+  const inputs = document.querySelectorAll('table input[type="text"]');
+  inputs.forEach(input => {
+    const value = input.value || ''; // Get the input value or an empty string
+    localStorage.setItem(input.id, value); // Save value in localStorage using the input's ID
   });
   console.log("Answers saved to local storage.");
 }
 
 // Load answers from localStorage
-function loadAnswers() {
-  const textareas = document.querySelectorAll('textarea[id^="question"]');
-  textareas.forEach(textarea => {
-    const savedAnswer = localStorage.getItem(textarea.id) || '';
-    textarea.value = savedAnswer;
+function loadTableAnswers() {
+  const inputs = document.querySelectorAll('table input[type="text"]');
+  inputs.forEach(input => {
+    const savedValue = localStorage.getItem(input.id) || ''; // Load the saved value or an empty string
+    input.value = savedValue; // Set the value to the input field
   });
   console.log("Answers loaded from local storage.");
 }
+
+// Attach event listeners to table inputs for auto-save
+function attachTableInputListeners() {
+  const inputs = document.querySelectorAll('table input[type="text"]');
+  inputs.forEach(input => {
+    input.addEventListener('input', saveTableAnswers); // Save table answers on input change
+  });
+}
+
+// Load all answers when the page loads
+window.addEventListener("load", function() {
+  // Load existing answers for textareas and table inputs
+  loadAnswers(); // Load textareas
+  loadTableAnswers(); // Load table inputs
+
+  // Attach input listeners
+  attachTableInputListeners();
+
+  // Attach other event listeners (e.g., for textareas)
+  const questions = document.getElementsByClassName("question");
+  for (const [index, element] of Array.from(questions).entries()) {
+    const ansElem = document.createElement("textarea");
+    ansElem.setAttribute("id", "question" + (index + 1));
+    ansElem.setAttribute("placeholder", "Type your answer here...");
+    ansElem.classList.add("input-box");
+    element.insertAdjacentElement("afterend", ansElem);
+
+    ansElem.addEventListener('input', function() {
+      this.style.height = 'auto';
+      this.style.height = (this.scrollHeight) + 'px';
+      saveAnswers(); // Save textarea answers on input
+    });
+  }
+});
+
 
 // Function to download the answers as a PDF with a more professional layout
 document.getElementById('downloadBtn').addEventListener('click', function() {
