@@ -2,7 +2,7 @@
 title: Breast Cancer Proteomics Module
 summary: Teaching module provided for the proteomics module. 
 date: last-modified
-author: Jacob Fredegaard Hansen
+author: Jacob Fredegaard Hansen, Lev Levitsky
 hide:
   - navigation
 ---
@@ -52,7 +52,12 @@ The module is divided into three sections:
    - Set up workflows tailored to TMT-labeled samples.
    - Run MS data analysis.
 
-3. **Data Screening, Multivariate Analysis, and Clustering**
+3. **Data annotation with SDRF**
+   - Get familiar with proteomics sample metadata.
+   - Learn the structure of SDRF.
+   - Annotate the study dataset.
+
+4. **Data Screening, Multivariate Analysis, and Clustering**
    - Techniques for screening and organizing results.
    - Multi-variate analysis and clustering.
    - Reveal meaningful patterns in the dataset.
@@ -66,17 +71,22 @@ By the end of this module, you will be equipped to manage TMT-labeled proteomics
 
 ## Part 1: Preliminary work
 
-{{< include TeachingModule/Preliminarywork.qmd >}}
+{{< include ./Preliminarywork.qmd >}}
 
 
 ## Part 2: Analysis of MS Data Using FragPipe
 
-{{< include TeachingModule/AnalysisMSData_FragPipe.qmd >}} 
+{{< include ./AnalysisMSData_FragPipe.qmd >}}
 
 
-## Part 3: Data screening, multi-variate analysis and clustering
+## Part 3: Data annotation with SDRF
 
-{{< include TeachingModule/DataScreening_Multivariate.qmd >}}
+{{< include ./sdrf.qmd >}}
+
+
+## Part 4: Data screening, multi-variate analysis and clustering {#sec-data-analysis}
+
+{{< include ./DataScreening_Multivariate.qmd >}}
 
 
 ## Personal Details
@@ -97,5 +107,5 @@ By the end of this module, you will be equipped to manage TMT-labeled proteomics
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
 
-<script src="javascripts/answers.js"/>
+<script src="../javascripts/answers.js"/>
 

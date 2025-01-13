@@ -1,13 +1,3 @@
----
-title: "Breast Cancer Proteomics Module: SDRF"
-summary: Teaching module provided for the proteomics module. 
-date: last-modified
-author: Lev Levitsky
-hide:
-  - navigation
----
-
-
 ::: {.question}
 Suppose you want to reproduce the figures from the article. What do you need for that, except the experimental data files?
 :::
@@ -82,22 +72,3 @@ If you need a grade for this course, submit your SDRF file together with your an
 ::: {.question}
 How would you go about making a full dataset annotation?
 :::
-
-## Personal Details
-
-**Name:**
-<textarea id="name" placeholder="Type your name here..." class="input-box"></textarea>
-
-**Email:**
-<textarea id="email" placeholder="Type your email here..." class="input-box"></textarea>
-
-**Course/Program:**
-<textarea id="course" placeholder="Type your course/program here..." class="input-box"></textarea>
-
-**Date:**
-<textarea id="date" placeholder="Type the date here..." class="input-box"></textarea>
-
-<button id="downloadBtn" class="download-button">Download Your Answers as PDF</button>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
-

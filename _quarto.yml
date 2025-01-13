@@ -16,7 +16,7 @@ website:
       - text: Course Materials
         href: coursematerials.qmd
       - text: Teaching Module
-        href: teachingmodule.qmd
+        href: TeachingModule/teachingmodule.qmd
       - text: Contributors
         href: contributors.qmd
 

@@ -26,6 +26,9 @@ This directory will be within the folder where you cloned the material in your t
 
 You can now proceed with the multivariate analysis of the material.
 
+To analyze the whole dataset, you will need to use output files from FragPipe for all sample files (i.e., 5x72 raw files). That file can be downloaded [here](https://github.com/hds-sandbox/proteomics-sandbox/blob/webpage/TeachingModule/combined_proteins.tsv).
+
+
 <iframe src="https://nbviewer.jupyter.org/github/veitveit/training-quantitative-proteomics/blob/main/03_Cluster_Analysis/Multivariate%20analysis.ipynb" 
         width="100%" 
         height="1200px">
