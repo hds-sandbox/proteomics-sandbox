@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.39">
+<meta name="generator" content="quarto-1.6.40">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -69,12 +69,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-d166b450ba5a8e9f7a0ab969bf6592c1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-8ea72dc5fed832574809a9c94082fbbb.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-ed9c931cba61491376169e2697ad0014.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-a040cd6abc73b98b2f4c673569425434.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-70681ac22f7a9c294f1b10dcc289f852.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-b3883a83b6cdceb4314f965facc5c958.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -145,7 +145,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Course Materials</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../teachingmodule.html"> 
+    <a class="nav-link" href="../TeachingModule/teachingmodule.html"> 
 <span class="menu-text">Teaching Module</span></a>
   </li>  
   <li class="nav-item">
@@ -169,8 +169,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#getting-started-with-fragpipe" id="toc-getting-started-with-fragpipe" class="nav-link active" data-scroll-target="#getting-started-with-fragpipe">Getting started with FragPipe</a></li>
-  <li><a href="#interpretation-and-analysis-of-fragpipe-results" id="toc-interpretation-and-analysis-of-fragpipe-results" class="nav-link" data-scroll-target="#interpretation-and-analysis-of-fragpipe-results">Interpretation and Analysis of FragPipe Results</a></li>
+  <li><a href="#getting-data-and-preparing-the-work-environment" id="toc-getting-data-and-preparing-the-work-environment" class="nav-link active" data-scroll-target="#getting-data-and-preparing-the-work-environment">Getting data and preparing the work environment</a></li>
+  <li><a href="#analyzing-data-with-fragpipe" id="toc-analyzing-data-with-fragpipe" class="nav-link" data-scroll-target="#analyzing-data-with-fragpipe">Analyzing data with FragPipe</a></li>
+  <li><a href="#overview-of-fragpipe-results" id="toc-overview-of-fragpipe-results" class="nav-link" data-scroll-target="#overview-of-fragpipe-results">Overview of FragPipe Results</a></li>
   </ul>
 </nav>
     </div>
@@ -180,7 +181,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<p>In this section of the teaching module, we will work with data from the paper. The first task is to download sample files from the paper, guided by the questions provided below:</p>
+<section id="getting-data-and-preparing-the-work-environment" class="level3">
+<h3 class="anchored" data-anchor-id="getting-data-and-preparing-the-work-environment">Getting data and preparing the work environment</h3>
+<p>In this section of the teaching module, we will be working with data from the paper. The first task is to download sample files from the paper, guided by the questions provided below:</p>
 <div class="question">
 <p>Where can the data be found?</p>
 </div>
@@ -194,7 +197,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="question">
 <p>What is FTP, and what is its functionality?</p>
 </div>
-<p>To download the data, we will use the <strong>Proteomics Sandbox Application</strong> on UCloud. This platform provides the necessary storage capacity and computational power to perform this process.</p>
+<section id="starting-the-proteomics-sandbox" class="level4">
+<h4 class="anchored" data-anchor-id="starting-the-proteomics-sandbox">Starting the Proteomics Sandbox</h4>
+<p>To download and then process the data, we will use the <strong>Proteomics Sandbox Application</strong> on UCloud. This platform provides the necessary storage capacity and computational power to perform this process.</p>
 <p>The <strong>Proteomics Sandbox Application</strong> is a virtual environment that includes various software tools, such as <strong>FragPipe</strong>, for analyzing proteomics data.</p>
 <p>First, we will download the data for the sample files to be used in <strong>FragPipe</strong>. Then, we will launch <strong>FragPipe</strong> to run the first analysis of the data. Before doing so, we have some questions regarding <strong>FragPipe</strong> and its usability:</p>
 <div class="question">
@@ -211,7 +216,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>In UCloud, the settings should look like this:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/TeachingModuleInstructions/UCloud_settings.PNG" class="img-fluid quarto-figure quarto-figure-center figure-img" width="750"></p>
+<p><img src="../images/TeachingModuleInstructions/UCloud_settings.PNG" class="img-fluid quarto-figure quarto-figure-center figure-img" width="750"></p>
 </figure>
 </div>
 <p>Before submitting the job, it is highly recommended to create a personal folder to securely store both your data and the results generated by <strong>FragPipe</strong>. Follow the step-by-step guide below for an effortless setup:</p>
@@ -221,13 +226,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/TeachingModuleInstructions/AddFolder1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="750"></p>
+<p><img src="../images/TeachingModuleInstructions/AddFolder1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="750"></p>
 </figure>
 </div>
 <p>Upon clicking, a window similar to the one below will appear. Here, you have the option to either create a specific folder within a particular drive in the workspace you’ve chosen or simply select the entire drive itself. In this example, the drive is labeled as <code>Home</code> and the workspace is <code>My workspace</code>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/TeachingModuleInstructions/AddFolder2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="750"></p>
+<p><img src="../images/TeachingModuleInstructions/AddFolder2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="750"></p>
 </figure>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
@@ -244,6 +249,7 @@ Caution
 <p>Time can pass quickly when working, so we recommend initially allocating 2 hours for the job. Now, we are ready to submit the job and launch the virtual environment of the <strong>Proteomics Sandbox Application</strong>.</p>
 </div>
 </div>
+</section>
 <section id="download-data-from-the-paper" class="level4">
 <h4 class="anchored" data-anchor-id="download-data-from-the-paper">Download Data from the Paper</h4>
 <p>Initially, we will need to download the paper’s data. For this exercise, we will only use one sample file from each Plex Set/Pool.</p>
@@ -309,8 +315,9 @@ Note
 <p>Next, we can launch FragPipe, which is located on the desktop. In this tutorial, we are using FragPipe version <strong>22.0</strong> within the October 2024 version of the <strong>Proteomics Sandbox</strong> application, available <a href="https://cloud.sdu.dk/app/jobs/create?app=proteomics&amp;version=Oct2024">here</a>.</p>
 <p>Now that FragPipe is launched, we need to configure the settings before running the analysis. To assist you in setting up the settings in FragPipe, we have provided some guiding questions:</p>
 </section>
-<section id="getting-started-with-fragpipe" class="level3">
-<h3 class="anchored" data-anchor-id="getting-started-with-fragpipe">Getting started with FragPipe</h3>
+</section>
+<section id="analyzing-data-with-fragpipe" class="level3">
+<h3 class="anchored" data-anchor-id="analyzing-data-with-fragpipe">Analyzing data with FragPipe</h3>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -376,7 +383,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>You can also skip configuring MSFragger manually and just use this <a href="https://github.com/hds-sandbox/proteomics-sandbox/blob/webpage/fragger.params">parameter file</a>. You will need to upload it to UCloud and then load it on the “MSFragger” tab in FragPipe.</p>
+<p>You can also skip configuring MSFragger manually and just use this <a href="https://github.com/hds-sandbox/proteomics-sandbox/blob/webpage/TeachingModule/fragger.params">parameter file</a>. You will need to upload it to UCloud and then load it on the “MSFragger” tab in FragPipe.</p>
 </div>
 </div>
 <p>Finally, we can navigate to the <code>Run</code> tab and run the analysis. For that, we must choose an output directory for the results of the search made by FragPipe. Once you have adjusted that, you are ready to click on <code>Run</code>.</p>
@@ -407,16 +414,14 @@ In your opinion, will increasing the number of fractions improve proteome covera
 </div>
 <p>For the downstream analysis, we will use the output from the list of combined proteins, which we will explore further in the following section.</p>
 </section>
-<section id="interpretation-and-analysis-of-fragpipe-results" class="level3">
-<h3 class="anchored" data-anchor-id="interpretation-and-analysis-of-fragpipe-results">Interpretation and Analysis of FragPipe Results</h3>
-<p>For this part, we will use output files based on a run with FragPipe using all sample files (i.e., 5x72 raw files). That file can be downloaded here???</p>
+<section id="overview-of-fragpipe-results" class="level3">
+<h3 class="anchored" data-anchor-id="overview-of-fragpipe-results">Overview of FragPipe Results</h3>
 <p>Now, we will look at the output from FragPipe, where we will use the file named <code>combined_proteins.tsv</code>. Initially, we will explore the contents of the file locally. Therefore, you should download the file from UCloud and view it locally in a file editor such as Excel.</p>
 <p>You can download the file by clicking on the file in your output directory in the UCloud interface, from where you can choose to download it.</p>
 <div class="question">
 <p>Provide a concise overview of the table’s contents. What information is represented in the rows and columns?</p>
 </div>
-<p>For the downstream analysis, we will use the columns containing the TMT intensities across the proteins identified.</p>
-<p>For that we will use <a href="https://computproteomics.bmb.sdu.dk/app_direct/OmicsQ/">OmicsQ</a>, which is a toolkit for quantitative proteomics. OmicsQ can be used to facilitate the processing of quantitative data from Omics type experiments. Additionally, it also serves as an entrypoint for using apps like <a href="https://computproteomics.bmb.sdu.dk/app_direct/PolySTest/">PolySTest</a> [SCHWAMMLE20201396] for statistical testing, <a href="https://computproteomics.bmb.sdu.dk/app_direct/VSClust/">VSClust</a> for clustering and <a href="https://computproteomics.bmb.sdu.dk/app_direct/ComplexBrowser/">ComplexBrowser</a> for the investigation of the behavior of protein complexes.</p>
+<p>For a more in-depth guide to processing of quantitative results based on TMT intensities of all proteins in the dataset, go to <a href="../TeachingModule/teachingmodule.html#sec-data-analysis">Part 4</a>. For that we will use <a href="https://computproteomics.bmb.sdu.dk/app_direct/OmicsQ/">OmicsQ</a>, which is a toolkit for quantitative proteomics. OmicsQ can be used to facilitate the processing of quantitative data from Omics type experiments. Additionally, it also serves as an entrypoint for using apps like <a href="https://computproteomics.bmb.sdu.dk/app_direct/PolySTest/">PolySTest</a> [SCHWAMMLE20201396] for statistical testing, <a href="https://computproteomics.bmb.sdu.dk/app_direct/VSClust/">VSClust</a> for clustering and <a href="https://computproteomics.bmb.sdu.dk/app_direct/ComplexBrowser/">ComplexBrowser</a> for the investigation of the behavior of protein complexes.</p>
 <!--
 Guide and introduction to Omics Q
 Questions about Omics Q
