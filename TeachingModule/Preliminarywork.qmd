@@ -40,7 +40,7 @@ How did you find the required information? Describe the steps you took. How much
 If you have not been able to find the annotations, open Supplementary Data 1, and then go to the tab called "Tumor annotations".
 :::
 
-To better understand the supplementary data, we have prepared guiding questions to aid in interpreting the table. You can find the supplementary data in the paper [here](https://www-nature-com.proxy1-bib.sdu.dk/articles/s41467-019-09018-y#Sec15).
+To better understand the supplementary data, we have prepared guiding questions to aid in interpreting the table. You can find the supplementary data in the paper [here](https://pubmed.ncbi.nlm.nih.gov/30962452/).
 
 ::: {.question}
 Provide a brief description of the content presented in the table.
