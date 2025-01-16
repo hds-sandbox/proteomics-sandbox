@@ -216,7 +216,7 @@ For the downstream analysis, we will use the output from the list of combined pr
 
 ### Overview of FragPipe Results
 
-Now, we will look at the output from FragPipe, where we will use the file named `combined_proteins.tsv`. Initially, we will explore the contents of the file locally. Therefore, you should download the file from UCloud and view it locally in a file editor such as Excel.
+Now, we will look at the output from FragPipe, where we will use the file named `combined_protein.tsv`. Initially, we will explore the contents of the file locally. Therefore, you should download the file from UCloud and view it locally in a file editor such as Excel.
 
 You can download the file by clicking on the file in your output directory in the UCloud interface, from where you can choose to download it.
 
