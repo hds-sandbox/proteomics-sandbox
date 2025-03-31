@@ -23,6 +23,25 @@ body {
   content: "❓ Question " counter(question-counter) ": ";
 }
 
+.question.advanced::before {
+  content: "❓ Question " counter(question-counter) " (advanced): ";
+}
+
+
+.task {
+    counter-increment: task-counter;
+    font-weight: bold;
+    font-size: 100%;
+}
+
+.task::before {
+  content: "📝 Task " counter(task-counter) ": ";
+}
+
+.task.advanced::before {
+  content: "📝 Task " counter(task-counter) " (advanced): ";
+}
+
 
 /* Styling the textarea */
 

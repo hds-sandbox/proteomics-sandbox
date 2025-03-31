@@ -9,7 +9,7 @@
 <meta name="author" content="Lev Levitsky">
 <meta name="dcterms.date" content="2025-03-31">
 
-<title>Brief Introduction to SDRF – Clinical Proteomics</title>
+<title>How to annotate data in proteomics – Clinical Proteomics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -137,7 +137,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#part-1-preliminary-work" id="toc-part-1-preliminary-work" class="nav-link active" data-scroll-target="#part-1-preliminary-work">Part 1: Preliminary work</a></li>
+  <li><a href="#part-1-understanding-study-design-and-experimental-setup" id="toc-part-1-understanding-study-design-and-experimental-setup" class="nav-link active" data-scroll-target="#part-1-understanding-study-design-and-experimental-setup">Part 1: Understanding study design and experimental setup</a></li>
   <li><a href="#part-2-data-annotation-with-sdrf" id="toc-part-2-data-annotation-with-sdrf" class="nav-link" data-scroll-target="#part-2-data-annotation-with-sdrf">Part 2: Data annotation with SDRF</a>
   <ul class="collapse">
   <li><a href="#sdrf-metadata-format" id="toc-sdrf-metadata-format" class="nav-link" data-scroll-target="#sdrf-metadata-format">SDRF metadata format</a></li>
@@ -150,7 +150,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Brief Introduction to SDRF</h1>
+<h1 class="title">How to annotate data in proteomics</h1>
 </div>
 
 
@@ -192,11 +192,19 @@ Overview
 <div id="callout-1" class="callout-1-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>This short training material is focused on proteomics data annotation and SDRF format. It is expected to take 1.5 hours to complete.</p>
+<section id="learning-goals" class="level4">
+<h4 class="anchored" data-anchor-id="learning-goals">Learning goals</h4>
+<ul>
+<li>Understand the concept, purpose and significance of data annotation in proteomics</li>
+<li>Learn about the scope and structure of SDRF</li>
+<li>Get practical experience with <a href="https://lessdrf.streamlit.app/">lesSDRF</a>, what it can and cannot do.</li>
+</ul>
+</section>
 </div>
 </div>
 </div>
-<section id="part-1-preliminary-work" class="level2">
-<h2 class="anchored" data-anchor-id="part-1-preliminary-work">Part 1: Preliminary work</h2>
+<section id="part-1-understanding-study-design-and-experimental-setup" class="level2">
+<h2 class="anchored" data-anchor-id="part-1-understanding-study-design-and-experimental-setup">Part 1: Understanding study design and experimental setup</h2>
 <p>For this work, we will use the data that was used and analyzed in the paper <em><a href="https://www.nature.com/articles/s41467-019-09018-y">Breast cancer quantitative proteome and proteogenomic landscape</a></em> by Johansson <em>et al.</em>, which compares subgroups of breast cancer tumors from the Oslo2 Landscape cohort.</p>
 <p>Before delving into the actual analysis of the data in FragPipe, we must initially:</p>
 <ol type="1">
@@ -254,7 +262,10 @@ Hint
 </div>
 <section id="sdrf-metadata-format" class="level3">
 <h3 class="anchored" data-anchor-id="sdrf-metadata-format">SDRF metadata format</h3>
-<p>Familiarize yourself with the <strong>Sample and Data Relationship Format for Proteomics</strong> - its <a href="https://github.com/bigbio/proteomics-sample-metadata">general description</a> and take a look at the <a href="https://github.com/bigbio/proteomics-sample-metadata/blob/master/sdrf-proteomics/README.adoc">specification</a>. Then answer a few questions:</p>
+<p>We are going to work with <strong>Sample and Data Relationship Format for Proteomics</strong> - a standardized table-based format capturing experimental metadata. An SDRF file is a TSV table describing a proteomics dataset. Rows in the table correspond to samples and columns correspond to sample characteristics and experimental parameters pertaining to data acquisition and processing. Column names and values in SDRF are thoroughly standardized to enable automated creation, validation and re-use of SDRF files.</p>
+<div class="task">
+<p>Read the <a href="https://github.com/bigbio/proteomics-sample-metadata">general description</a> of SDRF and take a look at the <a href="https://github.com/bigbio/proteomics-sample-metadata/blob/master/sdrf-proteomics/README.adoc">specification</a>. Then answer the following questions.</p>
+</div>
 <div class="question">
 <p>What is the general layout of an SDRF file?</p>
 </div>
@@ -267,16 +278,25 @@ Hint
 <div class="question">
 <p>How are the valid values defined for different columns?</p>
 </div>
-<p>We will now create an annotation for a small subset of our data according to SDRF-Proteomics standard. Go to <a href="https://lessdrf.streamlit.app/">lesSDRF</a>, then start a new SDRF annotation with the human template. When asked for file names, input only the first RAW file name from the annotation table found in supporting information. After that, proceed to step 2, labeling.</p>
+<p>We will now create an annotation for a small subset of our data according to SDRF-Proteomics standard.</p>
+<div class="task">
+<p>Go to <a href="https://lessdrf.streamlit.app/">lesSDRF</a>, a web application that serves for easy creation of SDRF files. Start a new SDRF annotation with the human template. When asked for file names, input only the first RAW file name from the annotation table found in supporting information. After that, proceed to step 2, labeling.</p>
+</div>
+<div class="task">
 <p>Carefully select the list of labels corresponding to the dataset, then click “Submit selection”, and proceed to specify that every label is present in “ALL” files. Then click “Ready” and proceed to step 3.</p>
+</div>
 <div class="question">
 <p>How many rows does the SDRF table have now? How many would it have if we annotated the entire dataset?</p>
 </div>
+<div class="task">
 <p>Fill in the first three required columns one by one: source name, organism, and organism part.</p>
+</div>
 <div class="question">
 <p>What would be a good sample identifier for the “source name” column?</p>
 </div>
+<div class="task">
 <p>Fill in the next column, cell type. Consider that we are dealing with cancer samples. For the next columns, ancestry category and age, you can select “not available”. Then, fill in the “sex” column.</p>
+</div>
 <p>It is time to fill in the disease column.</p>
 <div class="question">
 <p>How many different values for disease can we possibly have in our annotation? What do they correspond to?</p>
@@ -284,20 +304,29 @@ Hint
 <div class="question">
 <p>How many different values will we actually use when annotating the selected subset of data?</p>
 </div>
+<div class="task">
 <p>Proceed to fill the disease column, then fill in the rest of the columns, up to and including “instrument”.</p>
+</div>
 <div class="question">
 <p>How many different values should you use in the “assay name” column when annotating the subset? Why? How many different values should there be in the entire annotation?</p>
 </div>
+<div class="task">
 <p>When you have only four columns left (cleavage agent details, modifications, precursor and fragment mass tolerance), skip to step 4 and fill the factor value column.</p>
+</div>
 <div class="question">
 <p>What is the meaning of factor value, and what should it be in this case?</p>
 </div>
+<div class="task">
 <p>After that, download the resulting file. Copy the cleavage agent, modifications and mass tolerance information from the partial annotation provided by FragPipe into your file, using Excel or similar software. Congratulations! You have a complete annotation according to the SDRF standard, but only for one out of all raw files in the data set. If you need a grade for this course, submit your SDRF file together with your answers.</p>
+</div>
 <div class="question">
 <p>How would you go about making a full dataset annotation?</p>
 </div>
+<div class="task advanced">
+<p>You can try this <a href="https://github.com/hds-sandbox/proteomics-sandbox/blob/webpage/Create%20SDRF.ipynb">Python notebook</a> as a start for semi-automated creation of the full SDRF table. Download it to a directory of your choosing and put the supplementary table with tumor annotations next to it. Install Jupyter, Pandas and other dependencies in a virtual environment and run the notebook. Submit a full SDRF file with your answers.</p>
+</div>
 <div class="question">
-<p>You can try this <a href="https://github.com/hds-sandbox/proteomics-sandbox/blob/webpage/Create%20SDRF.ipynb">Python notebook</a> as a start for semi-automated creation of the full SDRF table. What are your thoughts about this approach to data annotation?</p>
+<p>What are your thoughts about this approach to data annotation?</p>
 </div>
 <table class="caption-top table">
 <colgroup>
@@ -332,7 +361,7 @@ Download Your Answers as PDF
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyLXRpdGxl">Clinical Proteomics</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXItdGl0bGU=">Clinical Proteomics</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6SW50cm9kdWN0aW9u">Introduction</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2luZGV4Lmh0bWw=">/index.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6R2V0dGluZyBTdGFydGVk">Getting Started</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2dldHRpbmdzdGFydGVkLmh0bWw=">/gettingstarted.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U2V0dXA=">Setup</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3NldHVwLmh0bWw=">/setup.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6Q29sYWJGb2xk">ColabFold</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2NvbGFiZm9sZC5odG1s">/colabfold.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6Q291cnNlIE1hdGVyaWFscw==">Course Materials</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2NvdXJzZW1hdGVyaWFscy5odG1s">/coursematerials.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6VGVhY2hpbmcgTW9kdWxl">Teaching Module</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L1RlYWNoaW5nTW9kdWxlL3RlYWNoaW5nbW9kdWxlLmh0bWw=">/TeachingModule/teachingmodule.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6Q29udHJpYnV0b3Jz">Contributors</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2NvbnRyaWJ1dG9ycy5odG1s">/contributors.html</span></p>
 </div>
 <div id="quarto-meta-markdown" class="hidden">
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW1ldGF0aXRsZQ==">Brief Introduction to SDRF – Clinical Proteomics</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLXR3aXR0ZXJjYXJkdGl0bGU=">Brief Introduction to SDRF – Clinical Proteomics</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW9nY2FyZHRpdGxl">Brief Introduction to SDRF – Clinical Proteomics</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW1ldGFzaXRlbmFtZQ==">Clinical Proteomics</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLXR3aXR0ZXJjYXJkZGVzYw=="></span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW9nY2FyZGRkZXNj"></span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW1ldGF0aXRsZQ==">How to annotate data in proteomics – Clinical Proteomics</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLXR3aXR0ZXJjYXJkdGl0bGU=">How to annotate data in proteomics – Clinical Proteomics</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW9nY2FyZHRpdGxl">How to annotate data in proteomics – Clinical Proteomics</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW1ldGFzaXRlbmFtZQ==">Clinical Proteomics</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLXR3aXR0ZXJjYXJkZGVzYw=="></span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW9nY2FyZGRkZXNj"></span></p>
 </div>
 </section>
 </section>
