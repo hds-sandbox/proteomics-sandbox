@@ -1,0 +1,6 @@
+For this work, we will use the data that was used and analyzed in the paper *[Breast cancer quantitative proteome and proteogenomic landscape](https://www.nature.com/articles/s41467-019-09018-y)* by Johansson *et al.*, which compares subgroups of breast cancer tumors from the Oslo2 Landscape cohort.
+
+Before delving into the actual analysis of the data in FragPipe, we must initially:
+
+1. Read and understand the study design of the paper.
+2. Understand the data being used from the paper.

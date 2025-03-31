@@ -1,0 +1,45 @@
+---
+title: Brief Introduction to SDRF
+summary: A standalone version of the part of the Clinical Proteomics Teaching Module about SDRF metadata standard
+date: last-modified
+author: Lev Levitsky
+hide:
+  - navigation
+---
+
+::: {.callout-note collapse="false"}
+# Overview
+
+This short training material is focused on proteomics data annotation and SDRF format. It is expected to take 1.5 hours to complete.
+:::
+
+
+## Part 1: Preliminary work
+
+{{< include TeachingModule/study_intro.qmd >}}
+
+::: {.callout-note}
+We do not include any questions about the study to save time, but please read and understand the article so you know enough about the samples and data collected.
+:::
+
+{{< include TeachingModule/supp_data_questions.qmd >}}
+
+## Part 2: Data annotation with SDRF
+
+{{< include TeachingModule/sdrf.qmd >}}
+
++---------------+---------------------------------------------------------------------------------------------------+
+|Name           | <textarea id="name" placeholder="Type your name here..." class="input-box"></textarea>            |
++---------------+---------------------------------------------------------------------------------------------------+
+|Email          | <textarea id="email" placeholder="Type your email here..." class="input-box"></textarea>          |
++---------------+---------------------------------------------------------------------------------------------------+
+|Course/Program | <textarea id="course" placeholder="Type your course/program here..." class="input-box"></textarea>|
++---------------+---------------------------------------------------------------------------------------------------+
+|Date           | <textarea id="date" placeholder="Type the date here..." class="input-box"></textarea>             |
++---------------+---------------------------------------------------------------------------------------------------+
+
+<button id="downloadBtn" class="download-button">Download Your Answers as PDF</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+
+<script src="./javascripts/answers.js"/>

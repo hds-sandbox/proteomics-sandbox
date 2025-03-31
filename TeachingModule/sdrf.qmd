@@ -72,3 +72,8 @@ If you need a grade for this course, submit your SDRF file together with your an
 ::: {.question}
 How would you go about making a full dataset annotation?
 :::
+
+::: {.question}
+You can try this [Python notebook](https://github.com/hds-sandbox/proteomics-sandbox/blob/webpage/Create%20SDRF.ipynb) as a start for semi-automated creation of the full SDRF table.
+What are your thoughts about this approach to data annotation?
+:::

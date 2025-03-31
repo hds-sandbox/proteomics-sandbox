@@ -1,0 +1,15 @@
+::: {.question}
+What are the primary research goals of this study?
+:::
+
+::: {.question}
+How is the study design structured to achieve the study objective?
+:::
+
+::: {.question}
+What role does LC-MS/MS play in this study, and why was it chosen as a method?
+:::
+
+::: {.question}
+What novel insights were gained from the proteogenomic approach used in this study?
+:::
