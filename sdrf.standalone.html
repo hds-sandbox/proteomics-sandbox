@@ -6,9 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-09-11">
+<meta name="author" content="Lev Levitsky">
+<meta name="dcterms.date" content="2025-03-31">
 
-<title>Clinical Proteomics</title>
+<title>Brief Introduction to SDRF – Clinical Proteomics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -92,7 +93,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Introduction</span></a>
   </li>  
   <li class="nav-item">
@@ -128,37 +129,48 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#part-1-preliminary-work" id="toc-part-1-preliminary-work" class="nav-link active" data-scroll-target="#part-1-preliminary-work">Part 1: Preliminary work</a></li>
+  <li><a href="#part-2-data-annotation-with-sdrf" id="toc-part-2-data-annotation-with-sdrf" class="nav-link" data-scroll-target="#part-2-data-annotation-with-sdrf">Part 2: Data annotation with SDRF</a>
+  <ul class="collapse">
+  <li><a href="#sdrf-metadata-format" id="toc-sdrf-metadata-format" class="nav-link" data-scroll-target="#sdrf-metadata-format">SDRF metadata format</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Clinical Proteomics</h1>
-<p class="subtitle lead">Clinical proteomics on Ucloud with the sandbox</p>
+<h1 class="title">Brief Introduction to SDRF</h1>
 </div>
 
 
 
-<div class="quarto-title-meta column-page">
+<div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Lev Levitsky </p>
+          </div>
+  </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 11, 2024</p>
+      <p class="date">March 31, 2025</p>
     </div>
   </div>
   
-    <div>
-    <div class="quarto-title-meta-heading">Modified</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date-modified">March 31, 2025</p>
-    </div>
-  </div>
     
   </div>
   
@@ -167,40 +179,166 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Discover the world of proteomics with the Clinical Proteomics module of the Sandbox, offering the Proteomics Sandbox app on UCloud - an accessible resource for biomedical students and non-computational researchers. With a user-friendly interface and a lightweight clone feature, the app is perfect for those without extensive coding knowledge, providing a stable platform for proteomics software tools. You can also learn to predict protein structures based on sequence data with the independent ColabFold workshop, available on UCloud. This hands-on experience offers insights into the exciting field of proteomics analysis and is accessible for all UCloud-users.</p>
-<p>New course materials are being developed constantly to enhance your education and training in clinical proteomics data analysis. Stay tuned!</p>
-<div class="callout callout-style-default callout-warning callout-titled" title="Disclaimer and requirements">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Overview
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>This short training material is focused on proteomics data annotation and SDRF format. It is expected to take 1.5 hours to complete.</p>
+</div>
+</div>
+</div>
+<section id="part-1-preliminary-work" class="level2">
+<h2 class="anchored" data-anchor-id="part-1-preliminary-work">Part 1: Preliminary work</h2>
+<p>For this work, we will use the data that was used and analyzed in the paper <em><a href="https://www.nature.com/articles/s41467-019-09018-y">Breast cancer quantitative proteome and proteogenomic landscape</a></em> by Johansson <em>et al.</em>, which compares subgroups of breast cancer tumors from the Oslo2 Landscape cohort.</p>
+<p>Before delving into the actual analysis of the data in FragPipe, we must initially:</p>
+<ol type="1">
+<li>Read and understand the study design of the paper.</li>
+<li>Understand the data being used from the paper.</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Disclaimer and requirements
+Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Currently, the educational material on proteomics is only available at UCloud, making it only accessible for UCloud-users.</p>
-<pre><code>- Access to UCloud and sufficient resources to run the application
-- Basic computational knowledge, including familiarity with the UCloud environment
-- Familiarity with proteomics analysis techniques</code></pre>
+<p>We do not include any questions about the study to save time, but please read and understand the article so you know enough about the samples and data collected.</p>
 </div>
 </div>
-<section id="learning-clinical-proteomics-with-the-sandbox" class="level2">
-<h2 class="anchored" data-anchor-id="learning-clinical-proteomics-with-the-sandbox">Learning Clinical Proteomics with the Sandbox</h2>
-<p>The Clinical Proteomics Module offers a comprehensive resource for learning and practicing clinical proteomics data analysis. The module consists of the following components:</p>
-<ul>
-<li>The Proteomics Sandbox app, which is a virtual machine with software readily available for clinical proteomics data analysis.<br>
-</li>
-<li>ColabFold workshop, which is an independent teaching material for learning to predict protein structures from sequence data based on AlphaFold.</li>
-</ul>
-<p>In the future, additional course materials will be made available to provide comprehensive teaching and education in clinical proteomics. With the Clinical Proteomics Module, students and researchers have the opportunity to work with real-world clinical data, gain practical experience in analyzing and interpreting such data, and enhance their knowledge and skills in clinical proteomics data analysis.</p>
-<p>Explore the various sections of the proteomics module by clicking on the tabs above.</p>
-
-
+<p>Before we proceed and download the data available from the paper, we must first delve into some of the details in Supplementary Data. Your first task is to look through the Supplementary Data and find the annotation relating the tumor types to the isotopic labels used.</p>
+<div class="question">
+<p>How did you find the required information? Describe the steps you took. How much time did it take?</p>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>If you have not been able to find the annotations, open Supplementary Data 1, and then go to the tab called “Tumor annotations”.</p>
+</div>
+</div>
+</div>
+<p>To better understand the supplementary data, we have prepared guiding questions to aid in interpreting the table. You can find the supplementary data in the paper <a href="https://www.nature.com/articles/s41467-019-09018-y#Sec15">here</a>.</p>
+<div class="question">
+<p>Provide a brief description of the content presented in the table.</p>
+</div>
+<div class="question">
+<p>What information does the tumor ID represent?</p>
+</div>
+<div class="question">
+<p>Briefly describe TMT-labeled mass spectrometry proteomics data and explain the experimental procedure involved.</p>
+</div>
+</section>
+<section id="part-2-data-annotation-with-sdrf" class="level2">
+<h2 class="anchored" data-anchor-id="part-2-data-annotation-with-sdrf">Part 2: Data annotation with SDRF</h2>
+<div class="question">
+<p>Suppose you want to reproduce the figures from the article. What do you need for that, except the experimental data files?</p>
+</div>
+<section id="sdrf-metadata-format" class="level3">
+<h3 class="anchored" data-anchor-id="sdrf-metadata-format">SDRF metadata format</h3>
+<p>Familiarize yourself with the <strong>Sample and Data Relationship Format for Proteomics</strong> - its <a href="https://github.com/bigbio/proteomics-sample-metadata">general description</a> and take a look at the <a href="https://github.com/bigbio/proteomics-sample-metadata/blob/master/sdrf-proteomics/README.adoc">specification</a>. Then answer a few questions:</p>
+<div class="question">
+<p>What is the general layout of an SDRF file?</p>
+</div>
+<div class="question">
+<p>What is the scope of information contained in an SDRF file?</p>
+</div>
+<div class="question">
+<p>What columns would capture the most important sample characteristics for the dataset you are working with?</p>
+</div>
+<div class="question">
+<p>How are the valid values defined for different columns?</p>
+</div>
+<p>We will now create an annotation for a small subset of our data according to SDRF-Proteomics standard. Go to <a href="https://lessdrf.streamlit.app/">lesSDRF</a>, then start a new SDRF annotation with the human template. When asked for file names, input only the first RAW file name from the annotation table found in supporting information. After that, proceed to step 2, labeling.</p>
+<p>Carefully select the list of labels corresponding to the dataset, then click “Submit selection”, and proceed to specify that every label is present in “ALL” files. Then click “Ready” and proceed to step 3.</p>
+<div class="question">
+<p>How many rows does the SDRF table have now? How many would it have if we annotated the entire dataset?</p>
+</div>
+<p>Fill in the first three required columns one by one: source name, organism, and organism part.</p>
+<div class="question">
+<p>What would be a good sample identifier for the “source name” column?</p>
+</div>
+<p>Fill in the next column, cell type. Consider that we are dealing with cancer samples. For the next columns, ancestry category and age, you can select “not available”. Then, fill in the “sex” column.</p>
+<p>It is time to fill in the disease column.</p>
+<div class="question">
+<p>How many different values for disease can we possibly have in our annotation? What do they correspond to?</p>
+</div>
+<div class="question">
+<p>How many different values will we actually use when annotating the selected subset of data?</p>
+</div>
+<p>Proceed to fill the disease column, then fill in the rest of the columns, up to and including “instrument”.</p>
+<div class="question">
+<p>How many different values should you use in the “assay name” column when annotating the subset? Why? How many different values should there be in the entire annotation?</p>
+</div>
+<p>When you have only four columns left (cleavage agent details, modifications, precursor and fragment mass tolerance), skip to step 4 and fill the factor value column.</p>
+<div class="question">
+<p>What is the meaning of factor value, and what should it be in this case?</p>
+</div>
+<p>After that, download the resulting file. Copy the cleavage agent, modifications and mass tolerance information from the partial annotation provided by FragPipe into your file, using Excel or similar software. Congratulations! You have a complete annotation according to the SDRF standard, but only for one out of all raw files in the data set. If you need a grade for this course, submit your SDRF file together with your answers.</p>
+<div class="question">
+<p>How would you go about making a full dataset annotation?</p>
+</div>
+<div class="question">
+<p>You can try this <a href="https://github.com/hds-sandbox/proteomics-sandbox/blob/webpage/Create%20SDRF.ipynb">Python notebook</a> as a start for semi-automated creation of the full SDRF table. What are your thoughts about this approach to data annotation?</p>
+</div>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 86%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Name</td>
+<td><textarea id="name" placeholder="Type your name here..." class="input-box"></textarea></td>
+</tr>
+<tr class="even">
+<td>Email</td>
+<td><textarea id="email" placeholder="Type your email here..." class="input-box"></textarea></td>
+</tr>
+<tr class="odd">
+<td>Course/Program</td>
+<td><textarea id="course" placeholder="Type your course/program here..." class="input-box"></textarea></td>
+</tr>
+<tr class="even">
+<td>Date</td>
+<td><textarea id="date" placeholder="Type the date here..." class="input-box"></textarea></td>
+</tr>
+</tbody>
+</table>
+<button id="downloadBtn" class="download-button">
+Download Your Answers as PDF
+</button>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+<script src="./javascripts/answers.js">
+<div id="quarto-navigation-envelope" class="hidden">
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyLXRpdGxl">Clinical Proteomics</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXItdGl0bGU=">Clinical Proteomics</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6SW50cm9kdWN0aW9u">Introduction</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2luZGV4Lmh0bWw=">/index.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6R2V0dGluZyBTdGFydGVk">Getting Started</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2dldHRpbmdzdGFydGVkLmh0bWw=">/gettingstarted.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U2V0dXA=">Setup</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3NldHVwLmh0bWw=">/setup.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6Q29sYWJGb2xk">ColabFold</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2NvbGFiZm9sZC5odG1s">/colabfold.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6Q291cnNlIE1hdGVyaWFscw==">Course Materials</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2NvdXJzZW1hdGVyaWFscy5odG1s">/coursematerials.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6VGVhY2hpbmcgTW9kdWxl">Teaching Module</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L1RlYWNoaW5nTW9kdWxlL3RlYWNoaW5nbW9kdWxlLmh0bWw=">/TeachingModule/teachingmodule.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6Q29udHJpYnV0b3Jz">Contributors</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2NvbnRyaWJ1dG9ycy5odG1s">/contributors.html</span></p>
+</div>
+<div id="quarto-meta-markdown" class="hidden">
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW1ldGF0aXRsZQ==">Brief Introduction to SDRF – Clinical Proteomics</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLXR3aXR0ZXJjYXJkdGl0bGU=">Brief Introduction to SDRF – Clinical Proteomics</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW9nY2FyZHRpdGxl">Brief Introduction to SDRF – Clinical Proteomics</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW1ldGFzaXRlbmFtZQ==">Clinical Proteomics</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLXR3aXR0ZXJjYXJkZGVzYw=="></span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW9nY2FyZGRkZXNj"></span></p>
+</div>
+</section>
 </section>
 
 </main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+<script id = "quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -761,7 +899,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-</div> <!-- /content -->
+</section></section></main></div> <!-- /content -->
 
 
 
