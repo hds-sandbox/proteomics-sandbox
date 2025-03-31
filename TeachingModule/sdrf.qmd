@@ -4,8 +4,14 @@ Suppose you want to reproduce the figures from the article. What do you need for
 
 ### SDRF metadata format
 
-Familiarize yourself with the **Sample and Data Relationship Format for Proteomics** - its [general description](https://github.com/bigbio/proteomics-sample-metadata)
-and take a look at the [specification](https://github.com/bigbio/proteomics-sample-metadata/blob/master/sdrf-proteomics/README.adoc). Then answer a few questions:
+We are going to work with **Sample and Data Relationship Format for Proteomics** - a standardized table-based format capturing experimental metadata.
+An SDRF file is a TSV table describing a proteomics dataset. Rows in the table correspond to samples and columns correspond to sample characteristics and experimental parameters
+pertaining to data acquisition and processing. Column names and values in SDRF are thoroughly standardized to enable automated creation, validation and re-use of SDRF files.
+
+::: {.task}
+Read the [general description](https://github.com/bigbio/proteomics-sample-metadata)
+of SDRF and take a look at the [specification](https://github.com/bigbio/proteomics-sample-metadata/blob/master/sdrf-proteomics/README.adoc). Then answer the following questions.
+:::
 
 ::: {.question}
 What is the general layout of an SDRF file?
@@ -24,24 +30,34 @@ How are the valid values defined for different columns?
 :::
 
 
-We will now create an annotation for a small subset of our data according to SDRF-Proteomics standard. Go to [lesSDRF](https://lessdrf.streamlit.app/),
-then start a new SDRF annotation with the human template. When asked for file names, input only the first RAW file name from the annotation table found in supporting information.
-After that, proceed to step 2, labeling.
+We will now create an annotation for a small subset of our data according to SDRF-Proteomics standard.
 
+::: {.task}
+Go to [lesSDRF](https://lessdrf.streamlit.app/), a web application that serves for easy creation of SDRF files.
+Start a new SDRF annotation with the human template. When asked for file names, input only the first RAW file name from the annotation table found in supporting information.
+After that, proceed to step 2, labeling.
+:::
+
+::: {.task}
 Carefully select the list of labels corresponding to the dataset, then click "Submit selection", and proceed to specify that every label is present in "ALL" files. Then click "Ready" and proceed to step 3.
+:::
 
 ::: {.question}
 How many rows does the SDRF table have now? How many would it have if we annotated the entire dataset?
 :::
 
+::: {.task}
 Fill in the first three required columns one by one: source name, organism, and organism part.
+:::
 
 ::: {.question}
 What would be a good sample identifier for the "source name" column?
 :::
 
+::: {.task}
 Fill in the next column, cell type. Consider that we are dealing with cancer samples. For the next columns, ancestry category and age, you can select "not available".
 Then, fill in the "sex" column.
+:::
 
 It is time to fill in the disease column.
 
@@ -53,27 +69,39 @@ How many different values for disease can we possibly have in our annotation? Wh
 How many different values will we actually use when annotating the selected subset of data?
 :::
 
+::: {.task}
 Proceed to fill the disease column, then fill in the rest of the columns, up to and including "instrument".
+:::
 
 ::: {.question}
 How many different values should you use in the "assay name" column when annotating the subset? Why? How many different values should there be in the entire annotation?
 :::
 
+::: {.task}
 When you have only four columns left (cleavage agent details, modifications, precursor and fragment mass tolerance), skip to step 4 and fill the factor value column.
+:::
 
 ::: {.question}
 What is the meaning of factor value, and what should it be in this case?
 :::
 
+::: {.task}
 After that, download the resulting file. Copy the cleavage agent, modifications and mass tolerance information from the partial annotation provided by FragPipe into your file,
 using Excel or similar software. Congratulations! You have a complete annotation according to the SDRF standard, but only for one out of all raw files in the data set.
 If you need a grade for this course, submit your SDRF file together with your answers.
+:::
 
 ::: {.question}
 How would you go about making a full dataset annotation?
 :::
 
-::: {.question}
+::: {.task .advanced}
 You can try this [Python notebook](https://github.com/hds-sandbox/proteomics-sandbox/blob/webpage/Create%20SDRF.ipynb) as a start for semi-automated creation of the full SDRF table.
+Download it to a directory of your choosing and put the supplementary table with tumor annotations next to it.
+Install Jupyter, Pandas and other dependencies in a virtual environment and run the notebook.
+Submit a full SDRF file with your answers.
+:::
+
+::: {.question}
 What are your thoughts about this approach to data annotation?
 :::

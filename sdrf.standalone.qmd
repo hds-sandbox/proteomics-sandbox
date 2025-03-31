@@ -1,5 +1,5 @@
 ---
-title: Brief Introduction to SDRF
+title: How to annotate data in proteomics
 summary: A standalone version of the part of the Clinical Proteomics Teaching Module about SDRF metadata standard
 date: last-modified
 author: Lev Levitsky
@@ -11,10 +11,16 @@ hide:
 # Overview
 
 This short training material is focused on proteomics data annotation and SDRF format. It is expected to take 1.5 hours to complete.
+
+#### Learning goals
+
+- Understand the concept, purpose and significance of data annotation in proteomics
+- Learn about the scope and structure of SDRF
+- Get practical experience with [lesSDRF](https://lessdrf.streamlit.app/), what it can and cannot do.
 :::
 
 
-## Part 1: Preliminary work
+## Part 1: Understanding study design and experimental setup
 
 {{< include TeachingModule/study_intro.qmd >}}
 
