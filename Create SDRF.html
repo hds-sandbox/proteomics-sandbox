@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>create-sdrf – Clinical Proteomics</title>
+<title>Create a full SDRF annotation for dataset PXD008841 – Clinical Proteomics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -171,50 +171,90 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Create a full SDRF annotation for dataset PXD008841</h1>
+</div>
 
 
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
 
 
 <div id="888301cb-544d-45ed-9100-c7893fbb57a4" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> itertools</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> <span class="st">'PXD008841'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>We can start with a partial annotation created by Fragpipe. Look here for a full <a href="https://hds-sandbox.github.io/proteomics-sandbox/TeachingModule/teachingmodule.html">teaching module on clinical proteomics</a> that explains the use of Fragpipe to process the data.</p>
 <div id="e40954cb-ee9c-47d8-a5de-065a175c0797" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_table(<span class="st">'sdrf (3).tsv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_table(<span class="st">'sdrf.tsv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="2f5251dd-2e6e-4c3a-9189-b7f463bbe178" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'comment[instrument]'</span>] <span class="op">=</span> <span class="st">'Q Exactive'</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'comment[technical replicate]'</span>] <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'characteristics[organism]'</span>] <span class="op">=</span> <span class="st">'Homo Sapiens'</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'characteristics[organism part]'</span>] <span class="op">=</span> <span class="st">'breast'</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'comment[fraction identifier]'</span>] <span class="op">=</span> df[<span class="st">'comment[data file]'</span>].<span class="bu">str</span>.extract(<span class="vs">r'fr(\d+).raw'</span>).astype(<span class="bu">int</span>)</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'comment[file uri]'</span>] <span class="op">=</span> <span class="st">'https://storage.jpostdb.org/JPST000265/'</span> <span class="op">+</span> df[<span class="st">'comment[data file]'</span>]</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'technology type'</span>] <span class="op">=</span> <span class="st">'proteomic profiling by mass spectrometry'</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'characteristics[ancestry category]'</span>] <span class="op">=</span> <span class="st">'not available'</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'characteristics[age]'</span>] <span class="op">=</span> <span class="st">'not available'</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'characteristics[sex]'</span>] <span class="op">=</span> <span class="st">'female'</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'characteristics[cell type]'</span>] <span class="op">=</span> <span class="st">'malignant cell'</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'characteristics[biological replicate]'</span>] <span class="op">=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Alternatively, we can start from scratch if we don’t have a partial SDRF. We will make the list of all raw files below. Skip the next two cells if you have the partial annotation from Fragpipe for the full dataset.</p>
+<div id="e7356d46-2d94-4394-bd99-d20229fb4f57" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>pools_and_prefixes <span class="op">=</span> [([<span class="dv">1</span>, <span class="dv">2</span>], <span class="st">'HJOS2U_20140410_TMTpool'</span>), ([<span class="dv">3</span>], <span class="st">'HJOSLO2U_QEHF_20150318_TMT_pool'</span>), ([<span class="dv">4</span>], <span class="st">'HJOSLO2U_QEHF_20150322_TMT_pool'</span>), ([<span class="dv">5</span>], <span class="st">'HJOSLO2U_QEHF_20150329_TMT_pool'</span>)]</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>tmt_channels <span class="op">=</span> <span class="bu">sorted</span>([<span class="st">'TMT'</span> <span class="op">+</span> c <span class="cf">for</span> c <span class="kw">in</span> [<span class="st">'126'</span>, <span class="st">'131N'</span>] <span class="op">+</span> [<span class="bu">str</span>(m) <span class="op">+</span> i <span class="cf">for</span> m, i <span class="kw">in</span> itertools.product(<span class="bu">range</span>(<span class="dv">127</span>, <span class="dv">131</span>), [<span class="st">'N'</span>, <span class="st">'C'</span>])]])</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>fractions <span class="op">=</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">73</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>raw_names <span class="op">=</span> []</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> pools, prefix <span class="kw">in</span> pools_and_prefixes:</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> pool <span class="kw">in</span> pools:</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> fr <span class="kw">in</span> fractions:</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>                raw_names.append(<span class="ss">f'</span><span class="sc">{</span>prefix<span class="sc">}{</span>pool<span class="sc">}</span><span class="ss">_300ugIPG37-49_7of15ul_fr</span><span class="sc">{</span>fr<span class="sc">:02d}</span><span class="ss">.raw'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="578230a6-3ccf-41ff-9731-9eefe0d2b55f" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>tumor_id <span class="op">=</span> pd.read_excel(<span class="st">'41467_2019_9018_MOESM3_ESM.xlsx'</span>, sheet_name<span class="op">=</span><span class="st">'Tumor annotations'</span>, usecols<span class="op">=</span>[<span class="st">'Tumor ID'</span>, <span class="st">'TMT set nr'</span>, <span class="st">'TMT tag'</span>, <span class="st">'PAM50 subtype'</span>], index_col<span class="op">=</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="30551418-f939-4c59-b5d2-36329bf5c80d" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'comment[data file]'</span>: [f <span class="cf">for</span> f <span class="kw">in</span> raw_names <span class="cf">for</span> _ <span class="kw">in</span> tmt_channels],</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'comment[fraction identifier]'</span>: [i <span class="cf">for</span> i <span class="kw">in</span> itertools.chain.from_iterable(itertools.repeat(<span class="bu">tuple</span>(fractions), <span class="dv">5</span>)) <span class="cf">for</span> _ <span class="kw">in</span> tmt_channels],</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'comment[label]'</span>: <span class="bu">list</span>(itertools.chain.from_iterable(itertools.repeat(<span class="bu">tuple</span>(tmt_channels), <span class="bu">len</span>(raw_names)))),</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="7beb75d9-bb9b-45bc-8628-a08559b2c220" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>tumor_id.index <span class="op">=</span> pd.MultiIndex.from_tuples([(s, <span class="bu">str</span>(label)) <span class="cf">for</span> s, label <span class="kw">in</span> tumor_id.index], names<span class="op">=</span>tumor_id.index.names)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Add more required columns. Run the cells below regardless of the starting point.</p>
+<div id="2f5251dd-2e6e-4c3a-9189-b7f463bbe178" class="cell" data-execution_count="37">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'comment[instrument]'</span>] <span class="op">=</span> <span class="st">'Q Exactive'</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'comment[technical replicate]'</span>] <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'characteristics[organism]'</span>] <span class="op">=</span> <span class="st">'Homo Sapiens'</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'characteristics[organism part]'</span>] <span class="op">=</span> <span class="st">'breast'</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'comment[fraction identifier]'</span>] <span class="op">=</span> df[<span class="st">'comment[data file]'</span>].<span class="bu">str</span>.extract(<span class="vs">r'fr(\d+).raw'</span>).astype(<span class="bu">int</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'comment[file uri]'</span>] <span class="op">=</span> <span class="st">'https://storage.jpostdb.org/JPST000265/'</span> <span class="op">+</span> df[<span class="st">'comment[data file]'</span>]</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'technology type'</span>] <span class="op">=</span> <span class="st">'proteomic profiling by mass spectrometry'</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'characteristics[ancestry category]'</span>] <span class="op">=</span> <span class="st">'not available'</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'characteristics[age]'</span>] <span class="op">=</span> <span class="st">'not available'</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'characteristics[sex]'</span>] <span class="op">=</span> <span class="st">'female'</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'characteristics[cell type]'</span>] <span class="op">=</span> <span class="st">'malignant cell'</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'characteristics[biological replicate]'</span>] <span class="op">=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="ead191c9-aef3-431a-816c-c15273f052df" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>tumor_types <span class="op">=</span> {</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Basal'</span>: <span class="st">'basal-like breast carcinoma'</span>,</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'LumA'</span>: <span class="st">'luminal A breast carcinoma'</span>,</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'LumB'</span>: <span class="st">'luminal B breast carcinoma'</span>,</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'HER2'</span>: <span class="st">'HER2 Positive Breast Carcinoma'</span>,</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Normal'</span>: <span class="st">'Normal Breast-Like Subtype of Breast Carcinoma'</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Extract the tumor annotations from the supplementary table. Reminder: the supplementary table is available <a href="https://www.nature.com/articles/s41467-019-09018-y#Sec15">here</a>, under <strong>Supplementary Data 1</strong>.</p>
+<div id="578230a6-3ccf-41ff-9731-9eefe0d2b55f" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>tumor_id <span class="op">=</span> pd.read_excel(<span class="st">'41467_2019_9018_MOESM3_ESM.xlsx'</span>, sheet_name<span class="op">=</span><span class="st">'Tumor annotations'</span>, usecols<span class="op">=</span>[<span class="st">'Tumor ID'</span>, <span class="st">'TMT set nr'</span>, <span class="st">'TMT tag'</span>, <span class="st">'PAM50 subtype'</span>], index_col<span class="op">=</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="65f5a20e-4d12-48cc-9a32-cdcecad4f602" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>tumor_id.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="7">
+<div id="7beb75d9-bb9b-45bc-8628-a08559b2c220" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>tumor_id.index <span class="op">=</span> pd.MultiIndex.from_tuples([(s, <span class="bu">str</span>(label)) <span class="cf">for</span> s, label <span class="kw">in</span> tumor_id.index], names<span class="op">=</span>tumor_id.index.names)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="ead191c9-aef3-431a-816c-c15273f052df" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>tumor_types <span class="op">=</span> {</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Basal'</span>: <span class="st">'basal-like breast carcinoma'</span>,</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'LumA'</span>: <span class="st">'luminal A breast carcinoma'</span>,</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'LumB'</span>: <span class="st">'luminal B breast carcinoma'</span>,</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'HER2'</span>: <span class="st">'HER2 Positive Breast Carcinoma'</span>,</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Normal'</span>: <span class="st">'Normal Breast-Like Subtype of Breast Carcinoma'</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="65f5a20e-4d12-48cc-9a32-cdcecad4f602" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>tumor_id.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
 <div>
 
 
@@ -266,47 +306,48 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="8ecf547f-1594-48f2-aa54-67cdc4257620" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>pool_str <span class="op">=</span> <span class="st">'SN='</span> <span class="op">+</span> <span class="st">','</span>.join(tumor_id[<span class="st">'Tumor ID'</span>].values)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_info(row):</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    pool <span class="op">=</span> <span class="bu">int</span>(re.search(<span class="vs">r'pool(\d)'</span>, row[<span class="st">'comment[data file]'</span>]).group(<span class="dv">1</span>))</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>        sample <span class="op">=</span> tumor_id.loc[(pool, row[<span class="st">'comment[label]'</span>][<span class="dv">3</span>:]), <span class="st">'Tumor ID'</span>]</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>        disease <span class="op">=</span> tumor_types[tumor_id.loc[(pool, row[<span class="st">'comment[label]'</span>][<span class="dv">3</span>:]), <span class="st">'PAM50 subtype'</span>]]</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>        pooled <span class="op">=</span> <span class="st">'not pooled'</span></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">KeyError</span>:</span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>        sample <span class="op">=</span> <span class="st">'pool'</span></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>        disease <span class="op">=</span> <span class="st">'breast cancer'</span></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>        pooled <span class="op">=</span> pool_str</span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    assay <span class="op">=</span> <span class="ss">f"pool </span><span class="sc">{</span>pool<span class="sc">}</span><span class="ss">, fraction </span><span class="sc">{</span>row[<span class="st">'comment[fraction identifier]'</span>]<span class="sc">}</span><span class="ss">"</span></span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> sample, assay, pooled, disease</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="8ecf547f-1594-48f2-aa54-67cdc4257620" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>pool_str <span class="op">=</span> <span class="st">'SN='</span> <span class="op">+</span> <span class="st">','</span>.join(tumor_id[<span class="st">'Tumor ID'</span>].values)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_info(row):</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    pool <span class="op">=</span> <span class="bu">int</span>(re.search(<span class="vs">r'pool(\d)'</span>, row[<span class="st">'comment[data file]'</span>]).group(<span class="dv">1</span>))</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>        sample <span class="op">=</span> tumor_id.loc[(pool, row[<span class="st">'comment[label]'</span>][<span class="dv">3</span>:]), <span class="st">'Tumor ID'</span>]</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>        disease <span class="op">=</span> tumor_types[tumor_id.loc[(pool, row[<span class="st">'comment[label]'</span>][<span class="dv">3</span>:]), <span class="st">'PAM50 subtype'</span>]]</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>        pooled <span class="op">=</span> <span class="st">'not pooled'</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">KeyError</span>:</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>        sample <span class="op">=</span> <span class="st">'pool'</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>        disease <span class="op">=</span> <span class="st">'breast cancer'</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>        pooled <span class="op">=</span> pool_str</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>    assay <span class="op">=</span> <span class="ss">f"pool </span><span class="sc">{</span>pool<span class="sc">}</span><span class="ss">, fraction </span><span class="sc">{</span>row[<span class="st">'comment[fraction identifier]'</span>]<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> sample, assay, pooled, disease</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="f37d664a-a044-4b38-96de-d2e561819468" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'source name'</span>, <span class="st">'assay name'</span>, <span class="st">'characteristics[pooled sample]'</span>, <span class="st">'characteristics[disease]'</span>]] <span class="op">=</span> df.<span class="bu">apply</span>(get_info, axis<span class="op">=</span><span class="dv">1</span>, result_type<span class="op">=</span><span class="st">'expand'</span>)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'factor value[disease]'</span>] <span class="op">=</span> df[<span class="st">'characteristics[disease]'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="f37d664a-a044-4b38-96de-d2e561819468" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'source name'</span>, <span class="st">'assay name'</span>, <span class="st">'characteristics[pooled sample]'</span>, <span class="st">'characteristics[disease]'</span>]] <span class="op">=</span> df.<span class="bu">apply</span>(get_info, axis<span class="op">=</span><span class="dv">1</span>, result_type<span class="op">=</span><span class="st">'expand'</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'factor value[disease]'</span>] <span class="op">=</span> df[<span class="st">'characteristics[disease]'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="ab2be8a8-237f-4ae1-bdc7-b70024f828bb" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> key(colname):</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> colname <span class="op">==</span> <span class="st">'source name'</span>:</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">0</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> colname[:<span class="dv">15</span>] <span class="op">==</span> <span class="st">'characteristics'</span>:</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">1</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> colname <span class="op">==</span> <span class="st">'assay name'</span>:</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">2</span></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> colname <span class="op">==</span> <span class="st">'technology type'</span>:</span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">3</span></span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> colname[:<span class="dv">7</span>] <span class="op">==</span> <span class="st">'comment'</span>:</span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">4</span></span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> colname[:<span class="dv">12</span>] <span class="op">==</span> <span class="st">'factor value'</span>:</span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">5</span></span>
-<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="ab2be8a8-237f-4ae1-bdc7-b70024f828bb" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># sorting key for ordering of columns</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> key(colname):</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> colname <span class="op">==</span> <span class="st">'source name'</span>:</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">0</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> colname[:<span class="dv">15</span>] <span class="op">==</span> <span class="st">'characteristics'</span>:</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">1</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> colname <span class="op">==</span> <span class="st">'assay name'</span>:</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">2</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> colname <span class="op">==</span> <span class="st">'technology type'</span>:</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">3</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> colname[:<span class="dv">7</span>] <span class="op">==</span> <span class="st">'comment'</span>:</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">4</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> colname[:<span class="dv">12</span>] <span class="op">==</span> <span class="st">'factor value'</span>:</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">5</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="c95778b3-4230-4890-bf9b-7b276a8667cb" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df[<span class="bu">sorted</span>(df.columns, key<span class="op">=</span>key)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="c95778b3-4230-4890-bf9b-7b276a8667cb" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df[<span class="bu">sorted</span>(df.columns, key<span class="op">=</span>key)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="1dde5960-3afc-4f25-a71d-dddd58cedb8f" class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>df.to_csv(<span class="st">'PXD008841.sdrf.tsv'</span>, sep<span class="op">=</span><span class="st">'</span><span class="ch">\t</span><span class="st">'</span>, index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="1dde5960-3afc-4f25-a71d-dddd58cedb8f" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>df.to_csv(<span class="ss">f'</span><span class="sc">{</span>dataset<span class="sc">}</span><span class="ss">.sdrf.tsv'</span>, sep<span class="op">=</span><span class="st">'</span><span class="ch">\t</span><span class="st">'</span>, index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
