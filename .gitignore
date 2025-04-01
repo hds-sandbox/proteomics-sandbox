@@ -2,3 +2,5 @@
 *_files/
 _site/
 docs
+**.ipynb_checkpoints
+PXD008841.sdrf.tsv

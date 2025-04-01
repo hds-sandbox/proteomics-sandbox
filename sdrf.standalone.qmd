@@ -2,7 +2,7 @@
 title: How to annotate data in proteomics
 summary: A standalone version of the part of the Clinical Proteomics Teaching Module about SDRF metadata standard
 date: last-modified
-author: Lev Levitsky
+author: Lev Levitsky, Veit Schwämmle
 hide:
   - navigation
 ---
