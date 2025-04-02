@@ -1,18 +1,17 @@
-{{ <include study_intro.qmd> }}
+{{< include study_intro.qmd >}}
 
 ### Questions for Understanding the Paper
 
 To better understand the paper, we have formulated some questions that should help clarify the study design, aim, and overall scope of the work. These questions are listed below:
 
-{{ <include general_questions.qmd >}}
+{{< include general_questions.qmd >}}
 
 
 ### Supplementary Data
 
-{{ <include supp_data_questions.qmd> }}
-
+{{< include supp_data_questions.qmd >}}
 
 
 #### TMT10-Tags and Tumor IDs
 
-{{ <include tmt_questions.qmd> }}
+{{< include tmt_questions.qmd >}}
