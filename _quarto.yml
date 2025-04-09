@@ -2,19 +2,15 @@ project:
   type: website
 
 website:
-  title: "Clinical Proteomics"
+  title: "Proteomics Hub"
   navbar:
     left:
-      - text: Introduction
+      - text: Home
         href: index.qmd
-      - text: Getting Started
-        href: gettingstarted.qmd
-      - text: Setup
-        href: setup.qmd
+      - text: UCloud app
+        href: ucloud.qmd
       - text: ColabFold
         href: colabfold.qmd
-      - text: Course Materials
-        href: coursematerials.qmd
       - text: Teaching Module
         href: TeachingModule/teachingmodule.qmd
       - text: Contributors
