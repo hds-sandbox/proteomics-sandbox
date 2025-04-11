@@ -11,9 +11,8 @@ hide:
 
 The Proteomics Sandbox application has been developed with contributions from:
 
- Jacob Fredegaard Hansen [:custom-orcid:](https://orcid.org/0009-0002-4458-3263) [:simple-github:](https://github.com/jacobfh1) [:simple-linkedin:](https://www.linkedin.com/in/jacobfh/) <br>
- Ole Nørregaard Jensen [:custom-orcid:](https://orcid.org/0000-0003-1862-8528) [:simple-linkedin:](https://www.linkedin.com/in/ole-n%C3%B8rregaard-jensen-b03b001/) <br>
- Veit Stefan Schwämmle [:custom-orcid:](https://orcid.org/0000-0002-9708-6722) [:simple-github:](https://github.com/veitveit) [:simple-linkedin:](https://www.linkedin.com/in/veit-schw%C3%A4mmle-4758b772/)
-
-
+- Jacob Fredegaard Hansen [{{< iconify fa-brands:orcid >}}](https://orcid.org/0009-0002-4458-3263) [{{< iconify logos:github-octocat >}}](https://github.com/jacobfh1) [{{< iconify logos:linkedin-icon >}}](https://www.linkedin.com/in/jacobfh/)
+- Ole Nørregaard Jensen [{{< iconify fa-brands:orcid >}}](https://orcid.org/0000-0003-1862-8528) [{{< iconify logos:linkedin-icon >}}](https://www.linkedin.com/in/ole-n%C3%B8rregaard-jensen-b03b001/)
+- Veit Stefan Schwämmle [{{< iconify fa-brands:orcid >}}](https://orcid.org/0000-0002-9708-6722) [{{< iconify logos:github-octocat >}}](https://github.com/veitveit) [{{< iconify logos:linkedin-icon >}}](https://www.linkedin.com/in/veit-schw%C3%A4mmle-4758b772/)
+- Lev I. Levitsky [{{< iconify fa-brands:orcid >}}](https://orcid.org/0000-0002-4048-0876) [{{< iconify logos:github-octocat >}}](https://github.com/levitsky) [{{< iconify logos:linkedin-icon >}}](https://www.linkedin.com/in/lev-levitsky-005854247/)
 
