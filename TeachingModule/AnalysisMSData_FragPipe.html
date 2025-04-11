@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.42">
+<meta name="generator" content="quarto-1.6.43">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>analysismsdata_fragpipe – Clinical Proteomics</title>
+<title>analysismsdata_fragpipe – Proteomics Hub</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -69,8 +69,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-d4d76bf8491c20bad77d141916dc28e1.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-4379b0ccadffce622b03caf4c46266b3.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-090d7dd4d8b9967711d86c433fbfd458.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
@@ -115,7 +115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">Clinical Proteomics</span>
+    <span class="navbar-title">Proteomics Hub</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -126,27 +126,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link" href="../index.html"> 
-<span class="menu-text">Introduction</span></a>
+<span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../gettingstarted.html"> 
-<span class="menu-text">Getting Started</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../setup.html"> 
-<span class="menu-text">Setup</span></a>
+    <a class="nav-link" href="../ucloud.html"> 
+<span class="menu-text">UCloud app</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../colabfold.html"> 
 <span class="menu-text">ColabFold</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../coursematerials.html"> 
-<span class="menu-text">Course Materials</span></a>
+    <a class="nav-link" href="../TeachingModule/teachingmodule.html"> 
+<span class="menu-text">Clinical Proteomics Course</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../TeachingModule/teachingmodule.html"> 
-<span class="menu-text">Teaching Module</span></a>
+    <a class="nav-link" href="../sdrf.standalone.html"> 
+<span class="menu-text">SDRF course</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../contributors.html"> 
@@ -211,30 +207,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="question">
 <p>What are the benefits of using FragPipe?</p>
 </div>
-<p>Now that we know what we want to do and why, it is time to start the <strong>Proteomics Sandbox</strong> application, or job. Simple analyses in <strong>FragPipe</strong> may only require 8 GB of RAM, while large-scale or complex analyses may require 24 GB of memory or more (<a href="https://fragpipe.nesvilab.org/docs/tutorial_fragpipe.html#:~:text=FragPipe%20runs%20on%20Windows%20and,24%20GB%20memory%20or%20more.">FragPipe Documentation</a>), which is why we will allocate 24 GB for this exercise.</p>
-<p>You can access the <strong>Proteomics Sandbox Application</strong> on UCloud <a href="https://cloud.sdu.dk/app/jobs/create?app=proteomics&amp;version=Oct2024">here</a>.</p>
-<p>In UCloud, the settings should look like this:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/TeachingModuleInstructions/UCloud_settings.PNG" class="img-fluid quarto-figure quarto-figure-center figure-img" width="750"></p>
-</figure>
-</div>
-<p>Before submitting the job, it is highly recommended to create a personal folder to securely store both your data and the results generated by <strong>FragPipe</strong>. Follow the step-by-step guide below for an effortless setup:</p>
-<ol type="1">
-<li>First, click on the vibrant blue <code>Add folder</code> button.</li>
-<li>Next, select the exact directory you wish to mount, as illustrated below:</li>
-</ol>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/TeachingModuleInstructions/AddFolder1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="750"></p>
-</figure>
-</div>
-<p>Upon clicking, a window similar to the one below will appear. Here, you have the option to either create a specific folder within a particular drive in the workspace you’ve chosen or simply select the entire drive itself. In this example, the drive is labeled as <code>Home</code> and the workspace is <code>My workspace</code>.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/TeachingModuleInstructions/AddFolder2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="750"></p>
-</figure>
-</div>
+<p>Now that we know what we want to do and why, it is time to start the <strong>Proteomics Sandbox</strong> application, or job. Refer to <a href="../ucloud.html">UCloud app documentation</a> for information on starting the app. Simple analyses in <strong>FragPipe</strong> may only require 8 GB of RAM, while large-scale or complex analyses may require 24 GB of memory or more (<a href="https://fragpipe.nesvilab.org/docs/tutorial_fragpipe.html#:~:text=FragPipe%20runs%20on%20Windows%20and,24%20GB%20memory%20or%20more.">FragPipe Documentation</a>), which is why we will allocate 24 GB for this exercise.</p>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -248,6 +221,9 @@ Caution
 <p>Make sure to allocate the right number of hours before submitting the job. If the time runs out, the job will be canceled, and all progress will be lost. However, you can always extend the job duration if more time is required after submission.</p>
 <p>Time can pass quickly when working, so we recommend initially allocating 2 hours for the job. Now, we are ready to submit the job and launch the virtual environment of the <strong>Proteomics Sandbox Application</strong>.</p>
 </div>
+</div>
+<div class="task">
+<p>Start the Proteomics Sandbox app on Ucloud with the recommended parameters.</p>
 </div>
 </section>
 <section id="download-data-from-the-paper" class="level4">
