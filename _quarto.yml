@@ -11,8 +11,10 @@ website:
         href: ucloud.qmd
       - text: ColabFold
         href: colabfold.qmd
-      - text: Teaching Module
+      - text: Clinical Proteomics Course
         href: TeachingModule/teachingmodule.qmd
+      - text: SDRF course
+        href: sdrf.standalone.qmd
       - text: Contributors
         href: contributors.qmd
 
