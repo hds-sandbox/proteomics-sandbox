@@ -9,7 +9,6 @@ css: css/styles.css
 date-modified: last-modified
 date-format: long
 date: 2024-09-11
-#bibliography: resources/references.bib
 ---
 
 # ColabFold
