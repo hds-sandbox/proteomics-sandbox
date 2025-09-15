@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-07-23">
+<meta name="dcterms.date" content="2025-09-15">
 
 <title>Proteomics Sandbox app on UCloud – Proteomics Hub</title>
 <style>
@@ -33,18 +33,19 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b651517ce65839d647a86e2780455cfb.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-8348143dda9f7905b0fcab1650c99050.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-1e815c4c50043f7e8fc9161d15dcdabb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-8348143dda9f7905b0fcab1650c99050.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5757ee0b5e13e82f473f69df691e10c5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-746b12677a866d60fe2edb41c4d5323b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-5757ee0b5e13e82f473f69df691e10c5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -246,6 +247,8 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    </a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Proteomics Hub</span>
     </a>
@@ -319,7 +322,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 23, 2025</p>
+      <p class="date">September 15, 2025</p>
     </div>
   </div>
   
@@ -337,7 +340,7 @@ ul.task-list li input[type="checkbox"] {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Section Overview
+<span class="screen-reader-only">Note</span>Section Overview
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -381,7 +384,7 @@ Section Overview
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Important warning
+<span class="screen-reader-only">Caution</span>Important warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -429,22 +432,26 @@ Important warning
 <td>Tool for visualizing and analyzing the results of peptide searches performed with SearchGUI. Includes features for filtering, annotation, and visualization of results. Supports integration with other proteomics databases and software.</td>
 </tr>
 <tr class="odd">
+<td><a href="https://github.com/smith-chem-wisc/FlashLFQ">FlashLFQ</a></td>
+<td>A fast label-free quantification algorithm for MS-based proteomics compatible with PeptideShaker.</td>
+</tr>
+<tr class="even">
 <td><a href="https://mzmine.github.io/">MZmine</a></td>
 <td>Open-source software for LC-MS data processing. It offers a flexible, user-friendly platform with modules for the full LC-MS data analysis workflow.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><a href="https://github.com/vdemichev/DiaNN">DIA-NN</a></td>
 <td>DIA-NN is a universal tool for DIA proteomics data. It features robust algorithms for reliable, large-scale experiments, emphasizing ease of use, reproducibility, and high throughput, processing up to 1000 runs per hour.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><a href="https://www.ks.uiuc.edu/Research/vmd/">VMD</a></td>
 <td>Visual Molecular Dynamics (VMD) is a molecular visualization program for displaying, animating, and analyzing large biomolecular systems using 3D graphics and built-in scripting. Supports various molecular dynamics simulations and bioinformatics analyses.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><a href="https://openms.de">OpenMS</a></td>
 <td>A a free, open-source framework for LC-MS data amangement and analysis. It includes a C++ library with Python bindings and a collection of command-line tools.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><a href="https://www.ebi.ac.uk/pride/markdownpage/pridesubmissiontool">PRIDE submission tool</a></td>
 <td>A GUI application allowing you to submit your proteomics dataset directly from UCloud to the PRIDE archive.</td>
 </tr>
@@ -519,13 +526,14 @@ Important warning
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
