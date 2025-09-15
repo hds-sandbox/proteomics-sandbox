@@ -1,2 +1,2 @@
-## Website for Clinical Proteomics module
-This is the website for the Clinical Proteomics module in the National Health Data Science Sandbox.
+## Website for HDS Proteomics Hub
+This is the website for the Proteomics resources in the National Health Data Science Sandbox.
