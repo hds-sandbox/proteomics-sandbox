@@ -1,63 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://hds-sandbox.github.io/proteomics-sandbox/contributors.html</loc>
-    <lastmod>2025-09-15T11:16:06.551Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hds-sandbox.github.io/proteomics-sandbox/ucloud.html</loc>
-    <lastmod>2025-09-15T11:16:06.588Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hds-sandbox.github.io/proteomics-sandbox/Create SDRF.html</loc>
-    <lastmod>2025-09-15T11:16:06.535Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hds-sandbox.github.io/proteomics-sandbox/TeachingModule/AnalysisMSData_FragPipe.html</loc>
-    <lastmod>2025-09-15T11:16:06.536Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hds-sandbox.github.io/proteomics-sandbox/TeachingModule/Preliminarywork.html</loc>
-    <lastmod>2025-09-15T11:16:06.536Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hds-sandbox.github.io/proteomics-sandbox/TeachingModule/tmt_questions.html</loc>
-    <lastmod>2025-09-15T11:16:06.550Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hds-sandbox.github.io/proteomics-sandbox/TeachingModule/study_intro.html</loc>
-    <lastmod>2025-09-15T11:16:06.550Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hds-sandbox.github.io/proteomics-sandbox/TeachingModule/supp_data_questions.html</loc>
-    <lastmod>2025-09-15T11:16:06.550Z</lastmod>
+    <loc>https://hds-sandbox.github.io/proteomics-sandbox/sdrf.guide.covid.html</loc>
+    <lastmod>2025-10-15T14:36:14.397Z</lastmod>
   </url>
   <url>
     <loc>https://hds-sandbox.github.io/proteomics-sandbox/TeachingModule/general_questions.html</loc>
-    <lastmod>2025-09-15T11:16:06.550Z</lastmod>
+    <lastmod>2025-10-15T14:36:14.356Z</lastmod>
   </url>
   <url>
     <loc>https://hds-sandbox.github.io/proteomics-sandbox/TeachingModule/sdrf.html</loc>
-    <lastmod>2025-09-15T11:16:06.550Z</lastmod>
+    <lastmod>2025-10-15T14:36:14.356Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hds-sandbox.github.io/proteomics-sandbox/TeachingModule/tmt_questions.html</loc>
+    <lastmod>2025-10-15T14:36:14.356Z</lastmod>
   </url>
   <url>
     <loc>https://hds-sandbox.github.io/proteomics-sandbox/TeachingModule/DataScreening_Multivariate.html</loc>
-    <lastmod>2025-09-15T11:16:06.536Z</lastmod>
+    <lastmod>2025-10-15T14:36:14.341Z</lastmod>
   </url>
   <url>
-    <loc>https://hds-sandbox.github.io/proteomics-sandbox/TeachingModule/teachingmodule.html</loc>
-    <lastmod>2025-09-15T11:16:06.550Z</lastmod>
+    <loc>https://hds-sandbox.github.io/proteomics-sandbox/TeachingModule/study_intro.html</loc>
+    <lastmod>2025-10-15T14:36:14.356Z</lastmod>
   </url>
   <url>
     <loc>https://hds-sandbox.github.io/proteomics-sandbox/colabfold.html</loc>
-    <lastmod>2025-09-15T11:16:06.551Z</lastmod>
+    <lastmod>2025-10-15T14:36:14.357Z</lastmod>
   </url>
   <url>
     <loc>https://hds-sandbox.github.io/proteomics-sandbox/index.html</loc>
-    <lastmod>2025-09-15T11:16:06.587Z</lastmod>
+    <lastmod>2025-10-15T14:36:14.396Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hds-sandbox.github.io/proteomics-sandbox/ucloud.html</loc>
+    <lastmod>2025-10-15T14:36:14.397Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hds-sandbox.github.io/proteomics-sandbox/contributors.html</loc>
+    <lastmod>2025-10-15T14:36:14.357Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hds-sandbox.github.io/proteomics-sandbox/Create SDRF.html</loc>
+    <lastmod>2025-10-15T14:36:14.340Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hds-sandbox.github.io/proteomics-sandbox/TeachingModule/AnalysisMSData_FragPipe.html</loc>
+    <lastmod>2025-10-15T14:36:14.341Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hds-sandbox.github.io/proteomics-sandbox/TeachingModule/teachingmodule.html</loc>
+    <lastmod>2025-10-15T14:36:14.356Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hds-sandbox.github.io/proteomics-sandbox/TeachingModule/supp_data_questions.html</loc>
+    <lastmod>2025-10-15T14:36:14.356Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hds-sandbox.github.io/proteomics-sandbox/TeachingModule/Preliminarywork.html</loc>
+    <lastmod>2025-10-15T14:36:14.341Z</lastmod>
   </url>
   <url>
     <loc>https://hds-sandbox.github.io/proteomics-sandbox/sdrf.standalone.html</loc>
-    <lastmod>2025-09-15T11:16:06.587Z</lastmod>
+    <lastmod>2025-10-15T14:36:14.397Z</lastmod>
   </url>
 </urlset>

@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Lev Levitsky, Veit Schwämmle">
+<meta name="dcterms.date" content="2025-10-15">
+
+<title>How to annotate COVID-19 proteomics data using SDRF – Proteomics Hub</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-bcd86fc3bdb6383d039c25b8acfee3b2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-e7f4145358ce1d0cd37d8d374dbb44f9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-bcd86fc3bdb6383d039c25b8acfee3b2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Proteomics Hub</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./ucloud.html"> 
+<span class="menu-text">UCloud app</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./colabfold.html"> 
+<span class="menu-text">ColabFold</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./TeachingModule/teachingmodule.html"> 
+<span class="menu-text">Clinical Proteomics Course</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./sdrf.standalone.html"> 
+<span class="menu-text">SDRF course</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./sdrf.guide.covid.html" aria-current="page"> 
+<span class="menu-text">COVID-19 SDRF Guide</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./contributors.html"> 
+<span class="menu-text">Contributors</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#understanding-the-dataset-covid-19-nasal-swab-proteomics" id="toc-understanding-the-dataset-covid-19-nasal-swab-proteomics" class="nav-link active" data-scroll-target="#understanding-the-dataset-covid-19-nasal-swab-proteomics">Understanding the Dataset: COVID-19 Nasal Swab Proteomics</a>
+  <ul class="collapse">
+  <li><a href="#study-design-overview" id="toc-study-design-overview" class="nav-link" data-scroll-target="#study-design-overview">Study Design Overview</a></li>
+  </ul></li>
+  <li><a href="#what-is-sdrf-and-why-use-it" id="toc-what-is-sdrf-and-why-use-it" class="nav-link" data-scroll-target="#what-is-sdrf-and-why-use-it">What is SDRF and Why Use It?</a>
+  <ul class="collapse">
+  <li><a href="#the-structure-of-sdrf" id="toc-the-structure-of-sdrf" class="nav-link" data-scroll-target="#the-structure-of-sdrf">The Structure of SDRF</a></li>
+  <li><a href="#core-information-categories" id="toc-core-information-categories" class="nav-link" data-scroll-target="#core-information-categories">Core Information Categories</a></li>
+  </ul></li>
+  <li><a href="#creating-sdrf-annotations-with-lessdrf" id="toc-creating-sdrf-annotations-with-lessdrf" class="nav-link" data-scroll-target="#creating-sdrf-annotations-with-lessdrf">Creating SDRF Annotations with lesSDRF</a>
+  <ul class="collapse">
+  <li><a href="#step-1-getting-started" id="toc-step-1-getting-started" class="nav-link" data-scroll-target="#step-1-getting-started">Step 1: Getting Started</a></li>
+  <li><a href="#step-2-label-selection-and-quantification-strategy" id="toc-step-2-label-selection-and-quantification-strategy" class="nav-link" data-scroll-target="#step-2-label-selection-and-quantification-strategy">Step 2: Label Selection and Quantification Strategy</a></li>
+  <li><a href="#step-3-sample-characteristics" id="toc-step-3-sample-characteristics" class="nav-link" data-scroll-target="#step-3-sample-characteristics">Step 3: Sample Characteristics</a></li>
+  <li><a href="#step-4-technical-and-analytical-parameters" id="toc-step-4-technical-and-analytical-parameters" class="nav-link" data-scroll-target="#step-4-technical-and-analytical-parameters">Step 4: Technical and Analytical Parameters</a></li>
+  <li><a href="#step-5-experimental-design-factors" id="toc-step-5-experimental-design-factors" class="nav-link" data-scroll-target="#step-5-experimental-design-factors">Step 5: Experimental Design Factors</a></li>
+  <li><a href="#final-considerations" id="toc-final-considerations" class="nav-link" data-scroll-target="#final-considerations">Final considerations</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">How to annotate COVID-19 proteomics data using SDRF</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Lev Levitsky, Veit Schwämmle </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 15, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Overview
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>This guide provides a comprehensive walkthrough for annotating proteomics datasets using the Sample and Data Relationship Format for Proteomics (SDRF). Using the COVID-19 nasal swab proteomics dataset PXD020394 as an example, you’ll learn how to create standardized metadata annotations that make proteomics data FAIR (Findable, Accessible, Interoperable, and Reusable).</p>
+<section id="learning-goals" class="level4">
+<h4 class="anchored" data-anchor-id="learning-goals">Learning goals</h4>
+<ul>
+<li>Understand the importance of standardized metadata in proteomics</li>
+<li>Learn the SDRF format structure and requirements</li>
+<li>Get hands-on experience with lesSDRF for creating SDRF annotations</li>
+<li>Understand how to extract experimental parameters from publications and raw data</li>
+</ul>
+</section>
+<section id="other-learning-resources" class="level4">
+<h4 class="anchored" data-anchor-id="other-learning-resources">Other learning resources</h4>
+<p>See our <a href="./index.html">proteomics sandbox</a> for other courses and resources on proteomics data analysis and annotation.</p>
+</section>
+</div>
+</div>
+</div>
+<section id="understanding-the-dataset-covid-19-nasal-swab-proteomics" class="level2">
+<h2 class="anchored" data-anchor-id="understanding-the-dataset-covid-19-nasal-swab-proteomics">Understanding the Dataset: COVID-19 Nasal Swab Proteomics</h2>
+<p>We will work with a dataset that comes from a study investigating protein expression differences between COVID-19 positive and negative nasal swab samples. This research, published as <a href="https://www.sciencedirect.com/science/article/pii/S2352340920310155"><em>“Data for nasal swab proteomics of SARS-CoV-2 infection: An exploratory analysis”</em></a>, provides an excellent example of comparative proteomics study design.</p>
+<section id="study-design-overview" class="level3">
+<h3 class="anchored" data-anchor-id="study-design-overview">Study Design Overview</h3>
+<p>The researchers collected nasal swab samples from 10 individuals - 5 COVID-19 negative (control) and 5 COVID-19 positive patients. Each sample was analyzed using liquid chromatography-tandem mass spectrometry (LC-MS/MS) with technical replicates, resulting in 20 raw data files total. The study aimed to identify protein expression differences that could serve as potential biomarkers for COVID-19 detection.</p>
+<p>Understanding the experimental design is crucial for proper SDRF annotation because it determines what sample characteristics and experimental factors need to be captured in the metadata.</p>
+</section>
+</section>
+<section id="what-is-sdrf-and-why-use-it" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-sdrf-and-why-use-it">What is SDRF and Why Use It?</h2>
+<p>The <a href="https://github.com/bigbio/proteomics-sample-metadata/tree/master/sdrf-proteomics">Sample and Data Relationship Format for Proteomics (SDRF-Proteomics)</a> is a standardized metadata format developed by the <a href="https://hupo.org/Proteomics-Standards-Initiative-(PSI)">HUPO Proteomics Standards Initiative</a>. It captures essential information about proteomics experiments in a structured, human- and machine-readable format.</p>
+<section id="the-structure-of-sdrf" class="level3">
+<h3 class="anchored" data-anchor-id="the-structure-of-sdrf">The Structure of SDRF</h3>
+<p>An SDRF file is fundamentally a tab-separated values (TSV) table where:</p>
+<ul>
+<li>Each row represents a data file (typically one MS run)</li>
+<li>Columns describe sample characteristics and experimental parameters</li>
+<li>Column names and values follow controlled vocabularies and ontologies</li>
+</ul>
+<p>The general flow of information in SDRF follows the experimental workflow: from biological samples through sample processing, mass spectrometry acquisition, to data analysis parameters.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You can learn more about controlled vocabularies <a href="https://www.ebi.ac.uk/training/online/courses/bioinformatics-terrified/what-makes-a-good-bioinformatics-database/controlled-vocabularies/">here</a>.</p>
+</div>
+</div>
+</section>
+<section id="core-information-categories" class="level3">
+<h3 class="anchored" data-anchor-id="core-information-categories">Core Information Categories</h3>
+<p>SDRF captures several key categories of information to provide a detailed description of the experiment:</p>
+<ol type="1">
+<li><strong>Sample characteristics</strong>: organism, tissue type, disease state, demographic information</li>
+<li><strong>Experimental design</strong>: biological and technical replicates, experimental factors</li>
+<li><strong>Sample processing</strong>: extraction methods, chemical modifications, enzymatic digestion</li>
+<li><strong>MS acquisition</strong>: instrument details, acquisition methods, mass tolerances</li>
+<li><strong>Data processing</strong>: search parameters, modifications, quantification methods</li>
+</ol>
+<section id="permitted-values" class="level4">
+<h4 class="anchored" data-anchor-id="permitted-values">Permitted values</h4>
+<p>To ensure machine readability and reusability, information in SDRF tables is required to follow strict formats. Values in most columns are defined by ontologies or controlled vocabularies. For example, most sample <code>characteristics</code> are defined in <a href="https://bioportal.bioontology.org/ontologies/EFO">Experimental Factor Ontology (EFO)</a>, which is a widely used ontology in biomedical research. Similarly, instrument models are defined in the <a href="https://www.ebi.ac.uk/ols/ontologies/ms">PSI-MS ontology</a>. The full list of supported ontologies and CVs is a part of the <a href="https://github.com/bigbio/proteomics-sample-metadata/tree/master/sdrf-proteomics">SDRF specification</a>.</p>
+</section>
+</section>
+</section>
+<section id="creating-sdrf-annotations-with-lessdrf" class="level2">
+<h2 class="anchored" data-anchor-id="creating-sdrf-annotations-with-lessdrf">Creating SDRF Annotations with lesSDRF</h2>
+<p>The <a href="https://lessdrf.streamlit.app/">lesSDRF web application</a> provides an intuitive interface for creating SDRF files without requiring deep knowledge of the specification details. Alternatively, one can create SDRF files manually in a spreadsheet editor, but this requires more expertise and can lead to errors.</p>
+<p>Let’s walk through the annotation process for our COVID-19 dataset.</p>
+<section id="step-1-getting-started" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-getting-started">Step 1: Getting Started</h3>
+<p>When you access lesSDRF, you’ll start by selecting an organism template. For our human COVID-19 study, we select the “human” template, which ensures all the necessary columns are present in the file.</p>
+<p>The application then asks for data file names. For the PXD020394 dataset, we have files like “NEG1.raw”, “NEG1rep.raw” for the first negative control sample and its technical replicate, continuing through “POS5.raw”, “POS5rep.raw” for the fifth positive sample.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>One way to get the list of file names is to download the <a href="https://ftp.pride.ebi.ac.uk/pride/data/archive/2020/07/PXD020394/README.txt">README</a> file from the PRIDE repository, open it in your spreadsheet editor (like Excel), then filter by <code>TYPE = RAW</code>, then copy all of the <code>NAME</code> column (there should only be RAW files). If you were annotating a dataset sitting on your local PC, you could get a list of RAW files from your terminal or file explorer.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Action">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Action
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Open <a href="https://lessdrf.streamlit.app/">lesSDRF</a>.</li>
+<li>Click on the dropdown under “Start here with a completely new SDRF file”.</li>
+<li>Select “human”.</li>
+<li>Paste the 20 RAW file names into the input field that appears and hit the <code>Enter</code> key.</li>
+<li>Verify the list is correct and there is a preview of table with 20 rows.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="step-2-label-selection-and-quantification-strategy" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-label-selection-and-quantification-strategy">Step 2: Label Selection and Quantification Strategy</h3>
+<p>The next step involves specifying the quantification approach. Our COVID-19 dataset uses label-free quantification, meaning no chemical labeling was applied to the samples. This is a common approach for discovery proteomics studies where the goal is to identify as many proteins as possible across different conditions.</p>
+<p>When working with label-free data, each raw file represents a separate acquisition, and the SDRF will have one row per file. For labeled approaches (like TMT or iTRAQ), multiple samples might be analyzed in a single run, resulting in multiple rows per file in the SDRF annotation.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Action">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Action
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Click on step <strong>“2. Labeling”</strong> in the navigation bar on the left.</li>
+<li>Under the SDRF preview, check the <strong>“label free sample”</strong> box, then click <strong>“Submit selection”</strong>.</li>
+<li>Below, choose <strong>“ALL”</strong> in the dropdown menu to apply this term to all files.</li>
+<li>Finally, check the <strong>“Ready?”</strong> box.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="step-3-sample-characteristics" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-sample-characteristics">Step 3: Sample Characteristics</h3>
+<p>Now we will start going through the required columns and filling them.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Action">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Action
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Click on <strong>“3. Required columns”</strong> in the navigation bar.</li>
+</ul>
+</div>
+</div>
+<section id="source-name-and-sample-identification" class="level4">
+<h4 class="anchored" data-anchor-id="source-name-and-sample-identification">Source Name and Sample Identification</h4>
+<p><code>source name</code> is actually the first column in the SDRF file, if you were to create one manually. It contains sample identifiers. The choice of format here is arbitrary, but the value has to be identical for all files corresponding to the same sample, including technical replicates, separately analyzed fractions of the same sample, etc. In this case, each sample corresponds to a patient, and we can use the patient designations for our source name values (<code>NEG1</code> to <code>NEG5</code> and <code>POS1</code> to <code>POS5</code>).</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Action">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Action
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Choose <strong>“source name”</strong> in the list of columns in the navigation bar.</li>
+<li>Fill in the values for all rows (each ID should be repeated exactly twice).</li>
+<li>Double-click the <strong>Update</strong> button.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="organism-and-anatomical-information" class="level4">
+<h4 class="anchored" data-anchor-id="organism-and-anatomical-information">Organism and Anatomical Information</h4>
+<p>The organism seems straightforward - <em>Homo sapiens</em>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>On second thought, there is another organism present in positive samples: the SARS-CoV-2 virus. It is possible to annotate both organisms if it is relevant for data processing and/or discoverability. We leave annotation of both organisms as an exercise to the reader.</p>
+<p><strong>Hint</strong>: the ontology term is called <code>Severe acute respiratory syndrome coronavirus 2</code>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Action">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Action
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Select <code>characteristics[organism]</code>.</li>
+<li>Specify that your data does <strong>not</strong> have multiple organisms and that only <strong>model organisms</strong> are present, then choose <strong>Homo sapiens</strong> on the right.</li>
+<li>Click <strong>Ready for input?</strong></li>
+<li><code>characteristics[organism]</code> should disappear from the list on the left and you can move on to annotating other columns.</li>
+</ul>
+</div>
+</div>
+<p>The next important piece of metadata identifies the source of sample in the organism, such as tissue or organ. Our samples come from “nasal cavity mucosa”, which is the specific anatomical location where the swabs were collected. This level of anatomical specificity is important for understanding the biological context of the protein expression data. Additionally, correct and detailed annotations will allow comparisons across different experiments.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Action">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Action
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Click on <code>characteristics[organism part]</code> and fill in the appropriate value.</p>
+</div>
+</div>
+</section>
+<section id="demographic-and-clinical-information" class="level4">
+<h4 class="anchored" data-anchor-id="demographic-and-clinical-information">Demographic and Clinical Information</h4>
+<p>One challenge with this dataset is the limited demographic information available. The publication doesn’t provide details about patient age, sex, or ancestry, which would normally be valuable for comprehensive annotation. In such cases, SDRF allows for “not available” values, maintaining the column structure while acknowledging missing information.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Action">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Action
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Fill the age, sex, ancestry category, and cell type with <code>Not available</code>.</p>
+</div>
+</div>
+</section>
+<section id="disease-state-classification" class="level4">
+<h4 class="anchored" data-anchor-id="disease-state-classification">Disease State Classification</h4>
+<p>The most critical factor in this study is the disease status. The samples are classified as either “normal” (COVID-19 negative) or “COVID-19” (positive). This binary classification becomes both a sample characteristic and the primary experimental factor for downstream analysis.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Action">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Action
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Label the negative samples as <code>normal</code> and the positive samples as <code>COVID-19</code>.</p>
+</div>
+</div>
+</section>
+<section id="other-sample-type-characteristics" class="level4">
+<h4 class="anchored" data-anchor-id="other-sample-type-characteristics">Other Sample Type Characteristics</h4>
+<p>We also need to annotate the <code>characteristics[individual]</code> and <code>characteristics[biological replicate]</code> columns. The individual in this case corresponds to the sample ID. The biological replicate is something hard to define in general, and should be annotated taking into account the context of the study. In this case, we will annotate them with numbers from 1 to 5 both for positive and negative samples.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>lesSDRF</code> annotates individuals using numbers, so we will just use numbers from 1 to 10. In general, numbers starting from 1 should be used for technical replicates, biological replicates and fraction identifiers. If either of those are not used in the study, the corresponding column must be filled with <code>1</code>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Action">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Action
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Complete the annotation of sample characteristics.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="step-4-technical-and-analytical-parameters" class="level3">
+<h3 class="anchored" data-anchor-id="step-4-technical-and-analytical-parameters">Step 4: Technical and Analytical Parameters</h3>
+<section id="assay-name-and-technology-type" class="level4">
+<h4 class="anchored" data-anchor-id="assay-name-and-technology-type">Assay name and technology type</h4>
+<p>These two columns are required by SDRF. <code>assay name</code>, similarly to <code>source name</code>, is a unique identifier, but it identifies the experimental run rather than the sample. For example, technical replicates will have different <code>assay name</code> but the same <code>source name</code>, while different channels in a TMT labeling experiment would get different <code>source name</code> and the same <code>assay name</code>. <code>technology type</code> is required for broader compatibility and in mass spectrometry based proteomics we always fill it with <code>proteomic profiling by mass spectrometry</code>.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Action">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Action
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Fill <code>assay name</code> and <code>technology type</code> columns.</p>
+</div>
+</div>
+</section>
+<section id="key-experimental-design-metadata" class="level4">
+<h4 class="anchored" data-anchor-id="key-experimental-design-metadata">Key experimental design metadata</h4>
+<p>SDRF requires the annotator to provide information about technical replicates and fractionation, two key parts of the technical experimental metadata. In this dataset, there are two technical replicates for each patient. Those should be annotated with numbers <code>1</code> and <code>2</code>. As for fractionation, it is not used in this experiment, so we fill in the fraction identifier <code>1</code> for every row in the table.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Action">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Action
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Fill in <code>comment[technical replicate]</code> and <code>comment[fraction identifier]</code>.</p>
+</div>
+</div>
+</section>
+<section id="sample-processing-details" class="level4">
+<h4 class="anchored" data-anchor-id="sample-processing-details">Sample Processing Details</h4>
+<p>The samples underwent tryptic digestion, a standard proteolytic treatment that cleaves proteins at specific amino acid sequences (after lysine and arginine residues). The proteins were also chemically modified with carbamidomethylation of cysteine residues (a fixed modification to prevent disulfide bond reformation) and potential oxidation of methionine (a variable modification that can occur during sample handling).</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Action">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Action
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Fill in <code>comment[cleavage agent details]</code> with <code>NT=Trypsin</code>.</li>
+<li>Select <code>comment[modification parameters]</code> and choose <code>Carbamydomethyl</code>, type <code>Fixed</code>, occurring <code>Anywhere</code> on <code>C</code>. These settings should result in this annotation string: <code>NT=Carbamidomethyl; AC=4; MT=Fixed; PP=Anywhere; TA=C</code>.</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The meaning of the keys is:</p>
+<ul>
+<li><strong>NT</strong>: name of the term</li>
+<li><strong>AC</strong>: accession in an external database (UNIMOD in this case)</li>
+<li><strong>MT</strong>: modification type</li>
+<li><strong>PP</strong>: position in the polypeptide</li>
+<li><strong>TA</strong>: target amino acid</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="mass-spectrometry-setup-and-data-processing-parameters" class="level4">
+<h4 class="anchored" data-anchor-id="mass-spectrometry-setup-and-data-processing-parameters">Mass Spectrometry Setup and Data Processing Parameters</h4>
+<p>The dataset was acquired using a <strong>Q Exactive Plus</strong> mass spectrometer using <strong>HCD</strong> (Higher-energy Collisional Dissociation) and processed with specific parameter settings:</p>
+<ul>
+<li>Precursor mass tolerance: 30 ppm</li>
+<li>Fragment mass tolerance: 0.05 Da</li>
+</ul>
+<p>These technical parameters are crucial for data reanalysis and comparison with other datasets.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Action">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Action
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Fill in <code>comment[instrument]</code>, <code>comment[fragment mass tolerance]</code>, and <code>comment[precursor mass tolerance]</code>.</li>
+<li>To annotate the fragmentation method, go to <strong>4. Additional columns</strong> and choose <code>comment[dissociation method]</code>. Start typing “HCD” in the search field; the full name of the term is <code>higher energy beam-type collision-induced dissociation</code>.</li>
+</ul>
+</div>
+</div>
+</section>
+</section>
+<section id="step-5-experimental-design-factors" class="level3">
+<h3 class="anchored" data-anchor-id="step-5-experimental-design-factors">Step 5: Experimental Design Factors</h3>
+<p>The “factor value” column captures the primary experimental variable being investigated. In our COVID-19 study, this is the disease status - the main factor that differentiates our sample groups and drives the biological questions being asked.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Action">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Action
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Go back to the required columns and choose the <code>factor value</code> to be <code>characteristics[disease]</code>. This will duplicate the values from the selected column in the <code>factor value</code> column.</p>
+</div>
+</div>
+<p>The resulting SDRF file for PXD020394 contains 20 rows (one for each MS run) and columns capturing all aspects of the experimental design and technical parameters. Each biological sample has two rows representing two technical replicates.</p>
+</section>
+<section id="final-considerations" class="level3">
+<h3 class="anchored" data-anchor-id="final-considerations">Final considerations</h3>
+<p>When annotating own data, it is relatively straightforward to map samples to files and fill in the required metadata. However, doing this for a public dataset is much harder and sometimes not possible. It requires extensively studying the Methods section of the publication (if it is available), carefully analyzing file names, supplementary data, and sometimes pure guessing to reconstruct the sample-to-data relationships. Technical metadata can be partially retrieved from the RAW files, but it is a time-consuming and instrument-dependent process. Hence, it is vital to annotate newly generated data prior to publishing it.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For a taste of what it is like annotating a public TMT dataset, check our <a href="./TeachingModule/teachingmodule.html">Clinical Proteomics course</a>.</p>
+</div>
+</div>
+<p>Online repositories for proteomic data, such as <a href="https://www.ebi.ac.uk/pride/">PRIDE</a>, support and encourage SDRF annotation with new submissions, while the SDRF community gladly accepts <a href="https://github.com/bigbio/proteomics-sample-metadata/tree/master/annotated-projects">submissions from the public</a>.</p>
+</section>
+<section id="conclusion" class="level3">
+<h3 class="anchored" data-anchor-id="conclusion">Conclusion</h3>
+<p>You now created the experimental metadata annotation for the dataset. With that, you ensure that the data is reusable and comparable to other datasets. By publishing metadata, you increase the scientific impact of the study, and you make it possible for other researchers to build upon this work.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/hds-sandbox\.github\.io\/proteomics-sandbox\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
