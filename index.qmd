@@ -33,7 +33,8 @@ The Proteomics Hub offers the following resources for learning and practicing (c
 
 - The [Proteomics Sandbox app](ucloud.qmd), which is a virtual machine with software readily available for clinical proteomics data analysis.
 - The [Clinical Proteomics teaching module](TeachingModule/teachingmodule.qmd), an interactive online course on data processing based on the **Proteomics Sandbox** app.
-- Separate mini-course on [Annotating proteomics data with SDRF](sdrf.standalone.qmd), which is also included in the **Clinical Proteomics teaching module**.
+- Separate interactive mini-course on [Annotating proteomics data with SDRF](sdrf.standalone.qmd), which is also included in the **Clinical Proteomics teaching module**.
+- A [walkthrough guide on annotating a COVID-19 dataset](sdrf.guide.covid.qmd) using [lesSDRF](https://lessdrf.streamlit.app/).
 - The [ColabFold workshop](colabfold.qmd), which is an independent teaching material for learning to predict protein structures from sequence data based on AlphaFold.
 
 If you are keen on delving deeper into proteomics, either through experimental or computational approaches, take a look at the following courses available at SDU:

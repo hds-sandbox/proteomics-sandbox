@@ -15,6 +15,8 @@ website:
         href: TeachingModule/teachingmodule.qmd
       - text: SDRF course
         href: sdrf.standalone.qmd
+      - text: COVID-19 SDRF Guide
+        href: sdrf.guide.covid.qmd
       - text: Contributors
         href: contributors.qmd
 

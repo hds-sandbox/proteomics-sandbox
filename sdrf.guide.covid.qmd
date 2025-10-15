@@ -1,0 +1,304 @@
+---
+title: How to annotate COVID-19 proteomics data using SDRF
+summary: A comprehensive guide to creating SDRF metadata annotations for proteomics datasets, using the PXD020394 COVID-19 study as an example
+date: last-modified
+author: Lev Levitsky, Veit Schwämmle
+hide:
+  - navigation
+---
+
+::: {.callout-note collapse="false"}
+# Overview
+
+This guide provides a comprehensive walkthrough for annotating proteomics datasets using the Sample and Data Relationship Format for Proteomics (SDRF).
+Using the COVID-19 nasal swab proteomics dataset PXD020394 as an example,
+you'll learn how to create standardized metadata annotations that make proteomics data FAIR (Findable, Accessible, Interoperable, and Reusable).
+
+#### Learning goals
+
+- Understand the importance of standardized metadata in proteomics
+- Learn the SDRF format structure and requirements
+- Get hands-on experience with lesSDRF for creating SDRF annotations
+- Understand how to extract experimental parameters from publications and raw data
+
+#### Other learning resources
+
+See our [proteomics sandbox](index.qmd) for other courses and resources on proteomics data analysis and annotation.
+:::
+
+## Understanding the Dataset: COVID-19 Nasal Swab Proteomics
+
+We will work with a dataset that comes from a study investigating protein expression differences between COVID-19 positive and negative nasal swab samples.
+This research, published as [*"Data for nasal swab proteomics of SARS-CoV-2 infection: An exploratory analysis"*](https://www.sciencedirect.com/science/article/pii/S2352340920310155),
+provides an excellent example of comparative proteomics study design.
+
+### Study Design Overview
+
+The researchers collected nasal swab samples from 10 individuals - 5 COVID-19 negative (control) and 5 COVID-19 positive patients.
+Each sample was analyzed using liquid chromatography-tandem mass spectrometry (LC-MS/MS) with technical replicates, resulting in 20 raw data files total.
+The study aimed to identify protein expression differences that could serve as potential biomarkers for COVID-19 detection.
+
+Understanding the experimental design is crucial for proper SDRF annotation because it determines what sample characteristics and experimental factors need to be captured in the metadata.
+
+## What is SDRF and Why Use It?
+
+The [Sample and Data Relationship Format for Proteomics (SDRF-Proteomics)](https://github.com/bigbio/proteomics-sample-metadata/tree/master/sdrf-proteomics)
+is a standardized metadata format developed by the [HUPO Proteomics Standards Initiative](https://hupo.org/Proteomics-Standards-Initiative-(PSI)).
+It captures essential information about proteomics experiments in a structured, human- and machine-readable format.
+
+### The Structure of SDRF
+
+An SDRF file is fundamentally a tab-separated values (TSV) table where:
+
+- Each row represents a data file (typically one MS run)
+- Columns describe sample characteristics and experimental parameters
+- Column names and values follow controlled vocabularies and ontologies
+
+The general flow of information in SDRF follows the experimental workflow: from biological samples through sample processing, mass spectrometry acquisition, to data analysis parameters.
+
+
+::: {.callout-note}
+You can learn more about controlled vocabularies [here](https://www.ebi.ac.uk/training/online/courses/bioinformatics-terrified/what-makes-a-good-bioinformatics-database/controlled-vocabularies/).
+:::
+
+### Core Information Categories
+
+SDRF captures several key categories of information to provide a detailed description of the experiment:
+
+1. **Sample characteristics**: organism, tissue type, disease state, demographic information
+2. **Experimental design**: biological and technical replicates, experimental factors
+3. **Sample processing**: extraction methods, chemical modifications, enzymatic digestion
+4. **MS acquisition**: instrument details, acquisition methods, mass tolerances
+5. **Data processing**: search parameters, modifications, quantification methods
+
+#### Permitted values
+
+To ensure machine readability and reusability, information in SDRF tables is required to follow strict formats.
+Values in most columns are defined by ontologies or controlled vocabularies.
+For example, most sample `characteristics` are defined in [Experimental Factor Ontology (EFO)](https://bioportal.bioontology.org/ontologies/EFO), which is a widely used ontology in biomedical research.
+Similarly, instrument models are defined in the [PSI-MS ontology](https://www.ebi.ac.uk/ols/ontologies/ms).
+The full list of supported ontologies and CVs is a part of the [SDRF specification](https://github.com/bigbio/proteomics-sample-metadata/tree/master/sdrf-proteomics).
+
+## Creating SDRF Annotations with lesSDRF
+
+The [lesSDRF web application](https://lessdrf.streamlit.app/) provides an intuitive interface for creating SDRF files without requiring deep knowledge of the specification details.
+Alternatively, one can create SDRF files manually in a spreadsheet editor, but this requires more expertise and can lead to errors.
+
+Let's walk through the annotation process for our COVID-19 dataset.
+
+### Step 1: Getting Started
+
+When you access lesSDRF, you'll start by selecting an organism template. For our human COVID-19 study, we select the "human" template, which ensures all the necessary columns are present in the file.
+
+The application then asks for data file names.
+For the PXD020394 dataset, we have files like "NEG1.raw", "NEG1rep.raw" for the first negative control sample and its technical replicate,
+continuing through "POS5.raw", "POS5rep.raw" for the fifth positive sample.
+
+::: {.callout-note}
+One way to get the list of file names is to download the [README](https://ftp.pride.ebi.ac.uk/pride/data/archive/2020/07/PXD020394/README.txt) file from the PRIDE repository,
+open it in your spreadsheet editor (like Excel), then filter by `TYPE = RAW`, then copy all of the `NAME` column (there should only be RAW files).
+If you were annotating a dataset sitting on your local PC, you could get a list of RAW files from your terminal or file explorer.
+:::
+
+::: {.callout-note title="Action"}
+ - Open [lesSDRF](https://lessdrf.streamlit.app/).
+ - Click on the dropdown under "Start here with a completely new SDRF file".
+ - Select "human".
+ - Paste the 20 RAW file names into the input field that appears and hit the `Enter` key.
+ - Verify the list is correct and there is a preview of table with 20 rows.
+:::
+
+### Step 2: Label Selection and Quantification Strategy
+
+The next step involves specifying the quantification approach.
+Our COVID-19 dataset uses label-free quantification, meaning no chemical labeling was applied to the samples.
+This is a common approach for discovery proteomics studies where the goal is to identify as many proteins as possible across different conditions.
+
+When working with label-free data, each raw file represents a separate acquisition, and the SDRF will have one row per file.
+For labeled approaches (like TMT or iTRAQ), multiple samples might be analyzed in a single run, resulting in multiple rows per file in the SDRF annotation.
+
+::: {.callout-note title="Action"}
+- Click on step **"2. Labeling"** in the navigation bar on the left.
+- Under the SDRF preview, check the **"label free sample"** box, then click **"Submit selection"**.
+- Below, choose **"ALL"** in the dropdown menu to apply this term to all files.
+- Finally, check the **"Ready?"** box.
+:::
+
+### Step 3: Sample Characteristics
+
+Now we will start going through the required columns and filling them.
+
+::: {.callout-note title="Action"}
+- Click on **"3. Required columns"** in the navigation bar.
+:::
+
+#### Source Name and Sample Identification
+
+`source name` is actually the first column in the SDRF file, if you were to create one manually. It contains sample identifiers.
+The choice of format here is arbitrary, but the value has to be identical for all files corresponding to the same sample,
+including technical replicates, separately analyzed fractions of the same sample, etc.
+In this case, each sample corresponds to a patient, and we can use the patient designations for our source name values
+(`NEG1` to `NEG5` and `POS1` to `POS5`).
+
+::: {.callout-note title="Action"}
+- Choose **"source name"** in the list of columns in the navigation bar.
+- Fill in the values for all rows (each ID should be repeated exactly twice).
+- Double-click the **Update** button.
+:::
+
+#### Organism and Anatomical Information
+
+The organism seems straightforward - *Homo sapiens*.
+
+::: {.callout-note}
+On second thought, there is another organism present in positive samples: the SARS-CoV-2 virus.
+It is possible to annotate both organisms if it is relevant for data processing and/or discoverability.
+We leave annotation of both organisms as an exercise to the reader.
+
+**Hint**: the ontology term is called
+`Severe acute respiratory syndrome coronavirus 2`.
+:::
+
+::: {.callout-note title="Action"}
+- Select `characteristics[organism]`.
+- Specify that your data does **not** have multiple organisms and that only **model organisms** are present, then choose **Homo sapiens** on the right.
+- Click **Ready for input?**
+- `characteristics[organism]` should disappear from the list on the left and you can move on to annotating other columns.
+:::
+
+The next important piece of metadata identifies the source of sample in the organism, such as tissue or organ.
+Our samples come from "nasal cavity mucosa", which is the specific anatomical location where the swabs were collected.
+This level of anatomical specificity is important for understanding the biological context of the protein expression data. Additionally,
+correct and detailed annotations will allow comparisons across different experiments.
+
+::: {.callout-note title="Action"}
+Click on `characteristics[organism part]` and fill in the appropriate value.
+:::
+
+#### Demographic and Clinical Information
+
+One challenge with this dataset is the limited demographic information available.
+The publication doesn't provide details about patient age, sex, or ancestry, which would normally be valuable for comprehensive annotation.
+In such cases, SDRF allows for "not available" values, maintaining the column structure while acknowledging missing information.
+
+::: {.callout-note title="Action"}
+Fill the age, sex, ancestry category, and cell type with `Not available`.
+:::
+
+#### Disease State Classification
+
+The most critical factor in this study is the disease status.
+The samples are classified as either "normal" (COVID-19 negative) or "COVID-19" (positive).
+This binary classification becomes both a sample characteristic and the primary experimental factor for downstream analysis.
+
+::: {.callout-note title="Action"}
+Label the negative samples as `normal` and the positive samples as `COVID-19`.
+:::
+
+#### Other Sample Type Characteristics
+
+We also need to annotate the `characteristics[individual]` and `characteristics[biological replicate]` columns.
+The individual in this case corresponds to the sample ID. The biological replicate is something hard to define in general, and should be annotated
+taking into account the context of the study. In this case, we will annotate them with numbers from 1 to 5 both for positive and negative samples.
+
+::: {.callout-note}
+`lesSDRF` annotates individuals using numbers, so we will just use numbers from 1 to 10.
+In general, numbers starting from 1 should be used for technical replicates, biological replicates and fraction identifiers.
+If either of those are not used in the study, the corresponding column must be filled with `1`.
+:::
+
+::: {.callout-note title="Action"}
+Complete the annotation of sample characteristics.
+:::
+
+### Step 4: Technical and Analytical Parameters
+
+#### Assay name and technology type
+
+These two columns are required by SDRF. `assay name`, similarly to `source name`, is a unique identifier, but it identifies the experimental run rather than the sample.
+For example, technical replicates will have different `assay name` but the same `source name`, while different channels in a TMT labeling experiment would get different `source name` and the same `assay name`.
+`technology type` is required for broader compatibility and in mass spectrometry based proteomics we always fill it with `proteomic profiling by mass spectrometry`.
+
+::: {.callout-note title="Action"}
+Fill `assay name` and `technology type` columns.
+:::
+
+#### Key experimental design metadata
+
+SDRF requires the annotator to provide information about technical replicates and fractionation, two key parts of the technical experimental metadata. In this dataset, there are two technical replicates for each patient.
+Those should be annotated with numbers `1` and `2`. As for fractionation, it is not used in this experiment, so we fill in the fraction identifier `1` for every row in the table.
+
+::: {.callout-note title="Action"}
+Fill in `comment[technical replicate]` and `comment[fraction identifier]`.
+:::
+
+#### Sample Processing Details
+
+The samples underwent tryptic digestion, a standard proteolytic treatment that cleaves proteins at specific amino acid sequences (after lysine and arginine residues).
+The proteins were also chemically modified with carbamidomethylation of cysteine residues (a fixed modification to prevent disulfide bond reformation)
+and potential oxidation of methionine (a variable modification that can occur during sample handling).
+
+::: {.callout-note title="Action"}
+- Fill in `comment[cleavage agent details]` with `NT=Trypsin`.
+- Select `comment[modification parameters]` and choose `Carbamydomethyl`, type `Fixed`, occurring `Anywhere` on `C`.
+These settings should result in this annotation string: `NT=Carbamidomethyl; AC=4; MT=Fixed; PP=Anywhere; TA=C`.
+:::
+
+::: {.callout-note collapse="true"}
+The meaning of the keys is:
+
+- **NT**: name of the term
+- **AC**: accession in an external database (UNIMOD in this case)
+- **MT**: modification type
+- **PP**: position in the polypeptide
+- **TA**: target amino acid
+:::
+
+#### Mass Spectrometry Setup and Data Processing Parameters
+
+The dataset was acquired using a **Q Exactive Plus** mass spectrometer using **HCD** (Higher-energy Collisional Dissociation) and processed with specific parameter settings:
+
+- Precursor mass tolerance: 30 ppm
+- Fragment mass tolerance: 0.05 Da
+
+These technical parameters are crucial for data reanalysis and comparison with other datasets.
+
+::: {.callout-note title="Action"}
+- Fill in `comment[instrument]`, `comment[fragment mass tolerance]`, and `comment[precursor mass tolerance]`.
+- To annotate the fragmentation method, go to **4. Additional columns** and choose `comment[dissociation method]`.
+  Start typing "HCD" in the search field; the full name of the term is `higher energy beam-type collision-induced dissociation`.
+:::
+
+### Step 5: Experimental Design Factors
+
+The "factor value" column captures the primary experimental variable being investigated.
+In our COVID-19 study, this is the disease status - the main factor that differentiates our sample groups and drives the biological questions being asked.
+
+::: {.callout-note title="Action"}
+Go back to the required columns and choose the `factor value` to be `characteristics[disease]`. This will duplicate the values from the selected column in the `factor value` column.
+:::
+
+The resulting SDRF file for PXD020394 contains 20 rows (one for each MS run) and columns capturing all aspects of the experimental design and technical parameters.
+Each biological sample has two rows representing two technical replicates.
+
+### Final considerations
+
+When annotating own data, it is relatively straightforward to map samples to files and fill in the required metadata.
+However, doing this for a public dataset is much harder and sometimes not possible.
+It requires extensively studying the Methods section of the publication (if it is available), carefully analyzing file names,
+supplementary data, and sometimes pure guessing to reconstruct the sample-to-data relationships.
+Technical metadata can be partially retrieved from the RAW files, but it is a time-consuming and instrument-dependent process.
+Hence, it is vital to annotate newly generated data prior to publishing it.
+
+::: {.callout-note}
+For a taste of what it is like annotating a public TMT dataset, check our [Clinical Proteomics course](TeachingModule/teachingmodule.qmd).
+:::
+
+Online repositories for proteomic data, such as [PRIDE](https://www.ebi.ac.uk/pride/), support and encourage SDRF annotation with new submissions,
+while the SDRF community gladly accepts [submissions from the public](https://github.com/bigbio/proteomics-sample-metadata/tree/master/annotated-projects).
+
+### Conclusion
+
+You now created the experimental metadata annotation for the dataset.
+With that, you ensure that the data is reusable and comparable to other datasets.
+By publishing metadata, you increase the scientific impact of the study, and you make it possible for other researchers to build upon this work.
